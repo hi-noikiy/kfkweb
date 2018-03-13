@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta content="width=device-width" name="viewport" />
+  <title>订单信息 - 开吃吧 - 网上订餐 - 大学生和白领的订餐平台</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/icon" />
+  <link rel="stylesheet" type="text/css" href="css/order.css?v=v5.1.1" />
+  <link href="css/bindPhone.css" rel="stylesheet" type="text/css" /> 
+  <link rel="stylesheet" type="text/css" href="css/base.css?v=v5.1.0" /> 
+     <link rel="stylesheet" type="text/css" href="css/main.css?v=v5.1.0" /> 
+     <link rel="stylesheet" type="text/css" href="css/common.css?v=v5.1.0" /> 
+  <style type="text/css">
+        .payselect{
+            border: 1px solid red;
+            background: red;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <form method="post" action="checkout" id="Form1"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzYyMTYyNjcxD2QWAgIDD2QWCGYPZBYGZg8PFgIeC05hdmlnYXRlVXJsBRt+L3BlcnNvbmFsL2lUb2RheU9yZGVyLmFzcHhkZAIBD2QWBAIBDxYEHgVzdHlsZQUNZGlzcGxheTpub25lOx4JaW5uZXJodG1sBQEwZAIDD2QWAgIBD2QWBAIBDxYCHgtfIUl0ZW1Db3VudAIBFgJmD2QWAmYPFQYBMw5jbGFzcz0ncmVhZGVkJxVzdHlsZT0nY29sb3I6I2I0YjRiNCcM6aSQ5Y6F55WZ6KiACTPmnIgxNOaXpRLlt7Lor7vppJDljoXnlZnoqIBkAgMPFgIeB1Zpc2libGVoZAICDxYEHgVjbGFzcwUSbF9yX2NvbiBOZXdhY2NvdW50HwIFrQQ8YSBocmVmPScjJyBjbGFzcz0ndXNlcl9sb2dpbmVkIFVzZXJOaWNrTmFtZSc+6Zi/6YCXPC9hPjxkaXYgY2xhc3M9J2xheWVyX3RvcF9hY2NvdW50IGxheWVyX3RvcEluZm8gYnI0IHNoYWRvdyAnIHN0eWxlPSdkaXNwbGF5OiBub25lOyc+PHNwYW4gY2xhc3M9J2Fycm93Jz48L3NwYW4+PHVsPjxsaT48YSBocmVmPSdodHRwOi8va2FpY2hpYmEuY29tL3BlcnNvbmFsL2hvbWUuYXNweCcgY2xhc3M9J3RvcF9uMSc+5oiR55qE5biQ5oi3PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9rYWljaGliYS5jb20vcGVyc29uYWwvaVRvZGF5T3JkZXIuYXNweCcgY2xhc3M9J3RvcF9uMic+6K6i5Y2V5Lit5b+DPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9rYWljaGliYS5jb20vcGVyc29uYWwvc3lzTm90aWNlLmFzcHgnIGNsYXNzPSd0b3BfbjMnPuezu+e7n+WFrOWRijwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8va2FpY2hpYmEuY29tL0NvbW1vbVBhZ2UvYy5hc3B4P0NsZWFuVHlwZT0yJyBjbGFzcz0ndG9wX240Jz7pgIDlh7rnmbvlvZU8L2E+PC9saT48L3VsPjwvZGl2PmQCAQ8QZBAVAQEwFQEBMBQrAwFnZGQCAg8QZBAVAQEwFQEBMBQrAwFnZGQCAw8WAh8DAgYWDGYPZBYCZg8VBgYzNDM0MzAM6K6+5Li66buY6K6kAAFxCzEzODUxNDM1NTkzAGQCAQ9kFgJmDxUGBjMwODIxOQzorr7kuLrpu5jorqQABHdxd3ELMTM4NTE0MjMyMjULMTM4NTEyMzIxNTRkAgIPZBYCZg8VBgYzMDU4MTgM6K6+5Li66buY6K6kAARhYWFhCzE4MDA1MTUwMDgxAGQCAw9kFgJmDxUGBjMwNTExMwzorr7kuLrpu5jorqQABXJycnJyCzEzODE1MjEyMTIxAGQCBA9kFgJmDxUGBjI5Nzg5Mwzpu5jorqTkv6Hmga8RY2hlY2tlZD0nY2hlY2tlZCckICAgICAgICAgICAgICAgICAgICAgICAg5oiR5Y2D5Y2D5LiHCzEzODUxNDM1NTkzCzE4MjUyMDg4NTQ3ZAIFD2QWAmYPFQYGMjk2OTU1DOiuvuS4uum7mOiupAAkICAgICAgICAgICAgICAgICAgICAgICAg5rGf6IuP5Y2X5LqsCzEzODUxNDM1NTkzAGRk" /> 
+   </div> 
+   <div id="wrap" style="width: 750px;"> 
+    <div class="order_head"> 
+     <div class="small_l_r clearfix quick_menu" style="max-width: 400px"> 
+      <a href="about.html" style="margin-right: 2px" class="MyOrderLink2">联系我们</a> 
+      <a id="Min_Top_MyOrderLink" class="MyOrderLink2" href="..member_order.html">我的订单</a> 
+      <span id="Min_Top_notification" class="small_message clearfix notification"><b class="message_bell">&nbsp;</b> <span id="Min_Top_num" class="num" style="display:none;">0</span> 
+       <div id="Min_Top_MessageContent" class="layer_top_account layer_top_Message br4 shadow " style="display: none"> 
+        <span class="arrow"></span> 
+        <ul id="Min_Top_MessageBox" class="MessageBox"> 
+         <li messagetype="3" class="readed"> 
+          <div> 
+           <div class="l"> 
+            <strong style="color:#b4b4b4"> 餐厅留言</strong>
+           </div> 
+           <div class="r">
+             3月14日
+           </div> 
+          </div> 
+          <div> 
+           <div class="message">
+             已读餐厅留言
+           </div> 
+           <div class="r"> 
+            <a href="#">[查看]</a>
+           </div> 
+          </div> </li> 
+         <li class="btn clearfix noPointer"> <input class="setallmessage" type="submit" value="知道了" /> </li> 
+        </ul> 
+       </div> </span> 
+      <div id="Min_Top_top_user" class="l_r_con Newaccount">
+       <a href="#" class="user_logined UserNickName">阿逗</a>
+       <div class="layer_top_account layer_topInfo br4 shadow " style="display: none;">
+        <span class="arrow"></span>
+        <ul>
+         <li><a href="http://kaichiba.com/personal/member_index.html" class="top_n1">我的帐户</a></li>
+         <li><a href="http://kaichiba.commember_order.html" class="top_n2">订单中心</a></li>
+         <li><a href="http://kaichiba.com/personal/member_announce.html" class="top_n3">系统公告</a></li>
+         <li><a href="http://kaichiba.com/CommomPage/c.aspx?CleanType=2" class="top_n4">退出登录</a></li>
+        </ul>
+       </div>
+      </div> 
+     </div> 
+     <!--end of top--> 
+     <input type="hidden" value="http://kaichiba.com/ajax" id="ajaxUrl" /> 
+     <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script> 
+     <a href="index.html"> <img src="images/little-logo.png" width="106" height="30" alt="logo" /> </a> 
+     <h2 class="buy_title"> 订单确认</h2> 
+    </div> 
+    <div id="order" class="shadow"> 
+     <div class="order_top clearfix"> 
+      <ul class="clearfix buy_item fr"> 
+       <li>1.选择美食</li> 
+       <li>3.完成订单</li> 
+       <li>2.确认订单</li> 
+       <li class="buy_item_last">&nbsp;</li> 
+      </ul> 
+      <img src="images/141226152111472.jpeg" alt="" width="45px" height="45px" class="fl" /> 
+      <p> <a id="Supplier_id" supid="123518511" href="shop_detail.html"> 夫妻豆快餐（芍药居店）</a></p> 
+      <p> 起送价：15元起送</p> 
+     </div> 
+     <p class="restaurant_explain"> 送餐说明：惊喜不断，优惠多多，总有一款你爱吃的菜 凡订单满50送600ml可乐or雪碧2瓶， 满100即送2瓶营养快线（500ml） or大雪碧、大可乐任选！！！ 如此优惠，还等什么！ </p> 
+     <table cellpadding="0" cellspacing="0"> 
+      <thead> 
+       <tr> 
+        <td class="col1"> 美食筐 </td> 
+        <td class="col2"> 单价 </td> 
+        <td class="col3"> 数量 </td> 
+        <td class="col4"> 小计 </td> 
+       </tr> 
+      </thead> 
+      <tbody> 
+       <tr>
+        <td>鱼香茄子饭</td>
+        <td>￥15.0</td>
+        <td>2</td>
+        <td>￥30</td>
+       </tr>
+       <tr>
+        <td>宫保鸡丁饭</td>
+        <td>￥15.0</td>
+        <td>1</td>
+        <td>￥15</td>
+       </tr>
+       <tr>
+        <td>辣子鸡饭</td>
+        <td>￥15.0</td>
+        <td>1</td>
+        <td>￥15</td>
+       </tr>
+       <tr>
+        <td>酱爆鸡丁饭</td>
+        <td>￥15.0</td>
+        <td>1</td>
+        <td>￥15</td>
+       </tr> 
+      </tbody> 
+      <tfoot> 
+       <tr> 
+        <td class="leave_message"> <input type="text" value="给餐厅留言" id="leave_message_box" style="padding-left: 33px" /> 
+         <div class="leave_message_list clearfix order_shadow" id="leave_message"> 
+          <a href="javascript:;"><span>不吃辣</span><b class="leave_message_blank_b">◆</b><b class="leave_message_color_b">◆</b></a> 
+          <a href="javascript:;"><span>辣一点</span></a> 
+          <a href="javascript:;"><span>多加米</span></a> 
+          <a href="javascript:;"><span>么零钱</span></a> 
+          <a href="javascript:;" class="last_child"> <span>不要葱姜蒜</span></a> 
+         </div> </td> 
+        <td colspan="3"> <p class="order_total"> 共<em>5</em>份美食&nbsp;&nbsp;&nbsp;&nbsp;总价：<em>&yen;75 </em> </p> 
+         <!--满减浮层提示框--> </td> 
+       </tr> 
+      </tfoot> 
+     </table> 
+     <!--餐厅活动--> 
+     <p style="display:none" id="privilegePanel" class="order_p"> <span class="order_p_icon order_p_active"></span><span id="last_must_pay" class="fr"> 应付金额：<em>&yen;75-0=<em class="realTotalPrice">75</em></em></span> <span class="shelter_span">使用优惠： <a href="javascript:;" class="btn trade_securities"><em class="voucherPrice"></em>元劵<img src="images/selected-icon.png" alt="" /> </a><span class="check_ok" id="trade_success">(抵价<em>0</em>元)</span> </span> <span id="border_dashed"></span> </p> 
+     <!--送餐地址--> 
+     <p class="order_p"> <span class="order_p_icon order_p_address"></span>送餐地址： <span class="address_phone"> <em>请填写地址</em></span> <a href="javascript:;" class="change_address">[填写]</a> </p> 
+     <!--送餐时间--> 
+     <div class="order_p" style="z-index: 10"> 
+      <span class="order_p_icon order_p_time"></span>送出时间：
+      <div id="time_dropdown" class="ui_dropdown time" style="z-index: 10;">
+       <a class="ui_dropdown_toggle"><span id="input_time">立即送出</span><i class="icon_caret"><b></b><b></b></i></a>
+       <ul id="time_list" class="ui_dropdown_menu">
+        <li><span timeid="0">立即送出</span></li>
+        <li><span timeid="1">20:00</span></li>
+        <li><span timeid="2">20:15</span></li>
+        <li><span timeid="3">20:30</span></li>
+        <li><span timeid="4">20:45</span></li>
+        <li><span timeid="5">21:00</span></li>
+        <li><span timeid="6">21:15</span></li>
+        <li><span timeid="7">21:30</span></li>
+        <li><span timeid="8">21:45</span></li>
+        <li><span timeid="9">22:00</span></li>
+        <li><span timeid="10">22:15</span></li>
+        <li><span timeid="11">22:30</span></li>
+        <li><span timeid="12">22:45</span></li>
+       </ul>
+      </div> 
+     </div> 
+     <div class="order_p"> 
+      <span class="order_p_icon order_p_pay"></span>支付方式： 
+      <a class="btn active_btn" id="offPay" data="1" style="cursor: pointer;">餐到付款<img src="images/selected-icon.png" alt="" /></a> 
+      <a class="btn" id="onlinePay" data="0" style="cursor: pointer;">在线支付<img src="images/selected-icon.png" alt="" /></a> 
+     </div> 
+     <input type="button" id="sendOrder" value="确认下单" style="margin-top: 6px;" /> 
+    </div> 
+   </div> 
+   <div class="shade" id="shade">
+     &nbsp;
+   </div> 
+   <div id="unlogin"> 
+    <div id="unloginCont"> 
+     <h2> 会员登录才能享受优惠</h2> 
+     <a class="orange_btn" href="login.html">去登录</a> 
+     <a class="orange_btn" href="http://waimaichaoren.com/account/register/"> 去注册</a> 
+    </div> 
+   </div> 
+   <div class="promotion_code shade_shadow"> 
+    <h2> 使用优惠码</h2> 
+    <input type="text" class="input_code" placeholder="请输入优惠码" style="padding-left: 33px;
+            width: 201px" /> 
+    <span style="color: red; padding-bottom: 5px"> </span> 
+    <p style="margin-top: 10px"> <a href="javascript:;" class="orange_btn" id="use_promotion">使用</a> <a href="javascript:;" class="cancel_btn" id="promotion_cancel">取消</a> </p> 
+   </div> 
+   <div class="k_c_point shade_shadow"> 
+    <h2> 10个开吃点可以抵现金1元，只有注册用户才能获得和使用开吃点。 <a style="float: none;" href="http://kaichiba.com/about/fIntegration" target="_blank">了解开吃点</a></h2> 
+    <p class="mt_15"> <a href="http://waimaichaoren.com/account/register/" class="orange_btn">去注册/登录</a> <a href="javascript:;" class="cancel_btn" id="point_cancel">以后再说</a> </p> 
+   </div> 
+   <div class="select_address shade_shadow" id="select_address"> 
+    <h2> <a href="javascript:;" id="add_new_address">添加新地址</a>送达地址</h2> 
+    <div style="max-height: 250px; overflow-y: auto; overflow-x: hidden"> 
+     <p class="add_address" addressid="343430"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 设为默认</a> <input type="radio" name="address" /> <span class="u_address"> q</span> <span class="u_phone"> 13851435593</span> <span class="u_altphone"> </span> </p> 
+     <p class="add_address" addressid="308219"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 设为默认</a> <input type="radio" name="address" /> <span class="u_address"> wqwq</span> <span class="u_phone"> 13851423225</span> <span class="u_altphone"> 13851232154</span> </p> 
+     <p class="add_address" addressid="305818"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 设为默认</a> <input type="radio" name="address" /> <span class="u_address"> aaaa</span> <span class="u_phone"> 18005150081</span> <span class="u_altphone"> </span> </p> 
+     <p class="add_address" addressid="305113"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 设为默认</a> <input type="radio" name="address" /> <span class="u_address"> rrrrr</span> <span class="u_phone"> 13815212121</span> <span class="u_altphone"> </span> </p> 
+     <p class="add_address" addressid="297893"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 默认信息</a> <input type="radio" name="address" checked="checked" /> <span class="u_address"> 我千千万</span> <span class="u_phone"> 13851435593</span> <span class="u_altphone"> 18252088547</span> </p> 
+     <p class="add_address" addressid="296955"> <a href="javascript:;" class="delete">&times;</a> <a href="javascript:;" class="edit" id="updateAddress"> 修改</a> <a href="javascript:;" class="to_default"> 设为默认</a> <input type="radio" name="address" /> <span class="u_address"> 江苏南京</span> <span class="u_phone"> 13851435593</span> <span class="u_altphone"> </span> </p> 
+    </div> 
+    <p class="mt_20"> <a href="javascript:;" class="orange_btn" id="use_address">使用</a> <a href="javascript:;" class="cancel_btn" id="address_cancel">取消</a> </p> 
+   </div> 
+   <!--绑定手机浮层 begin--> 
+   <div id="bindOverlay" style="display:none"> 
+    <div id="bindBox"> 
+     <div class="bind_tit clearfix"> 
+      <p class="bind_tit_left fl"> 绑定手机</p> 
+      <a href="javascript:void(0);" class="close" id="closeBind">关闭</a> 
+     </div> 
+     <div id="bind_advantage" style="width: 400px;"> 
+      <p> 您需要将手机号作为用户名吗？<br /> 绑定手机后就可以直接用手机号登录开吃吧</p> 
+     </div> 
+     <table> 
+      <tbody>
+       <tr> 
+        <td> <label class="bindlbl"> 手机号码：</label> </td> 
+        <td> <input type="text" id="phoneBind" /> </td> 
+       </tr> 
+       <tr> 
+        <td> <label class="bindlbl"> 验证码：</label> </td> 
+        <td> <input type="text" id="verifyNum" style="width: 60px; margin-top: 5px;" /><input type="button" id="getCheckCode" value="获取验证码" /> </td> 
+       </tr> 
+       <tr id="helpTr" style="display: none;"> 
+        <td colspan="2"> 
+         <div> 
+          <span id="helpSpanTip" style="font-size: 12px;" class="bindlbl">还没收到短信？试试&nbsp;<a id="forhelp" style="text-decoration: underline; color: Blue;" onclick="applyHelpBind();">语音验证码</a></span> 
+          <p id="phonecalltip" style="font-size: 12px; display: none; margin-top: 3px; margin-bottom: 4px" class="bindlbl"> 电话拨打中…请保持手机畅通!</p> 
+         </div> </td> 
+       </tr> 
+       <tr> 
+        <td style="text-align: left;"> <input type="button" id="btnOK" class="bindOK" value="绑定" onclick="olduserbindmobile()" /> </td> 
+        <td style="text-align: right;"> <a id="btnCancel" class="btnCancel" nowbind="1">下次吧</a> </td> 
+       </tr> 
+       <tr> 
+        <td colspan="2"> <p style="font-size: 12px; color: Red;" class="bindlbl" id="validtip"> </p> </td> 
+       </tr> 
+      </tbody>
+     </table> 
+    </div> 
+   </div> 
+   <!--绑定手机浮层 end--> 
+   <!--浮层--> 
+   <div class="minLoginBg"> 
+   </div> 
+   <div class="minLogReg" style="top: 30%;"> 
+    <div class="bind_tit clearfix"> 
+     <p class="bind_tit_left fl"> 登录或注册</p> 
+     <a href="javascript:void(0);" class="close">关闭</a> 
+    </div> 
+    <div id="bind_info"> 
+     <div class="attention br8" style="width: 438px; height: 20px; float: none; display: block;"> 
+      <p> 下单前请登录</p> 
+     </div> 
+     <div style="padding: 15px; background-color: #f5f5f5;"> 
+      <h3 style="cursor: pointer"> <input type="radio" name="bind" value="1" />已经注册过开吃吧</h3> 
+      <div class="bind1"> 
+       <p class="tel_number" style="margin-bottom: 5px; margin-top: 15px"> <label> 帐号：</label> <input type="text" value="" id="loginAccount" /> </p> 
+       <p class="tel_pwd" style="margin-bottom: 5px;"> <label> 密码：</label> <input type="password" value="" id="loginPassword" maxlength="15" /> </p> 
+       <p> <input type="button" style="float: none" value="登录" class="bind_subBtn" source="order" onclick="AccountLogin()" /> <span id="loginTips"></span><a href="/member/pwd_find.html" target="_blank" style="display: block;
+                            margin-right: 25px; margin-top: 20px; float: right; text-decoration: underline"> 忘记密码？</a> </p> 
+      </div> 
+     </div> 
+     <div style="margin-top: 10px; padding: 15px; background-color: #f5f5f5;"> 
+      <h3 style="cursor: pointer"> <input type="radio" checked="checked" name="bind" value="2" />还没有注册过开吃吧（注册开吃吧账户）</h3> 
+      <div class="bind2" style="display: none"> 
+       <ul class="tel_number" style="margin-bottom: 3px; margin-top: 3px; list-style-type: none;"> 
+        <li class="tel_number" style="margin-bottom: 5px; margin-top: 15px"> <label> 手机号码：</label> <input type="text" value="" id="bind_phone" style="width: 154px;" maxlength="11" /> <p class="focusTips" style="float: right"> </p> </li> 
+        <li style="margin-bottom: 3px;"> <label> 密码：</label> <input name="PassWord" type="password" maxlength="15" id="PassWord" style="width:154px;" /> <p class="focusTips" style="float: right"> </p> </li> 
+        <li> <label> 确认密码：</label> <input name="PassWord2" type="password" maxlength="15" id="PassWord2" style="width:154px;" /> <p class="focusTips" style="float: right"> </p> </li> 
+       </ul> 
+       <label> 验证码：</label>
+       <input type="text" id="txtValidateCode" style="width: 60px; float: left;" maxlength="4" /> 
+       <div id="ValidateCode1" style="margin: 3px; float: left;"> 
+       </div> 
+       <p class="g_valid"> <label> 校验码：</label> <input type="text" value="" id="input_valid" maxlength="6" style="width: 60px" /> <input type="button" value="免费获取" id="request_valid" style="margin-right: 15px;" source="order" /> </p> 
+       <p class="telk_note"> <span id="helpRegistP" style="display: none; font-size: 12px;">还没收到校验码？试试&nbsp; <a id="forHelp2" onclick="javascript:applyHelpRegist();" style="text-decoration: underline;
+                            color: blue; cursor: pointer">语音验证码</a> </span> </p> 
+       <p id="phonecalltip2" style="font-size: 12px; display: none; margin-top: 3px; margin-bottom: 4px;
+                        margin-left: 68px;"> 电话拨打中…请保持手机畅通!</p> 
+       <p id="validTips"> </p> 
+       <p> <input type="button" value="注册" style="float: none;" class="bind_subBtn" source="order" onclick="bindmobile('float_order')" /> </p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <script type="text/javascript">
+        $().ready(function () {
+
+            $("#ValidateCode1").html("<img title='点击刷新验证码' src='http://kaichiba.com/Code/ValidateCode.aspx?r=" + Math.random() + "'>");
+
+            $("#ValidateCode1,#ValidateCodeClick_Message").click(function () {
+                $("#ValidateCode1 ").html("<img title='点击刷新验证码' src='http://kaichiba.com/Code/ValidateCode.aspx?r=" + Math.random() + "'>");
+
+            });            
+        });    
+
+    </script> 
+   <input type="hidden" name="h_couponPrice" id="h_couponPrice" value="0" /> 
+   <input type="hidden" name="h_fullPrice" id="h_fullPrice" value="0" /> 
+   <input type="hidden" name="h_deliveryFee" id="h_deliveryFee" value="0" /> 
+   <input type="hidden" name="h_userVoucherPrice" id="h_userVoucherPrice" value="0" /> 
+   <input type="hidden" name="h_originalPrice" id="h_originalPrice" value="75.0" /> 
+   <input type="hidden" name="h_isRegist" id="h_isRegist" value="1" /> 
+   <input type="hidden" name="h_isSupportReservation" id="h_isSupportReservation" value="0" /> 
+   <input type="hidden" name="h_isFeatured" id="h_isFeatured" value="0" /> 
+   <input type="hidden" name="h_isKey1" id="h_isKey1" value="0" /> 
+   <input type="hidden" name="h_isPassCheck" id="h_isPassCheck" value="1" /> 
+   <input type="hidden" name="h_isAnonymous" id="h_isAnonymous" value="0" /> 
+   <input type="hidden" value="0" id="isphoneregist" /> 
+  </form> 
+  <div id="appdimencode"> 
+  </div> 
+  <div class="app-img"> 
+   <img src="images/appdimencode.png" width="135px" height="135px" alt="app" /> 
+   <div style="padding-left: 4px; background-color: White; height: 19px;">
+     扫一扫 APP订餐更方便
+   </div> 
+  </div> 
+  <div id="dimencode"> 
+  </div> 
+  <div class="wx-img"> 
+   <img src="images/dimencode.png" width="135px" height="135px" alt="wx" /> 
+   <div style="padding-left: 4px; background-color: White; height: 19px;">
+     扫一扫 微信也能叫外卖
+   </div> 
+  </div> 
+  <div id="crappdimencode"> 
+  </div> 
+  <div class="cr-app-img"> 
+   <img src="images/cruserapp.jpg" width="135px" height="135px" alt="wx" /> 
+   <div style="padding-left: 4px; background-color: White; height: 30px;">
+     “嗖”一下的美食
+    <br />外卖超人手机app下载 
+   </div> 
+  </div> 
+  <a id="feedback_btn" href="about.html"></a> 
+  <div id="MsgHide" style="display: none;"> 
+   <div id="feedbackTip"> 
+    <label> 小提示：催单请进入相应餐厅的页面进行留言，这样餐厅就能看见哦~</label> 
+    <textarea id="feedBackTipContent"></textarea> 
+   </div> 
+   <div id="isVisitor" style="display: none;"> 
+    <label> 您的邮箱(选填)</label> 
+    <input type="text" id="visitorMail" /> 
+   </div> 
+   <p id="isUser"> 我们的回复将发到个人中心的“问题反馈”里，请注意关注，感谢您的建议。</p> 
+   <table class="msgVild fBackVali"> 
+    <tbody>
+     <tr> 
+      <td> 验证码： </td> 
+      <td> <input type="text" id="fBackValiDateCode" class="ValiDateCode fBackValiDateCode" maxlength="4" style="width: 60px;" /> </td> 
+      <td> 
+       <div id="ValidateCode"> 
+       </div> </td> 
+      <td> <span id="ValidateCodeClick_fBack" style="line-height: 24px;">更换验证码</span> </td> 
+      <td style="width: 102px;"> <p class="validRs fBackValiRs"> </p> </td> 
+     </tr> 
+    </tbody>
+   </table> 
+   <div class="___dialogBtn fBackBtn"> 
+    <input type="button" class="dialogBtn feedBackBt" value="提交" /> 
+    <input type="button" class="dialogBtn hover fCancelBt" value="取消" /> 
+   </div> 
+  </div> 
+  <div id="footer"> 
+   <p> <a href="/SupplierJoin/Supplier.aspx" target="_blank">商家加盟</a>|<a href="about.html" rel="nofollow">联系我们</a>|<a href="/about/fHelp" rel="nofollow">帮助中心</a>|<a href="http://kaichiba.com/m/index.html" target="_blank" rel="nofollow">移动版</a>|<a href="http://shop.kaichiba.com" target="_blank" rel="nofollow">餐厅登录</a>|<a href="http://blog.kaichiba.com" target="_blank">美食谭</a>|<a href="/about/fRecruit" rel="nofollow">招贤纳士</a>|<a href="/about/fAbout" rel="nofollow">关于我们</a></p> 
+   <hr /> 
+   <p> Copyright &copy; 2011-2014 开吃吧 All Rights Reserved 京ICP备12015678号 | 京公网安备110114001132号</p> 
+  </div> 
+  <!--end of footer--> 
+  <input name="Footer1$hid_IspromoteUser" type="hidden" id="hid_IspromoteUser" value="False" /> 
+  <script src="js/jquery.cookie.js" type="text/javascript"></script> 
+  <script src="js/jquery.XYTipsWindow.2.8.js" type="text/javascript"></script> 
+  <script src="js/kcb_search.js" type="text/javascript"></script> 
+  <script src="js/kcb_top_js.js" type="text/javascript"></script> 
+  <script src="js/kcb_recommendSup.js?v=v5.0.1" type="text/javascript"></script> 
+  <script src="js/kcb_common.js?v=v5.0.1" type="text/javascript"></script> 
+  <script type="text/javascript">
+    $().ready(function () {
+        if ($("#hid_IspromoteUser").val() == "True") {
+            $("#pMenu .promote").css("display", "block");
+        }
+
+        $("#ValidateCode,#ValidateCodeClick_fBack").click(function () {
+            $("#ValidateCode").html("<img src='http://kaichiba.com/Code/ValidateCode.aspx?type=1&r=" + Math.random() + "'>");
+
+        });
+        $("#appdimencode").hover(function () {
+            $(".app-img").toggle();
+        });
+        $("#dimencode").hover(function () {
+            $(".wx-img").toggle();
+        });
+
+        $("#crappdimencode").hover(function () {
+            $(".cr-app-img").toggle();
+        });
+    });    
+</script> 
+  <script src="js/kcb_order.js?v=v5.1.0" type="text/javascript"></script> 
+  <script src="js/kcb_sendCheckCode.js?v=v5.1.0" type="text/javascript"></script> 
+  <script src="js/kcb_bindphone.js" type="text/javascript"></script>   
+ </body>
+</html>

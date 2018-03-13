@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>登录 - 第三方绑定</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" CONTENT="-1">           
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">           
+	  				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=jd2015030523" charset="utf-8"/>
+		
+		
+							<link rel="stylesheet" type="text/css" href="css/loginBind.css?v=jd2015030523" charset="utf-8"/>	
+				
+					
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png?v=jd2015030523"/>
+						<script type="text/javascript">
+			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
+			var _isWebKit = '__proto__' in {};//是否是webkit内核
+			if(_isWebKit){//如果是webkit内核，则分模块使用zepto
+				//要使用zeptojs的路径列表，可以做为分模块替换的开关
+				var _locationList=new Array();
+				//活动模块
+				_locationList.push('/activity/proActList');
+				_locationList.push('/activity/proActWareList');
+				_locationList.push('/activity/list');
+				//商品分类模块
+				_locationList.push('/category/');
+				//京东快讯模块
+				_locationList.push('/newslist.html');
+				_locationList.push('/newslist/');
+				_locationList.push('/news/');
+				//机票模块
+				_locationList.push('/airline/');
+				//酒店模块
+				_locationList.push('/hotel/');
+				//团购模块
+				_locationList.push('/tuan/');
+				//首页相关
+				_locationList.push('/hotbrand.html');//品牌馆
+				//商品筛选相关
+				_locationList.push('/ware/view.action');
+				_locationList.push('/ware/expandSort.action');
+				_locationList.push('/ware/categoryFilter.action');
+				_locationList.push('/goods_list.html');
+				_locationList.push('/products/');
+				_locationList.push('/index/getWare.action')//热门特惠
+				_locationList.push('/notice/');//通告模块
+				_locationList.push('/coupons/');//随地惠模块
+				_locationList.push('/chongzhi/');//手机充值模块
+				_locationList.push('/comment/');//手机推荐模块
+				_locationList.push('/pay/');//支付
+				_locationList.push('/order/');//订单
+				_locationList.push('/norder/');//订单
+				
+				_locationList.push('/seckill/');//秒杀
+				
+				_locationList.push('/sale/act/');//sale
+				_locationList.push('/sale/mall/');//sale
+				//_locationList.push('/market/floorWare.action');//掌上专享
+				
+				var _needReplace = false;
+				//如果当前路径符合要使用的路径规则，则进行替换
+				for(var i=0;i<_locationList.length;i++){
+					if(_winLocation.indexOf(_locationList[i])!=-1){
+						_needReplace=true;
+						break;
+					}
+				}
+				//如果是首页的话，则使用zepto
+				var _tmp = _winLocation.replace(/(^http:\/\/)|(\/*$)/g,'');
+				if(_tmp.indexOf('/')<0 || (_tmp.split('/').length<=2 && _tmp.indexOf('/index')>=0)){
+					_needReplace=true;
+				}
+				//如果是商品详情页的话，则使用zepto
+                var _dlocationList=new Array();
+                _dlocationList.push(/\/product\/([0-9]+)\.html/);
+                _dlocationList.push(/\/orderComment\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)-([0-9]+)\.html/);
+                _dlocationList.push(/\/comments\/([0-9]+)\.html/);
+                for(var i=0,len=_dlocationList.length;i<len;i++){
+                	if(_dlocationList[i].test(_winLocation)){
+                		_needReplace=true;
+               			 break;
+               		 }
+                }
+				if(_needReplace){
+					document.write('<script src="js/zepto.min.js?v=jd2015030523"><\/script>');
+					document.write('<script type="text/javascript">window.jQuery=window.Zepto;<\/script>');
+				}else{
+					document.write('<script src="js/jquery-1.6.2.min.js?v=jd2015030523"><\/script>');
+				}
+			}else{//如果是非webkit内核直接使用jquery
+				document.write('<script src="js/jquery-1.6.2.min.js?v=jd2015030523"><\/script>');
+			}
+		</script>
+				        <script type="text/javascript" src="js/common.js?v=jd2015030523"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=jd2015030523"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			    						<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+							<h2>京东联合登录</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+<style>
+    body {
+        background: #f1f1f1;
+    }
+    .bind-wrap {
+        padding: 20px;
+		padding-bottom:45px;
+        font-size: 14px;
+    }
+    .title {
+        color: #999;
+        line-height: 35px;
+    }
+    .txt-wrap {
+        border: 1px solid #ccc;
+        padding: 0px 10px;
+        background: #fff;
+        margin-bottom: 10px;
+    }
+    input {
+        border: 0px;
+        padding: 13px 0px;
+        line-height: 14px;
+        font-size: 14px;
+        height: 14px;
+        width: 100%;
+    }
+    .tip {
+        margin-top: 15px;
+        color: #666;
+        font-size: 12px;
+        line-height: 30px;
+    }
+    .forget {
+        float: right;
+        color: #999;
+        text-decoration: underline;
+        margin-top:30px;
+    }
+	.err-msg {
+        color: #c00000;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 15px;
+        padding-right: 22px;
+    }
+    .err-msg .go-bind {
+        margin: 0px 5px;
+        text-decoration: underline;
+    }
+	.invalid, .invalid input {
+        background: #fcecec;
+    }
+    .security-code {
+        margin-right: 110px;
+    }
+    .count-down.security-code {
+        margin-right: 160px;
+    }
+    .get-security-code {
+        float: right;
+        border: 1px solid #ccc;
+        color: #333;
+        width: 78px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    }
+    .count-down.get-security-code {
+        width: 128px;
+    }
+	.help-icon {
+        float: right;
+        margin-top: -5px;
+        margin-right: -20px;            
+        background: #bf9d5b;
+        border: 1px solid #bf9d5b;            
+    }
+    .help-icon:after {
+        content: "?";
+    }
+    .agreement-wrap {
+        font-size: 14px;
+        line-height: 40px;
+        margin-bottom: 10px;
+    }
+    .sqr-checkbox {
+        float: left;
+        margin: 10px 10px 0px 0px;
+    }
+    .reg-wrap .reg-title {
+        color: #333;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .title {
+        color: #999;
+    }
+    .agreement {
+        color: #c00000;
+        text-decoration: underline;
+    }
+    .tip {
+        margin-top: 15px;
+        color: #666;
+        font-size: 12px;
+        line-height: 30px;
+    }        
+    .mask {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .7);
+    }
+    .msgbox-wrap {
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        top: 50%;
+        margin-top: -170px;
+        z-index: 999;
+    }
+    .msgbox-description {
+        text-align: left;
+    }
+    .msgbox-description p {
+        margin-bottom: 10px;
+    }
+    .box-title {
+        font-size: 16px;
+        color: #c00000;
+        border-bottom: 1px solid #999;
+        display: block;
+        padding-bottom: 10px;
+        margin-bottom: 10px;        
+    }
+    .tel {
+        text-decoration: underline;
+    }
+    strong {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+</style>
+<script src="js/bind.js?v=jd2015030523" language="javascript"></script>
+<script type="text/javascript" src="js/validateCode.js?v=jd2015030523" ></script>
+
+<div class="bind-wrap">
+    <span class="title">关联已有京东帐号</span>
+		<form action="/login/doLoginBind.action" id="loginForm" method="post">
+				<input type="hidden" name="bkey" value="a0b1614d5170732e7defb9b197cb2303" />
+				<input type="hidden" name="type" value="qq" />
+				<input type="hidden" name="openId" value="1353489" />
+				<input type="hidden" name="sid" value="bfd5d5fa6afa2d31344dd42eb76b7d68" />
+				<input type="hidden" name="headimgurl" value="http://q.qlogo.cn/qqapp/100273020/0000000000000000000000000014A711/100" />
+				<input type="hidden" value="" name="codeKey" id="codeKey">
+    <div class="txt-wrap">
+        <input type="text" name="loginName" id="loginName" value="" placeholder="请输入用户名/邮箱/已验证手机" />
+    </div>
+	<div class="err-msg" id="loginNameError" style="display:none;">用户名不能为空</div>
+    <div class="txt-wrap">
+        <input type="password" name="password" id="password" placeholder="请输入密码" />
+    </div>
+	<div class="err-msg" id="passwordError" style="display:none;">密码不能为空</div>
+	<div id="captchaBox" style="position:relative;display: none ">
+		<span class="new-input-span new-mg-b10  w-70 txt-wrap" style="width: 70%;height: 40px;line-height: 36px;float:left">
+			<input type="text" id="captcha" name="captcha" placeholder="请输入验证码" valName="验证码"  maxLength="11"/>
+		</span>
+		<span class="new-get-btn w-28" style="padding-left:10px;right: 0;width: 115px;height: 40px;width: 28%;border-left:0px solid;text-align:left">
+			<!--<img src="images/" width="90" height="40px" id="captchaImg" onclick="refreshCaptcha('1353489','qq')"/>-->
+			<img src="/authCode/authCodeImg.action?key=" id="code" width="100" height="40" onclick="com_jd_passport_m_validateCode('code','codeKey','114');">
+		</span>
+	</div>
+	<div class="new-txt-err" id="captchaError" style="display:none;">验证码不能为空</div></br>
+    <span class="tip">关联后，您的QQ帐号和京东帐号都可以登录</span>
+    <a class="btn b-btn" href="javascript:subLoginForm();">完成</a>
+			<a href='https://passport.m.jd.comforget.html' class="forget">忘记密码</a>  </br>
+		</form>
+</div>
+<div class="mask" style="display: none"></div>
+	
+   
+	<div class="login-area" id="footer"  style="margin:0 auto 15px;" >
+        	<div class="login">
+									    					<a href="login.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">登录</a><span class="lg-bar">|</span><a href="https://passport.m.jd.com/user/mobileRegister.action?v=t&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">注册</a>
+    												<span  class="new-fr"><a href="/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+			<div class="version"><a href="http://wap.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a>
+				<a onclick="skip();" href="javascript:void(0);" id="toPcHome">电脑版</a>        	</div>
+        	<div  id="clientArea">
+									<a href="/download/downApp.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" id="toClient" class="openJD">客户端</a>
+				        	</div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有</div>
+        </div>
+
+    <div style="display:none;">
+    					<img src="/ja.jsp?&amp;utmn=787082815&amp;utmr=http%3A%2F%2Fm.jd.com%2Flogin%2FenterBind.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68%26bkey%3Da0b1614d5170732e7defb9b197cb2303%26openId%3D1353489%26type%3Dqq%26uname%3D%25EF%25BC%2586%25E2%2598%2586%25E9%2598%25BF%25E9%2580%2597%25E4%25BB%2594%25EF%25BC%2586%25E2%2598%2585%26headimgurl%3Dhttp%253A%252F%252Fq.qlogo.cn%252Fqqapp%252F100273020%252F0000000000000000000000000014A711%252F100&amp;utmp=%2Flogin%2FloginBind.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68%26uname%3D%EF%BC%86%E2%98%86%E9%98%BF%E9%80%97%E4%BB%94%EF%BC%86%E2%98%85%26bkey%3Da0b1614d5170732e7defb9b197cb2303%26type%3Dqq%26headimgurl%3Dhttp%3A%2F%2Fq.qlogo.cn%2Fqqapp%2F100273020%2F0000000000000000000000000014A711%2F100%26openId%3D1353489&amp;guid=ON&jav=html5&pin=-&utmac=MO-J2011-1&provinceId=&cityId=&countryId=&townId=&skuId=&skuPrice=&stockState=" />
+			    </div>
+
+    <script type="text/javascript" src="js/mping.min.js"></script>
+    <script type="text/javascript">
+        try{
+            var pv= new MPing.inputs.PV();   //构造pv 请求
+            var mping = new MPing();        //构造上报实例
+            mping.send(pv);                //上报pv
+        } catch (e){}
+    </script>
+
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+    window._clientVersion_ = '';
+    
+	$(document).ready(function(){
+		var _loadScript = function(url, options,cb){
+			var script = document.createElement("script");
+			var def = {
+				type: "text/javascript",
+				charset:"utf-8"
+			}
+			options= options|| {
+			}
+			for(var i in options){
+				def[i] = options[i];
+			}
+			script.src = url;
+			
+			for(var i in def){
+				script.setAttribute(i,def[i]);
+			}
+			script.addEventListener("load",function(){
+				cb && cb();
+			},false)
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+				if($(".download-con").length || $("#clientArea").length){
+			_loadScript("http://st.360buyimg.com/m/js/2013/installapp.js?v=jd2015030523",{},function(){
+				 $("#clientArea").length && downcheck($("#clientArea"),false);
+			});
+		}
+				
+	})
+			function skip(){
+		addCookie('pcm', '1' ,3, '', 'jd.com');
+		var localurl = 'http://www.jd.com/#m';
+		if(localurl == 'http://www.jd.com/#m'){
+			var localurl = document.location.href;
+    		if(localurl.indexOf('http://m.jd.com/sale/mall') == 0){
+    			var saleurl = localurl.replace('http://m.jd.com/sale/mall', 'http://sale.jd.com/mall');
+    			saleurl = saleurl+'#m'
+    			window.location.href = saleurl;
+				return;
+    		}else if(localurl.indexOf('http://m.jd.com/sale/act') == 0){
+    			var saleurl = localurl.replace('http://m.jd.com/sale/act', 'http://sale.jd.com/act');
+    			saleurl = saleurl+'#m'
+    		 	window.location.href = saleurl;
+				return;
+    		}else{
+    			 window.location.href = 'http://www.jd.com/#m';
+				 return;
+    		}
+		}
+		window.location.href = localurl;
+	}
+	
+	function addCookie(name, value, expires, path, domain){ 
+        var str=name+"="+escape(value); 
+        if(expires!=""){ 
+            var date=new Date(); 
+            date.setTime(date.getTime()+expires*24*3600*1000);//expires单位为天 
+            str+=";expires="+date.toGMTString(); 
+        } 
+        if(path!=""){ 
+        	str+=";path="+path;//指定可访问cookie的目录 
+        } 
+        if(domain!=""){ 
+        	str+=";domain="+domain;//指定可访问cookie的域 
+        } 
+        document.cookie=str; 
+    } 
+</script>
+</body>
+</html>

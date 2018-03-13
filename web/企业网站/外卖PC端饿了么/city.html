@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh">
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>首页-index.html</title> 
+  <meta name="description" content="饿了么是中国最专业的网上订餐平台，提供各类中式、日式、韩式、西式等优质美食。" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<!--
+
+  
+  
+
+
+  <script>
+    if(navigator.userAgent.indexOf("MSIE")!=-1 && !window.localStorage){}
+  </script> -->
+  <link class="usemin" rel="stylesheet" href="css/global.48e3a844.css" /> 
+  <link class="usemin" rel="stylesheet" href="css/homepage.8efdfd7c.css" /> 
+<!--  <script class="usemin" src="js/cdn_detect.66c19641.js"></script> -->
+<!--  <script>
+    if(!window.CDNReady){var d=new Date;d.setHours(d.getHours()+6);document.cookie='CDNDown=1; domain=v5.ele.me; expires='+d.toUTCString()+'; path=/';if(!window.localStorage.getItem('CDNBackup')){window.localStorage.setItem('CDNBackup',1);location.reload(true)}}
+  </script> -->
+<!--  <script class="usemin" src="js/modernizr.custom.min.f49cdc05.js"></script> -->
+  <script>
+      var startTime = new Date().getTime();
+      var ELEME = window.ELEME || {};
+      ELEME.baseUrl = "";
+      ELEME.formerBaseUrl = "http://ele.me";
+      ELEME.route = "homepage";
+      ELEME.fussHost = "http://fuss10.elemecdn.com";
+      ELEME.staticHost = "http://static11.elemecdn.com";
+      ELEME.rootHost = "ele.me";
+      ELEME.mainHost = "v5.ele.me";
+      ELEME.payHost = "p.ele.me";
+      ELEME.accountHost = "account.ele.me";
+            ELEME.csrfToken = "2337f5dd912e308d1058c30ca35ccc5d8234eda7";
+            ELEME.timeDelta = 1423500110 - new Date().getTime()/1000;
+      ELEME.payHost = "p.ele.me";
+    </script> 
+ </head> 
+ <body class="homepage"> 
+  <div class="homepage-container"> 
+   <header class="homepage-header"> 
+    <h1 class="header-logo"><i class="glyph-logo-eleme glyph"></i>叫外卖上饿了么</h1> 
+    <div class="header-account"> 
+     <a class="link" href="login.html">登录</a> / 
+     <a class="link" href="register.html">注册</a> 
+    </div> 
+   </header> 
+   <div class="map-container"> 
+    <div id="mask" class="map-mask ui_hide"></div> 
+    <div id="guide" class="map-guide ui_hide"> 
+     <div class="icon-guide-arrow"></div> 
+     <div>
+      输入订餐地址，浏览附近餐厅
+     </div> 
+    </div> 
+    <div id="map_wrap" class="map-wrap"></div> 
+    <div class="map-navbar group"> 
+     <div id="city_section" class="bs-dropdown module-city"> 
+      <div class="city_label bs-dropdown-toggle map-block dark city-toggle caret" data-toggle="bs-dropdown"></div> 
+      <div class="bs-dropdown-menu map-block city-dropdown" role="menu" aria-labelledby="dLabel" > 
+       <div class="city-dropdown-header module-header">
+         请选择你所在的城市 
+        <div class="homepage-flow"> 
+         <span class="highlight">选城市</span> &gt; 定位置 &gt; 叫外卖 
+         <img class="cartoon-figure" src="images/cartoon-figure.3497d78e.png" alt="阿饿君" /> 
+        </div> 
+       </div> 
+       <div class="city-nav group"> 
+        <div class="guess-wrapper"> 
+         <span class="guess-caption">猜你在</span> 
+         <span class="city_maybe guess-city" data-guess="1">上海</span> 
+        </div> 
+        <div class="filter-input-wrapper"> 
+         <input id="filter_input" class="filter-input" type="text" placeholder="请输入城市" /> 
+         <span class="glyph-search"></span> 
+        </div> 
+       </div> 
+       <div class="cities-wrapper"> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">A</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="257" data-map="0" data-code="4401003" data-lng="102.478485" data-lat="24.919489" data-pinyin="anning">安宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="261" data-map="0" data-code="0372" data-lng="114.389412" data-lat="36.079834" data-pinyin="anyang">安阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="272" data-map="0" data-code="0915" data-lng="109.029022" data-lat="32.684715" data-pinyin="ankang">安康</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="273" data-map="0" data-code="085" data-lng="105.947594" data-lat="26.253071" data-pinyin="anshun">安顺</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="70" data-map="0" data-code="0556" data-lng="117.063744" data-lat="30.543489" data-pinyin="anqing">安庆</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="96" data-map="1" data-code="0412" data-lng="122.994324" data-lat="41.108639" data-pinyin="anshan">鞍山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="216" data-map="1" data-code="00853" data-lng="113.54303" data-lat="22.186834" data-pinyin="aomen">澳门</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">B</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="3" data-map="1" data-code="010" data-lng="116.407028" data-lat="39.90443" data-pinyin="beijing">北京</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="264" data-map="0" data-code="0875" data-lng="99.161758" data-lat="25.112045" data-pinyin="baoshan">保山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="290" data-map="0" data-code="0779" data-lng="109.120163" data-lat="21.481291" data-pinyin="beihai">北海</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="68" data-map="0" data-code="0472" data-lng="109.840347" data-lat="40.657375" data-pinyin="baotou">包头</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="75" data-map="0" data-code="0552" data-lng="117.389732" data-lat="32.916302" data-pinyin="bengbu">蚌埠</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="95" data-map="0" data-code="0312" data-lng="115.464806" data-lat="38.87389" data-pinyin="baoding">保定</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="134" data-map="0" data-code="0543" data-lng="117.970695" data-lat="37.381989" data-pinyin="binzhou">滨州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="136" data-map="0" data-code="0857" data-lng="105.291641" data-lat="27.283953" data-pinyin="bijie">毕节</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="156" data-map="0" data-code="0776" data-lng="106.617851" data-lat="23.899649" data-pinyin="baise">百色</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="223" data-map="0" data-code="0436" data-lng="122.838821" data-lat="45.619587" data-pinyin="baicheng">白城</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="244" data-map="0" data-code="0917" data-lng="107.146782" data-lat="34.376049" data-pinyin="baoji">宝鸡</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">C</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="21" data-map="1" data-code="0731" data-lng="112.938828" data-lat="28.227898" data-pinyin="changsha">长沙</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="14" data-map="1" data-code="028" data-lng="104.064217" data-lat="30.657404" data-pinyin="chengdu">成都</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="267" data-map="0" data-code="0994" data-lng="87.302567" data-lat="44.017647" data-pinyin="changji">昌吉</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="12" data-map="1" data-code="0431" data-lng="125.323532" data-lat="43.81741" data-pinyin="changchun">长春</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="279" data-map="0" data-code="0878" data-lng="101.545906" data-lat="25.032888" data-pinyin="chuxiong">楚雄</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="289" data-map="0" data-code="4401004" data-lng="107.364708" data-lat="22.376532" data-pinyin="chongzuo">崇左</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="44" data-map="1" data-code="023" data-lng="106.552299" data-lat="29.5637" data-pinyin="chongqing">重庆</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="59" data-map="1" data-code="0519" data-lng="119.974068" data-lat="31.811234" data-pinyin="changzhou">常州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="83" data-map="0" data-code="0550" data-lng="118.33197" data-lat="32.256706" data-pinyin="chuzhou">滁州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="120" data-map="0" data-code="0736" data-lng="111.698509" data-lat="29.031679" data-pinyin="changde">常德</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="172" data-map="0" data-code="0314" data-lng="117.962761" data-lat="40.952953" data-pinyin="chengde">承德</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="175" data-map="0" data-code="0317" data-lng="116.838837" data-lat="38.304478" data-pinyin="cangzhou">沧州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="178" data-map="0" data-code="0735" data-lng="113" data-lat="25" data-pinyin="chenzhou">郴州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="235" data-map="0" data-code="0768" data-lng="116.622604" data-lat="23.656937" data-pinyin="chaozhou">潮州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="237" data-map="0" data-code="0355" data-lng="113.116257" data-lat="36.195385" data-pinyin="changzhi">长治</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="238" data-map="0" data-code="0565" data-lng="31.625381" data-lat="117.890282" data-pinyin="chaohu">巢湖</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="246" data-map="0" data-code="0566" data-lng="30.687181" data-lat="117.567383" data-pinyin="chizhou">池州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">D</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="20" data-map="1" data-code="0411" data-lng="121.615196" data-lat="38.913235" data-pinyin="dalian">大连</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="286" data-map="0" data-code="4600003" data-lng="109.580811" data-lat="19.521133" data-pinyin="danzhoushi">儋州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="51" data-map="1" data-code="0769" data-lng="113.751801" data-lat="23.02067" data-pinyin="dongguan">东莞</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="86" data-map="1" data-code="0459" data-lng="125.103783" data-lat="46.589306" data-pinyin="daqing">大庆</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="131" data-map="0" data-code="0838" data-lng="104.397903" data-lat="31.12686" data-pinyin="deyang">德阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="132" data-map="0" data-code="0546" data-lng="118.674782" data-lat="37.434765" data-pinyin="dongying">东营</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="145" data-map="0" data-code="0415" data-lng="124.354469" data-lat="40.000801" data-pinyin="dandong">丹东</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="169" data-map="0" data-code="0352" data-lng="113.30024" data-lat="40.07679" data-pinyin="datong">大同</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="174" data-map="0" data-code="0872" data-lng="100.230095" data-lat="25.591909" data-pinyin="dali">大理</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="224" data-map="0" data-code="0534" data-lng="116.3097" data-lat="37.445332" data-pinyin="dezhou">德州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="247" data-map="0" data-code="0818" data-lng="107.502777" data-lat="31.213659" data-pinyin="dazhou">达州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">E</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="184" data-map="0" data-code="0711" data-lng="114.894867" data-lat="30.391977" data-pinyin="ezhou">鄂州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="213" data-map="0" data-code="440100" data-lng="103.484505" data-lat="29.601198" data-pinyin="emeishan">峨眉山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="229" data-map="0" data-code="0718" data-lng="109.478569" data-lat="30.282057" data-pinyin="enshi">恩施</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">F</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="24" data-map="1" data-code="0757" data-lng="113.122086" data-lat="23.021727" data-pinyin="foshan">佛山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="9" data-map="1" data-code="0591" data-lng="119.297005" data-lat="26.074045" data-pinyin="fuzhou">福州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="108" data-map="1" data-code="0413" data-lng="123.957199" data-lat="41.880871" data-pinyin="fushun">抚顺</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="118" data-map="0" data-code="0418" data-lng="121.669952" data-lat="42.02137" data-pinyin="fuxin">阜新</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="195" data-map="0" data-code="0558" data-lng="115.808815" data-lat="32.890125" data-pinyin="fuyang">阜阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="219" data-map="0" data-code="0794" data-lng="116.354362" data-lat="27.94878" data-pinyin="fuzhou">抚州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">G</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="4" data-map="1" data-code="020" data-lng="113.263329" data-lat="23.128647" data-pinyin="guangzhou">广州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="262" data-map="0" data-code="0839" data-lng="105.85173" data-lat="32.432877" data-pinyin="guangyuan">广元</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="98" data-map="1" data-code="0773" data-lng="110.292534" data-lat="25.275286" data-pinyin="guilin">桂林</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="129" data-map="0" data-code="0797" data-lng="114.93502" data-lat="25.831823" data-pinyin="ganzhou">赣州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="137" data-map="1" data-code="0851" data-lng="106.63015" data-lat="26.647657" data-pinyin="guiyang">贵阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="197" data-map="0" data-code="510600" data-lng="104.282333" data-lat="30.976166" data-pinyin="guanghanshi">广汉</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">H</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="10" data-map="1" data-code="0451" data-lng="126.641602" data-lat="45.725201" data-pinyin="haerbin">哈尔滨</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="2" data-map="1" data-code="0571" data-lng="120.155067" data-lat="30.274082" data-pinyin="hangzhou">杭州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="259" data-map="0" data-code="0916" data-lng="107.023338" data-lat="33.067493" data-pinyin="hanzhong">汉中</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="266" data-map="0" data-code="0318" data-lng="115.675423" data-lat="37.735371" data-pinyin="hengshui">衡水</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="17" data-map="1" data-code="0551" data-lng="117.227234" data-lat="31.820206" data-pinyin="hefei">合肥</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="53" data-map="0" data-code="0554" data-lng="116.999931" data-lat="32.625477" data-pinyin="huainan">淮南</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="57" data-map="1" data-code="0752" data-lng="114.416191" data-lat="23.111845" data-pinyin="huizhou">惠州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="61" data-map="0" data-code="0572" data-lng="120.086823" data-lat="30.894348" data-pinyin="huzhou">湖州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="62" data-map="1" data-code="0898" data-lng="110.198296" data-lat="20.043999" data-pinyin="haikou">海口</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="92" data-map="1" data-code="0471" data-lng="111.749168" data-lat="40.842575" data-pinyin="huhehaote">呼和浩特</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="114" data-map="0" data-code="0517" data-lng="119.015305" data-lat="33.610371" data-pinyin="huaian">淮安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="116" data-map="0" data-code="0734" data-lng="112.572006" data-lat="26.893244" data-pinyin="hengyang">衡阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="133" data-map="0" data-code="0745" data-lng="110.001915" data-lat="27.56951" data-pinyin="huaihua">怀化</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="152" data-map="0" data-code="0714" data-lng="115.06617" data-lat="30.223104" data-pinyin="huangshi">黄石</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="170" data-map="0" data-code="0310" data-lng="114.492897" data-lat="36.636436" data-pinyin="handan">邯郸</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="177" data-map="0" data-code="0530" data-lng="32.5" data-lat="115" data-pinyin="heze">菏泽</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="199" data-map="0" data-code="0559" data-lng="118.337631" data-lat="29.714756" data-pinyin="huangshan">黄山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="214" data-map="0" data-code="0561" data-lng="116.792046" data-lat="33.97361" data-pinyin="huaibei">淮北</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="217" data-map="0" data-code="0713" data-lng="114.872314" data-lat="30.453905" data-pinyin="huanggang">黄冈</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="218" data-map="0" data-code="0429" data-lng="120.836937" data-lat="40.71104" data-pinyin="huludao">葫芦岛</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="245" data-map="0" data-code="0873" data-lng="103.375656" data-lat="23.362972" data-pinyin="honghezizhizhou">红河</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="252" data-map="0" data-code="4401002" data-lng="111.566696" data-lat="24.40358" data-pinyin="hezhou">贺州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">J</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="274" data-map="0" data-code="0743" data-lng="109.43" data-lat="28.18" data-pinyin="jishou">吉首</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="19" data-map="1" data-code="0531" data-lng="117.120384" data-lat="36.65007" data-pinyin="jinan">济南</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="47" data-map="1" data-code="0537" data-lng="116.587097" data-lat="35.414925" data-pinyin="jining">济宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="49" data-map="0" data-code="0798" data-lng="117.183685" data-lat="29.27342" data-pinyin="jingdezhen">景德镇</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="55" data-map="1" data-code="0573" data-lng="120.78302" data-lat="30.747839" data-pinyin="jiaxing">嘉兴</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="66" data-map="0" data-code="0792" data-lng="116.001923" data-lat="29.705072" data-pinyin="jiujiang">九江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="67" data-map="0" data-code="0579" data-lng="119.647446" data-lat="29.07906" data-pinyin="jinhua">金华</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="88" data-map="0" data-code="0454" data-lng="130.318893" data-lat="46.799789" data-pinyin="jiamusi">佳木斯</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="100" data-map="0" data-code="0716" data-lng="112.239738" data-lat="30.335163" data-pinyin="jingzhou">荆州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="101" data-map="0" data-code="0432" data-lng="126.549583" data-lat="43.837891" data-pinyin="jilin">吉林</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="110" data-map="0" data-code="0416" data-lng="121.126846" data-lat="41.095688" data-pinyin="jinzhou">锦州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="130" data-map="0" data-code="0750" data-lng="113.078499" data-lat="22.595161" data-pinyin="jiangmen">江门</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="144" data-map="0" data-code="0391" data-lng="113.241821" data-lat="35.215893" data-pinyin="jiaozuo">焦作</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="151" data-map="0" data-code="0724" data-lng="112.201492" data-lat="31.051851" data-pinyin="jingmen">荆门</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="153" data-map="1" data-code="0354" data-lng="112.752762" data-lat="37.687016" data-pinyin="jinzhong">晋中</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="220" data-map="0" data-code="0796" data-lng="114.985573" data-lat="27.107754" data-pinyin="jian">吉安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="221" data-map="0" data-code="0467" data-lng="130.968826" data-lat="45.28624" data-pinyin="jixi">鸡西</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="231" data-map="0" data-code="0663" data-lng="116.367027" data-lat="23.525148" data-pinyin="jieyang">揭阳</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">K</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="23" data-map="1" data-code="0871" data-lng="102.709946" data-lat="25.045156" data-pinyin="kunming">昆明</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="140" data-map="0" data-code="0855" data-lng="107.981209" data-lat="26.566862" data-pinyin="kaili">凯里</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="183" data-map="0" data-code="410203" data-lng="114.348305" data-lat="34.788559" data-pinyin="kaifeng">开封</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">L</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="281" data-map="0" data-code="0358" data-lng="111.144318" data-lat="37.518314" data-pinyin="lvliang">吕梁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="40" data-map="0" data-code="0316" data-lng="116.695801" data-lat="39.5336" data-pinyin="langfang">廊坊</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="41" data-map="1" data-code="0931" data-lng="103.834511" data-lat="36.06134" data-pinyin="lanzhou">兰州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="60" data-map="0" data-code="0539" data-lng="118.356453" data-lat="35.104675" data-pinyin="linyi">临沂</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="73" data-map="0" data-code="0578" data-lng="119.922791" data-lat="28.467632" data-pinyin="lishui">丽水</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="81" data-map="0" data-code="0772" data-lng="109.41494" data-lat="24.309488" data-pinyin="liuzhou">柳州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="84" data-map="0" data-code="0635" data-lng="115.985474" data-lat="36.457039" data-pinyin="liaocheng">聊城</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="85" data-map="0" data-code="0564" data-lng="116.521858" data-lat="31.733704" data-pinyin="luan">六安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="89" data-map="0" data-code="0518" data-lng="119.221603" data-lat="34.596649" data-pinyin="lianyungang">连云港</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="94" data-map="0" data-code="0379" data-lng="112.454041" data-lat="34.619682" data-pinyin="luoyang">洛阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="106" data-map="0" data-code="0830" data-lng="105.442253" data-lat="28.871803" data-pinyin="luzhou">泸州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="139" data-map="0" data-code="0833" data-lng="103.765572" data-lat="29.552107" data-pinyin="leshan">乐山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="143" data-map="0" data-code="0738" data-lng="112.00193" data-lat="27.729921" data-pinyin="loudi">娄底</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="155" data-map="0" data-code="0888" data-lng="100.227753" data-lat="26.855047" data-pinyin="lijiang">丽江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="168" data-map="0" data-code="0357" data-lng="111.516663" data-lat="36.086193" data-pinyin="linfen">临汾</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="181" data-map="0" data-code="0597" data-lng="116" data-lat="25" data-pinyin="longyan">龙岩</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="201" data-map="0" data-code="0766" data-lng="111.570015" data-lat="22.768597" data-pinyin="luoding">罗定</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="222" data-map="0" data-code="0419" data-lng="123.173576" data-lat="41.269478" data-pinyin="liaoyang">辽阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="227" data-map="0" data-code="0437" data-lng="125.136436" data-lat="42.901524" data-pinyin="liaoyuan">辽源</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="232" data-map="0" data-code="0891" data-lng="91.172112" data-lat="29.652491" data-pinyin="lasa">拉萨</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">M</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="56" data-map="0" data-code="0753" data-lng="116.122231" data-lat="24.28861" data-pinyin="meizhou">梅州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="82" data-map="0" data-code="0816" data-lng="104.679123" data-lat="31.467455" data-pinyin="mianyang">绵阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="90" data-map="1" data-code="0555" data-lng="118.506767" data-lat="31.67046" data-pinyin="maanshan">马鞍山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="123" data-map="0" data-code="0668" data-lng="110.925461" data-lat="21.663" data-pinyin="maoming">茂名</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="138" data-map="1" data-code="0453" data-lng="129.633179" data-lat="44.551659" data-pinyin="mudanjiang">牡丹江</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">N</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="6" data-map="1" data-code="025" data-lng="118.796486" data-lat="32.058151" data-pinyin="nanjing">南京</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="18" data-map="1" data-code="0574" data-lng="121.624138" data-lat="29.861921" data-pinyin="ningbo">宁波</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="260" data-map="0" data-code="0377" data-lng="112.52832" data-lat="32.990833" data-pinyin="nanyang">南阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="271" data-map="0" data-code="0593" data-lng="119.554703" data-lat="26.671747" data-pinyin="ningde">宁德</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="25" data-map="1" data-code="0791" data-lng="115.858643" data-lat="28.683756" data-pinyin="nanchang">南昌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="39" data-map="0" data-code="0513" data-lng="120.896698" data-lat="31.981701" data-pinyin="nantong">南通</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="45" data-map="1" data-code="0771" data-lng="108.367897" data-lat="22.816099" data-pinyin="nanning">南宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="99" data-map="0" data-code="0817" data-lng="106.11071" data-lat="30.837803" data-pinyin="nanchong">南充</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="104" data-map="0" data-code="0832" data-lng="105.058441" data-lat="29.580238" data-pinyin="neijiang">内江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="117" data-map="0" data-code="0599" data-lng="118.177711" data-lat="26.641768" data-pinyin="nanping">南平</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">P</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="269" data-map="0" data-code="0375" data-lng="113.293999" data-lat="33.737366" data-pinyin="pingdingshan">平顶山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="294" data-map="0" data-code="0879" data-lng="100.96608" data-lat="22.770082" data-pinyin="puer">普洱</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="150" data-map="0" data-code="0799" data-lng="113.854553" data-lat="27.622763" data-pinyin="pingxiang">萍乡</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="180" data-map="0" data-code="0594" data-lng="119.064514" data-lat="25.223087" data-pinyin="putian">莆田</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">Q</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="28" data-map="1" data-code="0532" data-lng="120.383072" data-lat="36.066521" data-pinyin="qingdao">青岛</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="265" data-map="0" data-code="0874" data-lng="103.796234" data-lat="25.490093" data-pinyin="qujingshi">曲靖</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="278" data-map="0" data-code="460000" data-lng="110.474648" data-lat="19.258343" data-pinyin="qionghai">琼海</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="63" data-map="0" data-code="0335" data-lng="119.600502" data-lat="39.93539" data-pinyin="qinhuangdao">秦皇岛</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="91" data-map="1" data-code="0452" data-lng="123.918205" data-lat="47.354362" data-pinyin="qiqihaer">齐齐哈尔</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="102" data-map="1" data-code="0595" data-lng="118.675674" data-lat="24.874128" data-pinyin="quanzhou">泉州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="157" data-map="0" data-code="0777" data-lng="108.61924" data-lat="21.946068" data-pinyin="qinzhou">钦州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="182" data-map="0" data-code="0570" data-lng="118.879997" data-lat="28.969999" data-pinyin="quzhou">衢州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">R</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="58" data-map="0" data-code="0633" data-lng="119.526886" data-lat="35.416328" data-pinyin="rizhao">日照</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">S</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="1" data-map="1" data-code="021" data-lng="121.473701" data-lat="31.230415" data-pinyin="shanghai">上海</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="31" data-map="1" data-code="0311" data-lng="114.514954" data-lat="38.042412" data-pinyin="shijiazhuang">石家庄</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="258" data-map="0" data-code="0993" data-lng="86.080597" data-lat="44.306091" data-pinyin="shihezi">石河子</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="8" data-map="1" data-code="0512" data-lng="120.586914" data-lat="31.297354" data-pinyin="suzhou">苏州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="11" data-map="1" data-code="0755" data-lng="114.058502" data-lat="22.543501" data-pinyin="shenzhen">深圳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="270" data-map="0" data-code="0598" data-lng="117.645744" data-lat="26.269682" data-pinyin="sanming">三明</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="16" data-map="1" data-code="024" data-lng="123.432594" data-lat="41.80571" data-pinyin="shenyang">沈阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="291" data-map="0" data-code="0825" data-lng="105.597679" data-lat="30.535393" data-pinyin="suiningshi">遂宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="69" data-map="0" data-code="0575" data-lng="120.580246" data-lat="30.029764" data-pinyin="shaoxing">绍兴</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="72" data-map="0" data-code="0751" data-lng="113.597527" data-lat="24.810406" data-pinyin="shaoguan">韶关</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="97" data-map="0" data-code="0793" data-lng="117.943436" data-lat="28.454863" data-pinyin="shangrao">上饶</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="135" data-map="0" data-code="0557" data-lng="116.964371" data-lat="33.64637" data-pinyin="suzhou">宿州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="165" data-map="1" data-code="460200" data-lng="109.511902" data-lat="18.252844" data-pinyin="sanya">三亚</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="171" data-map="1" data-code="0434" data-lng="124.350395" data-lat="43.16642" data-pinyin="siping">四平</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="173" data-map="0" data-code="0739" data-lng="111.467789" data-lat="27.238894" data-pinyin="shaoyang">邵阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="196" data-map="0" data-code="0719" data-lng="110.798149" data-lat="32.629398" data-pinyin="shiyan">十堰</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="200" data-map="1" data-code="0754" data-lng="116.681976" data-lat="23.354086" data-pinyin="shantou">汕头</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="206" data-map="0" data-code="0527" data-lng="118.275482" data-lat="33.961922" data-pinyin="suqian">宿迁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="228" data-map="1" data-code="0455" data-lng="126.96891" data-lat="46.653854" data-pinyin="suihua">绥化</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="253" data-map="0" data-code="0370" data-lng="115.654236" data-lat="34.410576" data-pinyin="shangqiu">商丘</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">T</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="5" data-map="1" data-code="022" data-lng="117.200233" data-lat="39.083836" data-pinyin="tianjin">天津</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="268" data-map="1" data-code="0475" data-lng="122.243446" data-lat="43.652889" data-pinyin="tongliao">通辽</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="43" data-map="0" data-code="0351" data-lng="112.551399" data-lat="37.871201" data-pinyin="taiyuan">太原</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="52" data-map="0" data-code="0576" data-lng="121.420753" data-lat="28.656382" data-pinyin="taizhou">台州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="65" data-map="0" data-code="0562" data-lng="117.811264" data-lat="30.945511" data-pinyin="tongling">铜陵</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="74" data-map="1" data-code="0538" data-lng="117.087608" data-lat="36.200245" data-pinyin="taian">泰安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="87" data-map="0" data-code="0315" data-lng="118.180191" data-lat="39.630867" data-pinyin="tangshan">唐山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="93" data-map="0" data-code="0523" data-lng="119.923111" data-lat="32.455772" data-pinyin="taizhou">泰州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="113" data-map="0" data-code="321200" data-lng="120.051758" data-lat="32.171864" data-pinyin="taixing">泰兴</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="226" data-map="0" data-code="0856" data-lng="109.189598" data-lat="27.731516" data-pinyin="tongren">铜仁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="239" data-map="0" data-code="0435" data-lng="125.943489" data-lat="41.732605" data-pinyin="tonghua">通化</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">W</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="7" data-map="1" data-code="027" data-lng="114.30584" data-lat="30.592928" data-pinyin="wuhan">武汉</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="282" data-map="0" data-code="0989" data-lng="110.758926" data-lat="19.606207" data-pinyin="wenchang">文昌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="30" data-map="0" data-code="0577" data-lng="119.161758" data-lat="36.706776" data-pinyin="wenzhou">温州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="34" data-map="1" data-code="0631" data-lng="122.120071" data-lat="37.513439" data-pinyin="weihai">威海</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="35" data-map="1" data-code="0510" data-lng="120.314201" data-lat="31.4937" data-pinyin="wuxi">无锡</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="293" data-map="0" data-code="0876" data-lng="104.232513" data-lat="23.386301" data-pinyin="wenshan">文山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="38" data-map="1" data-code="0553" data-lng="118.432198" data-lat="31.353201" data-pinyin="wuhu">芜湖</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="48" data-map="0" data-code="0536" data-lng="119.161758" data-lat="36.706776" data-pinyin="weifang">潍坊</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="236" data-map="1" data-code="0991" data-lng="87.616913" data-lat="43.825672" data-pinyin="wulumuqi">乌鲁木齐</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="243" data-map="0" data-code="0774" data-lng="111.274788" data-lat="23.485703" data-pinyin="wuzhou">梧州</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">X</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="13" data-map="1" data-code="0592" data-lng="118.090202" data-lat="24.480499" data-pinyin="xiamen">厦门</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="15" data-map="1" data-code="029" data-lng="108.952782" data-lat="34.264397" data-pinyin="xian">西安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="42" data-map="0" data-code="0732" data-lng="112.959999" data-lat="27.841999" data-pinyin="xiangtan">湘潭</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="263" data-map="0" data-code="0350" data-lng="112.734322" data-lat="38.416714" data-pinyin="xinzhou">忻州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="29" data-map="1" data-code="0516" data-lng="117.283714" data-lat="34.207142" data-pinyin="xuzhou">徐州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="296" data-map="0" data-code="0843" data-lng="102.26445" data-lat="27.894505" data-pinyin="xichang">西昌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="76" data-map="0" data-code="0373" data-lng="113.926979" data-lat="35.302933" data-pinyin="xinxiang">新乡</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="115" data-map="0" data-code="0910" data-lng="108.708977" data-lat="34.32959" data-pinyin="xianyang">咸阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="127" data-map="0" data-code="0790" data-lng="114.917343" data-lat="27.817804" data-pinyin="xinyu">新余</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="179" data-map="0" data-code="0319" data-lng="114.492889" data-lat="37.070019" data-pinyin="xingtai">邢台</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="198" data-map="0" data-code="0374" data-lng="113.852638" data-lat="34.035503" data-pinyin="xuchang">许昌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="205" data-map="0" data-code="0712" data-lng="113.916374" data-lat="30.92417" data-pinyin="xiaogan">孝感</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="215" data-map="1" data-code="00852" data-lng="114.163826" data-lat="22.276283" data-pinyin="xianggang">香港</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="230" data-map="0" data-code="0715" data-lng="114.322495" data-lat="29.841442" data-pinyin="xianning">咸宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="233" data-map="0" data-code="0971" data-lng="101.778221" data-lat="36.617134" data-pinyin="xining">西宁</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="234" data-map="0" data-code="0376" data-lng="32.14698" data-lat="114.091026" data-pinyin="xinyang">信阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="241" data-map="0" data-code="0710" data-lng="112.122414" data-lat="32.008984" data-pinyin="xiangyang">襄阳</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">Y</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="22" data-map="0" data-code="0514" data-lng="119.413284" data-lat="32.393494" data-pinyin="yangzhou">扬州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="292" data-map="0" data-code="0877" data-lng="102.527168" data-lat="24.347321" data-pinyin="yuxi">玉溪</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="297" data-map="0" data-code="0778" data-lng="108.636414" data-lat="24.485212" data-pinyin="yizhou">宜州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="71" data-map="0" data-code="0515" data-lng="120.163559" data-lat="33.347382" data-pinyin="yancheng">盐城</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="77" data-map="1" data-code="0535" data-lng="121.447945" data-lat="37.463833" data-pinyin="yantai">烟台</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="80" data-map="0" data-code="0717" data-lng="111.286484" data-lat="30.691978" data-pinyin="yichang">宜昌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="103" data-map="0" data-code="0831" data-lng="104.643211" data-lat="28.751762" data-pinyin="yibin">宜宾</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="119" data-map="0" data-code="0737" data-lng="112.355186" data-lat="28.553864" data-pinyin="yiyang">益阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="124" data-map="0" data-code="0730" data-lng="113.12896" data-lat="29.357107" data-pinyin="yueyang">岳阳</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="128" data-map="0" data-code="0795" data-lng="114.416779" data-lat="27.815617" data-pinyin="yichun">宜春</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="166" data-map="0" data-code="0359" data-lng="112.5522" data-lat="37.835571" data-pinyin="yuncheng">运城</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="167" data-map="0" data-code="0433" data-lng="129.527817" data-lat="42.895561" data-pinyin="yan bian">延边</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="176" data-map="0" data-code="0746" data-lng="111" data-lat="26" data-pinyin="yongzhou">永州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="191" data-map="0" data-code="579" data-lng="120.040001" data-lat="29.18" data-pinyin="yiwu">义乌</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="194" data-map="1" data-code="0951" data-lng="106.245705" data-lat="38.480141" data-pinyin="yinchuan">银川</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="202" data-map="0" data-code="0662" data-lng="111.95507" data-lat="21.861799" data-pinyin="yangjiang">阳江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="240" data-map="0" data-code="0835" data-lng="103.013268" data-lat="29.980536" data-pinyin="yaan">雅安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="242" data-map="0" data-code="0911" data-lng="109.489761" data-lat="36.585445" data-pinyin="yanan">延安</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="254" data-map="0" data-code="0775" data-lng="110.172791" data-lat="22.633263" data-pinyin="yulin">玉林</span> </li> 
+         </ul> 
+        </div> 
+        <div class="city-initial-group"> 
+         <span class="city-initial">Z</span> 
+         <ul class="city-list"> 
+          <li class="city-block"> <span class="city city_item" data-id="280" data-map="0" data-code="0744" data-lng="110.475067" data-lat="29.11912" data-pinyin="zhangjiajie">张家界</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="26" data-map="1" data-code="0756" data-lng="113.576637" data-lat="22.270462" data-pinyin="zhuhai">珠海</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="27" data-map="0" data-code="0511" data-lng="119.425697" data-lat="32.189789" data-pinyin="zhenjiang">镇江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="32" data-map="1" data-code="0371" data-lng="113.660774" data-lat="34.746689" data-pinyin="zhengzhou">郑州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="295" data-map="0" data-code="88888888888" data-lng="0" data-lat="0" data-pinyin="zhaotongshi">昭通</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="50" data-map="0" data-code="0533" data-lng="118.054932" data-lat="36.813492" data-pinyin="zibo">淄博</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="54" data-map="0" data-code="0632" data-lng="117.265045" data-lat="34.794693" data-pinyin="zaozhuang">枣庄</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="64" data-map="0" data-code="0758" data-lng="112.465088" data-lat="23.04719" data-pinyin="zhaoqing">肇庆</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="79" data-map="0" data-code="0759" data-lng="110.359383" data-lat="21.270712" data-pinyin="zhanjiang">湛江</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="105" data-map="0" data-code="0813" data-lng="104.778435" data-lat="29.339024" data-pinyin="zigong">自贡</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="111" data-map="0" data-code="0596" data-lng="117.647491" data-lat="24.512959" data-pinyin="zhangzhou">漳州</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="126" data-map="0" data-code="430200" data-lng="113.134003" data-lat="27.827553" data-pinyin="zhuzhou">株洲</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="154" data-map="0" data-code="0313" data-lng="114.886353" data-lat="40.767555" data-pinyin="zhangjiakou">张家口</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="203" data-map="0" data-code="0760" data-lng="113.392738" data-lat="22.517012" data-pinyin="zhongshan">中山</span> </li> 
+          <li class="city-block"> <span class="city city_item" data-id="204" data-map="0" data-code="0394" data-lng="114.696953" data-lat="33.626148" data-pinyin="zhoukou">周口</span> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="module-locate map_search"> 
+      <div class="map-block dark search-bar group"> 
+       <input id="search_input" class="search-input" type="search" placeholder="请输入你的订餐地址（学校，写字楼或街道）" /> 
+       <a class="glyph-search search-btn search_btn" role="button"></a> 
+      </div> 
+     </div> 
+     <div id="entry" class="map-block module-locate module-entry ui_hide"> 
+      <h3 class="module-header">请选择区域</h3> 
+      <div class="entries_box"></div> 
+     </div> 
+    </div> 
+    <div class="map-sidebar"> 
+     <div class="map-block module-result result_wrap ui_hide"> 
+      <div class="result-loading search_loader"> 
+       <i class="icon-eleme-loader"></i> 
+       <p class="hint">搜索中……</p> 
+      </div> 
+      <div class="result-wrapper result_container ui_hide"> 
+       <h3 class="module-header">共<span class="highlight addr_amount"></span>地址</h3> 
+       <div class="result-list search_results"> 
+        <div class="result-pager result_pagination"></div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="map-block map-tip">
+     点击地图直接定位
+    </div> 
+   </div> 
+   <footer class="homepage-footer"> 
+    <a class="footer-nav" href="http://ele.me/mobile" target="_blank">手机应用</a> 
+    <a class="footer-nav" href="http://kaidian.ele.me" target="_blank">我要开店</a> 
+    <a class="footer-nav" href="http://ele.me/links" target="_blank">友情链接</a> 
+    <a class="footer-nav" href="http://ele.me/sitemap" target="_blank">网站地图</a> 
+   </footer> 
+  </div> 
+  <script class="usemin" src="js/vendor.863b2cc3.js"></script> 
+  <script class="usemin" src="js/global.a722d854.js"></script> 
+  <script>
+//            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//      })(window,document,'script',('http://static11.elemecdn.com')+'/forward/js/vendor/analytics.js','ga');
+//
+//      ga('create','UA-2513347-3',{'cookieDomain':'.ele.me'});
+//      ga('send','pageview','homepage/');
+//      
+//      var isReady = false,
+//          readyList = null;
+//      function domReady(callback) {
+//        if (isReady) {
+//          setTimeout(callback);
+//          return;
+//        }
+//
+//        if (readyList) {
+//          readyList.push(callback);
+//          return;
+//        }
+//
+//        readyList = [callback];
+//        var completed = function(event) {
+//          if (document.addEventListener || event.type == 'load' || document.readyState === 'complete') {
+//            detach();
+//            realReady();
+//          }
+//        };
+//
+//        if (document.addEventListener) {
+//          document.addEventListener('DOMContentLoaded', completed, false);
+//          window.addEventListener('load', completed, false);
+//        } else {
+//          document.attachEvent('onreadystatechange', completed);
+//          window.attachEvent('onload', completed);
+//
+//          var top = false;
+//          try {
+//            top = window.frameElement == null && document.documentElement;
+//          } catch(e) {}
+//
+//          if (top && top.doScroll) {
+//            (function doScrollCheck() {
+//              if (!isReady) {
+//                try {
+//                  top.doScroll('left');
+//                } catch(e) {
+//                  return setTimeout(doScrollCheck, 50);
+//                }
+//                detach();
+//                realReady();
+//              }
+//            })();
+//          }
+//        }
+//
+//        function detach() {
+//          if (document.addEventListener) {
+//            document.removeEventListener('DOMContentLoaded', completed, false);
+//            window.removeEventListener('load', completed, false);
+//          } else {
+//            document.detachEvent('onreadystatechange', completed);
+//            window.detachEvent('onload', completed);
+//          }
+//        }
+//
+//        function realReady() {
+//          if (!document.body) {
+//            setTimeout(realReady);
+//            return;
+//          }
+//          isReady = true;
+//          var callback;
+//          while (callback = readyList.shift()) {
+//            callback();
+//          }
+//        }
+//      }
+//      domReady(function(){
+//        readyTime = new Date().getTime() - startTime;
+//        if(readyTime < 10000 && readyTime > 0){
+//          ga('send', 'event', 'ReadyTime', ELEME.route, '', readyTime);
+//        }
+//      });
+    </script> 
+  <script src="http://map.qq.com/api/js?v=2.exp&amp;key=FGBBZ-LXIRQ-EIN5W-G6TB5-SDDI7-U4BQ6"></script> 
+  <script class="usemin" src="js/homepage_vendor.a799fcfb.js"></script> 
+  <script>
+    ELEME.cities = {"A":[{"id":257,"name":"\u5b89\u5b81","abbr":"AN","area_code":"4401003","sort":2000,"is_map":0,"pinyin":"anning"},{"id":261,"name":"\u5b89\u9633","abbr":"AY","area_code":"0372","sort":2000,"is_map":0,"pinyin":"anyang"},{"id":272,"name":"\u5b89\u5eb7","abbr":"AK","area_code":"0915","sort":2000,"is_map":0,"pinyin":"ankang"},{"id":273,"name":"\u5b89\u987a","abbr":"AS","area_code":"085","sort":2000,"is_map":0,"pinyin":"anshun"},{"id":70,"name":"\u5b89\u5e86","abbr":"AQ","area_code":"0556","sort":2000,"is_map":0,"pinyin":"anqing"},{"id":96,"name":"\u978d\u5c71","abbr":"AS","area_code":"0412","sort":2000,"is_map":1,"pinyin":"anshan"},{"id":216,"name":"\u6fb3\u95e8","abbr":"AM","area_code":"00853","sort":2000,"is_map":1,"pinyin":"aomen"}],"B":[{"id":3,"name":"\u5317\u4eac","abbr":"BJ","area_code":"010","sort":2000,"is_map":1,"pinyin":"beijing"},{"id":264,"name":"\u4fdd\u5c71","abbr":"BS","area_code":"0875","sort":2000,"is_map":0,"pinyin":"baoshan"},{"id":290,"name":"\u5317\u6d77","abbr":"BH","area_code":"0779","sort":2000,"is_map":0,"pinyin":"beihai"},{"id":68,"name":"\u5305\u5934","abbr":"BT","area_code":"0472","sort":2000,"is_map":0,"pinyin":"baotou"},{"id":75,"name":"\u868c\u57e0","abbr":"BB","area_code":"0552","sort":2000,"is_map":0,"pinyin":"bengbu"},{"id":95,"name":"\u4fdd\u5b9a","abbr":"BD","area_code":"0312","sort":2000,"is_map":0,"pinyin":"baoding"},{"id":134,"name":"\u6ee8\u5dde","abbr":"BZ","area_code":"0543","sort":2000,"is_map":0,"pinyin":"binzhou"},{"id":136,"name":"\u6bd5\u8282","abbr":"BJ","area_code":"0857","sort":2000,"is_map":0,"pinyin":"bijie"},{"id":156,"name":"\u767e\u8272","abbr":"BS","area_code":"0776","sort":2000,"is_map":0,"pinyin":"baise"},{"id":223,"name":"\u767d\u57ce","abbr":"BC","area_code":"0436","sort":2000,"is_map":0,"pinyin":"baicheng"},{"id":244,"name":"\u5b9d\u9e21","abbr":"BJ","area_code":"0917","sort":2000,"is_map":0,"pinyin":"baoji"}],"C":[{"id":21,"name":"\u957f\u6c99","abbr":"CS","area_code":"0731","sort":13,"is_map":1,"pinyin":"changsha"},{"id":14,"name":"\u6210\u90fd","abbr":"CD","area_code":"028","sort":21,"is_map":1,"pinyin":"chengdu"},{"id":267,"name":"\u660c\u5409","abbr":"CJ","area_code":"0994","sort":2000,"is_map":0,"pinyin":"changji"},{"id":12,"name":"\u957f\u6625","abbr":"CC","area_code":"0431","sort":2000,"is_map":1,"pinyin":"changchun"},{"id":279,"name":"\u695a\u96c4","abbr":"CX","area_code":"0878","sort":2000,"is_map":0,"pinyin":"chuxiong"},{"id":289,"name":"\u5d07\u5de6","abbr":"CZ","area_code":"4401004","sort":2000,"is_map":0,"pinyin":"chongzuo"},{"id":44,"name":"\u91cd\u5e86","abbr":"CQ","area_code":"023","sort":2000,"is_map":1,"pinyin":"chongqing"},{"id":59,"name":"\u5e38\u5dde","abbr":"CZ","area_code":"0519","sort":2000,"is_map":1,"pinyin":"changzhou"},{"id":83,"name":"\u6ec1\u5dde","abbr":"CZ","area_code":"0550","sort":2000,"is_map":0,"pinyin":"chuzhou"},{"id":120,"name":"\u5e38\u5fb7","abbr":"CD","area_code":"0736","sort":2000,"is_map":0,"pinyin":"changde"},{"id":172,"name":"\u627f\u5fb7","abbr":"CD","area_code":"0314","sort":2000,"is_map":0,"pinyin":"chengde"},{"id":175,"name":"\u6ca7\u5dde","abbr":"CZ","area_code":"0317","sort":2000,"is_map":0,"pinyin":"cangzhou"},{"id":178,"name":"\u90f4\u5dde","abbr":"CZ","area_code":"0735","sort":2000,"is_map":0,"pinyin":"chenzhou"},{"id":235,"name":"\u6f6e\u5dde","abbr":"CZ","area_code":"0768","sort":2000,"is_map":0,"pinyin":"chaozhou"},{"id":237,"name":"\u957f\u6cbb","abbr":"CZ","area_code":"0355","sort":2000,"is_map":0,"pinyin":"changzhi"},{"id":238,"name":"\u5de2\u6e56","abbr":"CH","area_code":"0565","sort":2000,"is_map":0,"pinyin":"chaohu"},{"id":246,"name":"\u6c60\u5dde","abbr":"CZ","area_code":"0566","sort":2000,"is_map":0,"pinyin":"chizhou"}],"D":[{"id":20,"name":"\u5927\u8fde","abbr":"DL","area_code":"0411","sort":2000,"is_map":1,"pinyin":"dalian"},{"id":286,"name":"\u510b\u5dde","abbr":"DZS","area_code":"4600003","sort":2000,"is_map":0,"pinyin":"danzhoushi"},{"id":51,"name":"\u4e1c\u839e","abbr":"DG","area_code":"0769","sort":2000,"is_map":1,"pinyin":"dongguan"},{"id":86,"name":"\u5927\u5e86","abbr":"DQ","area_code":"0459","sort":2000,"is_map":1,"pinyin":"daqing"},{"id":131,"name":"\u5fb7\u9633","abbr":"DY","area_code":"0838","sort":2000,"is_map":0,"pinyin":"deyang"},{"id":132,"name":"\u4e1c\u8425","abbr":"DY","area_code":"0546","sort":2000,"is_map":0,"pinyin":"dongying"},{"id":145,"name":"\u4e39\u4e1c","abbr":"DD","area_code":"0415","sort":2000,"is_map":0,"pinyin":"dandong"},{"id":169,"name":"\u5927\u540c","abbr":"DT","area_code":"0352","sort":2000,"is_map":0,"pinyin":"datong"},{"id":174,"name":"\u5927\u7406","abbr":"DL","area_code":"0872","sort":2000,"is_map":0,"pinyin":"dali"},{"id":224,"name":"\u5fb7\u5dde","abbr":"DZ","area_code":"0534","sort":2000,"is_map":0,"pinyin":"dezhou"},{"id":247,"name":"\u8fbe\u5dde","abbr":"DZ","area_code":"0818","sort":2000,"is_map":0,"pinyin":"dazhou"}],"E":[{"id":184,"name":"\u9102\u5dde","abbr":"EZ","area_code":"0711","sort":2000,"is_map":0,"pinyin":"ezhou"},{"id":213,"name":"\u5ce8\u7709\u5c71","abbr":"EMS","area_code":"440100","sort":2000,"is_map":0,"pinyin":"emeishan"},{"id":229,"name":"\u6069\u65bd","abbr":"ES","area_code":"0718","sort":2000,"is_map":0,"pinyin":"enshi"}],"F":[{"id":24,"name":"\u4f5b\u5c71","abbr":"FS","area_code":"0757","sort":23,"is_map":1,"pinyin":"foshan"},{"id":9,"name":"\u798f\u5dde","abbr":"FZ","area_code":"0591","sort":2000,"is_map":1,"pinyin":"fuzhou"},{"id":108,"name":"\u629a\u987a","abbr":"FS","area_code":"0413","sort":2000,"is_map":1,"pinyin":"fushun"},{"id":118,"name":"\u961c\u65b0","abbr":"FX","area_code":"0418","sort":2000,"is_map":0,"pinyin":"fuxin"},{"id":195,"name":"\u961c\u9633","abbr":"FY","area_code":"0558","sort":2000,"is_map":0,"pinyin":"fuyang"},{"id":219,"name":"\u629a\u5dde","abbr":"FZ","area_code":"0794","sort":2000,"is_map":0,"pinyin":"fuzhou"}],"G":[{"id":4,"name":"\u5e7f\u5dde","abbr":"GZ","area_code":"020","sort":6,"is_map":1,"pinyin":"guangzhou"},{"id":262,"name":"\u5e7f\u5143","abbr":"GY","area_code":"0839","sort":2000,"is_map":0,"pinyin":"guangyuan"},{"id":98,"name":"\u6842\u6797","abbr":"GL","area_code":"0773","sort":2000,"is_map":1,"pinyin":"guilin"},{"id":129,"name":"\u8d63\u5dde","abbr":"GZ","area_code":"0797","sort":2000,"is_map":0,"pinyin":"ganzhou"},{"id":137,"name":"\u8d35\u9633","abbr":"GY","area_code":"0851","sort":2000,"is_map":1,"pinyin":"guiyang"},{"id":197,"name":"\u5e7f\u6c49","abbr":"GHS","area_code":"510600","sort":2000,"is_map":0,"pinyin":"guanghanshi"}],"H":[{"id":10,"name":"\u54c8\u5c14\u6ee8","abbr":"HEB","area_code":"0451","sort":4,"is_map":1,"pinyin":"haerbin"},{"id":2,"name":"\u676d\u5dde","abbr":"HZ","area_code":"0571","sort":8,"is_map":1,"pinyin":"hangzhou"},{"id":259,"name":"\u6c49\u4e2d","abbr":"HZ","area_code":"0916","sort":2000,"is_map":0,"pinyin":"hanzhong"},{"id":266,"name":"\u8861\u6c34","abbr":"HS","area_code":"0318","sort":2000,"is_map":0,"pinyin":"hengshui"},{"id":17,"name":"\u5408\u80a5","abbr":"HF","area_code":"0551","sort":2000,"is_map":1,"pinyin":"hefei"},{"id":53,"name":"\u6dee\u5357","abbr":"HN","area_code":"0554","sort":2000,"is_map":0,"pinyin":"huainan"},{"id":57,"name":"\u60e0\u5dde","abbr":"HZ","area_code":"0752","sort":2000,"is_map":1,"pinyin":"huizhou"},{"id":61,"name":"\u6e56\u5dde","abbr":"HZ","area_code":"0572","sort":2000,"is_map":0,"pinyin":"huzhou"},{"id":62,"name":"\u6d77\u53e3","abbr":"HK","area_code":"0898","sort":2000,"is_map":1,"pinyin":"haikou"},{"id":92,"name":"\u547c\u548c\u6d69\u7279","abbr":"HHHT","area_code":"0471","sort":2000,"is_map":1,"pinyin":"huhehaote"},{"id":114,"name":"\u6dee\u5b89","abbr":"HA","area_code":"0517","sort":2000,"is_map":0,"pinyin":"huaian"},{"id":116,"name":"\u8861\u9633","abbr":"HY","area_code":"0734","sort":2000,"is_map":0,"pinyin":"hengyang"},{"id":133,"name":"\u6000\u5316","abbr":"HH","area_code":"0745","sort":2000,"is_map":0,"pinyin":"huaihua"},{"id":152,"name":"\u9ec4\u77f3","abbr":"HS","area_code":"0714","sort":2000,"is_map":0,"pinyin":"huangshi"},{"id":170,"name":"\u90af\u90f8","abbr":"HD","area_code":"0310","sort":2000,"is_map":0,"pinyin":"handan"},{"id":177,"name":"\u83cf\u6cfd","abbr":"HZ","area_code":"0530","sort":2000,"is_map":0,"pinyin":"heze"},{"id":199,"name":"\u9ec4\u5c71","abbr":"HS","area_code":"0559","sort":2000,"is_map":0,"pinyin":"huangshan"},{"id":214,"name":"\u6dee\u5317","abbr":"HB","area_code":"0561","sort":2000,"is_map":0,"pinyin":"huaibei"},{"id":217,"name":"\u9ec4\u5188","abbr":"HG","area_code":"0713","sort":2000,"is_map":0,"pinyin":"huanggang"},{"id":218,"name":"\u846b\u82a6\u5c9b","abbr":"HLD","area_code":"0429","sort":2000,"is_map":0,"pinyin":"huludao"},{"id":245,"name":"\u7ea2\u6cb3","abbr":"HHZZZ","area_code":"0873","sort":2000,"is_map":0,"pinyin":"honghezizhizhou"},{"id":252,"name":"\u8d3a\u5dde","abbr":"HZ","area_code":"4401002","sort":2000,"is_map":0,"pinyin":"hezhou"}],"J":[{"id":274,"name":"\u5409\u9996","abbr":"JS","area_code":"0743","sort":2000,"is_map":0,"pinyin":"jishou"},{"id":19,"name":"\u6d4e\u5357","abbr":"JN","area_code":"0531","sort":2000,"is_map":1,"pinyin":"jinan"},{"id":47,"name":"\u6d4e\u5b81","abbr":"JN","area_code":"0537","sort":2000,"is_map":1,"pinyin":"jining"},{"id":49,"name":"\u666f\u5fb7\u9547","abbr":"JDZ","area_code":"0798","sort":2000,"is_map":0,"pinyin":"jingdezhen"},{"id":55,"name":"\u5609\u5174","abbr":"JX","area_code":"0573","sort":2000,"is_map":1,"pinyin":"jiaxing"},{"id":66,"name":"\u4e5d\u6c5f","abbr":"JJ","area_code":"0792","sort":2000,"is_map":0,"pinyin":"jiujiang"},{"id":67,"name":"\u91d1\u534e","abbr":"JH","area_code":"0579","sort":2000,"is_map":0,"pinyin":"jinhua"},{"id":88,"name":"\u4f73\u6728\u65af","abbr":"JMS","area_code":"0454","sort":2000,"is_map":0,"pinyin":"jiamusi"},{"id":100,"name":"\u8346\u5dde","abbr":"JZ","area_code":"0716","sort":2000,"is_map":0,"pinyin":"jingzhou"},{"id":101,"name":"\u5409\u6797","abbr":"JL","area_code":"0432","sort":2000,"is_map":0,"pinyin":"jilin"},{"id":110,"name":"\u9526\u5dde","abbr":"JZ","area_code":"0416","sort":2000,"is_map":0,"pinyin":"jinzhou"},{"id":130,"name":"\u6c5f\u95e8","abbr":"JM","area_code":"0750","sort":2000,"is_map":0,"pinyin":"jiangmen"},{"id":144,"name":"\u7126\u4f5c","abbr":"JZ","area_code":"0391","sort":2000,"is_map":0,"pinyin":"jiaozuo"},{"id":151,"name":"\u8346\u95e8","abbr":"JM","area_code":"0724","sort":2000,"is_map":0,"pinyin":"jingmen"},{"id":153,"name":"\u664b\u4e2d","abbr":"JZ","area_code":"0354","sort":2000,"is_map":1,"pinyin":"jinzhong"},{"id":220,"name":"\u5409\u5b89","abbr":"JA","area_code":"0796","sort":2000,"is_map":0,"pinyin":"jian"},{"id":221,"name":"\u9e21\u897f","abbr":"JX","area_code":"0467","sort":2000,"is_map":0,"pinyin":"jixi"},{"id":231,"name":"\u63ed\u9633","abbr":"JY","area_code":"0663","sort":2000,"is_map":0,"pinyin":"jieyang"}],"K":[{"id":23,"name":"\u6606\u660e","abbr":"KM","area_code":"0871","sort":2000,"is_map":1,"pinyin":"kunming"},{"id":140,"name":"\u51ef\u91cc","abbr":"KL","area_code":"0855","sort":2000,"is_map":0,"pinyin":"kaili"},{"id":183,"name":"\u5f00\u5c01","abbr":"KF","area_code":"410203","sort":2000,"is_map":0,"pinyin":"kaifeng"}],"L":[{"id":281,"name":"\u5415\u6881","abbr":"LL","area_code":"0358","sort":2000,"is_map":0,"pinyin":"lvliang"},{"id":40,"name":"\u5eca\u574a","abbr":"LF","area_code":"0316","sort":2000,"is_map":0,"pinyin":"langfang"},{"id":41,"name":"\u5170\u5dde","abbr":"LZ","area_code":"0931","sort":2000,"is_map":1,"pinyin":"lanzhou"},{"id":60,"name":"\u4e34\u6c82","abbr":"LY","area_code":"0539","sort":2000,"is_map":0,"pinyin":"linyi"},{"id":73,"name":"\u4e3d\u6c34","abbr":"LS","area_code":"0578","sort":2000,"is_map":0,"pinyin":"lishui"},{"id":81,"name":"\u67f3\u5dde","abbr":"LZ","area_code":"0772","sort":2000,"is_map":0,"pinyin":"liuzhou"},{"id":84,"name":"\u804a\u57ce","abbr":"LC","area_code":"0635","sort":2000,"is_map":0,"pinyin":"liaocheng"},{"id":85,"name":"\u516d\u5b89","abbr":"LA","area_code":"0564","sort":2000,"is_map":0,"pinyin":"luan"},{"id":89,"name":"\u8fde\u4e91\u6e2f","abbr":"LYG","area_code":"0518","sort":2000,"is_map":0,"pinyin":"lianyungang"},{"id":94,"name":"\u6d1b\u9633","abbr":"LY","area_code":"0379","sort":2000,"is_map":0,"pinyin":"luoyang"},{"id":106,"name":"\u6cf8\u5dde","abbr":"LZ","area_code":"0830","sort":2000,"is_map":0,"pinyin":"luzhou"},{"id":139,"name":"\u4e50\u5c71","abbr":"LS","area_code":"0833","sort":2000,"is_map":0,"pinyin":"leshan"},{"id":143,"name":"\u5a04\u5e95","abbr":"LD","area_code":"0738","sort":2000,"is_map":0,"pinyin":"loudi"},{"id":155,"name":"\u4e3d\u6c5f","abbr":"LJ","area_code":"0888","sort":2000,"is_map":0,"pinyin":"lijiang"},{"id":168,"name":"\u4e34\u6c7e","abbr":"LF","area_code":"0357","sort":2000,"is_map":0,"pinyin":"linfen"},{"id":181,"name":"\u9f99\u5ca9","abbr":"LY","area_code":"0597","sort":2000,"is_map":0,"pinyin":"longyan"},{"id":201,"name":"\u7f57\u5b9a","abbr":"LD","area_code":"0766","sort":2000,"is_map":0,"pinyin":"luoding"},{"id":222,"name":"\u8fbd\u9633","abbr":"LY","area_code":"0419","sort":2000,"is_map":0,"pinyin":"liaoyang"},{"id":227,"name":"\u8fbd\u6e90","abbr":"LY","area_code":"0437","sort":2000,"is_map":0,"pinyin":"liaoyuan"},{"id":232,"name":"\u62c9\u8428","abbr":"LS","area_code":"0891","sort":2000,"is_map":0,"pinyin":"lasa"}],"M":[{"id":56,"name":"\u6885\u5dde","abbr":"MZ","area_code":"0753","sort":2000,"is_map":0,"pinyin":"meizhou"},{"id":82,"name":"\u7ef5\u9633","abbr":"MY","area_code":"0816","sort":2000,"is_map":0,"pinyin":"mianyang"},{"id":90,"name":"\u9a6c\u978d\u5c71","abbr":"MAS","area_code":"0555","sort":2000,"is_map":1,"pinyin":"maanshan"},{"id":123,"name":"\u8302\u540d","abbr":"MM","area_code":"0668","sort":2000,"is_map":0,"pinyin":"maoming"},{"id":138,"name":"\u7261\u4e39\u6c5f","abbr":"MDJ","area_code":"0453","sort":2000,"is_map":1,"pinyin":"mudanjiang"}],"N":[{"id":6,"name":"\u5357\u4eac","abbr":"NJ","area_code":"025","sort":5,"is_map":1,"pinyin":"nanjing"},{"id":18,"name":"\u5b81\u6ce2","abbr":"NB","area_code":"0574","sort":18,"is_map":1,"pinyin":"ningbo"},{"id":260,"name":"\u5357\u9633","abbr":"NY","area_code":"0377","sort":2000,"is_map":0,"pinyin":"nanyang"},{"id":271,"name":"\u5b81\u5fb7","abbr":"ND","area_code":"0593","sort":2000,"is_map":0,"pinyin":"ningde"},{"id":25,"name":"\u5357\u660c","abbr":"NC","area_code":"0791","sort":2000,"is_map":1,"pinyin":"nanchang"},{"id":39,"name":"\u5357\u901a","abbr":"NT","area_code":"0513","sort":2000,"is_map":0,"pinyin":"nantong"},{"id":45,"name":"\u5357\u5b81","abbr":"NN","area_code":"0771","sort":2000,"is_map":1,"pinyin":"nanning"},{"id":99,"name":"\u5357\u5145","abbr":"NC","area_code":"0817","sort":2000,"is_map":0,"pinyin":"nanchong"},{"id":104,"name":"\u5185\u6c5f","abbr":"NJ","area_code":"0832","sort":2000,"is_map":0,"pinyin":"neijiang"},{"id":117,"name":"\u5357\u5e73","abbr":"NP","area_code":"0599","sort":2000,"is_map":0,"pinyin":"nanping"}],"P":[{"id":269,"name":"\u5e73\u9876\u5c71","abbr":"PDS","area_code":"0375","sort":2000,"is_map":0,"pinyin":"pingdingshan"},{"id":294,"name":"\u666e\u6d31","abbr":"PE","area_code":"0879","sort":2000,"is_map":0,"pinyin":"puer"},{"id":150,"name":"\u840d\u4e61","abbr":"PX","area_code":"0799","sort":2000,"is_map":0,"pinyin":"pingxiang"},{"id":180,"name":"\u8386\u7530","abbr":"PT","area_code":"0594","sort":2000,"is_map":0,"pinyin":"putian"}],"Q":[{"id":28,"name":"\u9752\u5c9b","abbr":"QD","area_code":"0532","sort":15,"is_map":1,"pinyin":"qingdao"},{"id":265,"name":"\u66f2\u9756","abbr":"QJS","area_code":"0874","sort":2000,"is_map":0,"pinyin":"qujingshi"},{"id":278,"name":"\u743c\u6d77","abbr":"QH","area_code":"460000","sort":2000,"is_map":0,"pinyin":"qionghai"},{"id":63,"name":"\u79e6\u7687\u5c9b","abbr":"QHD","area_code":"0335","sort":2000,"is_map":0,"pinyin":"qinhuangdao"},{"id":91,"name":"\u9f50\u9f50\u54c8\u5c14","abbr":"QQHE","area_code":"0452","sort":2000,"is_map":1,"pinyin":"qiqihaer"},{"id":102,"name":"\u6cc9\u5dde","abbr":"QZ","area_code":"0595","sort":2000,"is_map":1,"pinyin":"quanzhou"},{"id":157,"name":"\u94a6\u5dde","abbr":"QZ","area_code":"0777","sort":2000,"is_map":0,"pinyin":"qinzhou"},{"id":182,"name":"\u8862\u5dde","abbr":"QZ","area_code":"0570","sort":2000,"is_map":0,"pinyin":"quzhou"}],"R":[{"id":58,"name":"\u65e5\u7167","abbr":"RZ","area_code":"0633","sort":2000,"is_map":0,"pinyin":"rizhao"}],"S":[{"id":1,"name":"\u4e0a\u6d77","abbr":"SH","area_code":"021","sort":1,"is_map":1,"pinyin":"shanghai"},{"id":31,"name":"\u77f3\u5bb6\u5e84","abbr":"SJZ","area_code":"0311","sort":17,"is_map":1,"pinyin":"shijiazhuang"},{"id":258,"name":"\u77f3\u6cb3\u5b50","abbr":"SHZ","area_code":"0993","sort":2000,"is_map":0,"pinyin":"shihezi"},{"id":8,"name":"\u82cf\u5dde","abbr":"SZ","area_code":"0512","sort":2000,"is_map":1,"pinyin":"suzhou"},{"id":11,"name":"\u6df1\u5733","abbr":"SZ","area_code":"0755","sort":2000,"is_map":1,"pinyin":"shenzhen"},{"id":270,"name":"\u4e09\u660e","abbr":"SM","area_code":"0598","sort":2000,"is_map":0,"pinyin":"sanming"},{"id":16,"name":"\u6c88\u9633","abbr":"SY","area_code":"024","sort":2000,"is_map":1,"pinyin":"shenyang"},{"id":291,"name":"\u9042\u5b81","abbr":"SNS","area_code":"0825","sort":2000,"is_map":0,"pinyin":"suiningshi"},{"id":69,"name":"\u7ecd\u5174","abbr":"SX","area_code":"0575","sort":2000,"is_map":0,"pinyin":"shaoxing"},{"id":72,"name":"\u97f6\u5173","abbr":"SG","area_code":"0751","sort":2000,"is_map":0,"pinyin":"shaoguan"},{"id":97,"name":"\u4e0a\u9976","abbr":"SR","area_code":"0793","sort":2000,"is_map":0,"pinyin":"shangrao"},{"id":135,"name":"\u5bbf\u5dde","abbr":"SZ","area_code":"0557","sort":2000,"is_map":0,"pinyin":"suzhou"},{"id":165,"name":"\u4e09\u4e9a","abbr":"SY","area_code":"460200","sort":2000,"is_map":1,"pinyin":"sanya"},{"id":171,"name":"\u56db\u5e73","abbr":"SP","area_code":"0434","sort":2000,"is_map":1,"pinyin":"siping"},{"id":173,"name":"\u90b5\u9633","abbr":"SY","area_code":"0739","sort":2000,"is_map":0,"pinyin":"shaoyang"},{"id":196,"name":"\u5341\u5830","abbr":"SY","area_code":"0719","sort":2000,"is_map":0,"pinyin":"shiyan"},{"id":200,"name":"\u6c55\u5934","abbr":"ST","area_code":"0754","sort":2000,"is_map":1,"pinyin":"shantou"},{"id":206,"name":"\u5bbf\u8fc1","abbr":"SQ","area_code":"0527","sort":2000,"is_map":0,"pinyin":"suqian"},{"id":228,"name":"\u7ee5\u5316","abbr":"SH","area_code":"0455","sort":2000,"is_map":1,"pinyin":"suihua"},{"id":253,"name":"\u5546\u4e18","abbr":"SQ","area_code":"0370","sort":2000,"is_map":0,"pinyin":"shangqiu"}],"T":[{"id":5,"name":"\u5929\u6d25","abbr":"TJ","area_code":"022","sort":14,"is_map":1,"pinyin":"tianjin"},{"id":268,"name":"\u901a\u8fbd","abbr":"TL","area_code":"0475","sort":2000,"is_map":1,"pinyin":"tongliao"},{"id":43,"name":"\u592a\u539f","abbr":"TY","area_code":"0351","sort":2000,"is_map":0,"pinyin":"taiyuan"},{"id":52,"name":"\u53f0\u5dde","abbr":"TZ","area_code":"0576","sort":2000,"is_map":0,"pinyin":"taizhou"},{"id":65,"name":"\u94dc\u9675","abbr":"TL","area_code":"0562","sort":2000,"is_map":0,"pinyin":"tongling"},{"id":74,"name":"\u6cf0\u5b89","abbr":"TA","area_code":"0538","sort":2000,"is_map":1,"pinyin":"taian"},{"id":87,"name":"\u5510\u5c71","abbr":"TS","area_code":"0315","sort":2000,"is_map":0,"pinyin":"tangshan"},{"id":93,"name":"\u6cf0\u5dde","abbr":"TZ","area_code":"0523","sort":2000,"is_map":0,"pinyin":"taizhou"},{"id":113,"name":"\u6cf0\u5174","abbr":"TX","area_code":"321200","sort":2000,"is_map":0,"pinyin":"taixing"},{"id":226,"name":"\u94dc\u4ec1","abbr":"TR","area_code":"0856","sort":2000,"is_map":0,"pinyin":"tongren"},{"id":239,"name":"\u901a\u5316","abbr":"TH","area_code":"0435","sort":2000,"is_map":0,"pinyin":"tonghua"}],"W":[{"id":7,"name":"\u6b66\u6c49","abbr":"WH","area_code":"027","sort":20,"is_map":1,"pinyin":"wuhan"},{"id":282,"name":"\u6587\u660c","abbr":"WC","area_code":"0989","sort":2000,"is_map":0,"pinyin":"wenchang"},{"id":30,"name":"\u6e29\u5dde","abbr":"WZ","area_code":"0577","sort":2000,"is_map":0,"pinyin":"wenzhou"},{"id":34,"name":"\u5a01\u6d77","abbr":"WH","area_code":"0631","sort":2000,"is_map":1,"pinyin":"weihai"},{"id":35,"name":"\u65e0\u9521","abbr":"WX","area_code":"0510","sort":2000,"is_map":1,"pinyin":"wuxi"},{"id":293,"name":"\u6587\u5c71","abbr":"WS","area_code":"0876","sort":2000,"is_map":0,"pinyin":"wenshan"},{"id":38,"name":"\u829c\u6e56","abbr":"WH","area_code":"0553","sort":2000,"is_map":1,"pinyin":"wuhu"},{"id":48,"name":"\u6f4d\u574a","abbr":"WF","area_code":"0536","sort":2000,"is_map":0,"pinyin":"weifang"},{"id":236,"name":"\u4e4c\u9c81\u6728\u9f50","abbr":"WLMQ","area_code":"0991","sort":2000,"is_map":1,"pinyin":"wulumuqi"},{"id":243,"name":"\u68a7\u5dde","abbr":"WZ","area_code":"0774","sort":2000,"is_map":0,"pinyin":"wuzhou"}],"X":[{"id":13,"name":"\u53a6\u95e8","abbr":"XM","area_code":"0592","sort":7,"is_map":1,"pinyin":"xiamen"},{"id":15,"name":"\u897f\u5b89","abbr":"XA","area_code":"029","sort":24,"is_map":1,"pinyin":"xian"},{"id":42,"name":"\u6e58\u6f6d","abbr":"XT","area_code":"0732","sort":80,"is_map":0,"pinyin":"xiangtan"},{"id":263,"name":"\u5ffb\u5dde","abbr":"XZ","area_code":"0350","sort":2000,"is_map":0,"pinyin":"xinzhou"},{"id":29,"name":"\u5f90\u5dde","abbr":"XZ","area_code":"0516","sort":2000,"is_map":1,"pinyin":"xuzhou"},{"id":296,"name":"\u897f\u660c","abbr":"XC","area_code":"0843","sort":2000,"is_map":0,"pinyin":"xichang"},{"id":76,"name":"\u65b0\u4e61","abbr":"XX","area_code":"0373","sort":2000,"is_map":0,"pinyin":"xinxiang"},{"id":115,"name":"\u54b8\u9633","abbr":"XY","area_code":"0910","sort":2000,"is_map":0,"pinyin":"xianyang"},{"id":127,"name":"\u65b0\u4f59","abbr":"XY","area_code":"0790","sort":2000,"is_map":0,"pinyin":"xinyu"},{"id":179,"name":"\u90a2\u53f0","abbr":"XT","area_code":"0319","sort":2000,"is_map":0,"pinyin":"xingtai"},{"id":198,"name":"\u8bb8\u660c","abbr":"XC","area_code":"0374","sort":2000,"is_map":0,"pinyin":"xuchang"},{"id":205,"name":"\u5b5d\u611f","abbr":"XG","area_code":"0712","sort":2000,"is_map":0,"pinyin":"xiaogan"},{"id":215,"name":"\u9999\u6e2f","abbr":"XG","area_code":"00852","sort":2000,"is_map":1,"pinyin":"xianggang"},{"id":230,"name":"\u54b8\u5b81","abbr":"XN","area_code":"0715","sort":2000,"is_map":0,"pinyin":"xianning"},{"id":233,"name":"\u897f\u5b81","abbr":"XN","area_code":"0971","sort":2000,"is_map":0,"pinyin":"xining"},{"id":234,"name":"\u4fe1\u9633","abbr":"XY","area_code":"0376","sort":2000,"is_map":0,"pinyin":"xinyang"},{"id":241,"name":"\u8944\u9633","abbr":"XY","area_code":"0710","sort":2000,"is_map":0,"pinyin":"xiangyang"}],"Y":[{"id":22,"name":"\u626c\u5dde","abbr":"YZ","area_code":"0514","sort":2000,"is_map":0,"pinyin":"yangzhou"},{"id":292,"name":"\u7389\u6eaa","abbr":"YX","area_code":"0877","sort":2000,"is_map":0,"pinyin":"yuxi"},{"id":297,"name":"\u5b9c\u5dde","abbr":"YZ","area_code":"0778","sort":2000,"is_map":0,"pinyin":"yizhou"},{"id":71,"name":"\u76d0\u57ce","abbr":"YC","area_code":"0515","sort":2000,"is_map":0,"pinyin":"yancheng"},{"id":77,"name":"\u70df\u53f0","abbr":"YT","area_code":"0535","sort":2000,"is_map":1,"pinyin":"yantai"},{"id":80,"name":"\u5b9c\u660c","abbr":"YC","area_code":"0717","sort":2000,"is_map":0,"pinyin":"yichang"},{"id":103,"name":"\u5b9c\u5bbe","abbr":"YB","area_code":"0831","sort":2000,"is_map":0,"pinyin":"yibin"},{"id":119,"name":"\u76ca\u9633","abbr":"YY","area_code":"0737","sort":2000,"is_map":0,"pinyin":"yiyang"},{"id":124,"name":"\u5cb3\u9633","abbr":"YY","area_code":"0730","sort":2000,"is_map":0,"pinyin":"yueyang"},{"id":128,"name":"\u5b9c\u6625","abbr":"YC","area_code":"0795","sort":2000,"is_map":0,"pinyin":"yichun"},{"id":166,"name":"\u8fd0\u57ce","abbr":"YC","area_code":"0359","sort":2000,"is_map":0,"pinyin":"yuncheng"},{"id":167,"name":"\u5ef6\u8fb9","abbr":"YBZXZZZZ","area_code":"0433","sort":2000,"is_map":0,"pinyin":"yan bian"},{"id":176,"name":"\u6c38\u5dde","abbr":"YZ","area_code":"0746","sort":2000,"is_map":0,"pinyin":"yongzhou"},{"id":191,"name":"\u4e49\u4e4c","abbr":"YW","area_code":"579","sort":2000,"is_map":0,"pinyin":"yiwu"},{"id":194,"name":"\u94f6\u5ddd","abbr":"YC","area_code":"0951","sort":2000,"is_map":1,"pinyin":"yinchuan"},{"id":202,"name":"\u9633\u6c5f","abbr":"YJ","area_code":"0662","sort":2000,"is_map":0,"pinyin":"yangjiang"},{"id":240,"name":"\u96c5\u5b89","abbr":"YA","area_code":"0835","sort":2000,"is_map":0,"pinyin":"yaan"},{"id":242,"name":"\u5ef6\u5b89","abbr":"YA","area_code":"0911","sort":2000,"is_map":0,"pinyin":"yanan"},{"id":254,"name":"\u7389\u6797","abbr":"YL","area_code":"0775","sort":2000,"is_map":0,"pinyin":"yulin"}],"Z":[{"id":280,"name":"\u5f20\u5bb6\u754c","abbr":"ZJJ","area_code":"0744","sort":2000,"is_map":0,"pinyin":"zhangjiajie"},{"id":26,"name":"\u73e0\u6d77","abbr":"ZH","area_code":"0756","sort":2000,"is_map":1,"pinyin":"zhuhai"},{"id":27,"name":"\u9547\u6c5f","abbr":"ZJ","area_code":"0511","sort":2000,"is_map":0,"pinyin":"zhenjiang"},{"id":32,"name":"\u90d1\u5dde","abbr":"ZZ","area_code":"0371","sort":2000,"is_map":1,"pinyin":"zhengzhou"},{"id":295,"name":"\u662d\u901a","abbr":"ZTS","area_code":"88888888888","sort":2000,"is_map":0,"pinyin":"zhaotongshi"},{"id":50,"name":"\u6dc4\u535a","abbr":"ZB","area_code":"0533","sort":2000,"is_map":0,"pinyin":"zibo"},{"id":54,"name":"\u67a3\u5e84","abbr":"ZZ","area_code":"0632","sort":2000,"is_map":0,"pinyin":"zaozhuang"},{"id":64,"name":"\u8087\u5e86","abbr":"ZQ","area_code":"0758","sort":2000,"is_map":0,"pinyin":"zhaoqing"},{"id":79,"name":"\u6e5b\u6c5f","abbr":"ZJ","area_code":"0759","sort":2000,"is_map":0,"pinyin":"zhanjiang"},{"id":105,"name":"\u81ea\u8d21","abbr":"ZG","area_code":"0813","sort":2000,"is_map":0,"pinyin":"zigong"},{"id":111,"name":"\u6f33\u5dde","abbr":"ZZ","area_code":"0596","sort":2000,"is_map":0,"pinyin":"zhangzhou"},{"id":126,"name":"\u682a\u6d32","abbr":"ZZ","area_code":"430200","sort":2000,"is_map":0,"pinyin":"zhuzhou"},{"id":154,"name":"\u5f20\u5bb6\u53e3","abbr":"ZJK","area_code":"0313","sort":2000,"is_map":0,"pinyin":"zhangjiakou"},{"id":203,"name":"\u4e2d\u5c71","abbr":"ZS","area_code":"0760","sort":2000,"is_map":0,"pinyin":"zhongshan"},{"id":204,"name":"\u5468\u53e3","abbr":"ZK","area_code":"0394","sort":2000,"is_map":0,"pinyin":"zhoukou"}]};
+  </script> 
+  <script class="usemin" src="js/homepage.842841e1.js"></script>   
+ </body>
+</html>

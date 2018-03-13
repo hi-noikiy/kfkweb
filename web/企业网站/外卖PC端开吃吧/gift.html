@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>积分商城 - 开吃吧 - 网上订餐 - 大学生和白领的订餐平台</title> 
+  <link rel="icon" href="images/favicon.ico" type="image/png" /> 
+  <link href="css/gift.css" rel="stylesheet" type="text/css" /> 
+  <link rel="stylesheet" type="text/css" href="css/base.css?v=v5.2.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=v5.2.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/common.css?v=v5.2.0" /> 
+ </head> 
+ <body> 
+  <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script> 
+  <div id="top"> 
+   <div id="top_inner"> 
+    <a class="logo" href="index.html"> <img src="images/tranlogo.png" /> </a> 
+    <div class="top_area" style="width: 210px; margin-top: 13px; margin-left: 5px; text-align: center;
+                     line-height: 10px;"> 
+     <i style="margin-top: 7px;margin-right: 2px;"></i> 
+     <span class="schoolname" style="cursor: pointer;
+                          max-width: 124px; margin-right: 0px; line-height: 16px; float: left;padding-top: 7px;"> 郑州轻工业学院二</span> 
+     <span style="line-height: 16px; float: left;margin-top: 5px;" class="change">[<a href="index.html">切换位置</a>]</span> 
+    </div> 
+    <ul class="top_NewNava"> 
+     <li class="active"><a href="index.html">首页</a></li> 
+     <li><a href="cheap.html">便宜吧</a></li> 
+     <li><a href="gift.html">积分商城</a></li> 
+    </ul> 
+    <div id="top_quickmenu" class="quick_menu"> 
+     <dl> 
+      <dd> 
+       <a id="ctl01_MyOrderLink" class="MyOrderLink" href="member_order.html">我的订单</a> 
+      </dd> 
+      <dd class="all_mess"> 
+       <span id="ctl01_notification" class="notification"><b class="message_prompt"> &nbsp;</b> <span id="ctl01_num" class="num" style="display:none;"></span> 
+        <div id="ctl01_MessageContent" class="layer_top_account layer_top_Message br4 shadow " style="display: none"> 
+         <span class="arrow"></span> 
+         <ul id="ctl01_MessageBox" class="MessageBox"> 
+          <li class="No_Message_Type"> 
+           <div>
+             今日没有消息 
+           </div></li> 
+          <li class="btn clearfix noPointer"><input type="submit" class="setallmessage" value="知道了" /></li> 
+         </ul> 
+        </div> </span> 
+      </dd> 
+      <dd id="ctl01_top_user" class="Newaccount"> 
+       <div class="login_regist"> 
+        <a href="login.html" class="log_btn">登录</a> 
+        <span>|</span> 
+        <a href="http://waimaichaoren.com/account/register/" class="log_btn regist">注册</a> 
+        <div class="login-type" style="display: none"> 
+         <ul> 
+          <li class="login-type1"><a href="login.html">本站帐号登录</a></li> 
+          <li class="login-type2"><a href="/thirdparty/Weibologin.aspx">新浪微博登录</a></li> 
+          <li class="login-type3"><a href="https://graph.renren.com/oauth/authorize?client_id=150045&amp;response_type=code&amp;redirect_uri=http://kaichiba.com/thirdparty/UserCheckFromRenRen.aspx&amp;display=dialog&amp;scope=publish_share+publish_feed"> 人人网登录</a></li> 
+          <li class="login-type4"><a href="/thirdparty/QQlogin.aspx">QQ登录</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+      </dd> 
+     </dl> 
+    </div> 
+    <div id="search" class="fr br3"> 
+     <input id="keyword" type="text" onkeydown="enterIn(event)" value="搜索餐厅、美食" autocomplete="off" /> 
+     <a class="serch_btn_a" href="javascript:searchClick();">搜索</a> 
+     <div class="searchRes" id="searchRes"> 
+     </div> 
+    </div> 
+    <!--end of quickmenu--> 
+   </div> 
+  </div> 
+  <div class="shade" id="shade" style="display: none; opacity: 0.8; filter: alpha(opacity=80);">
+    &nbsp; 
+  </div> 
+  <div class="urgency_message" noticeid="" style="display: none"> 
+   <div class="urgency_message_top"> 
+    <h2 class="urgency_message_top_title"> 紧急通知</h2> 
+    <p class="urgency_message_show"> </p> 
+   </div> 
+   <div class="urgency_message_bottom"> 
+    <a href="javascript:;" class="return_message">好的，我已经联系送餐员</a> 
+   </div> 
+  </div> 
+  <!--end of top--> 
+  <input type="hidden" value="http://kaichiba.com/ajax" id="ajaxUrl" /> 
+  <input type="hidden" id="h_keyword" value="" /> 
+  <script type="text/javascript">
+            $(document).ready(function() {
+                if ($("#h_keyword").val() != "") {
+                    $("#keyword").val($("#h_keyword").val());
+                }
+                $(".schoolname").click(function() {
+                    location.href = $(".logo").attr("href");
+                });
+            })
+        </script> 
+  <div id="containter"> 
+   <div id="wrap"> 
+    <div id="school"> 
+     <a href="gift.html"></a> 
+     <a href="index.html">[切换位置]</a> 
+     <span>/</span> 
+     <em>积分商城</em> 
+    </div> 
+    <!--end of header--> 
+    <div id="container" class="clearfix"> 
+     <div id="left" class="shadow gift"> 
+      <div id="s_tab"> 
+       <h3> 积分商城</h3> 
+      </div> 
+      <p class="gift-center"> 积分获取规则：A.每日登录+20分；B.订餐成功后，总积分=原有积分+订餐金额&times;10</p> 
+      <ul class="clearfix"> 
+       <li> <h2> 40000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/g17.png" alt="" /> 
+          <p> 开吃吧鼠标垫</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 50000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/glassbag.jpg" alt="" /> 
+          <p> 羊毛毡眼镜袋</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 60000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/g1.jpg" alt="" /> 
+          <p> 青蛙U型护颈枕</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g12.jpg" alt="" /> 
+          <p> 小牛U型护颈枕</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/30.jpg" alt="" /> 
+          <p> 30元移动充值卡</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g3.jpg" alt="" /> 
+          <p> 可爱兔LED充电台灯</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g4.jpg" alt="" /> 
+          <p> 迷你羞羞兔音响</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 70000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/cup.jpg" alt="" /> 
+          <p> 400ml玻璃双层杯</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/cardcase.jpg" alt="" /> 
+          <p> emoi基本生活 单层硅胶名片盒</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 80000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/g5.jpg" alt="" /> 
+          <p> 瑞鹊幸运小猫爪4G U盘</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g6.jpg" alt="" /> 
+          <p> 自由星太阳花USB充电台灯</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 120000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/g7.jpg" alt="" /> 
+          <p> 《暮光之城》明信片印章</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g8.jpg" alt="" /> 
+          <p> 《史蒂夫&middot;乔布斯传》</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 250000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/1.png" alt="" /> 
+          <p> 狼蛛背光键鼠套装</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/2.png" alt="" /> 
+          <p> 哥尔GO-2032空气加湿器</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+         <dd> 
+          <img src="images/g11.jpg" alt="" /> 
+          <p> 两人三季休闲单层帐篷</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 1000000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/nano7.jpg" alt="" /> 
+          <p> 苹果iPod nano 7(16GB)</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 2000000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/ipod5.jpg" alt="" /> 
+          <p> 苹果iPod touch 5(32GB)</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 6000000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/ipad.jpg" alt="" /> 
+          <p> iPad Air(16GB/WiFi版)</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+       <li> <h2> 10000000积分</h2> 
+        <dl> 
+         <dd> 
+          <img src="images/air.jpg" alt="" /> 
+          <p> MacBook Air(MD223CH/A)</p> 
+          <button> 我要兑换</button> 
+         </dd> 
+        </dl> </li> 
+      </ul> 
+     </div> 
+     <!--end of left--> 
+     <div id="right"> 
+      <div class="right_item shadow" id="goto_draw"> 
+       <div class="right_point_draw"> 
+        <img src="images/right_point_draw.png" alt="" /> 
+        <h2> 开吃吧积分大抽奖</h2> 
+        <p> 还等什么？快来试试手气吧!</p> 
+        <a href="draw.html" class="goto_draw">立刻去抽奖</a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!--end of container--> 
+    <div id="appdimencode"> 
+    </div> 
+    <div class="app-img"> 
+     <img src="images/appdimencode.png" width="135px" height="135px" alt="app" /> 
+     <div style="padding-left: 4px; background-color: White; height: 19px;">
+       扫一扫 APP订餐更方便 
+     </div> 
+    </div> 
+    <div id="dimencode"> 
+    </div> 
+    <div class="wx-img"> 
+     <img src="images/dimencode.png" width="135px" height="135px" alt="wx" /> 
+     <div style="padding-left: 4px; background-color: White; height: 19px;">
+       扫一扫 微信也能叫外卖 
+     </div> 
+    </div> 
+    <div id="crappdimencode"> 
+    </div> 
+    <div class="cr-app-img"> 
+     <img src="images/cruserapp.jpg" width="135px" height="135px" alt="wx" /> 
+     <div style="padding-left: 4px; background-color: White; height: 30px;">
+       “嗖”一下的美食 
+      <br />外卖超人手机app下载 
+     </div> 
+    </div> 
+    <a id="feedback_btn" href="about.html"></a> 
+    <div id="MsgHide" style="display: none;"> 
+     <div id="feedbackTip"> 
+      <label> 小提示：催单请进入相应餐厅的页面进行留言，这样餐厅就能看见哦~</label> 
+      <textarea id="feedBackTipContent"></textarea> 
+     </div> 
+     <div id="isVisitor" style="display: none;"> 
+      <label> 您的邮箱(选填)</label> 
+      <input type="text" id="visitorMail" /> 
+     </div> 
+     <p id="isUser"> 我们的回复将发到个人中心的“问题反馈”里，请注意关注，感谢您的建议。</p> 
+     <table class="msgVild fBackVali"> 
+      <tbody> 
+       <tr> 
+        <td> 验证码： </td> 
+        <td> <input type="text" id="fBackValiDateCode" class="ValiDateCode fBackValiDateCode" maxlength="4" style="width: 60px;" /> </td> 
+        <td> 
+         <div id="ValidateCode"> 
+         </div> </td> 
+        <td> <span id="ValidateCodeClick_fBack" style="line-height: 24px;">更换验证码</span> </td> 
+        <td style="width: 102px;"> <p class="validRs fBackValiRs"> </p> </td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     <div class="___dialogBtn fBackBtn"> 
+      <input type="button" class="dialogBtn feedBackBt" value="提交" /> 
+      <input type="button" class="dialogBtn hover fCancelBt" value="取消" /> 
+     </div> 
+    </div> 
+    <div id="footer"> 
+     <p> <a href="/SupplierJoin/Supplier.aspx" target="_blank">商家加盟</a>|<a href="about.html" rel="nofollow">联系我们</a>|<a href="/about/fHelp" rel="nofollow">帮助中心</a>|<a href="http://kaichiba.com/m/index.html" target="_blank" rel="nofollow">移动版</a>|<a href="http://shop.kaichiba.com" target="_blank" rel="nofollow">餐厅登录</a>|<a href="http://blog.kaichiba.com" target="_blank">美食谭</a>|<a href="/about/fRecruit" rel="nofollow">招贤纳士</a>|<a href="/about/fAbout" rel="nofollow">关于我们</a></p> 
+     <hr /> 
+     <p> Copyright &copy; 2011-2014 开吃吧 All Rights Reserved 京ICP备12015678号 | 京公网安备110114001132号</p> 
+    </div> 
+    <!--end of footer--> 
+    <input name="ctl02$hid_IspromoteUser" type="hidden" id="hid_IspromoteUser" value="False" /> 
+    <script src="js/jquery.cookie.js" type="text/javascript"></script> 
+    <script src="js/jquery.XYTipsWindow.2.8.js" type="text/javascript"></script> 
+    <script src="js/kcb_search.js" type="text/javascript"></script> 
+    <script src="js/kcb_top_js.js" type="text/javascript"></script> 
+    <script src="js/kcb_recommendSup.js?v=v5.0.1" type="text/javascript"></script> 
+    <script src="js/kcb_common.js?v=v5.0.1" type="text/javascript"></script> 
+    <script type="text/javascript">
+                  $().ready(function() {
+                      if ($("#hid_IspromoteUser").val() == "True") {
+                          $("#pMenu .promote").css("display", "block");
+                      }
+
+                      $("#ValidateCode,#ValidateCodeClick_fBack").click(function() {
+                          $("#ValidateCode").html("<img src='http://kaichiba.com/Code/ValidateCode.aspx?type=1&r=" + Math.random() + "'>");
+
+                      });
+                      $("#appdimencode").hover(function() {
+                          $(".app-img").toggle();
+                      });
+                      $("#dimencode").hover(function() {
+                          $(".wx-img").toggle();
+                      });
+
+                      $("#crappdimencode").hover(function() {
+                          $(".cr-app-img").toggle();
+                      });
+                  });
+                </script> 
+   </div> 
+   <!--end of wrap--> 
+  </div> 
+  <script src="js/kcb_gift.js?v=v5.0.4" type="text/javascript"></script> 
+  <script id="iDealKCBVisitRecord" src="js/iDeal.KCB.visitRecord.js?webId=2&amp;channel=1&amp;pageType=18" type="text/javascript"></script>  
+ </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>找回密码</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+         				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=20130806100001" charset="utf-8"/>
+						<link rel="stylesheet" type="text/css" href="css/password.css" charset="utf-8"/>	
+					
+				
+			
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png"/>
+						<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+				        <script type="text/javascript" src="js/common.js?v=201307121358"></script>
+        <script type="text/javascript" src="js/spin.min.js"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back"><span>返回</span></a>
+							<h2>找回密码</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="http://m.jd.comindex.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="http://m.jd.comcat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="/user/home.action" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+
+<div class="new-ct bind">
+    <div class="new-pay-pw">
+		<div class="new-set-info">
+        	<form id="form_fillAccountName" name="form_fillAccountName" action="" method="post">
+                <span class="new-input-span mg-b15">
+        			<input type="text" id="userInput" class="new-input" name="userInput" placeholder="用户名/邮箱/已验证手机号">
+        		</span>
+        		<div id="username_error" class="new-txt-err"></div>
+				<span class="new-tbl-type new-mg-b5">
+                    <span class="new-tbl-cell w100">
+    					<span class="new-input-span">
+    						<input name="validateCode" type="text"  id="validateCode" class="new-input" placeholder="请输入验证码" tip="请输入验证码" errorLabel="codeError" notBlank="notBlank" valueMissingTxt="未输入验证码" "/>
+    					</span>
+    				</span>
+    				<span class="new-tbl-cell">
+    				  <span class="new-abtn-code">
+                        <a href="javascript:void(0)" onclick="com_jd_passport_m_validateCode('code','codeKey','3');">
+                            <img id='code' style="width:100px;height:40px;" src="/authCode/authCodeImg.action?key=c7bac70c2006bc4a6d2c749a8c05c077" />
+                        </a>
+    				  </span>
+						 <a href="javascript:void(0);"  onclick="com_jd_passport_m_validateCode('code','codeKey','3');"  class="new-txt-rd2">换一张</a>
+						 <input type="hidden" value="c7bac70c2006bc4a6d2c749a8c05c077" name="codeKey" id="codeKey">
+                    </span>
+                </span>
+				
+        		<a class="new-abtn-type new-mg-t30" href="javascript:void(0);" id="btnFillAccountName">下一步</a>
+        	</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/validateCode.js" ></script>
+<script type="text/javascript" src="js/findLoginPassword.js"></script>
+<script type="text/javascript">
+	var sid = '';
+	
+	var formSubmit = function(){
+		if(userInputBlur()){
+    		var param;
+    		if(sid == ''){
+    			param = {userInput:$("#userInput").val(),validateCode:$("#validateCode").val(),codeKey:$("#codeKey").val()};
+    		}else{
+    			param = {userInput:$("#userInput").val(),validateCode:$("#validateCode").val(),codeKey:$("#codeKey").val(),sid:sid};
+    		}	
+    		jQuery.get('/findloginpassword/checkUserInputUsername.json?',
+        			param,
+        			function(data){ 
+					com_jd_passport_m_validateCode('code','codeKey','3');
+        				if(data.isSuccess=="T" ){
+    						form_fillAccountName.action = '/findloginpassword/selectAuthenticationPattern.action';
+        					form_fillAccountName.submit();
+        				}
+        				else{
+        					if(data.returnCode=="needUserName"){
+    							//邮箱不唯一
+    							form_fillAccountName.action = '/findloginpassword/emailNotUnique.action';
+    							form_fillAccountName.submit();
+        					}
+        					else if(data.returnCode=="chooseEmailOrUsername"){
+    							//用户名和邮箱相同且唯一
+    							form_fillAccountName.action = '/findloginpassword/usernameSameWithEmailUnique.action';
+    							form_fillAccountName.submit();
+        					}
+        					else if(data.returnCode=="chooseNeedEmailOrUsername"){
+    							//用户名和邮箱相同不唯一
+    							form_fillAccountName.action = '/findloginpassword/usernameSameWithEmailNotUnique.action';
+    							form_fillAccountName.submit();
+        					}
+    						else if(data.returnCode=="chooseMobileOrUsername"){
+    							//用户名和手机相同
+    							form_fillAccountName.action = '/findloginpassword/usernameSameWithMobile.action';
+    							form_fillAccountName.submit();
+        					}
+    						else if(data.returnCode=="none"){
+    							$("#username_error").show();
+    							$("#username_error").html("用户名 不存在");
+        					}
+							else if(data.returnCode=="codeError"){
+								$("#username_error").show();
+    							$("#username_error").html("验证码错误");
+							}
+    						else{
+    							$("#username_error").show();
+    							$("#username_error").html("系统异常");
+    						}
+    						
+        				}
+        		});
+		}
+		
+	}
+	var userInputBlur = function(){
+		if($("#userInput").val()==''){
+			$("#username_error").show();
+			$("#username_error").html("输入不能为空");
+			return false;
+		}
+		return true;
+	}
+	var userInputFocus = function(){
+		$("#username_error").hide();
+	}
+    $(document).ready(function(){
+		$('#userInput').blur(userInputBlur);
+		$('#userInput').focus(userInputFocus);
+		$('#btnFillAccountName').click(formSubmit);
+    }); 
+</script>
+
+
+
+
+
+    <footer>
+		<div class="login-area" id="footer">
+        	<div class="login">
+									    					<a href="login.html">登录</a><span class="lg-bar">|</span><a href="https://passport.m.jd.com/user/mobileRegister.action">注册</a>
+    												<span  class="new-fr"><a href="http://m.jd.com/showvote.html">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version"><a href="http://m.jd.comindex.html?v=w">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a></div>
+            <div id="clientArea">
+                <a href="http://m.jd.com/download/downApp.html" id="layout_toClient" class="layout-openJD">客户端</a>
+            </div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有</div>
+        </div>
+    </footer>
+
+
+    <div style="display:none;">
+        	<img src="/ja.jsp?&amp;utmn=87714067&amp;utmr=https%3A%2F%2Fpassport.m.jd.com%2Fuser%2Flogin.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68%26returnurl%3Dhttp%253A%252F%252Fp.m.jd.com%252Fnorder%252Forder.action%253FwareId%253D1488391628%2526enterOrder%253Dtrue%2526sid%253D1d7f067778e1ec0702fd13721e619448%26ipChanged%3D&amp;utmp=%2Ffindloginpassword%2FfillAccountName.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;guid=ON&jav=touch&pin=-&utmac=MO-J2011-1" />
+        </div>
+
+            <script type="text/javascript" src="js/mping.min.js"></script>
+        <script type="text/javascript">
+            try{
+                var pv= new MPing.inputs.PV();
+                var mping = new MPing();
+                mping.send(pv);
+            } catch (e){
+            }
+        </script>
+    
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value=""/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='http://m.jd.com/airline/index.action';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('http://m.jd.com/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+
+</script>
+
+</body>
+</html>
+

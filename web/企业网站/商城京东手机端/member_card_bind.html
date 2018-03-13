@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>个人中心 - 绑定京东卡/E卡</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=2" charset="utf-8"/>
+						<link rel="stylesheet" type="text/css" href="css/giftCard.css?v=2" charset="utf-8"/>	
+					
+				
+			
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png"/>
+						<script type="text/javascript" src="js/jquery-1.6.2.min.js?v=2"></script>
+				        <script type="text/javascript" src="js/common.js?v=2"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=2"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back"><span>返回</span></a>
+							<h2>绑定京东卡/E卡</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="http://m.jd.comindex.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="http://m.jd.comcat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="/user/home.action" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+
+
+<div class="new-ct">
+	<div class="new-gift-card">
+        <div class="new-set-info">
+
+			<span class="new-tbl-type">
+                <span class="new-tbl-cell">
+					<span class="new-input-span">
+						<input class="new-input" id="cardPwd" value="" maxlength="16" onblur="checkCardPwd()" placeholder="请填写京东卡/E卡卡密" type="text">
+					</span>
+				</span>
+			</span>
+			
+			<div id="cardPwdNull" class="new-txt-err" style="display:none;">密码不能为空，请重新输入</div>
+			<div id="cardPwdError" class="new-txt-err" style="display:none;">密码格式错误，请重新输入</div>
+			
+			<div class="new-card-yz new-mg-tb15" style="height:30px;">
+                <span class="new-input-span new-input-span-v2">
+					<input class="new-input" type="text" value="" placeholder="请填写验证码" id="validateCode" />
+				</span>
+				<input type="hidden" value="e3b065675591d5b9d8579e6995edb5f6" name="codeKey" id="codeKey" autocomplete="off" />
+				<a href="javascript:void(0)" onclick="com_jd_passport_m_validateCode('code','codeKey','7');">
+					<img id="code" class="new-mg-l15" height="28" width="83" alt="img"  src="/authCode/authCodeImg.action?key=e3b065675591d5b9d8579e6995edb5f6" alt="验证码" />
+				</a>
+				<a href="javascript:void(0)" class="new-a-change new-mg-l15" onclick="com_jd_passport_m_validateCode('code','codeKey','7');" id="c_code"> 换一张</a>
+            </div>
+			
+			<div id="validateCodeIdNull" class="new-txt-err" style="display: none;">验证码不能为空，请重新输入</div>
+			
+			<p style="display:none;margin-top:5px;" id="showCardBalance">
+                <span class="new-tbl-cell new-txt-w200"> 
+					余额：
+					<span id="cardBalance" style="color:red;"></span>
+				</span>
+            </p>
+			
+			<div class="new-card-btn new-tbl-type new-pd-tb30">
+                <span class="new-tbl-cell w50">
+					<a class="new-abtn-type3 new-mg-r12" href="javascript:void(0)" id="bindCard">绑定</a>
+                </span>
+                <span class="new-tbl-cell w50">
+					<a class="new-abtn-type2 new-mg-l12" href="javascript:void(0)" id="queryCard">查询余额</a>
+                </span>
+			</div>
+        </div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/validateCode.js?v=2" ></script>
+<script type="text/javascript">
+    //京东卡信息验证
+
+	function checkCardPwd(){
+		var cardPwd = $('#cardPwd').val().trim();
+        //cardPwd = cardPwd.replace(" ", "").replace(" ", "").replace(" ", "");
+		var len = cardPwd.length;
+		if(len==0){
+			$('#cardPwdNull').show();
+			$('#cardPwdError').hide();
+			return false;
+		}
+		if(len!=16){
+			$('#cardPwdNull').hide();
+			$('#cardPwdError').show();
+			return false;
+		}
+		$('#cardPwdError').hide();
+		$('#cardPwdNull').hide();
+		return true;
+	}
+
+	function checkValidateCode(){
+		var validateCode = $('#validateCode').val().trim();
+		if(validateCode == ""){
+            $("#validateCode").focus();
+			$('#validateCodeIdNull').show();
+            setTimeout("$('#validateCodeIdNull').hide()",6000);
+			return false;
+		}
+		return true;
+	}
+
+	var reg = /^[a-fA-F0-9]{1,}$/;
+	var retn;
+
+	
+
+	$('#cardPwd').bind('input',function(){
+		var pw = $('#cardPwd').val().trim();
+		if(pw != ""){
+            //pw = pw.replace(" ", "").replace(" ", "").replace(" ", "");
+			retn = validationValue(pw,"cardPwd");
+		}
+		//if(retn){
+    	//}
+	});
+
+    function processInputVal(flag){  //每四位之间加上一个空格
+        var pw = $("#"+flag).val();
+        var len = pw.length;
+        if(len > 4 && len <= 8){
+           pw = pw.substring(0,4) + " " + pw.substring(4);
+        }else if(len > 8 && len <= 12){
+           pw = pw.substring(0,4) + " " + pw.substring(4,8) + " " + pw.substring(8);
+        }else if(len > 12 && len <= 16){
+           pw = pw.substring(0,4) + " " + pw.substring(4,8) + " " + pw.substring(8,12) + " " + pw.substring(12);
+        }
+        $("#"+flag).val(pw);
+        getFocus(flag);
+    }
+
+	function validationValue(tempVal,flag){
+		if(!reg.test(tempVal)){
+			$("#"+flag).val(tempVal.substring(0,tempVal.length-1));
+            getFocus(flag);
+            //processInputVal(flag);
+            return false;
+		}else{
+			$("#"+flag).val(tempVal.toUpperCase());
+            //processInputVal(flag);
+			return true;
+		}
+	}
+
+	function getFocus(flag){
+		setTimeout(function(){
+			$("#"+flag).focus();
+		},1);
+	}
+
+	$('#bindCard').click(function(){
+		if(!checkCardPwd() || !checkValidateCode()){
+			return false;
+		}
+		var len = $('#cardPwd').val().length;
+
+		var cardPwd = $('#cardPwd').val().trim();
+		var codeKey = $('#codeKey').val().trim();
+        var validateCode = $('#validateCode').val().trim();
+        //cardPwd = cardPwd.replace(" ", "").replace(" ", "").replace(" ", "");
+		var pw1 = cardPwd.substring(0,4);
+		var pw2 = cardPwd.substring(4,8);
+		var pw3 = cardPwd.substring(8,12);
+		var pw4 = cardPwd.substring(12,16);
+		var pw = pw1+"-"+pw2+"-"+pw3+"-"+pw4;
+		var sid = '';
+		if(confirm("京东卡绑定后无法给其他账户使用，是否绑定？")){
+			//window.location.href="/card/giftCardBind.action?cardId=" + cardNum + "&cardPwd=" + pw + "&codeKey=" + codeKey + "&validateCode=" + validateCode + "&sid=" + sid;
+            jQuery.get(
+                '/card/giftCardBindAjaxCheck.json',
+                {"cardPwd":pw,"codeKey":codeKey,"validateCode":validateCode},
+                function(data){
+                    if(data!=null && data.success){
+                        window.location.href="/card/giftCardBind.action?success=" + data.success + "&usedFlag=" + data.usedFlag + "&sid=" + sid;
+                    }else{
+                        if(data.message == null){
+                           alert("操作失败");
+                        }else{
+						   com_jd_passport_m_validateCode('code','codeKey','7');
+						   $('#validateCode').val("");
+                           if(data.message.indexOf("您没有开启支付密码") != -1){
+                              window.location.href="/card/giftCardBind.action?cardPwd=" + pw +"&success=" + data.success + "&usedFlag=" + data.usedFlag + "&sid=" + sid;
+                           }else{
+                              alert(data.message);
+                           }
+                        }
+                    }
+                },"json");
+		}else return false;
+	});
+
+	$('#queryCard').click(function(){
+		$("#showCardBalance").hide();
+		if(!checkCardPwd() || !checkValidateCode()){
+			return false;
+		}
+		
+        var codeKey = $('#codeKey').val().trim();
+        var validateCode = $('#validateCode').val().trim();
+        var pw = $('#cardPwd').val().trim();
+        //pw = pw.replace(" ", "").replace(" ", "").replace(" ", "");
+        var temp = "";
+        temp += pw.substring(0, 4) + "-";
+        temp += pw.substring(4, 8) + "-";
+        temp += pw.substring(8, 12) + "-";
+        temp += pw.substring(12);
+        pw = temp;
+        $("#cardBalance").text("");
+        jQuery.get(
+            '/card/giftCardQuery.json',
+            {"cardPwd":pw,"codeKey":codeKey,"validateCode":validateCode},
+            function(data){
+                if(data!=null && data.success){
+                    $("#cardBalance").text(" ￥"+data.balance);
+                    $("#showCardBalance").show();
+                }else{
+                    if(data.message == null){
+                       alert("操作失败");
+                    }else{
+                       alert(data.message);
+                    }
+                }
+				com_jd_passport_m_validateCode('code','codeKey','7');
+				$('#validateCode').val("");
+            },"json");
+	});
+	
+/* del by lizhenyou 2014-10-15
+     //刷新验证码
+    function refreshCode(d){
+        if(d.codeKey){
+            $('#code').attr('src','/validatecode/cardValidateCode.action?key='+d.codeKey);
+            $('#codeKey').val(d.codeKey);
+        }
+    }
+    var refreshCodeAjax = function(func,uri){
+          jQuery.post(uri?uri:'/card/getValidateCodeKey.json',function(d){
+            //d格式为{"codeKey":"xxxxxxx"}
+            func(d);
+        });
+    }
+    //超链接绑定 click事件
+    $('#c_code').click(function(){
+          refreshCodeAjax(refreshCode);
+    });
+	
+	$('#code').click(function(){
+          refreshCodeAjax(refreshCode);
+    });
+	*/
+</script>
+    <footer>
+		<div class="login-area" id="footer">
+        	<div class="login">
+				                	<a rel="nofollow" href='/user/home.action'>
+						        					hjl41614..
+        									</a>
+    				<span class="lg-bar">|</span>
+											<a rel="nofollow" href='https://passport.m.jd.com/user/logout.action'>退出</a>
+													<span  class="new-fr"><a href="http://m.jd.com/showvote.html">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version"><a href="http://m.jd.comindex.html?v=w">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a></div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有 </div>
+        </div>
+    </footer>
+
+
+    <div style="display:none;">
+        	<img src="/ja.jsp?&amp;utmn=370331026&amp;utmr=http%3A%2F%2Fhome.m.jd.com%2Fwallet%2FgiftCards.action%3FisECard%3Dtrue%26sid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;utmp=%2Fcard%2FoptionGiftCard.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;guid=ON&jav=touch&pin=hjl416148489&utmac=MO-J2011-1" />
+        </div>
+
+            <script type="text/javascript" src="js/pingJS.1.0.js"></script>
+        <script type="text/javascript">
+            pingJS();
+        </script>
+    
+
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value=""/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='http://m.jd.com/airline/index.action';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('http://m.jd.com/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+
+
+
+
+	
+</script>
+</body>
+</html>
+

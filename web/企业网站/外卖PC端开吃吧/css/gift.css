@@ -1,0 +1,250 @@
+﻿.gift{border:1px solid #ddd;}
+.gift-center{float:left;margin:10px 10px 0 10px;width:658px;background:whiteSmoke;padding:10px;}
+.gift ul{padding:0 10px 20px;background:#fff}
+.gift ul li{float:left;width:680px;}
+.gift ul p{float:left;width:160px;padding:5px 0;}
+.gift ul h2{border-bottom:1px solid #ccc;padding:10px;}
+.gift ul dl{float:left;margin:10px 0;}
+.gift ul dd{float:left;width:160px;margin:0 5px;text-align:center;}
+.gift ul img{border:1px solid #ececec;}
+.gift-more{padding:10px 0 10px 10px;float:left;}
+.gift button,.layer_inner button{background:url(../images/pubBtn.png) 0 0 no-repeat;width:80px;height:30px;border:none;cursor:pointer;}
+.gift button:hover,.layer_inner button:hover{background-position:0 -31px;}
+
+
+.exchange{padding:60px 20px 5px;background-color:#fff;}
+.exchange_content{color:#666;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:0px 10px 15px;padding:15px 10px;background-color:#fff;}
+.exchange_point_pic{width:154px;height:72px;position:relative;}
+.exchange_point_pic p{text-align:center;width:100%;height:20px;line-height:20px;position:absolute;bottom:8px;left:0px;background-color:#f66611;border-top:1px solid #fdb3d7;border-bottom:1px solid #c69516;color:#fff;}
+.exchange_point_rule{padding-left:175px;font-size:14px;line-height:35px;}
+.exchange_point_rule a{color:#55aadd;text-decoration:underline}
+.exchange_point{padding-left:175px;font-size:14px;line-height:35px;}
+.exchange_point_select{padding:1px;color:#000;}
+.c_green{color:#709102;margin-right:10px;}
+.c_orange{color:#f66611;}
+.do_exchange{border:1px solid #c7c6c6;border-radius:4px;padding:5px 20px;background-color: #f0f0f0;background-image: -webkit-gradient(linear,left top,left bottom,from(#fafafa),to(#f0f0f0));background-image: -webkit-linear-gradient(top,#fafafa 0,#f0f0f0 100%);background-image: -moz-linear-gradient(top,#fafafa 0,#f0f0f0 100%);background-image: -o-linear-gradient(top,#fafafa 0,#f0f0f0 100%);background-image: linear-gradient(to bottom,#fafafa 0,#f0f0f0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#f0f0f0',GradientType=0);}
+.right_point_draw{padding:9px 8px 30px;font-family: "微软雅黑";}
+.right_point_draw h2{color: #f57325;font-size: 20px;margin:20px 0px 5px;padding-left:5px;}
+.right_point_draw p{font-size:16px;color:#666;padding-left:5px;}
+.goto_draw{color: #963;font-size:16px;background: url(../images/order-btn.png) no-repeat;display:block;width:236px;height:38px;line-height:38px;text-align:center;font-weight:bold;margin:20px auto 10px;}
+a.goto_draw:hover {background-position: 0 -39px;}
+#goto_draw{margin-top:0px;}
+				
+				
+				
+				
+				
+				
+				
+		.draw{
+		width:980px;
+		margin:0px auto;
+	}
+	.draw_title{
+		line-height:25px;
+	}
+	.draw_title a{
+		color:#666;
+	}
+	.border_1px{
+		border:1px solid #ccc;
+	}
+	.draw_left{
+		width:566px;
+		float:left;
+		padding:45px 37px;
+		background:#fafafa url(../images/draw_left_bg.png) center 5px no-repeat;
+	}
+	.left_inner{
+		border:8px solid #fecd86;
+	}
+	.left_inner_title{
+		border-bottom:8px solid #fecd86;
+		background:url(../images/left_inner_title.png) 0px 0px repeat;
+		height:80px;
+	}
+	.left_content{
+		background-color:#f5f5f5;
+		padding-bottom:17px;
+		position:relative;
+		width:550px;
+	}
+	.award_pic{
+		width:150px;
+		height:150px;
+		border:1px solid #ebebeb;
+	}
+	.award_shade{
+		position:absolute;
+		bottom:25px;
+		left:6px;
+		width:152px;
+		height:46px;
+		filter:alpha(opacity=60);
+		opacity:0.6;
+	}
+	.award_shade_type1{
+		background-color:#f9d4ec;
+	}
+	.award_shade_type2{
+		background-color:#fed4bb;
+	}
+	.award_shade_type3{
+		background-color:#e0ebfa;
+	}
+	.award_shade_type4{
+		background-color:#ffe7c3;
+	}
+	.award_shade_type5{
+		background-color:#f8ded4;;
+	}
+	.award_message{
+		text-align:center;
+		height:33px;
+		line-height:33px;
+		color:#fff;
+		font-size:14px;
+		position:absolute;
+		left:20px;
+		bottom:31px;
+		width:124px;
+		 -webkit-border-radius:16px;
+		-moz-border-radius:16px;
+		 border-radius:16px;
+	}
+	.award_message_type1{
+		background-color:#ec855c;
+	}
+	.award_message_type2{
+		background-color:#ff9800;
+	}
+	.award_message_type3{
+		background-color:#17a5df;
+	}
+	.left_content_item{
+		background-color:#fff;
+		padding:6px;
+		float:left;
+		position:relative;
+		-moz-box-shadow:0px 0px 5px #969696;
+	   -webkit-box-shadow:0px 0px 5px #969696;
+	   box-shadow:0px 0px 5px #969696;
+	   margin:17px 9.5px 0px;
+	   font-size:0px;
+	}
+	.left_content div.active{
+		background-color:#17a5df;
+		-moz-box-shadow:0px 0px 5px #777;
+	   -webkit-box-shadow:0px 0px 5px #777;
+	   box-shadow:0px 0px 15px #777;
+	}
+	.left_content div.active .award_pic{
+		border-color:transparent;
+	}
+	.do_draw{
+		display:block;
+		float:left;
+		width:183px;
+		height:175px;
+		background:url(../images/draw.png) 4px 0px no-repeat;
+		position:relative;
+		top:12px;
+		cursor:pointer;
+	}
+	.do_draw:hover{
+		background:url(../images/draw.png) 4px -352px no-repeat;
+	}
+	.do_draw:active{
+		background:url(../images/draw.png) 4px -176px no-repeat;
+	}
+	
+	.draw_right{
+		width:337px;
+		border-left:1px solid #ccc;
+		min-height:755px;
+		float:right;
+		background-color:#fff;
+	}
+	.tag_image{
+		margin:46px 0px 15px -2px;
+	}
+	.my_point{
+		font-size:14px;
+		color:#5fafdf;
+		margin:12px 10px 6px 15px;
+		border-bottom:1px dashed #ddd;
+		padding-bottom:6px;
+		font-family:"微软雅黑";
+	}
+	.draw_rule{
+		color:#d57860;
+		font-size:15px;
+		line-height:28px;
+		padding-left:15px;
+		font-weight:bold;
+		font-family:"微软雅黑";
+	}
+	.award_list {
+		font-family:"微软雅黑";
+		padding-left:15px;
+		margin-top:15px;
+	}
+	.award_list h2{
+		color:#f57325;
+		font-size:20px;
+		margin-bottom:5px;
+	}
+    .award_list p{
+		font-size:16px;
+		color:#666;
+		line-height:25px;
+	}
+	.winning{
+		background:#f5f5f5 url(../images/winning.png) 6px 3px no-repeat;
+		padding:5px 10px 5px 35px;
+		margin:0px 20px 0px 15px;
+		line-height:25px;
+		cursor:pointer;
+		color:#f57325;
+		font-weight:bold;
+		font-family:"微软雅黑";
+		font-size:14px;
+	}
+	.winning span{
+		color:#999;
+	}
+	.winning_message{
+		padding:18px 0px 30px 20px;
+		margin:20px 20px 10px 15px;
+		background:#f5f5f5;
+		display:none;
+	}
+	.winning_message h2{
+		color:#f57325;
+		font-size:20px;
+		font-family:"微软雅黑";
+		font-weight:100;
+		margin-bottom:5px;
+	}
+	.winning_message h3{
+		color:#f57325;
+		font-size:18px;
+		font-family:"微软雅黑";
+		font-weight:100;
+		margin-bottom:5px;
+	}
+	.winning_message p{
+		color:#777;
+		font-size:15px;
+		line-height:30px;
+	}
+	.winning_message_open{
+		display:none;
+	}
+	.winning p{
+		color: #777;
+		font-size: 15px;
+		line-height: 30px;
+		font-weight:100;
+		display:none;
+	}	

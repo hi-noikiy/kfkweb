@@ -1,0 +1,1168 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="开吃吧 – 在线叫外卖 – 全国最大的在线外卖订餐平台,为您提供最新外卖订餐菜单、特价优惠信息,收录了全国数万家餐厅,足不出户,便可轻松订餐。让我们在外卖订餐的时尚中,开吃吧！" />
+    <meta name="keywords" content="外卖,外卖网,网上订餐,高校外卖,外卖电话,高校周边餐厅,全国最大的外卖网" />
+    <meta property="qc:admins" content="2243437410301216375" />
+    <meta property="wb:webmaster" content="f21c7cc619566a14" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="baidu-site-verification" content="3TDvYt5ClyzpoxHQ" />
+    <link rel="shortcut icon" href="image/favicon.ico" />
+    <link href="css/NewNavigation2.css?v=12" rel="stylesheet" type="text/css" />
+    <link href="css/global.css" rel="stylesheet" type="text/css" />
+    <link href="css/map.css?v=5.0.6.4" rel="stylesheet" type="text/css" />
+    <title>开吃吧-网上订餐-叫外卖就上开吃吧</title>
+    <script src="js/frame/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="js/frame/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //导航到外卖超人
+        function navigateChaoRen(obj) {
+            $(".Guess,.Guess_detail,.Guess_Info").remove();
+            var x = window.document.width;
+            var y = window.document.height;
+            var HtmlStr = "<div class='Guess'></div><div class='Guess_detail'></div><div class='Guess_Info'><div id='Guess'>开吃吧属外卖超人旗下网站，3秒钟后将跳转到外卖超人网站，为您提供服务。</div></div></div>";
+            $("body").append(HtmlStr);
+            $(".Guess").width(x);
+            $(".Guess").height(y);
+
+            $(".Guess").addClass("GuessStyle");
+            $(".Guess_detail").addClass("Guess_detailStyle");
+            //判断浏览器是否ie7和ie8，控制透明度
+            if ($.browser.msie) {
+                if ($.browser.version == "7.0" || $.browser.version == "8.0") {
+                    $(".Guess").removeClass("GuessStyle").addClass("IEGuess");
+                    $(".Guess_detail").removeClass("Guess_detailStyle").addClass("IEGuess_detail");
+                }
+            };
+            setInterval(function () {
+                var href = "";
+                switch ($(obj).attr("name")) {
+                    case "shanghai":
+                        href = "http://waimaichaoren.com/shanghai/?utm_source=kaichiba&utm_medium=shanghai&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "nanjing":
+                        href = "http://waimaichaoren.com/nanjing/?utm_source=kaichiba&utm_medium=nanjing&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "suzhou":
+                        href = "http://waimaichaoren.com/suzhou/?utm_source=kaichiba&utm_medium=sushou&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "fuzhou":
+                        href = "http://waimaichaoren.com/fuzhou/?utm_source=kaichiba&utm_medium=fuzhou&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "guangzhou":
+                        href = "http://waimaichaoren.com/guangzhou/?utm_source=kaichiba&utm_medium=guangzhou&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "hangzhou":
+                        href = "http://waimaichaoren.com/hangzhou/?utm_source=kaichiba&utm_medium=hangzhou&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "qingdao":
+                        href = "http://waimaichaoren.com/qingdao/?utm_source=kaichiba&utm_medium=qingdao&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "ningbo":
+                        href = "http://waimaichaoren.com/ningbo/?utm_source=kaichiba&utm_medium=ningbo&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "chongqing":
+                        href = "http://waimaichaoren.com/chongqing/?utm_source=kaichiba&utm_medium=chongqing&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "shenzhen":
+                        href = "http://waimaichaoren.com/shenzhen/?utm_source=kaichiba&utm_medium=shenzhen&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "xiamen":
+                        href = "http://waimaichaoren.com/xiamen/?utm_source=kaichiba&utm_medium=xiamen&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    case "chengdu":
+                        href = "http://waimaichaoren.com/chengdu/?utm_source=kaichiba&utm_medium=chengdu&utm_term=&utm_content=&utm_campaign=%E9%A6%96%E9%A1%B5";
+                        break;
+                    default:
+                }
+                window.location = href;
+            }, 3000);
+        }
+    </script>
+</head>
+<body onload="pageLoad()">
+    <div class="top">
+        <img src="image/newnavi/logo.png" /></div>
+    <div class="Main_body">
+        <div class="titleimg">
+            <img src="image/newnavi/title.png" />
+        </div>
+    </div>
+    <div class="Sub_body">
+        <div class="body_top">
+            <span>请选择所在城市</span><span id="city"></span><img src="image/newnavi/dot.png" /><span
+                id="area"></span><img src="image/newnavi/dot.png" /><span id="shoparea"></span><a
+                    class="triangle"></a></div>
+        <div class="Main_subbody">
+            <ul class="cities">
+                <li class="clearfix"><span class="bj" cid="1" ismap="1">北京</span> <span class="wh"
+                    cid="17" ismap="1">武汉</span> <span class="tj" cid="11" ismap="1">天津</span><span class="jn"
+                        cid="18" ismap="1">济南</span> <span class="lf" cid="22">廊坊</span><span class="cs"
+                            cid="23">长沙</span>
+                    
+                    <span class="zz" cid="12" ismap="1">郑州</span>
+                    
+                    
+                    
+                    <span name="shanghai" onclick="navigateChaoRen(this)">上海</span> <span name="nanjing"
+                        onclick="navigateChaoRen(this)">南京</span> <span name="suzhou" onclick="navigateChaoRen(this)">
+                            苏州</span> <span name="fuzhou" onclick="navigateChaoRen(this)">福州</span>
+                    <span name="guangzhou" onclick="navigateChaoRen(this)">广州</span> <span name="hangzhou"
+                        onclick="navigateChaoRen(this)">杭州</span> <span name="qingdao" onclick="navigateChaoRen(this)">
+                            青岛</span> <span name="ningbo" onclick="navigateChaoRen(this)">宁波</span>
+                    <span name="chongqing" onclick="navigateChaoRen(this)">重庆</span> <span name="shenzhen"
+                        onclick="navigateChaoRen(this)">深圳</span> <span name="xiamen" onclick="navigateChaoRen(this)">
+                            厦门</span> <span name="chengdu" onclick="navigateChaoRen(this)">成都</span>
+                </li>
+            </ul>
+            <div class="allareas">
+                <ul class="areas" id="bj">
+                    <li><span class="bj-hd">海淀区</span> <span class="bj-cy">朝阳区</span> <span class="bj-cp">
+                        昌平区</span> <span class="bj-sjs">石景山</span> </li>
+                    <li><span class="bj-fs">房山区</span><a class="triangle tri_white"></a> </li>
+                </ul>
+                <ul class="areas" id="hz">
+                    <li><span class="hz-xs">下沙区</span> <span class="hz-xh">西湖区</span> <span class="hz-xhsgj">
+                        小和山高教区</span> <a class="triangle tri_white"></a></li>
+                </ul>
+                <ul class="areas" id="tj">
+                    <li><span class="tj-xq">西青区</span> <span class="tj-nk">南开区</span> <span class="tj-hx">
+                        河西区</span><span class="tj-hp">和平区</span> <a class="triangle tri_white"></a></li>
+                </ul>
+                <ul class="areas" id="wh">
+                    <li><span class="wh-wc">武昌区</span><span class="wh-hs">洪山区</span><span class="wh-hk">江汉区</span><span
+                        class="wh-jx">江夏区</span></li>
+                    <li><span class="wh-jjjs">经济技术开发区</span><span class="wh-qs">青山区</span> <span class="wh-dhjs">
+                        东湖技术开发区</span><span class="wh-dxh">东西湖区</span> </li>
+                </ul>
+                <ul class="areas" id="wx">
+                    <li><span class="wx-hs">惠山区</span></li>
+                </ul>
+                <ul class="areas" id="cds">
+                    <li><span class="cds-wl">武陵区</span></li>
+                </ul>
+                <ul class="areas" id="nj">
+                    <li><span class="nj-xl">仙林大学城</span> <span class="nj-xw">玄武区</span> <span class="nj-jn">
+                        江宁区</span> <span class="nj-gl">鼓楼区</span></li><li><span class="nj-pk">浦口区</span><a
+                            class="triangle tri_white"></a></li>
+                </ul>
+                <ul class="areas" id="jn">
+                    <li><span class="jn-cq">长清区</span><span class="jn-lx">历下区</span><span class="jn-sz">
+                        市中区</span><span class="jn-lc">历城区</span><li><span class="jn-gx">高新区</span></li><a
+                            class="triangle tri_white"></a></li>
+                </ul>
+                <ul class="areas" id="lf">
+                    <li><span class="lf-yj">燕郊</span><a class="triangle tri_white"></a> </li>
+                </ul>
+                <ul class="areas" id="hhht">
+                    <li><span class="hhht-sh">赛罕区</span> <span class="hhht-yq">玉泉区</span> </li>
+                </ul>
+                <ul class="areas" id="cs">
+                    <li><span class="cs-yl">岳麓区</span> <span class="cs-fr">芙蓉区</span> <span class="cs-tx">
+                        天心区</span> </li>
+                </ul>
+                <ul class="areas" id="cd">
+                    <li><span class="cd-wh">武侯区</span> <span class="cd-gx">天府新区</span><span class="cd-bx">郫县</span>
+                        <span class="cd-shl">双流</span> </li>
+                    <li><span class="cd-jj">锦江区</span> </li>
+                </ul>
+                <ul class="areas" id="zz">
+                    <li><span class="zz-gxq">高新区</span> <span class="zz-zdxq">郑东新区</span> <span class="zz-xzs">
+                        新郑市</span><span class="zz-jsq">金水区</span></li>
+                    <li><span class="zz-hjq">惠济区</span></li>
+                </ul>
+                <ul class="areas" id="hf">
+                    <li><span class="hf-ssq">蜀山区</span> <span class="hf-jjkfq">经济开发区</span><span class="hf-yhq">瑶海区</span>
+                    </li>
+                </ul>
+                <ul class="areas" id="zb">
+                    <li><span class="zb-zdq">张店区</span></li>
+                </ul>
+                <ul class="areas" id="cq">
+                    <li><span class="cq-spbq">沙坪坝区</span> <span class="cq-ybq">渝北区</span> <span class="cq-jbq">
+                        江北区</span> <span class="cq-hxdxc">虎溪大学城</span></li>
+                    <li><span class="cq-naq">南岸区</span> <span class="cq-bpq">北培区</span></li>
+                </ul>
+                <ul class="areas" id="hk">
+                    <li><span class="hk-mlq">美兰区</span></li>
+                </ul>
+                <ul class="areas" id="ha">
+                    <li><span class="ha-qhq">清河区</span></li>
+                </ul>
+                <ul class="areas" id="hd">
+                    <li><span class="hd-hsq">邯山区</span></li>
+                </ul>
+            </div>
+            <div class="list" id="schools">
+                <ul id="hd-hsq">
+                    <li><a href="area/11252" target="_blank" title="邯郸学院周边餐厅">邯郸学院</a></li>
+                    <li><a href="area/11253" target="_blank" title="邯郸大学周边餐厅">邯郸大学</a></li>
+                    <li><a href="area/11254" target="_blank" title="河北工程大学周边餐厅">河北工程大学</a></li>
+                </ul>
+                <ul id="ha-qhq">
+                    <li><a href="area/11227" target="_blank" title="淮阴工北京路校区周边餐厅">淮阴工北京路校区</a></li>
+                </ul>
+                <ul id="bj-hd">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-bj-wdk">五道口</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10002" target="_blank" title="北京科技大学周边餐厅">北京科技大学</a></li>
+                    <li><a href="area/10102" target="_blank" title="北京林业大学周边餐厅">北京林业大学</a></li>
+                    <li><a href="area/10031" target="_blank" title="中国农业大学（东区)周边餐厅">中国农业大学（东区）</a></li>
+                    <li><a href="area/10135" target="_blank" title="中国地质大学（北京）周边餐厅">中国地质大学（北京）</a></li>
+                    <li><a href="area/10104" target="_blank" title="中国矿业大学（北京）周边餐厅">中国矿业大学（北京）</a></li>
+                    <li><a href="area/3" target="_blank" title="清华大学周边餐厅">清华大学</a></li>
+                    <li><a href="area/4" target="_blank" title="北京大学周边餐厅">北京大学</a></li>
+                    <li><a href="area/5" target="_blank" title="中国人民大学周边餐厅">中国人民大学</a></li>
+                    <li><a href="area/6" target="_blank" title="北京理工大学周边餐厅">北京理工大学</a></li>
+                    <li><a href="area/8" target="_blank" title="北京外国语大学周边餐厅">北京外国语大学</a></li>
+                    <li><a href="area/7" target="_blank" title="中央民族大学周边餐厅">中央民族大学</a></li>
+                    <li><a href="area/10010" target="_blank" title="北京交通大学周边餐厅">北京交通大学</a></li>
+                    <li><a href="area/10103" target="_blank" title="中央财经大学周边餐厅">中央财经大学</a></li>
+                    <li><a href="area/10040" target="_blank" title="北京师范大学周边餐厅">北京师范大学</a></li>
+                    <li><a href="area/10058" target="_blank" title="北京邮电大学周边餐厅">北京邮电大学</a></li>
+                    <li><a href="area/10038" target="_blank" title="北京语言大学周边餐厅">北京语言大学</a></li>
+                    <li><a href="area/10006" target="_blank" title="北京航空航天大学周边餐厅">北京航空航天大学</a></li>
+                    <li><a href="area/10136" target="_blank" title="北京大学医学部周边餐厅">北京大学医学部</a></li>
+                    <li><a href="area/10014" target="_blank" title="北京工商大学周边餐厅">北京工商大学</a></li>
+                    <li><a href="area/10024" target="_blank" title="首都师范大学周边餐厅">首都师范大学</a></li>
+                    <li><a href="area/10191" target="_blank" title="北京体育大学">北京体育大学</a></li>
+                    <li><a href="area/10029" target="_blank" title="中国政法大学周边餐厅">中国政法大学</a></li>
+                    <li><a href="area/10137" target="_blank" title="北京电影学院周边餐厅">北京电影学院</a></li>
+                    <li><a href="area/10007" target="_blank" title="首都体育学院周边餐厅">首都体育学院</a></li>
+                    <li><a href="area/10105" target="_blank" title="北京化工大学（海淀）周边餐厅">北京化工大学（海淀）</a></li>
+                </ul>
+                <ul id="bj-cy">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-bj-hxdj">惠新东街</a></li>
+                            <li><a class="shop-bj-hxl">惠新里</a></li>
+                            <li><a class="shop-bj-hxbl">惠新北里</a></li>
+                            <li><a class="shop-bj-syj">芍药居</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10109" target="_blank" title="对外经济贸易大学周边餐厅">对外经济贸易大学</a></li>
+                    <li><a href="area/10184" target="_blank" title="北京化工大学周边餐厅">北京化工大学</a></li>
+                    <li><a href="area/10183" target="_blank" title="北京服装学院周边餐厅">北京服装学院</a></li>
+                    <li><a href="area/10019" target="_blank" title="北京联合大学周边餐厅">北京联合大学</a></li>
+                    <li><a href="area/10127" target="_blank" title="北京中医药大学周边餐厅">北京中医药大学</a></li>
+                    <li><a href="area/10509" target="_blank" title="北京工业大学艺术设计学院周边餐厅">北京工业大学艺术设计学院</a></li>
+                    <li><a href="area/10510" target="_blank" title="北京社会主义学院周边餐厅">北京社会主义学院</a></li>
+                    <li><a href="area/10195" target="_blank" title="北京工业大学（朝阳）周边餐厅">北京工业大学（朝阳）</a></li>
+                    <li><a href="area/10003" target="_blank" title="中国传媒大学周边餐厅">中国传媒大学</a></li>
+                    <li><a href="area/10027" target="_blank" title="北京第二外国语学院周边餐厅">北京第二外国语学院</a></li>
+                    <li><a href="area/10432" target="_blank" title="艺水珠江周边餐厅">艺水珠江</a></li>
+                </ul>
+                <ul id="bj-cp">
+                    <li class="shoparea">
+                        <ul>
+                            <!--   <li><a class="shop-bj-hlg">回龙观</a></li> -->
+                            <li><a href="area/10461" target="_blank" title="城北市场周边餐厅">城北市场</a></li>
+                            <li><a href="area/10525" target="_blank" title="佰嘉城周边餐厅">佰嘉城</a></li>
+                            <li><a href="area/10526" target="_blank" title="天露园周边餐厅">天露园</a></li>
+                            <li><a href="area/10527" target="_blank" title="国仕汇周边餐厅">国仕汇</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/1" target="_blank" title="华北电力大学(北京)周边餐厅">华北电力大学(北京)</a></li>
+                    <li><a href="area/2" target="_blank" title="北京农学院周边餐厅">北京农学院</a></li>
+                    <li><a href="area/10048" target="_blank" title="中国石油大学（昌平）周边餐厅">中国石油大学（昌平）</a></li>
+                    <li><a href="area/10132" target="_blank" title="中国政法大学(昌平)周边餐厅">中国政法大学(昌平)</a></li>
+                    <li><a href="area/10134" target="_blank" title="北京化工大学(昌平)周边餐厅">北京化工大学(昌平)</a></li>
+                    <li><a href="area/10485" target="_blank" title="北京国际经贸研修学院(手表厂)周边餐厅">北京国际经贸研修学院(手表厂)</a></li>
+                    <li><a href="area/10133" target="_blank" title="吉利大学周边餐厅">吉利大学</a></li>
+                </ul>
+                <ul id="hz-xh">
+                    <li><a href="area/10125" target="_blank" title="浙江大学(紫金港校区)周边餐厅">浙江大学(紫金港校区)</a>
+                    </li>
+                </ul>
+                <ul id="cds-wl">
+                    <li><a href="area/11021" target="_blank" title="文理学院（西院）周边餐厅">文理学院（西院）</a> </li>
+                </ul>
+                <ul id="bj-sjs">
+                    <li><a href="area/10196" target="_blank" title="北方工业大学周边餐厅">北方工业大学</a></li>
+                    <li><a href="area/10197" target="_blank" title="首钢工学院周边餐厅">首钢工学院</a></li>
+                </ul>
+                <ul id="bj-fs">
+                    <li><a href="area/10528" target="_blank" title="北京理工大学(良乡)周边餐厅">北京理工大学(良乡)</a></li>
+                </ul>
+                <ul id="hz-xs">
+                    <li><a href="area/10110" target="_blank" title="杭州电子科技大学周边餐厅">杭州电子科技大学</a></li>
+                    <li><a href="area/10111" target="_blank" title="浙江传媒学院周边餐厅">浙江传媒学院</a></li>
+                    <li><a href="area/10112" target="_blank" title="杭州职业技术学院周边餐厅">杭州职业技术学院</a></li>
+                    <li><a href="area/10113" target="_blank" title="浙江理工大学(一区)周边餐厅">浙江理工大学(一区)</a></li>
+                    <li><a href="area/10114" target="_blank" title="中国计量学院周边餐厅">中国计量学院</a></li>
+                    <li><a href="area/10115" target="_blank" title="浙江育英职业技术学院周边餐厅">浙江育英职业技术学院</a></li>
+                    <li><a href="area/10116" target="_blank" title="浙江警官职业学院周边餐厅">浙江警官职业学院</a></li>
+                    <li><a href="area/10117" target="_blank" title="浙江水利水电专科学校周边餐厅">浙江水利水电专科学校</a></li>
+                    <li><a href="area/10118" target="_blank" title="浙江经济职业技术学院周边餐厅">浙江经济职业技术学院</a></li>
+                    <li><a href="area/10119" target="_blank" title="浙江财经学院周边餐厅">浙江财经学院</a></li>
+                    <li><a href="area/10120" target="_blank" title="浙江金融职业学院周边餐厅">浙江金融职业学院</a></li>
+                    <li><a href="area/10121" target="_blank" title="浙江经贸职业技术学院周边餐厅">浙江经贸职业技术学院</a></li>
+                    <li><a href="area/10122" target="_blank" title="杭州师范大学周边餐厅">杭州师范大学</a></li>
+                    <li><a href="area/10123" target="_blank" title="浙江工商大学周边餐厅">浙江工商大学</a></li>
+                    <li><a href="area/10124" target="_blank" title="浙江理工大学(二区,三区)周边餐厅">浙江理工大学(二区,三区)</a></li>
+                </ul>
+                <ul id="hz-xhsgj">
+                    <li><a href="area/10188" target="_blank" title="浙江长征职业技术学院周边餐厅">浙江长征职业技术学院</a> </li>
+                    <li><a href="area/10189" target="_blank" title="浙江科技学院西和公寓院周边餐厅">浙江科技学院西和公寓</a>
+                    </li>
+                    <li><a href="area/10188" target="_blank" title="浙江科技学院东和公寓周边餐厅">浙江科技学院东和公寓</a> </li>
+                </ul>
+                <ul id="hk-mlq">
+                    <li><a href="area/11030" target="_blank" title="浙江长征职业技术学院周边餐厅">海南大学</a> </li>
+                </ul>
+                <ul id="tj-xq">
+                    <li><a href="area/10147" target="_blank" title="天津师范大学(西青区)周边餐厅">天津师范大学(西青区)</a></li>
+                    <li><a href="area/10152" target="_blank" title="天津工业大学周边餐厅">天津工业大学</a></li>
+                    <li><a href="area/10282" target="_blank" title="天津理工大学(西青区)周边餐厅">天津理工大学(西青区)</a></li>
+                    <li><a href="area/10976" target="_blank" title="天津农学院周边餐厅">天津农学院</a></li>
+                    <li><a href="area/10977" target="_blank" title="天津城建大学周边餐厅">天津城建大学</a></li>
+                    <li><a href="area/10978" target="_blank" title="津商业大学宝德学院周边餐厅">天津商业大学宝德学院</a></li>
+                </ul>
+                <ul id="tj-nk">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-cs-as">鞍山西道&海光寺</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10148" target="_blank" title="南开大学(南开区)周边餐厅">南开大学(南开区)</a></li>
+                    <li><a href="area/10149" target="_blank" title="天津大学(南开区)周边餐厅">天津大学(南开区)</a></li>
+                    <li><a href="area/11020" target="_blank" title="天津中医药大学(南开区)周边餐厅">天津中医药大学(南开区)</a></li>
+                </ul>
+                <ul id="tj-hx">
+                    <li><a href="area/10151" target="_blank" title="天津体育学院周边餐厅">天津体育学院</a></li>
+                </ul>
+                <ul id="tj-hp">
+                    <li><a href="area/10150" target="_blank" title="天津医科大学(和平区)周边餐厅">天津医科大学(和平区)</a></li>
+                </ul>
+                <ul id="nj-jn">
+                    <li><a href="area/10257" target="_blank" title="南广学院周边餐厅">南广学院</a></li>
+                    <li><a href="area/10126" target="_blank" title="南京晓庄学院周边餐厅">南京晓庄学院</a></li>
+                    <li><a href="area/10146" target="_blank" title="南京工程学院周边餐厅">南京工程学院</a></li>
+                    <li><a href="area/10246" target="_blank" title="南京航空航天大学（江宁）周边餐厅">南京航空航天大学（江宁）</a></li>
+                    <li><a href="area/10247" target="_blank" title="河海大学（江宁）周边餐厅">河海大学（江宁）</a></li>
+                    <li><a href="area/10248" target="_blank" title="东南大学（江宁）周边餐厅">东南大学（江宁）</a></li>
+                    <li><a href="area/10252" target="_blank" title="江苏海事职业技术学院周边餐厅">江苏海事职业技术学院</a></li>
+                    <li><a href="area/10254" target="_blank" title="金陵科技学院周边餐厅">金陵科技学院</a></li>
+                    <li><a href="area/10256" target="_blank" title="中国药科大学(江宁)周边餐厅">中国药科大学(江宁)</a></li>
+                    <li><a href="area/10253" target="_blank" title="南京交通职业技术学院周边餐厅">南京交通职业技术学院</a></li>
+                </ul>
+                <ul id="nj-xl">
+                    <li><a href="area/10261" target="_blank" title="南京师范大学（仙林）周边餐厅">南京师范大学（仙林）</a></li>
+                    <li><a href="area/10259" target="_blank" title="南京邮电大学（仙林）周边餐厅">南京邮电大学（仙林）</a></li>
+                    <li><a href="area/10258" target="_blank" title="南京大学（仙林）周边餐厅">南京大学（仙林）</a></li>
+                    <li><a href="area/10260" target="_blank" title="南京中医药大学（仙林）周边餐厅">南京中医药大学（仙林）</a></li>
+                    <li><a href="area/10264" target="_blank" title="南京理工大学紫金学院（仙林）周边餐厅">南京理工大学紫金学院（仙林）</a></li>
+                    <li><a href="area/10262" target="_blank" title="南京应天学院（仙林）周边餐厅">南京应天学院（仙林）</a></li>
+                    <li><a href="area/10268" target="_blank" title="南京财经大学周边餐厅">南京财经大学</a></li>
+                </ul>
+                <ul id="nj-pk">
+                    <li><a href="area/10240" target="_blank" title="南京工业大学（浦口）周边餐厅">南京工业大学（浦口）</a></li>
+                    <li><a href="area/10243" target="_blank" title="东南大学成贤周边餐厅">东南大学成贤学院</a></li>
+                    <li><a href="area/10244" target="_blank" title="南京农业大学工程学院周边餐厅">南京农业大学工程学院</a></li>
+                    <li><a href="area/10266" target="_blank" title="南京气象学院周边餐厅">南京气象学院</a></li>
+                    <li><a href="area/10267" target="_blank" title="南京信息工程大学周边餐厅">南京信息工程大学</a></li>
+                    <li><a href="area/10245" target="_blank" title="南京审计学院周边餐厅">南京审计学院</a></li>
+                </ul>
+                <ul id="nj-gl">
+                    <li><a href="area/10233" target="_blank" title="南京大学（鼓楼）周边餐厅">南京大学（鼓楼）</a></li>
+                    <li><a href="area/10234" target="_blank" title="东南大学（鼓楼）周边餐厅">东南大学（鼓楼）</a></li>
+                    <li><a href="area/10237" target="_blank" title="河海大学（鼓楼）周边餐厅">河海大学（鼓楼）</a></li>
+                    <li><a href="area/10238" target="_blank" title="南京艺术学院周边餐厅">南京艺术学院</a></li>
+                    <li><a href="area/10239" target="_blank" title="南京师范大学（鼓楼）周边餐厅">南京师范大学（鼓楼）</a></li>
+                    <li><a href="area/10433" target="_blank" title="南京邮电大学（鼓楼）周边餐厅">南京邮电大学（鼓楼）</a></li>
+                    <li><a href="area/10434" target="_blank" title="南京工业大学（鼓楼）周边餐厅">南京工业大学（鼓楼）</a></li>
+                </ul>
+                <ul id="nj-xw">
+                    <li><a href="area/10153" target="_blank" title="南京农业大学周边餐厅">南京农业大学</a></li>
+                    <li><a href="area/10140" target="_blank" title="南京理工大学周边餐厅">南京理工大学</a></li>
+                    <li><a href="area/10235" target="_blank" title="南京林业大学周边餐厅">南京林业大学</a></li>
+                    <li><a href="area/10236" target="_blank" title="南京航空航天大学（明故宫）周边餐厅">南京航空航天大学（明故宫）</a></li>
+                </ul>
+                <ul id="wh-wc">
+                    <li><a href="area/10269" target="_blank" title="武汉大学周边餐厅">武汉大学（本部）</a></li>
+                    <li><a href="area/10538" target="_blank" title="武汉大学三环公寓周边餐厅">武汉大学三环公寓</a></li>
+                    <li><a href="area/10539" target="_blank" title="武汉大学医学院周边餐厅">武汉大学（医学院）</a></li>
+                    <li><a href="area/10540" target="_blank" title="武汉大学弘博公寓周边餐厅">武汉大学（弘博公寓）</a></li>
+                    <li><a href="area/10217" target="_blank" title="湖北大学（三期公寓）周边餐厅">湖北大学（三期公寓）</a></li>
+                    <li><a href="area/10231" target="_blank" title="湖北大学一期二期周边餐厅">湖北大学（一期、二期）</a></li>
+                    <li><a href="area/10215" target="_blank" title="华中农业大学周边餐厅">华中农业大学</a></li>
+                    <li><a href="area/10232" target="_blank" title="武汉理工大学（升升公寓）周边餐厅">武汉理工大学（升升公寓）</a></li>
+                    <li><a href="area/10201" target="_blank" title="武汉理工大学（鉴湖校区）周边餐厅">武汉理工大学（鉴湖校区）</a></li>
+                    <li><a href="area/10200" target="_blank" title="武汉理工大学（南湖新区）周边餐厅">武汉理工大学（南湖新区）</a></li>
+                    <li><a href="area/10202" target="_blank" title="武汉理工大学（东院）周边餐厅">武汉理工大学（东院）</a></li>
+                    <li><a href="area/10203" target="_blank" title="武汉理工大学（西院）周边餐厅">武汉理工大学（西院）</a></li>
+                </ul>
+                <ul id="jn-cq">
+                    <li><a href="area/10271" target="_blank" title="齐鲁工业大学周边餐厅">齐鲁工业大学</a></li>
+                    <li><a href="area/10284" target="_blank" title="山东女子学院周边餐厅">山东女子学院</a></li>
+                    <li><a href="area/10281" target="_blank" title="长清大学城商业街周边餐厅">长清大学城商业街</a></li>
+                    <li><a href="area/10285" target="_blank" title="山东师范大学周边餐厅">山东师范大学</a></li>
+                    <li><a href="area/10273" target="_blank" title="山东中医药大学（长清校区）周边餐厅">山东中医药大学（长清校区）</a></li>
+                    <li><a href="area/10274" target="_blank" title="山东工艺美术学院（长清校区）周边餐厅">山东工艺美术学院（长清校区）</a></li>
+                    <li><a href="area/10286" target="_blank" title="山东艺术学院周边餐厅">山东艺术学院</a></li>
+                </ul>
+                <ul id="jn-sz">
+                    <li><a href="area/10298" target="_blank" title="济南大学周边餐厅">济南大学</a></li>
+                </ul>
+                <ul id="jn-lx">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/10910" target="_blank" title="中润广场">中润广场</a></li>
+                            <li><a href="area/10911" target="_blank" title="中建文化城">中建文化城</a></li>
+                            <li><a href="area/11233" target="_blank" title="万豪国际">万豪国际</a></li>
+                            <li><a href="area/11271" target="_blank">山东国际珠宝交易中心</a></li>
+                            <li><a href="area/11272 " target="_blank">诚基中心</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10484" target="_blank" title="山东财经大学（燕山校区）周边餐厅">山东财经大学（燕山校区）</a></li>
+                    <li><a href="area/10530" target="_blank" title="山东师范大学周边餐厅">山东师范大学</a></li>
+                    <li><a href="area/10439" target="_blank" title="山东中医药大学周边餐厅">山东中医药大学</a></li>
+                    <li><a href="area/10906" target="_blank" title="山东大学(千佛山校区)周边餐厅">山东大学(千佛山校区)</a></li>
+                </ul>
+                <ul id="jn-lc">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/10914" target="_blank" title="数码港">数码港</a></li>
+                            <li><a href="area/10915" target="_blank" title="科苑大厦">科苑大厦</a></li>
+                            <li><a href="area/10916" target="_blank" title="百脑汇">百脑汇</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10848" target="_blank" title="山东大学（中心校区）">山东大学（中心校区）</a></li>
+                    <li><a href="area/10849" target="_blank" title="山东大学（洪家楼校区）">山东大学（洪家楼校区）</a></li>
+                </ul>
+                <ul id="jn-gx">
+                    <li><a href="area/10958" target="_blank" title="山东英才学院周边餐厅">山东英才学院</a></li>
+                    <li><a href="area/10929" target="_blank" title="山东建筑大学周边餐厅">山东建筑大学</a></li>
+                    <li><a href="area/10930" target="_blank" title="山东体育学院">山东体育学院</a></li>
+                </ul>
+                <ul id="wh-hs">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-wh-rx">鲁巷</a></li>
+                            <li><a class="shop-wh-gbt">广埠屯</a></li>
+                            <li><a class="shop-wh-jdk">街道口</a></li>
+                            <li><a class="shop-wh-zn">中南</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10437" target="_blank" title="武汉大学（信息学部）周边餐厅">武汉大学（信息学部）</a></li>
+                    <li><a href="area/10270" target="_blank" title="华中科技大学文华学院周边餐厅">华中科技大学文华学院</a></li>
+                    <li><a href="area/10204" target="_blank" title="华中师范大学周边餐厅">华中师范大学</a></li>
+                    <li><a href="area/10287" target="_blank" title="武汉体育学院周边餐厅">武汉体育学院</a></li>
+                    <li><a href="area/10207" target="_blank" title="中国地质大学（武汉）周边餐厅">中国地质大学（武汉）</a></li>
+                    <li><a href="area/10214" target="_blank" title="中南财经政法大学周边餐厅">中南财经政法大学</a></li>
+                    <li><a href="area/10199" target="_blank" title="华中科技大学周边餐厅">华中科技大学</a></li>
+                    <li><a href="area/10213" target="_blank" title="武汉纺织大学（南湖校区）周边餐厅">武汉纺织大学（南湖校区）</a></li>
+                    <li><a href="area/10212" target="_blank" title="中南民族大学周边餐厅">中南民族大学</a></li>
+                    <li><a href="area/10221" target="_blank" title="白沙洲大道长江工商学院周边餐厅">白沙洲大道长江工商学院</a></li>
+                    <li><a href="area/10222" target="_blank" title="湖北中医学院周边餐厅">湖北中医学院</a></li>
+                    <li><a href="area/10223" target="_blank" title="武汉大学（信息学部）周边餐厅">武汉科技大学（黄家湖）</a></li>
+                    <li><a href="area/10224" target="_blank" title="武汉交通职业学院周边餐厅">武汉交通职业学院</a></li>
+                    <li><a href="area/10215" target="_blank" title="华中农业大学周边餐厅">华中农业大学</a></li>
+                </ul>
+                <ul id="wh-jx">
+                    <li><a href="area/10276" target="_blank" title="武汉纺织大学（阳光公寓）周边餐厅">武汉纺织大学（阳光校区）</a></li>
+                    <li><a href="area/10438" target="_blank" title="湖北经济学院周边餐厅">湖北经济学院</a></li>
+                    <li><a href="area/10487" target="_blank" title="湖北美术学院（藏龙岛校区）周边餐厅">湖北美术学院（藏龙岛校区）</a></li>
+                    <li><a href="area/10494" target="_blank" title="汉口学院周边餐厅">汉口学院</a></li>
+                    <li><a href="area/10211" target="_blank" title="武汉工程大学周边餐厅">武汉工程大学（流芳校区）</a></li>
+                </ul>
+                <ul id="wh-hk">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-wh-xbh">西北湖-取水楼-新华路</a></li>
+                            <li><a class="shop-wh-wg">武广-万松园路</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10228" target="_blank" title="中国地质大学（汉口校区）周边餐厅">中国地质大学（汉口校区）</a></li>
+                    <li><a href="area/10229" target="_blank" title="华中科技大学同济医学院周边餐厅">华中科技大学同济医学院</a></li>
+                </ul>
+                <ul id="wh-dxh">
+                    <li><a href="area/10230" target="_blank" title="武汉工业学院（常青分校）周边餐厅">武汉工业学院</a></li>
+                </ul>
+                <ul id="wh-jjjs">
+                    <li><a href="area/10216" target="_blank" title="江汉大学周边餐厅">江汉大学</a></li>
+                </ul>
+                <ul id="wh-qs">
+                    <li><a href="area/10436" target="_blank" title="武汉科技大学城市学院周边餐厅">武汉科技大学城市学院</a></li>
+                    <li><a href="area/10551" target="_blank" title="武汉外语外事学院周边餐厅">武汉外语外事学院</a></li>
+                </ul>
+                <ul id="wh-dhjs">
+                    <li><a href="area/10279" target="_blank" title="湖北第二师范学院周边餐厅">湖北第二师范学院</a></li>
+                </ul>
+                <ul id="lf-yj">
+                    <li><a href="area/10489" target="_blank" title="华北科技学院周边餐厅">华北科技学院</a></li>
+                    <li><a href="area/10490" target="_blank" title="中央美术学院（燕郊校区）周边餐厅">中央美术学院（燕郊校区）</a></li>
+                    <li><a href="area/10491" target="_blank" title="防灾科技学院周边餐厅">防灾科技学院</a></li>
+                    <li><a href="area/10492" target="_blank" title="民政部管理干部学院周边餐厅">民政部管理干部学院</a></li>
+                    <li><a href="area/10493" target="_blank" title="交通运输管理干部学院周边餐厅">交通运输管理干部学院</a></li>
+                </ul>
+                <ul id="cq-spbq">
+                    <li><a href="area/10836" target="_blank" title="重庆大学（A区）周边餐厅">重庆大学（A区）</a></li>
+                    <li><a href="area/10837" target="_blank" title="重庆大学（B区）周边餐厅">重庆大学（B区）</a></li>
+                </ul>
+                <ul id="cq-ybq">
+                    <li><a href="area/10846" target="_blank" title="西南政法大学渝北校区周边餐厅">西南政法大学渝北校区</a></li>
+                    <li><a href="area/11003" target="_blank" title="西南政法大学周边餐厅">西南政法大学</a></li>
+                </ul>
+                <ul id="cq-hxdxc">
+                    <li><a href="area/11004" target="_blank" title="重庆大学虎溪校区周边餐厅">重庆大学虎溪校区</a></li>
+                    <li><a href="area/11005" target="_blank" title="重庆师范大学虎溪校区周边餐厅">重庆师范大学虎溪校区</a></li>
+                    <li><a href="area/11006" target="_blank" title="富力城周边餐厅">富力城</a></li>
+                    <li><a href="area/11007" target="_blank" title="四川美术学院虎溪校区周边餐厅">四川美术学院虎溪校区</a></li>
+                    <li><a href="area/10839" target="_blank" title="四川美术学院周边餐厅">四川美术学院</a></li>
+                    <li><a href="area/10841" target="_blank" title="重庆医科大学华瑞大厦周边餐厅">重庆医科大学</a></li>
+                    <li><a href="area/10842" target="_blank" title="重庆医药高专">重庆医药高专</a></li>
+                    <li><a href="area/10843" target="_blank" title="重庆警察学院周边餐厅">重庆警察学院</a></li>
+                    <li><a href="area/10844" target="_blank" title="重庆电子校周边餐厅">重庆电子校</a></li>
+                    <li><a href="area/10845" target="_blank" title="龙湖u城天街重重庆电子校周边餐厅">龙湖u城天街</a></li>
+                </ul>
+                <ul id="cq-naq">
+                    <li><a href="area/11008" target="_blank" title="重庆邮电大学周边餐厅">重庆邮电大学</a></li>
+                    <li><a href="area/11009" target="_blank" title="重庆工商大学周边餐厅">重庆工商大学</a></li>
+                    <li><a href="area/11010" target="_blank" title="重庆工商大学新北区周边餐厅">重庆工商大学新北区</a></li>
+                </ul>
+                <ul id="cq-bpq">
+                    <li><a href="area/11011" target="_blank" title="西南大学北区">西南大学北区</a></li>
+                    <li><a href="area/11012" target="_blank" title="西南大学南区">西南大学南区</a></li>
+                </ul>
+                <ul id="cq-jbq">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/10988" target="_blank" title="世纪英皇南塔周边餐厅">世纪英皇南塔</a></li>
+                            <li><a href="area/10989" target="_blank" title="世纪英皇北塔周边餐厅">世纪英皇北塔</a></li>
+                            <li><a href="area/10990" target="_blank" title="国际商会大厦周边餐厅">国际商会大厦</a></li>
+                            <li><a href="area/10991" target="_blank" title="邦兴北都周边餐厅">邦兴北都</a></li>
+                            <li><a href="area/10992" target="_blank" title="北城旺角周边餐厅">北城旺角</a></li>
+                            <li><a href="area/10993" target="_blank" title="北岸星座周边餐厅">北岸星座</a></li>
+                            <li><a href="area/10994" target="_blank" title="红鼎国际名苑A座周边餐厅">红鼎国际名苑A座</a></li>
+                            <li><a href="area/10995" target="_blank" title="红鼎国际B,C座周边餐厅">红鼎国际B,C座</a></li>
+                            <li><a href="area/10996" target="_blank" title="晴朗广场周边餐厅">晴朗广场</a></li>
+                            <li><a href="area/10997" target="_blank" title="未来国际周边餐厅">未来国际</a></li>
+                            <li><a href="area/10998" target="_blank" title="协信（富力海洋）中心周边餐厅">协信（富力海洋）中心</a></li>
+                            <li><a href="area/10999" target="_blank" title="茂业东方时代周边餐厅">茂业东方时代</a></li>
+                            <li><a href="area/11000" target="_blank" title="中信商务大厦（浩博天庭）周边餐厅">中信商务大厦（浩博天庭）</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="cd-wh">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/11083" target="_blank">宏地大厦</a></li>
+                            <li><a href="area/11088" target="_blank">数码科技大厦</a></li>
+                            <li><a href="area/11090" target="_blank">国航世纪中心</a></li>
+                            <li><a href="area/11091" target="_blank">华尔兹广场</a></li>
+                            <li><a href="area/11092" target="_blank">凯莱帝景花园</a></li>
+                            <li><a href="area/11093" target="_blank">丰德国际广场</a></li>
+                            <li><a href="area/11095" target="_blank">曼哈顿</a></li>
+                            <li><a href="area/11096" target="_blank">首座大道</a></li>
+                            <li><a href="area/11097" target="_blank">新华苑</a></li>
+                            <li><a href="area/11098" target="_blank">兴彩苑</a></li>
+                            <li><a href="area/11102" target="_blank">新南大楼</a></li>
+                            <li><a href="area/11103" target="_blank">自由星城</a></li>
+                            <li><a href="area/11115" target="_blank">时代数码大厦</a></li>
+                            <li><a href="area/11116" target="_blank">亚太广场</a></li>
+                        </ul>
+                        <li>
+                            <li><a href="area/10495" target="_blank" title="成都体育学院">成都体育学院</a></li>
+                            <li><a href="area/10496" target="_blank" title="四川大学华西校区">四川大学华西校区</a></li>
+                </ul>
+                <ul id="cd-gx">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-cd-tfxc">天府新城</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="cd-bx">
+                    <li><a href="area/11078" target="_blank" title="西华大学">西华大学</a></li>
+                    <li><a href="area/11079" target="_blank" title="西南交通大学犀浦校区">西南交通大学犀浦校区</a></li>
+                    <li><a href="area/11080" target="_blank" title="电子科技大学（清水河校区）">电子科技大学（清水河校区）</a></li>
+                </ul>
+                <ul id="cd-shl">
+                    <li><a href="area/11081" target="_blank" title="成都信息工程学院">成都信息工程学院</a></li>
+                </ul>
+                <ul id="cd-jj">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/11117" target="_blank">银石广场</a></li>
+                        </ul>
+                        <li>
+                </ul>
+                <ul id="cs-yl">
+                    <li><a href="area/10533" target="_blank" title="中南大学">中南大学</a></li>
+                    <li><a href="area/10534" target="_blank" title="湖南师范大学">湖南师范大学</a></li>
+                    <li><a href="area/10535" target="_blank" title="湖南大学">湖南大学</a></li>
+                </ul>
+                <ul id="cs-tx">
+                    <li><a href="area/10536" target="_blank" title="中南林业科技大学周边餐厅">中南林业科技大学</a></li>
+                    <li><a href="area/10548" target="_blank" title="湖南广播电视大学周边餐厅">湖南广播电视大学</a></li>
+                </ul>
+                <ul id="cs-fr">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a class="shop-cs-ds">火车站商圈</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="wx-hs">
+                    <li><a href="area/10552" target="_blank" title="江南影视艺术职业技术学院周边餐厅">江南影视艺术职业技术学院</a></li>
+                    <li><a href="area/10553" target="_blank" title="无锡商业职业学院周边餐厅">无锡商业职业学院</a></li>
+                    <li><a href="area/10554" target="_blank" title="无锡城市学院">无锡城市学院</a></li>
+                    <li><a href="area/10555" target="_blank" title="无锡技师学院">无锡技师学院</a></li>
+                    <li><a href="area/10556" target="_blank" title="江苏信息学院">江苏信息学院</a></li>
+                    <li><a href="area/10557" target="_blank" title="无锡汽车工程学院">无锡汽车工程学院</a></li>
+                    <li><a href="area/10558" target="_blank" title="无锡师范学院">无锡师范学院</a></li>
+                    <li><a href="area/10559" target="_blank" title="惠山职教">惠山职教</a></li>
+                    <li><a href="area/10673" target="_blank" title="恒达中环广场">恒达中环广场</a></li>
+                </ul>
+                <ul id="hf-ssq">
+                    <li><a href="area/10615" target="_blank" title="安徽农业大学">安徽农业大学</a> </li>
+                    <li><a href="area/10617" target="_blank" title="合肥学院">合肥学院</a> </li>
+                </ul>
+                <ul id="hf-jjkfq">
+                    <li><a href="area/10616" target="_blank" title="安徽大学（新校区）">安徽大学（新校区）</a> </li>
+                    <li><a href="area/10622" target="_blank" title="合肥财经学院">合肥财经学院</a> </li>
+                </ul>
+                <ul id="hf-yhq">
+                    <li><a href="area/10675" target="_blank" title="安徽中医药大学">安徽中医药大学</a> </li>
+                    <li><a href="area/10676" target="_blank" title="安徽涉外经济职业学院">安徽涉外经济职业学院</a> </li>
+                    <li><a href="area/10677" target="_blank" title="安徽城市管理职业学院">安徽城市管理职业学院</a> </li>
+                </ul>
+                <ul id="zz-gxq">
+                    <li><a href="area/10618" target="_blank" title="郑州大学（教学区）">郑州大学（教学区）</a> </li>
+                    <li><a href="area/10619" target="_blank" title="河南工业大学">河南工业大学</a> </li>
+                    <li><a href="area/10632" target="_blank" title="郑州轻工业大学">郑州轻工业大学</a> </li>
+                    <li><a href="area/10156" target="_blank" title="郑州大学（柳荷园）">郑州郑州大学（柳荷园）</a> </li>
+                    <li><a href="area/11077" target="_blank">郑州大学（ 菊松园）</a> </li>
+                </ul>
+                <ul id="zz-zdxq">
+                    <li><a href="area/10629" target="_blank" title="河南牧业经济学院">河南牧业经济学院</a> </li>
+                    <li><a href="area/10630" target="_blank" title="河南财经政法大学（郑东新区）">河南财经政法大学（郑东新区）</a>
+                    </li>
+                    <li><a href="area/10631" target="_blank" title="河南警察学院（郑东新区）">河南警察学院（郑东新区）</a> </li>
+                    <li><a href="area/10727" target="_blank" title="姚桥社区">姚桥社区</a> </li>
+                    <li><a href="area/10663" target="_blank" title="郑州航空工业管理学院">郑州航空工业管理学院</a> </li>
+                </ul>
+                <ul id="zz-xzs">
+                    <li><a href="area/10682" target="_blank" title="郑州西亚斯国际学院">郑州西亚斯国际学院</a> </li>
+                    <li><a href="area/10851" target="_blank" title="郑州升达经贸管理学院">郑州升达经贸管理学院</a> </li>
+                    <li><a href="area/10852" target="_blank" title="中原工学院龙湖校区">中原工学院龙湖校区</a> </li>
+                    <li><a href="area/11215" target="_blank" title="华北水利水电大学新校区">华北水利水电大学新校区</a> </li>
+                </ul>
+                <ul id="zz-jsq">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/10864" target="_blank" title="中科信息大厦">中科信息大厦</a></li>
+                            <li><a href="area/10865" target="_blank" title="海特大厦">海特大厦</a></li>
+                            <li><a href="area/10866" target="_blank" title="英特大厦">英特大厦</a></li>
+                            <li><a href="area/10867" target="_blank" title="融丰花苑">融丰花苑</a></li>
+                            <li><a href="area/10868" target="_blank" title="豫博大厦">豫博大厦</a></li>
+                            <li><a href="area/10869" target="_blank" title="世博中心">世博中心</a></li>
+                            <li><a href="area/10870" target="_blank" title="中关大厦">中关大厦</a></li>
+                            <li><a href="area/10871" target="_blank" title="财富广场">财富广场</a></li>
+                            <li><a href="area/10872" target="_blank" title="科技市场">科技市场</a></li>
+                            <li><a href="area/10873" target="_blank" title="财智名座">财智名座</a></li>
+                            <li><a href="area/10874" target="_blank" title="电子大厦">电子大厦</a></li>
+                            <li><a href="area/10875" target="_blank" title="新科大厦">新科大厦</a></li>
+                            <li><a href="area/10876" target="_blank" title="思达数码大厦C座">思达数码大厦C座</a></li>
+                            <li><a href="area/11208" target="_blank" title="居易广场">居易广场</a></li>
+                            <li><a href="area/11209" target="_blank" title="罗马假日">罗马假日</a></li>
+                            <li><a href="area/11210" target="_blank" title="摩根中心">摩根中心</a></li>
+                            <li><a href="area/11207" target="_blank" title="SOHO广场">SOHO广场</a></li>
+                            <li><a href="area/10979" target="_blank" title="河南省职工医院">河南省职工医院</a></li>
+                            <li><a href="area/10980" target="_blank" title="国际企业中心">国际企业中心</a></li>
+                            <li><a href="area/10981" target="_blank" title="国贸新领地">国贸新领地</a></li>
+                            <li><a href="area/10982" target="_blank" title="招银大厦">招银大厦</a></li>
+                            <li><a href="area/10983" target="_blank" title="省汇中心">省汇中心</a></li>
+                            <li><a href="area/10984" target="_blank" title="金成国际广场">金成国际广场</a></li>
+                            <li><a href="area/10986" target="_blank" title="安华大厦">安华大厦</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10853" target="_blank" title="河南农业大学（桃李园宿舍区）">河南农业大学（桃李园宿舍区）</a>
+                    </li>
+                    <li><a href="area/10854" target="_blank" title="郑州轻工业学院（老校区）">郑州轻工业学院（老校区）</a> </li>
+                    <li><a href="area/10855" target="_blank" title="郑州轻工业学院轻工职业学院">郑州轻工业学院轻工职业学院</a>
+                    </li>
+                    <li><a href="area/10856" target="_blank" title="郑州轻工业学院二宿舍区">郑州轻工业学院二宿舍区</a> </li>
+                    <li><a href="area/10857" target="_blank" title="郑州轻工业学院三宿舍区">郑州轻工业学院三宿舍区</a> </li>
+                    <li><a href="area/10858" target="_blank" title="河南财经政法大学文北校区">河南财经政法大学文北校区</a> </li>
+                    <li><a href="area/10859" target="_blank" title="河南省司法警官职业学院">河南省司法警官职业学院</a> </li>
+                    <li><a href="area/11228" target="_blank" title="华北水利水电大学老校区">华北水利水电大学老校区</a> </li>
+                </ul>
+                <ul id="zz-hjq">
+                    <li><a href="area/10860" target="_blank" title="河南牧业经济学院（英才校区）">河南牧业经济学院（英才校区）</a>
+                    </li>
+                    <li><a href="area/10861" target="_blank" title="国基大学城">国基大学城</a> </li>
+                    <li><a href="area/10862" target="_blank" title="郑州师范学院东校区">郑州师范学院东校区</a> </li>
+                    <li><a href="area/10863" target="_blank" title="郑州师范学院老校区">郑州师范学院老校区</a> </li>
+                </ul>
+                <ul id="hhht-sh">
+                    <li><a href="area/10647" target="_blank" title="呼市职业技术学院">呼市职业技术学院</a></li>
+                    <li><a href="area/10648" target="_blank" title="内蒙古电子信息技术职业学院">内蒙古电子信息技术职业学院</a></li>
+                    <li><a href="area/10649" target="_blank" title="内蒙古化工职业技术学院">内蒙古化工职业技术学院</a></li>
+                    <li><a href="area/10650" target="_blank" title="内蒙古机电技术职业学院">内蒙古机电技术职业学院</a></li>
+                    <li><a href="area/10651" target="_blank" title="内蒙古商贸职业学院">内蒙古商贸职业学院</a></li>
+                    <li><a href="area/10652" target="_blank" title="内蒙古北方职业技术学院">内蒙古北方职业技术学院</a></li>
+                </ul>
+                <ul id="hhht-yq">
+                    <li><a href="area/10653" target="_blank" title="内蒙古大学创业学院">内蒙古大学创业学院</a></li>
+                    <li><a href="area/10654" target="_blank" title="内蒙古大学（南校区）">内蒙古大学（南校区）</a></li>
+                </ul>
+                <ul id="zb-zdq">
+                    <li class="shoparea">
+                        <ul>
+                            <li><a href="area/10824" target="_blank" title="茂业天地">茂业天地</a></li>
+                            <li><a href="area/10825" target="_blank" title="美食街">美食街</a></li>
+                            <li><a href="area/10826" target="_blank" title="王府井">王府井</a></li>
+                            <li><a href="area/10827" target="_blank" title="彩世界商业广场">彩世界商业广场</a></li>
+                            <li><a href="area/10828" target="_blank" title="步行街">步行街</a></li>
+                            <li><a href="area/10829" target="_blank" title="凯德广场">凯德广场</a></li>
+                            <li><a href="area/10830" target="_blank" title="银座（柳泉路店）">银座（柳泉路店）</a></li>
+                            <li><a href="area/10831" target="_blank" title="佳世客">佳世客</a></li>
+                            <li><a href="area/10832" target="_blank" title="义乌小商品城">义乌小商品城</a></li>
+                            <li><a href="area/10833" target="_blank" title="国贸大厦">国贸大厦</a></li>
+                            <li><a href="area/10834" target="_blank" title="齐赛科技城">齐赛科技城</a></li>
+                            <li><a href="area/10835" target="_blank" title="淄博国际会展中心">淄博国际会展中心</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="area/10817" target="_blank" title="山东理工大学（东校区）">山东理工大学（东校区）</a></li>
+                    <li><a href="area/10818" target="_blank" title="山东理工大学（西校区）">山东理工大学（西校区）</a></li>
+                    <li><a href="area/10820" target="_blank" title="淄博职业学院（东校区）">淄博职业学院（东校区）</a></li>
+                    <li><a href="area/10821" target="_blank" title="淄博市技师学院（西校区）">淄博市技师学院（西校区）</a></li>
+                    <li><a href="area/10822" target="_blank" title="淄博市技师学院（东校区）">淄博市技师学院（东校区）</a></li>
+                    <li><a href="area/10823" target="_blank" title="淄博市技师学院（南定校区）">淄博市技师学院（南定校区）</a></li>
+                </ul>
+            </div>
+            <div class="shopareas">
+                <ul id="shop-wh-rx">
+                    <li><a href="area/10289" target="_blank" title="光谷中心花园周边餐厅">光谷中心花园</a></li>
+                    <li><a href="area/10290" target="_blank" title="光谷国际广场周边餐厅">光谷国际广场</a></li>
+                    <li><a href="area/10291" target="_blank" title="东谷银座周边餐厅">东谷银座</a></li>
+                    <li><a href="area/10292" target="_blank" title="光谷银座周边餐厅">光谷银座</a></li>
+                    <li><a href="area/10293" target="_blank" title="华乐商务中心周边餐厅">华乐商务中心</a></li>
+                    <li><a href="area/10294" target="_blank" title="联合国际周边餐厅">联合国际</a></li>
+                    <li><a href="area/10295" target="_blank" title="湖北信息产业科技大厦周边餐厅">湖北信息产业科技大厦</a></li>
+                    <li><a href="area/10296" target="_blank" title="光谷资本大厦周边餐厅">光谷资本大厦</a></li>
+                    <li><a href="area/10297" target="_blank" title="国光大厦周边餐厅">国光大厦</a></li>
+                    <li><a href="area/10299" target="_blank" title="新都汇周边餐厅">新都汇</a></li>
+                    <li><a href="area/10300" target="_blank" title="烽火科技大厦周边餐厅">烽火科技大厦</a></li>
+                    <li><a href="area/10301" target="_blank" title="联峰大厦周边餐厅">联峰大厦</a></li>
+                    <li><a href="area/10314" target="_blank" title="东方怡景大厦周边餐厅">东方怡景大厦</a></li>
+                </ul>
+                <ul id="shop-wh-gbt">
+                    <li><a href="area/10302" target="_blank" title="阜华大厦周边餐厅">阜华大厦</a></li>
+                    <li><a href="area/10306" target="_blank" title="长江传媒大厦周边餐厅">长江传媒大厦</a></li>
+                    <li><a href="area/10308" target="_blank" title="未来城周边餐厅">未来城</a></li>
+                    <li><a href="area/10312" target="_blank" title="鹏程大厦周边餐厅">鹏程大厦</a></li>
+                    <li><a href="area/10313" target="_blank" title="武汉电脑城周边餐厅">武汉电脑城</a></li>
+                    <li><a href="area/10435" target="_blank" title="银海雅苑周边餐厅">银海雅苑</a></li>
+                    <li><a href="area/10304" target="_blank" title="广埠屯资讯大厦周边餐厅">广埠屯资讯大厦</a></li>
+                    <li><a href="area/10305" target="_blank" title="赛博数码广场周边餐厅">赛博数码广场</a></li>
+                    <li><a href="area/10310" target="_blank" title="武汉电脑大世界周边餐厅">武汉电脑大世界</a></li>
+                    <li><a href="area/10309" target="_blank" title="珞珈电脑城周边餐厅">珞珈电脑城</a></li>
+                    <li><a href="area/10311" target="_blank" title="华中数码城周边餐厅">华中数码城</a></li>
+                    <li><a href="area/10532" target="_blank" title="融科·珞瑜中心周边餐厅">融科·珞瑜中心</a></li>
+                </ul>
+                <ul id="shop-bj-wdk">
+                    <li><a href="area/10347" target="_blank">财智大厦</a></li>
+                    <li><a href="area/10315" target="_blank">创新大厦</a></li>
+                    <li><a href="area/10316" target="_blank">创业大厦</a></li>
+                    <li><a href="area/10317" target="_blank">东升大厦</a></li>
+                    <li><a href="area/10318" target="_blank">华清嘉园</a></li>
+                    <li><a href="area/10319" target="_blank">华业大厦</a></li>
+                    <li><a href="area/10320" target="_blank">科技大厦</a></li>
+                    <li><a href="area/10321" target="_blank">立业大厦</a></li>
+                    <li><a href="area/10322" target="_blank">清华同方科技广场大厦</a></li>
+                    <li><a href="area/10323" target="_blank">搜狐网络大厦</a></li>
+                    <li><a href="area/10324" target="_blank">同方大厦</a></li>
+                    <li><a href="area/10325" target="_blank">威盛大厦</a></li>
+                    <li><a href="area/10326" target="_blank">银谷大厦</a></li>
+                    <li><a href="area/10327" target="_blank">紫光大厦</a></li>
+                </ul>
+                <ul id="shop-wh-jdk">
+                    <li><a href="area/10302" target="_blank" title="阜华大厦周边餐厅">阜华大厦</a></li>
+                    <li><a href="area/10308" target="_blank" title="未来城周边餐厅">未来城</a></li>
+                    <li><a href="area/10312" target="_blank" title="鹏程大厦周边餐厅">鹏程大厦</a></li>
+                </ul>
+                <ul id="shop-wh-zn">
+                    <li><a href="area/10443" target="_blank" title="中建广场周边餐厅">中建广场</a></li>
+                    <li><a href="area/10450" target="_blank" title="世纪广场周边餐厅">世纪广场</a></li>
+                    <li><a href="area/10455" target="_blank" title="中商广场周边餐厅">中商广场</a></li>
+                    <li><a href="area/10449" target="_blank" title="鹏程时代周边餐厅">鹏程时代</a></li>
+                    <li><a href="area/10445" target="_blank" title="阜华-领秀中南周边餐厅">阜华-领秀中南</a></li>
+                    <li><a href="area/10440" target="_blank" title="中南国际城周边餐厅">中南国际城</a></li>
+                    <li><a href="area/10441" target="_blank" title="聚豪华庭周边餐厅">聚豪华庭</a></li>
+                    <li><a href="area/10452" target="_blank" title="发展大厦周边餐厅">发展大厦</a></li>
+                    <li><a href="area/10456" target="_blank" title="新时代商务中心周边餐厅">新时代商务中心</a></li>
+                    <li><a href="area/10451" target="_blank" title="嘉园大厦周边餐厅">嘉园大厦</a></li>
+                    <li><a href="area/10457" target="_blank" title="思特大厦周边餐厅">思特大厦</a></li>
+                    <li><a href="area/10459" target="_blank" title="南方帝园周边餐厅">南方帝园</a></li>
+                </ul>
+                <ul id="shop-bj-xeq">
+                    <li><a href="area/10328" target="_blank">百度大厦</a></li>
+                    <li><a href="area/10329" target="_blank">烽火科技</a></li>
+                    <li><a href="area/10330" target="_blank">光大银行信用卡中心</a></li>
+                    <li><a href="area/10331" target="_blank">国通创安大厦</a></li>
+                    <li><a href="area/10332" target="_blank">华控大厦</a></li>
+                    <li><a href="area/10333" target="_blank">环洋大厦</a></li>
+                    <li><a href="area/10334" target="_blank">辉煌国际</a></li>
+                    <li><a href="area/10335" target="_blank">京蒙高科大厦</a></li>
+                    <li><a href="area/10336" target="_blank">联想北研</a></li>
+                    <li><a href="area/10337" target="_blank">领秀新硅谷</a></li>
+                    <li><a href="area/10338" target="_blank">铭科苑</a></li>
+                    <li><a href="area/10339" target="_blank">鹏寰国际大厦</a></li>
+                    <li><a href="area/10340" target="_blank">上地科技大厦</a></li>
+                    <li><a href="area/10341" target="_blank">数码科技广场</a></li>
+                    <li><a href="area/10342" target="_blank">燕尚园</a></li>
+                    <li><a href="area/10343" target="_blank">盈创动力</a></li>
+                    <li><a href="area/10344" target="_blank">智学苑</a></li>
+                    <li><a href="area/10345" target="_blank">中国软件开发中心</a></li>
+                    <li><a href="area/10346" target="_blank">中国银行银行卡中心</a></li>
+                </ul>
+                <ul id="shop-bj-sd">
+                    <li><a href="area/10348" target="_blank">北京八维计算机学校</a></li>
+                    <li><a href="area/10349" target="_blank">北京发那科机电公司</a></li>
+                    <li><a href="area/10350" target="_blank">彩虹大厦</a></li>
+                    <li><a href="area/10351" target="_blank">创通大厦</a></li>
+                    <li><a href="area/10352" target="_blank">春生泰克大厦</a></li>
+                    <li><a href="area/10353" target="_blank">CPE大厦（中石油工程）</a></li>
+                    <li><a href="area/10354" target="_blank">得实大厦</a></li>
+                    <li><a href="area/10355" target="_blank">东方电子科技大厦</a></li>
+                    <li><a href="area/10356" target="_blank">方正大厦</a></li>
+                    <li><a href="area/10357" target="_blank">福道大厦</a></li>
+                    <li><a href="area/10358" target="_blank">高立二千大厦</a></li>
+                    <li><a href="area/10359" target="_blank">硅谷亮城</a></li>
+                    <li><a href="area/10360" target="_blank">国际创业园</a></li>
+                    <li><a href="area/10361" target="_blank">国际科技创业园</a></li>
+                    <li><a href="area/10362" target="_blank">国试大厦</a></li>
+                    <li><a href="area/10363" target="_blank">航空模拟器大厦</a></li>
+                    <li><a href="area/10364" target="_blank">昊海大厦</a></li>
+                    <li><a href="area/10365" target="_blank">华成大厦</a></li>
+                    <li><a href="area/10366" target="_blank">华环大厦</a></li>
+                    <li><a href="area/10367" target="_blank">华胜大厦</a></li>
+                    <li><a href="area/10368" target="_blank">汇众大厦</a></li>
+                    <li><a href="area/10369" target="_blank">嘉华大厦</a></li>
+                    <li><a href="area/10370" target="_blank">金辉科技大厦</a></li>
+                    <li><a href="area/10371" target="_blank">金泰富地</a></li>
+                    <li><a href="area/10372" target="_blank">金燕龙大厦</a></li>
+                    <li><a href="area/10373" target="_blank">康得大厦</a></li>
+                    <li><a href="area/10374" target="_blank">科利华网络大厦</a></li>
+                    <li><a href="area/10375" target="_blank">科贸大厦</a></li>
+                    <li><a href="area/10376" target="_blank">科实大厦</a></li>
+                    <li><a href="area/10377" target="_blank">奎科大厦</a></li>
+                    <li><a href="area/10378" target="_blank">联创大厦</a></li>
+                    <li><a href="area/10379" target="_blank">联想大厦</a></li>
+                    <li><a href="area/10380" target="_blank">留学人员创业园</a></li>
+                    <li><a href="area/10381" target="_blank">南天大厦</a></li>
+                    <li><a href="area/10382" target="_blank">清华同方上地产业楼</a></li>
+                    <li><a href="area/10383" target="_blank">群英科技园</a></li>
+                    <li><a href="area/10384" target="_blank">瑞斯康达公司</a></li>
+                    <li><a href="area/10385" target="_blank">上地创新大厦</a></li>
+                    <li><a href="area/10386" target="_blank">上地大厦</a></li>
+                    <li><a href="area/10387" target="_blank">上地MOMA</a></li>
+                    <li><a href="area/10388" target="_blank">上地四街1号院</a></li>
+                    <li><a href="area/10389" target="_blank">实创大厦</a></li>
+                    <li><a href="area/10390" target="_blank">时代集团大厦</a></li>
+                    <li><a href="area/10391" target="_blank">数码视讯大厦</a></li>
+                    <li><a href="area/10392" target="_blank">数字传媒大厦</a></li>
+                    <li><a href="area/10393" target="_blank">四方大厦</a></li>
+                    <li><a href="area/10394" target="_blank">先锋大厦</a></li>
+                    <li><a href="area/10395" target="_blank">兴天海园大厦</a></li>
+                    <li><a href="area/10396" target="_blank">信息大厦</a></li>
+                    <li><a href="area/10397" target="_blank">许继集团</a></li>
+                    <li><a href="area/10398" target="_blank">研华科技大厦</a></li>
+                    <li><a href="area/10399" target="_blank">玉景公寓</a></li>
+                    <li><a href="area/10400" target="_blank">志远大厦</a></li>
+                    <li><a href="area/10401" target="_blank">中关村创业大厦</a></li>
+                    <li><a href="area/10402" target="_blank">中关村发展大厦</a></li>
+                    <li><a href="area/10403" target="_blank">中关村生物医药园</a></li>
+                    <li><a href="area/10404" target="_blank">中国知识产权培训中心</a></li>
+                    <li><a href="area/10405" target="_blank">中黎科技园</a></li>
+                </ul>
+                <ul id="shop-bj-zgcrjy">
+                    <li><a href="area/10406" target="_blank">10号国永研发中心</a></li>
+                    <li><a href="area/10407" target="_blank">11号中科大洋科技大厦</a></li>
+                    <li><a href="area/10408" target="_blank">12号首创空间</a></li>
+                    <li><a href="area/10409" target="_blank">15号方舟大厦</a></li>
+                    <li><a href="area/10410" target="_blank">16号中国工商银行软件</a></li>
+                    <li><a href="area/10411" target="_blank">17号腾飞高科岭</a></li>
+                    <li><a href="area/10412" target="_blank">18号创通大厦</a></li>
+                    <li><a href="area/10413" target="_blank">18号广联达大厦</a></li>
+                    <li><a href="area/10414" target="_blank">19号钻石大厦</a></li>
+                    <li><a href="area/10415" target="_blank">1号信息中心</a></li>
+                    <li><a href="area/10416" target="_blank">20号中欧国际工商学院</a></li>
+                    <li><a href="area/10417" target="_blank">21号启明星辰大厦</a></li>
+                    <li><a href="area/10418" target="_blank">22号中国银联</a></li>
+                    <li><a href="area/10419" target="_blank">24号甲骨文大厦</a></li>
+                    <li><a href="area/10420" target="_blank">25号曙光研发大楼</a></li>
+                    <li><a href="area/10421" target="_blank">26号中核能源</a></li>
+                    <li><a href="area/10422" target="_blank">28号华宇大厦IBM</a></li>
+                    <li><a href="area/10423" target="_blank">29号南瑞科技大厦</a></li>
+                    <li><a href="area/10424" target="_blank">2号孵化器</a></li>
+                    <li><a href="area/10425" target="_blank">3号孵化器</a></li>
+                    <li><a href="area/10426" target="_blank">4号云基地</a></li>
+                    <li><a href="area/10427" target="_blank">5号汉王科技大厦</a></li>
+                    <li><a href="area/10428" target="_blank">6号东软大厦</a></li>
+                    <li><a href="area/10429" target="_blank">7号信威通信大厦</a></li>
+                    <li><a href="area/10430" target="_blank">8号华夏科技大厦</a></li>
+                    <li><a href="area/10431" target="_blank">9号国际软件大厦</a></li>
+                </ul>
+                <ul id="shop-bj-hlg">
+                    <li><a href="area/10461" target="_blank" title="城北市场周边餐厅">城北市场</a></li>
+                </ul>
+                <ul id="shop-wh-xbh">
+                    <li><a href="area/10482" target="_blank" title="花园道周边餐厅">花园道</a></li>
+                    <li><a href="area/10483" target="_blank" title="青年广场周边餐厅">青年广场</a></li>
+                    <li><a href="area/10462" target="_blank" title="同成广场周边餐厅">同成广场</a></li>
+                    <li><a href="area/10463" target="_blank" title="国贸新都大厦周边餐厅">国贸新都大厦</a></li>
+                    <li><a href="area/10464" target="_blank" title="元辰国际周边餐厅">元辰国际</a></li>
+                    <li><a href="area/10465" target="_blank" title="新世界国贸大厦周边餐厅">新世界国贸大厦</a></li>
+                    <li><a href="area/10466" target="_blank" title="招银大厦周边餐厅">招银大厦</a></li>
+                    <li><a href="area/10468" target="_blank" title="万豪国际周边餐厅">万豪国际</a></li>
+                    <li><a href="area/10469" target="_blank" title="武汉广电周边餐厅">武汉广电</a></li>
+                    <li><a href="area/10472" target="_blank" title="建银大厦周边餐厅">建银大厦</a></li>
+                    <li><a href="area/10474" target="_blank" title="民生银行大厦周边餐厅">民生银行大厦</a></li>
+                    <li><a href="area/10471" target="_blank" title="福星惠誉大厦周边餐厅">福星惠誉大厦</a></li>
+                    <li><a href="area/10480" target="_blank" title="良友大厦周边餐厅">良友大厦</a></li>
+                    <li><a href="area/10467" target="_blank" title="东一时区周边餐厅">东一时区</a></li>
+                    <li><a href="area/10473" target="_blank" title="浦发银行大厦周边餐厅">浦发银行大厦</a></li>
+                    <li><a href="area/10481" target="_blank" title="伟业大厦周边餐厅">伟业大厦</a></li>
+                </ul>
+                <ul id="shop-wh-wg">
+                    <li><a href="area/10475" target="_blank" title="中山广场周边餐厅">中山广场</a></li>
+                    <li><a href="area/10476" target="_blank" title="创世纪大厦周边餐厅">创世纪大厦</a></li>
+                    <li><a href="area/10477" target="_blank" title="武汉广场周边餐厅">武汉广场</a></li>
+                    <li><a href="area/10478" target="_blank" title="武广公寓楼周边餐厅">武广公寓楼</a></li>
+                    <li><a href="area/10479" target="_blank" title="世贸广场周边餐厅">世贸广场</a></li>
+                </ul>
+                <ul id="shop-lf-yj">
+                    <li><a href="area/10475" target="_blank" title="中山广场周边餐厅">中山广场</a></li>
+                    <li><a href="area/10476" target="_blank" title="创世纪大厦周边餐厅">创世纪大厦</a></li>
+                    <li><a href="area/10477" target="_blank" title="武汉广场周边餐厅">武汉广场</a></li>
+                    <li><a href="area/10478" target="_blank" title="武广公寓楼周边餐厅">武广公寓楼</a></li>
+                    <li><a href="area/10479" target="_blank" title="世贸广场周边餐厅">世贸广场</a></li>
+                </ul>
+                <ul id="shop-cd-tfxc">
+                    <li><a href="area/10499" target="_blank" title="新希望国际周边餐厅">新希望国际</a></li>
+                    <li><a href="area/10811" target="_blank" title="天府软件园">天府软件园</a></li>
+                </ul>
+                <ul id="shop-bj-hxl">
+                    <li><a href="area/10502" target="_blank" title="通联大厦周边餐厅">通联大厦</a></li>
+                    <li><a href="area/10504" target="_blank" title="惠新里小区周边餐厅">惠新里小区</a></li>
+                </ul>
+                <ul id="shop-bj-hxbl">
+                    <li><a href="area/10505" target="_blank" title="中国艺术研究院周边餐厅">中国艺术研究院</a></li>
+                    <li><a href="area/10506" target="_blank" title="罗马家园周边餐厅">罗马家园</a></li>
+                    <li><a href="area/10507" target="_blank" title="千鹤家园周边餐厅">千鹤家园</a></li>
+                    <li><a href="area/10508" target="_blank" title="惠中园小区周边餐厅">惠中园小区</a></li>
+                </ul>
+                <ul id="shop-bj-hxdj">
+                    <li><a href="area/10500" target="_blank" title="克劳沃大厦周边餐厅">克劳沃大厦</a></li>
+                    <li><a href="area/10501" target="_blank" title="天健大厦周边餐厅">天健大厦</a></li>
+                    <li><a href="area/10503" target="_blank" title="紫光发展大厦周边餐厅">紫光发展大厦</a></li>
+                    <li><a href="area/10522" target="_blank" title="设计大厦周边餐厅">设计大厦</a></li>
+                    <li><a href="area/10512" target="_blank" title="富盛大厦周边餐厅">富盛大厦</a></li>
+                    <li><a href="area/10513" target="_blank" title="北奥大厦周边餐厅">北奥大厦</a></li>
+                    <li><a href="area/10523" target="_blank" title="北京乡镇企业大厦周边餐厅">北京乡镇企业大厦</a></li>
+                    <li><a href="area/10524" target="_blank" title="中国石化大厦">中国石化大厦</a></li>
+                </ul>
+                <ul id="shop-bj-syj">
+                    <li><a href="area/10514" target="_blank" title="芍药居北里周边餐厅">芍药居北里</a></li>
+                    <li><a href="area/10515" target="_blank" title="中煤信息大厦周边餐厅">中煤信息大厦</a></li>
+                    <li><a href="area/10516" target="_blank" title="芍药居综合楼周边餐厅">芍药居综合楼</a></li>
+                </ul>
+                <ul id="shop-cs-ds">
+                    <li><a href="area/10541" target="_blank" title="凯旋国际周边餐厅">凯旋国际</a></li>
+                    <li><a href="area/10542" target="_blank" title="科佳电脑城周边餐厅">科佳电脑城</a></li>
+                    <li><a href="area/10543" target="_blank" title="国储电脑城周边餐厅">国储电脑城</a></li>
+                    <li><a href="area/10544" target="_blank" title="华瑞大厦周边餐厅">华瑞大厦</a></li>
+                    <li><a href="area/10545" target="_blank" title="华海3C周边餐厅">华海3C</a></li>
+                    <li><a href="area/10546" target="_blank" title="凯通国际城周边餐厅">凯通国际城</a></li>
+                    <li><a href="area/10547" target="_blank" title="融圣国际周边餐厅">融圣国际</a></li>
+                </ul>
+                <ul id="shop-cs-as">
+                    <li><a href="area/11058" target="_blank" title="时代数码广场(南开区)周边餐厅">时代数码广场</a></li>
+                    <li><a href="area/11059" target="_blank" title="百脑汇科技大厦周边餐厅">百脑汇科技大厦</a></li>
+                    <li><a href="area/11060" target="_blank" title="世通大厦周边餐厅">世通大厦</a></li>
+                    <li><a href="area/11061" target="_blank" title="颐高数码广场(南开店)周边餐厅">颐高数码广场(南开店)</a></li>
+                    <li><a href="area/11062" target="_blank" title="赛博数码广场周边餐厅">赛博数码广场</a></li>
+                    <li><a href="area/11063" target="_blank" title="慧谷大厦周边餐厅">慧谷大厦</a></li>
+                    <li><a href="area/11064" target="_blank" title="乐谷商务中心周边餐厅">乐谷商务中心</a></li>
+                    <li><a href="area/11065" target="_blank" title="新天地大厦周边餐厅">新天地大厦</a></li>
+                    <li><a href="area/11066" target="_blank" title="环球置地广场周边餐厅">环球置地广场</a></li>
+                    <li><a href="area/11067" target="_blank" title="今晚大厦周边餐厅">今晚大厦</a></li>
+                    <li><a href="area/11068" target="_blank" title="新泉大厦周边餐厅">新泉大厦</a></li>
+                    <li><a href="area/11069" target="_blank" title="天津第二七二妇科医院周边餐厅">天津第二七二妇科医院</a></li>
+                    <li><a href="area/11070" target="_blank" title="天津经济联合中心大厦周边餐厅">天津经济联合中心大厦</a></li>
+                    <li><a href="area/11071" target="_blank" title="天津瑞竹大厦周边餐厅">天津瑞竹大厦</a></li>
+                    <li><a href="area/11072" target="_blank" title="嘉利中心周边餐厅">嘉利中心</a></li>
+                    <li><a href="area/11073" target="_blank" title="万德庄大街周边餐厅">万德庄大街</a></li>
+                    <li><a href="area/11074" target="_blank" title="新都花园周边餐厅">新都花园</a></li>
+                    <li><a href="area/11075" target="_blank" title="中恺国际广场周边餐厅">中恺国际广场</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--地图开始-->
+        <div id="mapnav" class="pg-map map-view hidden">
+            <div id="body-wrap">
+                <div class="bd-content cf">
+                    <div class="address-wrap clearfix">
+                        <input id="sear_add_key" type="text" placeholder="请输入写字楼，小区，学校等地址信息" class="search-input fl"
+                            autocomplete="off">
+                        <button id="sea_add_btn" class="search-btn fl">
+                            搜索</button>
+                        <a class="location ca-black fl" id="choosedcity">北京</a>
+                        <div class="hist-link fl borderradius-3" id="change-city" onclick="changecity()">
+                            <span>切换城市</span> <i class="i-triangle-down"></i>
+                        </div>
+                    </div>
+                    <div class="addr-results">
+                        <ol id="result_panel">
+                        </ol>
+                        <div id="page_index" class="result-paginate">
+                        </div>
+                    </div>
+                    <div class="addr-map">
+                        <div id="mapcontainer" style="height: 488px">
+                        </div>
+                        <div class="map-tip" id="map-tip-div">
+                            点击地图可以直接定位<a href="#" onclick="$('#map-tip-div').toggle(); return false;" class="close-link">x</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--地图结束-->
+    </div>
+    <div id="footer">
+        <p>
+            <a href="/SupplierJoin/Supplier.aspx" target="_blank">商家加盟</a>|<a href="/about/fContact"
+                rel="nofollow">联系我们</a>|<a href="/about/fHelp" rel="nofollow">帮助中心</a>|<a href="http://kaichiba.com/m/index.html"
+                    target="_blank" rel="nofollow">移动版</a>|<a href="http://shop.kaichiba.com" target="_blank"
+                        rel="nofollow">餐厅登录</a>|<a href="http://blog.kaichiba.com" target="_blank">美食谭</a>|<a
+                            href="/about/fRecruit" rel="nofollow">招贤纳士</a> |<a href="/about/fAbout" rel="nofollow">关于我们</a></p>
+        <hr />
+        <p>
+            Copyright © 2011-2014 开吃吧 All Rights Reserved 京ICP备12015678号 | 京公网安备110114001132号</p>
+    </div>
+    <input name="findschool" type="hidden" id="findschool" />
+    <input name="findcity" type="hidden" id="findcity" value="上海,sh" />
+    <script id="iDealKCBVisitRecord" src="/VR/Scripts/iDeal.KCB.visitRecord.js?webId=2&channel=1&pageType=9"
+        type="text/javascript"></script>
+    <script id="navjs" src="js/kcb/kcb_nav2.js?v=5.0.6.5&ct=&cityId="
+        type="text/javascript"></script>
+    <script src="js/frame/jsrender.js" type="text/javascript"></script>
+    <script src="js/frame/jquery.cookie.js" type="text/javascript"></script>
+    <script src="js/frame/jquery.paginate.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sZunx57Szoyt0t82dqVVZC9v"></script>
+    <script src="js/kcb/kcb_map.js?v=5.0.6.4" type="text/javascript"></script>
+    <script id="mapInfoWindow" type="text/x-jsrender">   
+     <p class="bubble-addr">选择最近的区域</p>
+     <div class="clearfix show-cont">
+     
+     {{if poi_list.length > 0}}
+         {{for poi_list}}
+               {{if uniid==1||uniid==2}}
+               <a href='http://waimaichaoren.com/restaurants/26907343/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10109}}
+                  <a href='http://waimaichaoren.com/restaurants/27074915/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10632}}
+                  <a href='http://waimaichaoren.com/restaurants/25764532/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10298}}
+                  <a href='http://waimaichaoren.com/restaurants/28198560/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10848}}
+                  <a href='http://waimaichaoren.com/restaurants/28308064/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10929}}
+                  <a href='http://waimaichaoren.com/restaurants/28453920/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10207}}
+                  <a href='http://waimaichaoren.com/restaurants/24830049/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10438}}
+                  <a href='http://waimaichaoren.com/restaurants/24885051/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10276}}
+                  <a href='http://waimaichaoren.com/restaurants/24743141/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10287}}
+                  <a href='http://waimaichaoren.com/restaurants/24800566/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10184}}
+                  <a href='http://waimaichaoren.com/restaurants/27063854/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10204}}
+                  <a href='http://waimaichaoren.com/restaurants/24777123/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10437}}
+                  <a href='http://waimaichaoren.com/restaurants/24770345/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+                  {{else uniid==10290}}
+                  <a href='http://waimaichaoren.com/restaurants/24825785/' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+               {{else}}
+                 <a href='http://kaichiba.com/area/{{:uniid}}' target="blank" class="unilink"><span class="uniname">{{:uniname}}</span><span class="supnum"><font class="num">{{:supnum}}</font>家餐厅</span><span class="distance">{{:distance}}KM</span></a>
+
+               {{/if}}
+               
+             
+           
+
+         {{/for}}
+     {{else}}
+     	<a onclick='return false;' class="borderradius-1 bubble-btn disable-btn" disabled>很抱歉附近没有适合餐厅，开吃吧正努力拓展中！</a>
+     {{/if}}
+     </div>
+    </script>
+    <script type="text/javascript">
+        $.views.helpers({
+            "remove": function (index, data) {
+                data.splice(index, 1);
+            }
+        });
+    </script>
+    <script id="mapResultWindow" type="text/x-jsrender">
+     <li id='result_item_{{:index}}' onclick='{{:method}}' class="result-item">
+   	  <span class='icon icon-{{:index}}'></span> 
+   	  <div class="addr-info-wrap">
+         <p class="addr-name">{{:title}}</p>  
+         <p class="addr-position">地址：{{:address}}</p>
+   	  </div>
+     </li>
+    </script>
+    <script id="mapEmptyResultWindow" type="text/x-jsrender">
+     <li class="no-result-item">没有找到任何搜索结果，换个关键字试试。<li>
+    </script>
+    <script>
+        $(document).ready(function () {
+            console.log($.browser.version);
+            //判断浏览器是否ie6
+            if ($.browser.msie) {
+
+                if ($.browser.version == "6.0" || $.browser.version == "7.0") {
+                    $(document.body).append("<div id=\"ie6_bg\"></div><div id=\"ie6_tip\"><div id=\"ie6_sorry\">对不起，您的浏览器版本过低，您可以尝试：</div><div id=\"ie6_wap\">访问简洁版开吃吧</div><div id=\"ie6_update\">升级浏览器</div></div>");
+                    $("#ie6_wap").click(function () { location.href = "http://wap.kaichiba.com" });
+                    $("#ie6_update").click(function () { location.href = "http://chrome.360.cn/" });
+                }
+            };
+        });
+        var map1 = new BMap.Map("mapcontainer");
+        var point = new BMap.Point(116.404, 39.915);
+        map1.centerAndZoom(point, 15);
+    </script>
+    <!-- Baidu Analytics -->
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F10aff81e653e169efbb5a4cc78104c93' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!-- End Baidu Tracking Code -->
+    <!-- Google Analytics Code -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-25141879-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics Code -->
+</body>
+</html>

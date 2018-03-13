@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>个人中心 - 我的消息</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=2" charset="UTF-8"/>
+						<link rel="stylesheet" type="text/css" href="css/messages.css?v=2" charset="UTF-8"/>	
+					
+				
+			
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png"/>
+						<script type="text/javascript" src="js/jquery-1.6.2.min.js?v=2"></script>
+				        <script type="text/javascript" src="js/common.js?v=2"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=2"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back"><span>返回</span></a>
+							<h2>消息中心</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+
+<div class="new-ct">
+    <div class="new-msg-center">
+    	    		<div>暂无消息!</div>
+    	    </div>
+</div>
+    <footer>
+		<div class="login-area" id="footer">
+        	<div class="login">
+				                	<a rel="nofollow" href='member_index.html'>
+						        					hjl41614..
+        									</a>
+    				<span class="lg-bar">|</span>
+											<a rel="nofollow" href='https://passport.m.jd.com/user/logout.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68'>退出</a>
+													<span  class="new-fr"><a href="http://m.jd.com/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version"><a href="http://m.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a></div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有 </div>
+        </div>
+    </footer>
+
+
+    <div style="display:none;">
+        	<img src="/ja.jsp?&amp;utmn=34816875&amp;utmr=http%3A%2F%2Fhome.m.jd.com%2FmyJd%2Fhome.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;utmp=%2FmyJd%2Fmessage%2Flist.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;guid=ON&jav=touch&pin=hjl416148489&utmac=MO-J2011-1" />
+        </div>
+
+            <script type="text/javascript" src="js/pingJS.1.0.js"></script>
+        <script type="text/javascript">
+            pingJS();
+        </script>
+    
+
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='http://m.jd.com/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('http://m.jd.com/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+
+
+
+
+	
+</script>
+</body>
+</html>
+

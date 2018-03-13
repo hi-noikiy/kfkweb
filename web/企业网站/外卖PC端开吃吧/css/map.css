@@ -1,0 +1,26 @@
+.map-view h2{font-size:17px;font-weight:700;background-color:#EBEBEA;padding-bottom:9px}
+.page-wrap .inner-wrap{padding-top:18px}
+.map-view h2 span{margin-left:7px}
+.address-wrap{border-bottom:solid 1px #D2D2D2;background-color:#FCFCFC}
+.address-wrap .location{width:79px;border-right:1px solid #E5E5E5;text-align:center;font-weight:700;font-size:14px;display:block;height:60px;line-height:60px}
+.address-wrap .search-input{border:solid 4px #f35f0e;padding:8px 12px;width:297px;height:19px;font-size:14px;margin:8px 0 0 11px}
+.address-wrap .search-btn{border:0;padding:0 20px;height:43px;cursor: pointer; color:#fff;line-height:43px;font-size:16px;background:#f35f0e;display:block;margin-top:8px}
+.address-wrap .hist-link{font-size:16px;line-height:43px;display:block;width:110px;height:43px;background-color:#EEE;color:#434343;text-align:center;margin:8px 0 0 15px;position:relative;z-index:1;cursor:pointer}
+.address-wrap .i-triangle-down{vertical-align:3px}
+.addr-map h3{font-size:14px;font-weight: 700;color: #f35f0e}
+.addr-map .bubble-addr{color:#818181;color: #f35f0e}
+.addr-map .bubble-btn{color:#FFF;height:30px;background-color:#f35f0e;line-height:30px;cursor:pointer;text-align:center;float:left;display:inline-block;padding:0 10px}
+.addr-map .show-cont{ margin-top: 5px; min-width: 330px}
+.addr-map .bubble-btn:hover{text-decoration:none}
+.address-wrap .address-hist{background-color:#FFF;border:1px solid #CCC;position:absolute;left:0;top:40px;z-index:1}
+.addr-map .map-tip{position:absolute;top:10px;left:100%;margin-left:-212px;width:200px;height:40px;line-height:40px;text-align:center;background:#fff;box-shadow:0 1px 1px #BBB;z-index:1}
+.addr-map .disable-btn{border-color:#B1B1B1;color:#999;background:#F0F0F0}
+.addr-map{position:relative;border:solid 1px #D2D2D2;border-top:0;overflow:hidden;zoom:1}
+.address-wrap .address-hist a{color:#434343;width:184px;display:block;line-height:30px;text-align:left;font-size:14px;padding-left:14px}
+.addr-map .unilink{ line-height: 22px;height: 22px; color: #000;display:block;font-size: 13px;padding: 2px;}
+.addr-map .unilink .uniname{float: left}
+.addr-map .unilink .supnum{float: right;border-radius: 3px; width: 64px;background-color: #f35f0e;color: #fff; padding-left:8px; padding-right:2px;}
+.addr-map .unilink .supnum .num{}
+.addr-map .unilink .distance{ float: right;width: 50px}
+.addr-map .unilink:hover{ color: #f35f0e; background-color: #eee}
+.address-wrap .map_search_a{ background: url(../images/fdnew.png) center center no-repeat;float: right;display: block;width: 24px;height: 24px}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html data-php=''>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="baidu-site-verification" content="t7oDT96Amk" />
+<title>个人中心 - 首页</title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<meta name="sogou_site_verification" content="G7nmLR75yc"/>
+<meta name="baidu-tc-cerfication" content="0a8c6d28b570b218f78510c29be4529b" />
+<meta name="360-site-verification" content="8b6121969d78afda8caeb69053fa29d9" />
+<script>
+(function wapStart() {
+    var now = Date.now();
+    var win = this;
+    var phpData = document.documentElement.getAttribute('data-php');
+    var special = /m=special/.test(location.search);
+    var _onCompleted = function() {__STATS.add('dom_ready');};
+    var _onLoad = function() {
+        __STATS.add('onload');
+        if(!special && __locals.img_test_page == 'index' && Math.random() <= 0.1) {
+            var id = __locals.img_test_type;
+            var v = Date.now() - now;
+            if(id) (new Image()).src = 'http://mstats.vip.com/v1/counts/m_img_test?id='+id+'&value='+v;
+        }
+        win.removeEventListener('DOMContentLoaded', _onCompleted);
+        win.removeEventListener('load', _onLoad);
+    };
+
+    if (phpData) {
+        try {
+            phpData = JSON.parse(phpData);
+        } catch (e) {}
+    }
+
+    win.__STATS = {
+        start: now,
+        points: {},
+        add: function(point, time) {
+            __STATS.points[point] = time ? time : (Date.now() - __STATS.start);
+        }
+    };
+    win.addEventListener('DOMContentLoaded', _onCompleted, false);
+    win.addEventListener('load', _onLoad, false);
+    win.onerror = function(msg, url, line, col) {
+        var u = 'http://mstats.vip.com/v1/jslog/m?';
+        u += '_t=' + Date.now();
+        u += '&msg=' + encodeURIComponent([msg, url, line, col || 0].join('|'));
+        (new Image()).src = u;
+    };
+
+    // need remove
+    win.ui = 'touch';
+    win.vipConfig = {
+        priceImageSwitch: parseInt('0', 10),
+        ipLocation: {
+            result: "",
+            province: ""
+        }
+    };
+
+    // all data from php stored here
+    win.__locals = phpData || {};
+}.call(window));
+</script>
+
+
+<link rel="stylesheet" href="css/45cd6da9da.layout.min.css">
+
+<link rel="stylesheet" href="css/86fe49ca90.common.min.css">
+
+
+<script>__STATS.add('head_load');</script>
+
+
+<noscript><div class="ui-top-note">您的浏览器已禁用javascript,为了您能正常浏览网站,请在浏览器里面启用javascript!</div></noscript>
+
+</head>
+
+<body  >
+
+<script src="js/562a4c0e89.jquery-2.1.0.min.js"></script>
+
+
+
+<!--客户端下载的图片-->
+ <!--客户端下载的图片-->
+<style>
+	.CUAvFWCa { width: 100%; height: 55px; background: url(//ms2-m.vipstatic.com/images/common/63f7093727.download_bg.png) ; background-size: 100% 100%;}
+	.CUAvFWCa .u-download-bar{width: 100%; height: 55px; position: relative; background: url(//ms2-m.vipstatic.com/images/common/b658bbd2b9.client_fix_btn.png) no-repeat center top; background-size:320px; z-index: 100;}
+	.CUAvFWCa p {position: absolute; top: 15px; left: 50%; margin-left:-70px; width: 120px;line-height: 16px; text-align: left; color: #fff; font-size: 12px; font-style: italic;}
+	.CUAvFWCa span {width: 18px; height: 18px; padding:10px 20px 10px 7px; position: absolute; background:url(//ms2-m.vipstatic.com/images/common/d094a29202.indexicon.png) no-repeat; background-size:225px; background-position: -168px -143px;/*background-position: -53px -150px;*/ top: 10px; left: 0;}
+</style>
+
+<div class="CUAvFWCa">
+	<div class="u-download-bar">
+		<p>下载手机app<br />特卖惊喜抢不停！</p>
+		<span></span>
+	</div>
+</div>
+
+<script>
+	var downloadAppConfig = {
+		cls : 'CUAvFWCa',
+		url : 'http://m.vip.com/service-download.html',
+		page : 'user'
+	}
+</script>
+
+
+		<header id="header" class="u-header clearfix">
+	    <!--返回按钮根据程序判断来源，返回上一级-->
+		 		 <!-- 非微信扫码进入的用户 -->
+	    <div class="u-hd-left f-left">
+                <a href="javascript:void(0)" class="J_backToPrev"><span class="u-icon i-hd-back"></span></a>
+                </div>
+			     <div  class="u-hd-tit"><span>个人中心</span></div>
+		       	    <div class="u-hd-right f-right"><a href="index.html" mars_sead="nav_home_btn"><span class="u-icon i-hd-home"></span></a></div>
+      		 	</header>
+	
+<div class="userinfo">
+  <div class="userinfo_content">
+    <p class="username">416148489@qq.com</p>
+    <div class="usermsg clearfix">
+      <p class="valid_mark"><span class="num">0</span>积分</p>
+      <a href="member_points.html" class="tointegration" mars_sead="integration-change_btn">积分兑换</a>
+    </div>
+      </div>
+</div>
+
+ <!--三种状态的订单-->
+<div class="userdiv user_order">
+  <ul class="order_state clearfix">
+    <li>
+            <a href="member_order_list.html" class="">
+        <span class="wait_pay"></span>
+        <p>待支付
+                  </p>
+      </a>
+          </li>
+    <li>
+            <a href="member_order_list.html" class="">
+        <span class="wait_delivery"></span>
+        <p>待收货
+                  </p>
+      </a>
+          </li>
+    <li>
+      <a href="member_order_list.html" class="">
+        <span class="all_orders"></span>
+        <p>更多订单</p>
+      </a>
+    </li>
+  </ul>
+ </div>
+
+<div class="s_links in_user_center userdiv">
+  			<a href="member_collect.html">
+			<em class="s_fav"></em>我的收藏<span></span><i class="s_onsale"></i>
+	</a>
+    <a href="cart.html"><em class="s_history"></em>购物车历史<span></span></a>
+    <a href="member_cart.html"><em class="s_foot"></em>浏览历史<span></span>
+    <a href="member_refund.html"><em class="s_back"></em>自助退货<span></span></a>
+  <a href="member_wallet.html" mars_sead="user_wallet_bind_btn"><em class="s_wallet"></em>唯品钱包<span></span></a>
+  <a href="user-coupon.html"><em class="s_count"></em>优惠券<span></span></a>
+  <a href="member_points.html" mars_sead="integration-change_btn"><em class="s_integration"></em>积分兑换<span></span></a>
+ </div>
+
+<div class="s_links in_user_center userdiv">
+  <a href="member_addr_list.html"><em class="s_addr"></em>配送地址<span></span></a>
+</div>
+
+<div class="userdiv">
+<a href="user-logout.html" class="btn_out" mars_sead="logout_btn">退出登录</a>
+</div>
+<div class="space20"></div>
+<!--以下是底部样式-->
+  <div class="u-footer clearfix">
+        <div class="u-ft-downbtn">
+    <a style="display: block; width: 302px; height: 53px; margin: 0 auto; background: url(//ms2-m.vipstatic.com/images/common/dc4267fbe5.btn_down_footer.png) no-repeat; background-size: 302px;" href="http://m.vip.com/service-download.html" mars_sead="user_footer_client_download_btn">
+      <span style="display: block;width: 116px;height:36px;padding: 10px 0 0 78px;overflow: hidden;line-height: 18px;font-style: italic;text-shadow: 0 1px 1px rgba(255,255,255,.75);color: #000;">
+        下载手机APP<br/>特卖优惠抢不停 !
+      </span>
+    </a></div>
+        <div class="u-footnav clearfix">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<a href="index.html" mars_sead="footer-index_btn">首页</a>
+<a href="cart.html" mars_sead="footer-cart_btn">购物车</a>
+<a href="service-download.html" mars_sead="footer-loading_btn">客户端</a>
+<a href="user.html" mars_sead="footer-users_btn">个人中心</a>
+<!-- <a href="user-logout.html" mars_sead="footer-logout_btn">退出登录</a> -->
+
+    </div>
+    <p class="u-copyright" >Copyright © 2008-2015m.vip.com，All Rights Reserved 粤ICP备08114786号</p>
+  </div>
+      <a href="#top" class="u-backtop" mars_sead="home_foot_top_btn"><span class="u-icon i-backtop"></span></a>
+    
+  <!--以下是浮于显示屏左下角的购物袋-->
+  
+
+<script src="//ms2-m.vipstatic.com/js/7fae035d74.swipe.min.js"></script>
+
+<script src="//ms2-m.vipstatic.com/js/6c856242ce.base.min.js"></script>
+
+<script src="http://3rd.vipstatic.com/mars_wap/mars_wap.js"></script>
+<noscript>
+    <img src="http://mar.vip.com/n" height="1" width="1" border="0" alt="" />
+</noscript>
+
+
+<script type="text/javascript">
+$(function() {
+	$("#reddot").on("click", function() {
+		Cookie.Set("WAP[redDot]", 'd949af86b4c44be985b927ef6e6c88db', 7, "vip.com", "/")
+	});
+});
+</script>
+
+<script async src="//ms2-m.vipstatic.com/js/f90fe14b29.report.min.js"></script>
+</body>
+
+</html>
+

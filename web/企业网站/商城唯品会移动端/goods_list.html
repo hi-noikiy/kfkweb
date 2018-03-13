@@ -1,0 +1,855 @@
+	<!DOCTYPE html>
+<html data-php=''>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="baidu-site-verification" content="t7oDT96Amk" />
+<title>商品列表</title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<meta name="sogou_site_verification" content="G7nmLR75yc"/>
+<meta name="baidu-tc-cerfication" content="0a8c6d28b570b218f78510c29be4529b" />
+<meta name="360-site-verification" content="8b6121969d78afda8caeb69053fa29d9" />
+<script>
+(function wapStart() {
+    var now = Date.now();
+    var win = this;
+    var phpData = document.documentElement.getAttribute('data-php');
+    var special = /m=special/.test(location.search);
+    var _onCompleted = function() {__STATS.add('dom_ready');};
+    var _onLoad = function() {
+        __STATS.add('onload');
+        if(!special && __locals.img_test_page == 'index' && Math.random() <= 0.1) {
+            var id = __locals.img_test_type;
+            var v = Date.now() - now;
+            if(id) (new Image()).src = 'http://mstats.vip.com/v1/counts/m_img_test?id='+id+'&value='+v;
+        }
+        win.removeEventListener('DOMContentLoaded', _onCompleted);
+        win.removeEventListener('load', _onLoad);
+    };
+
+    if (phpData) {
+        try {
+            phpData = JSON.parse(phpData);
+        } catch (e) {}
+    }
+
+    win.__STATS = {
+        start: now,
+        points: {},
+        add: function(point, time) {
+            __STATS.points[point] = time ? time : (Date.now() - __STATS.start);
+        }
+    };
+    win.addEventListener('DOMContentLoaded', _onCompleted, false);
+    win.addEventListener('load', _onLoad, false);
+    win.onerror = function(msg, url, line, col) {
+        var u = 'http://mstats.vip.com/v1/jslog/m?';
+        u += '_t=' + Date.now();
+        u += '&msg=' + encodeURIComponent([msg, url, line, col || 0].join('|'));
+        (new Image()).src = u;
+    };
+
+    // need remove
+    win.ui = 'touch';
+    win.vipConfig = {
+        priceImageSwitch: parseInt('0', 10),
+        ipLocation: {
+            result: "",
+            province: ""
+        }
+    };
+
+    // all data from php stored here
+    win.__locals = phpData || {};
+}.call(window));
+</script>
+
+
+<link rel="stylesheet" href="css/45cd6da9da.layout.min.css">
+
+<link rel="stylesheet" href="css/86fe49ca90.common.min.css">
+
+
+<script>__STATS.add('head_load');</script>
+
+
+
+
+</head>
+
+<body  >
+
+<script src="js/562a4c0e89.jquery-2.1.0.min.js"></script>
+
+
+
+<!--客户端下载的图片-->
+ <!--客户端下载的图片-->
+<style>
+	.SYxeuCqG { width: 100%; height: 55px; background: url(//ms2-m.vipstatic.com/images/common/63f7093727.download_bg.png) ; background-size: 100% 100%;}
+	.SYxeuCqG .u-download-bar{width: 100%; height: 55px; position: relative; background: url(//ms2-m.vipstatic.com/images/common/b658bbd2b9.client_fix_btn.png) no-repeat center top; background-size:320px; z-index: 100;}
+	.SYxeuCqG p {position: absolute; top: 15px; left: 50%; margin-left:-70px; width: 120px;line-height: 16px; text-align: left; color: #fff; font-size: 12px; font-style: italic;}
+	.SYxeuCqG span {width: 18px; height: 18px; padding:10px 20px 10px 7px; position: absolute; background:url(//ms2-m.vipstatic.com/images/common/d094a29202.indexicon.png) no-repeat; background-size:225px; background-position: -168px -143px;/*background-position: -53px -150px;*/ top: 10px; left: 0;}
+</style>
+
+<div class="SYxeuCqG">
+	<div class="u-download-bar">
+		<p>下载手机APP<br/>海量爆款惊喜开抢 !</p>
+		<span></span>
+	</div>
+</div>
+
+<script>
+	var downloadAppConfig = {
+		cls : 'SYxeuCqG',
+		url : 'http://m.vip.com/service-download.html',
+		page : 'brand'
+	}
+</script>
+
+
+		<header id="header" class="u-header clearfix">
+	    <!--返回按钮根据程序判断来源，返回上一级-->
+		 		 <!-- 非微信扫码进入的用户 -->
+	    <div class="u-hd-left f-left">
+                <a href="javascript:void(0)" mars_sead="brand-list-back_btn" class="J_backToPrev"><span class="u-icon i-hd-back"></span></a>
+                </div>
+			     <div  class="u-hd-tit"><span>贝贝依依BBYY男女童混合专场</span></div>
+		       	    <div class="u-hd-right f-right"><a href="index.html" mars_sead="nav_home_btn"><span class="u-icon i-hd-home"></span></a></div>
+      		 	</header>
+		
+<!--这里是列表，大图，分类三个点击按钮，点击后以相应方式显示商品，与下面的.listItem这个class对应-->
+<ul class="thumb-mode clearfix" data-thumbcate="list">
+  <li>  <a href="goods_list.html" class="allgoods" mars_sead="brand-free_btn"><span class="u-icon i-radio"></span>有货商品</a>  </li>
+  <li> <a href="javascript:;" data-dropmen="down" mars_sead="brand-rank_btn"><span class="u-icon i-sort"></span>排序</a>
+    <div class="drop_sort hide">
+<a href="brand-385806-0-0-0-1-MA-1-20.html"  class="cur"><span>默认</span></a>
+<a href="brand-385806-0-1-0-1-MA-1-20.html" mars_sead="brand-price-rank_btn" ><span>价格从低到高</span></a>
+<a href="brand-385806-0-3-0-1-MA-1-20.html" mars_sead="brand-sale-rank_btn"  ><span>折扣从低到高</span></a>
+ </div>
+  </li>
+  <li>
+    <!--<a href="brand-category-385806-0-0-0-1-0-1-20.html">分类</a>-->
+    <a href="javascript:;" data-dropmen="left" mars_sead="brand-choose_btn"><span class="u-icon i-classify"></span>筛选</a>
+    <div class="trasp hide">
+      <div class="traspinner">
+        <div class="drop_cate clearfix">
+          <div id="B_cateWrap" class="c_wrapper">
+            <div id="B_pageScroller" class="c_scroller">
+              <ul>
+                                <li data-cateid="0">                   <h2 class="active">全部 <span>(177)</span></h2>
+                   </li>
+                                <li data-cateid="10301007">                   <h2 >儿童外套 <span>(14)</span></h2>
+                   </li>
+                                <li data-cateid="10301012">                   <h2 >儿童裤 <span>(56)</span></h2>
+                   </li>
+                                <li data-cateid="10301003">                   <h2 >儿童T恤 <span>(38)</span></h2>
+                   </li>
+                                <li data-cateid="10301001">                   <h2 >儿童吊带 <span>(28)</span></h2>
+                   </li>
+                                <li data-cateid="10301011">                   <h2 >儿童连身裙 <span>(22)</span></h2>
+                   </li>
+                                <li data-cateid="10301010">                   <h2 >儿童半截裙 <span>(7)</span></h2>
+                   </li>
+                                <li data-cateid="10301004">                   <h2 >儿童衬衫 <span>(7)</span></h2>
+                   </li>
+                                <li data-cateid="10301006">                   <h2 >儿童毛衣 <span>(5)</span></h2>
+                   </li>
+                              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="drop_cate right">
+          <div id="B_listWrap" class="c_wrapper">
+            <div id="B_pageScroller" class="c_scroller">
+                                          <div data-listid="0" class="category hide" style="display:block">
+                                <a href="goods_detail.html">全部
+                                </a>
+                                <a href="brand-385806-0-0-0-1-OTA-1-20.html">90
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-0-0-0-1-MTY1-1-20.html">165
+                                </a>
+                              </div>
+                                                        <div data-listid="10301007" class="category hide" >
+                                <a href="brand-385806-10301007-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301007-0-0-1-OTA-1-20.html">90
+                                </a>
+                              </div>
+                                                        <div data-listid="10301012" class="category hide" >
+                                <a href="brand-385806-10301012-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-MTY1-1-20.html">165
+                                </a>
+                                <a href="brand-385806-10301012-0-0-1-OTA-1-20.html">90
+                                </a>
+                              </div>
+                                                        <div data-listid="10301003" class="category hide" >
+                                <a href="brand-385806-10301003-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-OTA-1-20.html">90
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301003-0-0-1-MTYw-1-20.html">160
+                                </a>
+                              </div>
+                                                        <div data-listid="10301001" class="category hide" >
+                                <a href="brand-385806-10301001-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-OTA-1-20.html">90
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301001-0-0-1-MTEw-1-20.html">110
+                                </a>
+                              </div>
+                                                        <div data-listid="10301011" class="category hide" >
+                                <a href="brand-385806-10301011-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301011-0-0-1-OTA-1-20.html">90
+                                </a>
+                              </div>
+                                                        <div data-listid="10301010" class="category hide" >
+                                <a href="brand-385806-10301010-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTAw-1-20.html">100
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301010-0-0-1-OTA-1-20.html">90
+                                </a>
+                              </div>
+                                                        <div data-listid="10301004" class="category hide" >
+                                <a href="brand-385806-10301004-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-OTA-1-20.html">90
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301004-0-0-1-MTAw-1-20.html">100
+                                </a>
+                              </div>
+                                                        <div data-listid="10301006" class="category hide" >
+                                <a href="brand-385806-10301006-0-0-1-0-1-20.html">全部
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTIw-1-20.html">120
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTMw-1-20.html">130
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTQw-1-20.html">140
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTUw-1-20.html">150
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTYw-1-20.html">160
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTEw-1-20.html">110
+                                </a>
+                                <a href="brand-385806-10301006-0-0-1-MTAw-1-20.html">100
+                                </a>
+                              </div>
+                                        </div>
+          </div>
+        </div>
+        <div class="drop_bottom">
+          <a data-dropClose="true" href="javascript:;"></a>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<div id="w_container" class="goods_list_wrapper" style="position:relative">
+  <!--品牌名称-->
+  <!--<h1 class="page_title">贝贝依依BBYY男女童混合专场 - 全部</h1>-->
+
+
+      <!-- hwd 140210 -->
+    <div class="u-pro-brandmsg clearfix">
+      <div class="inner clearfix">
+        <div class="u-pms-msg f-left">
+                                  <p class="c-white">购物满2件即享9折，满3件即享8.5折</p>
+                              </div>
+                <div class="p-relative f-right" data-saleBrand="true"><span class="u-icon i-clock-white"></span><span class="J-time">剩4天</span></div>
+              </div>
+    </div>
+    <!-- hwd end -->
+
+  <!--以下是大图方式的样品排列-->
+    <div class="u-pro-list clearfix" data-offset="20" data-limit="20" data-img-class="j_item_image">
+    <!--循环dl-->
+    <!-- 分享 -->
+        <dl class="rs-item pg1" data-mid="50619113">
+		<a href="goods_detail.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200615272-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619113" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14200615272-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童春绿女童翻领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥55</span>
+				<span class="markprice">¥139</span>
+				<span class="f-right discount">4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619107">
+		<a href="goods_detail.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200609623-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619107" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14200609623-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童浅麻灰女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥99</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619100">
+		<a href="product-385806-50619100.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200608082-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619100" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14200608082-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童糖果红女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥47</span>
+				<span class="markprice">¥119</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619735">
+		<a href="product-385806-50619735.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14203206393-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619735" data-onerror="http://a2.vimage1.com/upload/merchandise/385805/BBYY-B14203206393-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童蓝藏青女童连衣裙</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥63</span>
+				<span class="markprice">¥159</span>
+				<span class="f-right discount">4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619179">
+		<a href="product-385806-50619179.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14201504396-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619179" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14201504396-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童浅牛仔蓝女童牛仔中裤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥75</span>
+				<span class="markprice">¥179</span>
+				<span class="f-right discount">4.2折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619216">
+		<a href="product-385806-50619216.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14203206082-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619216" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14203206082-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童糖果红女童连衣裙</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥63</span>
+				<span class="markprice">¥159</span>
+				<span class="f-right discount">4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619743">
+		<a href="product-385806-50619743.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14203209530-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619743" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14203209530-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童漂白女童连衣裙</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥85</span>
+				<span class="markprice">¥199</span>
+				<span class="f-right discount">4.3折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619750">
+		<a href="product-385806-50619750.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14203209623-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619750" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14203209623-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童浅麻灰女童连衣裙</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥85</span>
+				<span class="markprice">¥199</span>
+				<span class="f-right discount">4.3折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619808">
+		<a href="product-385806-50619808.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14210508150-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619808" data-onerror="http://a2.vimage1.com/upload/merchandise/385805/BBYY-B14210508150-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童橙色男童翻领衬衫</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥65</span>
+				<span class="markprice">¥159</span>
+				<span class="f-right discount">4.1折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619877">
+		<a href="product-385806-50619877.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14210646623-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619877" data-onerror="http://a2.vimage1.com/upload/merchandise/385805/BBYY-B14210646623-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童浅麻灰男童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥89</span>
+				<span class="f-right discount">4.4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619925">
+		<a href="product-385806-50619925.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14210714530-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619925" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14210714530-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童漂白男童圆领背心</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥89</span>
+				<span class="f-right discount">4.4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619943">
+		<a href="product-385806-50619943.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14210718260-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619943" data-onerror="http://a2.vimage1.com/upload/merchandise/385805/BBYY-B14210718260-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童孔雀绿男童运动背心</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥36</span>
+				<span class="markprice">¥89</span>
+				<span class="f-right discount">4折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619992">
+		<a href="product-385806-50619992.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14211923638-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619992" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14211923638-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童沙色男童垮裤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥65</span>
+				<span class="markprice">¥159</span>
+				<span class="f-right discount">4.1折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619040">
+		<a href="product-385806-50619040.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B13211913394-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619040" data-onerror="http://a2.vimage1.com/upload/merchandise/176085/BBYY-B13211913394-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">男童灰蓝男童牛仔中裤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥54</span>
+				<span class="markprice">¥179</span>
+				<span class="f-right discount">3折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619098">
+		<a href="product-385806-50619098.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200604312-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619098" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14200604312-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童浅蓝女童短袖翻领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥45</span>
+				<span class="markprice">¥119</span>
+				<span class="f-right discount">3.8折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619103">
+		<a href="product-385806-50619103.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200608162-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619103" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14200608162-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童鲜黄女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥47</span>
+				<span class="markprice">¥119</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619105">
+		<a href="product-385806-50619105.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200609530-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619105" data-onerror="http://a4.vimage1.com/upload/merchandise/385805/BBYY-B14200609530-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童漂白女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥99</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619109">
+		<a href="product-385806-50619109.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200610162-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619109" data-onerror="http://a2.vimage1.com/upload/merchandise/385805/BBYY-B14200610162-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童鲜黄女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥99</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619111">
+		<a href="product-385806-50619111.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200610360-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619111" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14200610360-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童水蓝女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥99</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+        <dl class="rs-item pg1" data-mid="50619115">
+		<a href="product-385806-50619115.html" class="clearfix ablock">
+		<dt class="pic"> 
+			<img src="images/BBYY-B14200617272-5_304x384_80.jpg" class="j_item_image pg1" data-brandid="385806" data-productid="50619115" data-onerror="http://a3.vimage1.com/upload/merchandise/385805/BBYY-B14200617272-5.jpg" data-brandlazy="false"> 
+								</dt>
+      <dd class="b_goods_name">女童春绿女童圆领T恤</dd>
+      			<dd class="pricebox clearfix">
+				<span class="grallyprice f-left">¥39</span>
+				<span class="markprice">¥99</span>
+				<span class="f-right discount">3.9折</span>
+			</dd>
+            </a>
+    </dl>
+      </div>
+
+  <!--和产品上面的排序一致-->
+  <div class="u-loading u-more-btn J_pager_more" data-page="1" data-pagesize="20" data-query="385806-0-0-0-1-0">查看更多商品</div>
+  
+</div>
+
+<!--618第二期/点击num_coupon，P隐藏，再点击，展开-->
+<!-- <div class="num_coupon"><p>有一张满<span class="c-red">300</span>减<span class="c-red">100</span>优惠券可用</p></div> -->
+
+<script src="js/7d4857940c.Vipiscroll.min.js"></script>
+
+<script type="text/javascript">
+var brandPrefix = 'brand';
+var productPrefix = 'product';
+var $getchoiceSize = '0';
+
+var pageContext = {};
+pageContext.brand_id = "385806";
+pageContext.filter_size = "0";
+pageContext.efilter_size = "MA";
+
+pageContext.itemIds ="50619113,50619107,50619100,50619735,50619179,50619216,50619743,50619750,50619808,50619877,50619925,50619943,50619992,50619040,50619098,50619103,50619105,50619109,50619111,50619115,";
+if (pageContext.itemIds && pageContext.itemIds.match(",$")) {
+	pageContext.itemIds = pageContext.itemIds.substring(0, pageContext.itemIds.length - 1);
+}
+
+pageContext.is_old = "0";
+</script>
+
+ 
+<script id="item_list_tpl" type="text/template">
+#% _.each(bean.itemList, function(item) { %#
+    <dl class="rs-item pg#%= bean.page %#" data-mid="#%- item.product_id %#">
+      #%
+          var product_detail_url = productPrefix + "-" + bean.brand_id + "-" + item.product_id + ".html";
+          if (bean.filter_size && bean.filter_size !== "0") {
+              product_detail_url = product_detail_url + "?size=" + bean.efilter_size;
+          }
+      %#
+      <a href="#%= product_detail_url %#" class="clearfix ablock">
+      <dt class="pic">
+        <img src="images/b1e7d8066b.loading_goods.png" class="j_item_image pg#%= bean.page %#" data-original="#%- item.small_image2 %#" data-brandid="#%- bean.brand_id %#" data-productid="#%- item.product_id %#" data-onerror="#%- item.small_image %#">
+        #% if ( item.sale_out && parseInt(item.sale_out) == 1 ) { %#
+          <div class="u-seldout-cover"><span class="seldout"></span></div>
+        #% } %#
+        #% if (item.special_price != ''){ %#
+          <div class="u-pro-savetips">比网站再省¥#%= item.fav_price %#</div>
+        #% } %#
+      </dt>
+      <dd class="b_goods_name">#%- item.product_name %#</dd>
+	  #% if (item.special_price != ''){ %#
+	  	<dd class="pricebox clearfix"><span class="grallyprice f-left">¥#%= item.special_price %#</span>
+          <span class="markprice">¥#%= item.market_price %#</span>
+          <span class="f-right discount">¥#%- item.agio %#</span>
+      </dd>
+	  #% }else{ %#
+      	<dd class="pricebox clearfix">
+        <span class="grallyprice f-left">¥#%= item.vipshop_price %#</span>
+        <span class="markprice">¥#%= item.market_price %#</span>
+        <span class="f-right discount">#%- item.agio %#</span></dd>
+	  #% } %#
+      </a>
+    </dl>
+#% }); %#
+</script>
+ 
+
+<!--以下是底部样式-->
+  <div class="u-footer clearfix">
+        <div class="u-ft-downbtn"><a style="display: block; width: 320px; height: 53px; margin: 0 auto; background: url(//ms2-m.vipstatic.com/images/common/dc4267fbe5.btn_down_footer.png) no-repeat; background-size: 320px;" href="http://m.vip.com/service-download.html" mars_sead="brand_footer_client_download_btn">
+      <span style="display: block;width: 116px;height:36px;padding: 10px 0 0 90px;overflow: hidden;line-height: 18px;font-style: italic;text-shadow: 0 1px 1px rgba(255,255,255,.75);color: #000;">
+        下载手机APP<br/>查看更多图文详情哦 !
+      </span>
+    </a></div>
+        <div class="u-footnav clearfix">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<a href="index.html" mars_sead="footer-index_btn">首页</a>
+<a href="cart.html" mars_sead="footer-cart_btn">购物车</a>
+<a href="service-download.html" mars_sead="footer-loading_btn">客户端</a>
+<a href="login.html?back_act=http%3A%2F%2Fm.vip.com%2Fgoods_detail.html" mars_sead="footer-mlogin_btn">登录</a>
+<a href="reg.html?back_act=http%3A%2F%2Fm.vip.com%2Fgoods_detail.html" mars_sead="footer-mregister_btn">注册</a>
+
+    </div>
+    <p class="u-copyright" >Copyright © 2008-2015 m.vip.com，All Rights Reserved 粤ICP备08114786号</p>
+  </div>
+      <a href="#top" class="u-backtop" mars_sead="home_foot_top_btn"><span class="u-icon i-backtop"></span></a>
+    <!--以下是浮于显示屏左下角的购物袋-->
+      <div class="u-shopbag" data-shopcart="true" >
+  <a href="cart.html?rbc=service"  mars_sead="floating-cart_btn">
+    <span class="u-icon i-flow-carticon"></span>
+        <span class="u-flow-cartnum hide"></span>
+    <span class="u-flow-carttime hide"></span>
+      </a>
+</div>
+  
+
+<script type="text/javascript">
+__STATS.add('html_render');
+
+function wechatShare(data) {
+    // If no data is defined, just fallback to wechat's default behaviour.
+    if (!data) {
+        return;
+    }
+
+    var title = data.title || document.title;
+    var desc = data.desc || "分享";
+    var url = data.url || document.location.href;
+
+    function getDefaultImage() {
+        var images = document.getElementsByTagName("img");
+        if (images && images.length > 0) {
+            for (var i = 0; i < images.length; i++) {
+                var image = images[i];
+                if (image.width > 140 && image.height > 130 && $(image).is(":visible")) {
+                	return image.src;
+                }
+            }
+        }
+        return null;
+    }
+
+    function shareFriend() {
+        // Delay image loading to the time when DOM is ready.
+        var img = data.img || getDefaultImage();
+        WeixinJSBridge.invoke("sendAppMessage", {
+            "img_url": img,
+            "link": url,
+            "desc": desc,
+            "title": title
+        }, function(res) {
+        });
+    }
+
+    function shareTimeline() {
+        var img = data.img || getDefaultImage();
+        WeixinJSBridge.invoke("shareTimeline", {
+            "img_url": img,
+            "link": url,
+            "desc": desc,
+            "title": title
+        }, function(res) {
+        });
+    }
+
+    function shareWeibo() {
+        var img = data.img || getDefaultImage();
+        WeixinJSBridge.invoke("shareWeibo", {
+            "img_url": img,
+            "content": title,
+            "url": url,
+            "desc": desc,
+            "title": title
+        }, function(res) {
+        });
+    }
+
+    document.addEventListener("WeixinJSBridgeReady", function onBridgeReady() {
+        WeixinJSBridge.on("menu:share:appmessage", function(argv) {
+            shareFriend();
+        });
+
+        WeixinJSBridge.on("menu:share:timeline", function(argv) {
+            shareTimeline();
+        });
+
+        WeixinJSBridge.on("menu:share:weibo", function(argv) {
+            shareWeibo();
+        });
+    }, false);
+}
+
+var data = {"img":"http:\/\/a.vimage1.com\/upload\/brand\/201503\/20150324160218111513_315x290_80.jpg","url":null,"title":"\u8d1d\u8d1d\u4f9d\u4f9dBBYY\u7537\u5973\u7ae5\u6df7\u5408\u4e13\u573a\uff0c\u552f\u54c1\u4f1a\u8d85\u4f4e\u6298\u6263\u70ed\u5356\u4e2d\uff0c\u731b\u6233\u62a2\u8d2d\uff01","desc":null};
+wechatShare(data);
+</script>
+
+
+<script src="js/e41a4b7a8b.all.min.js"></script>
+
+
+<script src="js/mars_wap.js"></script>
+<noscript>
+    <img src="http://mar.vip.com/n" height="1" width="1" border="0" alt="" />
+</noscript>
+
+<script async src="js/f90fe14b29.report.min.js"></script>
+
+
+<script src="js/daeabf3cab.page.item.list.min.js"></script>
+
+<!-- ZYZ Code Start -->
+    <script type="text/javascript">
+        var _zyzs = document.getElementsByTagName('script')[0];
+        var _zaq  = _zaq || [];
+        _zaq.push(['setTrackerUrl', 'http://tk.optaim.com/j']);
+        _zaq.push(['setSiteId', 'zyz_283_1']);
+        _zaq.push(['trackPageView']);
+
+        /*var _s   = document.createElement('script');
+        _s.src   = "http://s2.vipstatic.com/js/public/inf/ztk.js";
+        _s.type  = 'text/javascript';
+        _s.async = true;
+        _zyzs.parentNode.insertBefore(_s, _zyzs);*/
+    </script>
+<script async src="js/cf80229a1d.tkmvip.min.js"></script>
+    <noscript>
+         <p><img src="http://tk.optaim.com/p?sid=zyz_364_1" width="0" height="0" border="0" alt="" /></p>
+    </noscript>
+<!-- ZYZ Code End -->
+</body>
+</html>
+
+
+

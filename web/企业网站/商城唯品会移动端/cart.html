@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="baidu-site-verification" content="t7oDT96Amk" />
+<title>购物车</title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<meta name="sogou_site_verification" content="G7nmLR75yc"/>
+<meta name="baidu-tc-cerfication" content="0a8c6d28b570b218f78510c29be4529b" />
+<meta name="360-site-verification" content="8b6121969d78afda8caeb69053fa29d9" />
+<script>
+(function wapStart() {
+    var now = Date.now();
+    var win = this;
+    var phpData = document.documentElement.getAttribute('data-php');
+    var special = /m=special/.test(location.search);
+    var _onCompleted = function() {__STATS.add('dom_ready');};
+    var _onLoad = function() {
+        __STATS.add('onload');
+        if(!special && __locals.img_test_page == 'index' && Math.random() <= 0.1) {
+            var id = __locals.img_test_type;
+            var v = Date.now() - now;
+            if(id) (new Image()).src = 'http://mstats.vip.com/v1/counts/m_img_test?id='+id+'&value='+v;
+        }
+        win.removeEventListener('DOMContentLoaded', _onCompleted);
+        win.removeEventListener('load', _onLoad);
+    };
+
+    if (phpData) {
+        try {
+            phpData = JSON.parse(phpData);
+        } catch (e) {}
+    }
+
+    win.__STATS = {
+        start: now,
+        points: {},
+        add: function(point, time) {
+            __STATS.points[point] = time ? time : (Date.now() - __STATS.start);
+        }
+    };
+    win.addEventListener('DOMContentLoaded', _onCompleted, false);
+    win.addEventListener('load', _onLoad, false);
+    win.onerror = function(msg, url, line, col) {
+        var u = 'http://mstats.vip.com/v1/jslog/m?';
+        u += '_t=' + Date.now();
+        u += '&msg=' + encodeURIComponent([msg, url, line, col || 0].join('|'));
+        (new Image()).src = u;
+    };
+
+    // need remove
+    win.ui = 'touch';
+    win.vipConfig = {
+        priceImageSwitch: parseInt('0', 10),
+        ipLocation: {
+            result: "",
+            province: ""
+        }
+    };
+
+    // all data from php stored here
+    win.__locals = phpData || {};
+}.call(window));
+</script>
+
+
+<link rel="stylesheet" href="css/45cd6da9da.layout.min.css">
+
+<link rel="stylesheet" href="css/86fe49ca90.common.min.css">
+<script>__STATS.add('head_load');</script>
+
+</head>
+
+<body>
+	<script src="js/562a4c0e89.jquery-2.1.0.min.js"></script>
+
+		<header id="header" class="u-header clearfix">
+	    <!--返回按钮根据程序判断来源，返回上一级-->
+		 		 <!-- 非微信扫码进入的用户 -->
+	    <div class="u-hd-left f-left">
+      		 <a href="javascript:void(0)" mars_sead="cart-back_btn" class="J_backToPrev"><span class="u-icon i-hd-back"></span></a>
+        </div>
+			     <span class="u-hd-tit">购物车</span>
+		 	    <div class="u-hd-right f-right"><a href="cart.html" mars_sead="check-shopping-history_btn"><span class="u-icon i-hd-history"></span></a></div>
+		 	</header>
+	
+
+<style type="text/css">.u-footer{display:none;}</style>
+<div id="cart_list">
+  
+  <!--特卖会订单-->
+  <div class="space10"></div>
+      <h2 class="order_sendby clearfix">
+	<span>
+			唯品会发货,支持货到付款
+	</span>
+  </h2>
+  <div class="cartdiv">
+            <div class="cartlist clearfix">
+            <p class="clearfix protips">
+      	<span class="cl_sp_type_r">再购1件即可参与购物满2件即享9折，满3件即享8.5折 
+	  </p>
+	        <!-- 分组品牌开始 -->
+      <div class="space10"></div>
+      <div class="cartlistinner clearfix">
+	  	<a href="product-385806-50619854.html?rbc=url_cart" class="cart_orderlist_i">
+        	<img src="images/b1e7d8066b.loading_goods.png" data-original="http://a1.vimage1.com/upload/merchandise/385805/BBYY-B14210636150-5.jpg" data-onerror="http://a1.vimage1.com/upload/merchandise/385805/BBYY-B14210636150-5.jpg" width="80" height="101" data-brandlazy="true">
+		</a>
+        <div class="cart_orderlist_info"> <a href="product-385806-50619854.html?rbc=url_cart">
+          <p class="cart_g_name">男童橙色男童圆领T恤</p>
+          <p class="cart_b_name">贝贝依依BBYY男女童混合专场</p>
+                    <p class="c-grey">尺码：100</p>
+          <p class="space5"></p>
+		            </a>
+          <div class="amount-confirm-box" data-product_id="50619854" data-size_id="130792728">
+              <a href="javascript:;" class="amount-action amount-action-min disabled" mars_sead="cart_edit_btn"  data_mars="prd_id:50619854">-</a>
+              <span class="amount-text">1</span>
+              <input class="amount-num" type="text" readonly="readonly" data-brand-id="385806" data-product_id="50619854" data-size_id="130792728" data-id="" value="1" name="num">
+              <a href="javascript:;" class="amount-action amount-action-max" data-action="addNum" mars_sead="cart_edit_btn"  data_mars="prd_id:50619854">+</a>
+          </div>
+        </div>
+
+
+       	      <!--一般商品-->
+	      <a class="cart_orderlist_p" href="product-385806-50619854.html?rbc=url_cart" target="_blank"; style="display:block">
+	          <span class="c_price">¥39</span>
+	          <span class="fontstyle">¥99</span>
+	      </a>
+	  
+
+    <span class="delete">
+       <a href="javascript:;" data-action="delete" data-useCoupon="0" mars_sead="cart_delect_btn" data_mars="prd_id:50619854">
+        <img src="images/74ff20009b.scan_layer-33.png" width="22" height="22">
+       </a>
+    </span>
+	</div>
+
+      
+          </div>
+                
+
+
+    <div class="orderaction clearfix">
+      	    <p class="fl">再购<span class="fontred">49元</span>即免运费。</p>
+            <p class="fr"><span class="c_price"> ¥39 </span></p>
+      <div class="clear"></div>
+	  <div class="use_bouns clearfix">
+	 	 	 <div class="use_bouns">
+    	        如需使用优惠券请<a href="login.html?back_act=http%3A%2F%2Fm.vip.com%2Fcart-usebouns.html" class="c-yellow"> 登录&gt;&gt;</a>
+        	 </div>
+	 	 	 </div>
+          </div>
+  </div>
+  <!--固定在页面底部浮动的购买按钮-->
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="saveguid"><span></span>100%正品保证</div>
+    <div class="container nav-current-box checkout-box">
+      <div class="navbar-header">
+        <p class="totle">总金额：<span class="price">¥39</span></p>
+        <span>为您节省：¥60</span>
+      </div>
+      <div class="navbar-brand">
+         <a class="btn btn-large btn-purple" mars_sead="first-check_btn" href="javascript:;" data-islogin="true" data-shopcarthide="true" data-countDown="true" data-cartTime="1194">抢先结算<span class="fr cart-time"><span class="i-icon-clock"></span><span class="count-time"></span></span></a>
+      </div>
+    </div>
+  </div>
+      <script type="text/javascript">
+    function detectUser(){
+      var detect = {};
+      // 登录状态      
+      detect.istempuser =  parseInt("1");
+      // 开启临时购物车
+      detect.opentempshopcart =  parseInt("1");
+      // 开启免注册购买
+      detect.openfreeregister =  parseInt("0");
+      detect.isParameter = "";
+      detect.international = parseInt("")
+      return detect;
+    };
+  </script>
+</div>
+<div class="space10"></div>
+<script type="text/javascript">
+localStorage.removeItem("pay_fail");
+</script>
+  <div class="u-footer clearfix">
+        <div class="u-ft-downbtn"><a style="display: block; width: 320px; height: 53px; margin: 0 auto; background: url(//ms2-m.vipstatic.com/images/common/dc4267fbe5.btn_down_footer.png) no-repeat; background-size: 320px;" href="http://m.vip.com/service-download.html" mars_sead="footer_client_download_btn">
+      <span style="display: block;width: 116px;height:36px;padding: 10px 0 0 90px;overflow: hidden;line-height: 18px;font-style: italic;text-shadow: 0 1px 1px rgba(255,255,255,.75);color: #000;">
+        下载手机app<br />特卖惊喜抢不停！
+      </span>
+    </a></div>
+        <div class="u-footnav clearfix">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<a href="index.html" mars_sead="footer-index_btn">首页</a>
+<a href="cart.html" mars_sead="footer-cart_btn">购物车</a>
+<a href="service-download.html" mars_sead="footer-loading_btn">客户端</a>
+<a href="login.html?back_act=http%3A%2F%2Fm.vip.com%2Fcart-usebouns.html" mars_sead="footer-mlogin_btn">登录</a>
+<a href="reg.html?back_act=http%3A%2F%2Fm.vip.com%2Fcart.html%3Frbc%3Dservice" mars_sead="footer-mregister_btn">注册</a>
+
+    </div>
+    <p class="u-copyright" >Copyright © 2008-2015 m.vip.com，All Rights Reserved 粤ICP备08114786号</p>
+  </div>
+      <a href="#top" class="u-backtop" mars_sead="home_foot_top_btn"><span class="u-icon i-backtop"></span></a>
+    <!--以下是浮于显示屏左下角的购物袋-->
+  
+
+
+
+<script src="js/e41a4b7a8b.all.min.js"></script>
+
+
+<script src="js/mars_wap.js"></script>
+<noscript>
+    <img src="http://mar.vip.com/n" height="1" width="1" border="0" alt="" />
+</noscript>
+
+<script async src="js/f90fe14b29.report.min.js"></script>
+
+<script src="js/adc3afbe73.page.cart.detail.min.js"></script>
+<div class="space30"></div>
+<div class="space30"></div>
+</body>
+</html>

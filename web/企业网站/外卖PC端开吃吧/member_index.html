@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>个人中心 - 首页-member_index.html</title> 
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/icon" /> 
+  <link rel="stylesheet" type="text/css" href="css/home.css?v=v5.1.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/tooltips.css?v=v5.1.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/base.css?v=v5.2.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/main.css?v=v5.2.0" /> 
+  <link rel="stylesheet" type="text/css" href="css/common.css?v=v5.2.0" /> 
+ </head> 
+ <body id="home"> 
+  <form method="post" action="member_index.html" id="ctl00"> 
+   <div class="aspNetHidden"> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzE1NjgwNzM4D2QWAgIBD2QWBGYPZBYIZg9kFgZmDw8WAh4LTmF2aWdhdGVVcmwFG34vcGVyc29uYWwvaVRvZGF5T3JkZXIuYXNweGRkAgEPFgIeBWNsYXNzBQxub3RpZmljYXRpb24WBAIBDxYEHgVzdHlsZQUNZGlzcGxheTpub25lOx4JaW5uZXJodG1sBQEwZAIDDxYCHwMFpAE8bGkgIGNsYXNzPSdOb19NZXNzYWdlX1R5cGUnPjxkaXY+5LuK5pel5rKh5pyJ5raI5oGvPC9kaXY+PC9saT48bGkgY2xhc3M9J2J0biBjbGVhcmZpeCBub1BvaW50ZXInPjxpbnB1dCB0eXBlPSdzdWJtaXQnIGNsYXNzPSdzZXRhbGxtZXNzYWdlJyB2YWx1ZT0n55+l6YGT5LqGJz48L2xpPmQCAg8WAh8DBZIEPGRpdiBjbGFzcz0nbG9naW5fcmVnaXN0JyAgPjxhIGhyZWY9JyMnIGNsYXNzPSdsb2dfYnRuIHJlZ2lzdCB1c2VyX2xvZ2luZWQgVXNlck5pY2tOYW1lJz7pmL/pgJc8L2E+PGRpdiBjbGFzcz0nbGF5ZXJfdG9wX2FjY291bnQgbGF5ZXJfdG9wSW5mbyBicjQgc2hhZG93ICcgc3R5bGU9J2Rpc3BsYXk6IG5vbmU7Jz48c3BhbiBjbGFzcz0nYXJyb3cnPjwvc3Bhbj48dWw+PGxpPjxhIGhyZWY9Jy9wZXJzb25hbC9ob21lLmFzcHgnIGNsYXNzPSd0b3BfbjEnPuaIkeeahOW4kOaItzwvYT48L2xpPjxsaT48YSBocmVmPScvcGVyc29uYWwvaVRvZGF5T3JkZXIuYXNweCcgY2xhc3M9J3RvcF9uMic+6K6i5Y2V5Lit5b+DPC9hPjwvbGk+PGxpPjxhIGhyZWY9Jy9wZXJzb25hbC9zeXNOb3RpY2UuYXNweCcgY2xhc3M9J3RvcF9uMyc+57O757uf5YWs5ZGKPC9hPjwvbGk+PGxpPjxhIGhyZWY9Jy9Db21tb21QYWdlL2MuYXNweD9DbGVhblR5cGU9MicgY2xhc3M9J3RvcF9uNCc+6YCA5Ye655m75b2VPC9hPjwvbGk+PC91bD48L2Rpdj48L2Rpdj5kAgEPDxYCHwAFG34vcGVyc29uYWwvaVRvZGF5T3JkZXIuYXNweGRkAgIPFgIfAQUMbm90aWZpY2F0aW9uFgQCAQ8WBB8CBQ1kaXNwbGF5Om5vbmU7HwMFATBkAgMPZBYCAgEPFgIfAwWjATxsaSBjbGFzcz0nTm9fTWVzc2FnZV9UeXBlJz48ZGl2PuS7iuaXpeayoeaciea2iOaBrzwvZGl2PjwvbGk+PGxpIGNsYXNzPSdidG4gY2xlYXJmaXggbm9Qb2ludGVyJz48aW5wdXQgdHlwZT0nc3VibWl0JyBjbGFzcz0nc2V0YWxsbWVzc2FnZScgdmFsdWU9J+efpemBk+S6hic+PC9saT5kAgMPFgIfAwWSBDxkaXYgY2xhc3M9J2xvZ2luX3JlZ2lzdCcgID48YSBocmVmPScjJyBjbGFzcz0nbG9nX2J0biByZWdpc3QgdXNlcl9sb2dpbmVkIFVzZXJOaWNrTmFtZSc+6Zi/6YCXPC9hPjxkaXYgY2xhc3M9J2xheWVyX3RvcF9hY2NvdW50IGxheWVyX3RvcEluZm8gYnI0IHNoYWRvdyAnIHN0eWxlPSdkaXNwbGF5OiBub25lOyc+PHNwYW4gY2xhc3M9J2Fycm93Jz48L3NwYW4+PHVsPjxsaT48YSBocmVmPScvcGVyc29uYWwvaG9tZS5hc3B4JyBjbGFzcz0ndG9wX24xJz7miJHnmoTluJDmiLc8L2E+PC9saT48bGk+PGEgaHJlZj0nL3BlcnNvbmFsL2lUb2RheU9yZGVyLmFzcHgnIGNsYXNzPSd0b3BfbjInPuiuouWNleS4reW/gzwvYT48L2xpPjxsaT48YSBocmVmPScvcGVyc29uYWwvc3lzTm90aWNlLmFzcHgnIGNsYXNzPSd0b3BfbjMnPuezu+e7n+WFrOWRijwvYT48L2xpPjxsaT48YSBocmVmPScvQ29tbW9tUGFnZS9jLmFzcHg/Q2xlYW5UeXBlPTInIGNsYXNzPSd0b3BfbjQnPumAgOWHuueZu+W9lTwvYT48L2xpPjwvdWw+PC9kaXY+PC9kaXY+ZAIEDxYCHgtfIUl0ZW1Db3VudAIEFghmD2QWAmYPFQMvPHNwYW4gY2xhc3M9J290aGljbyByZW5yZW4nPuS6uuS6uui0puWPtzwvc3Bhbj4J5pyq57uR5a6a8gE8YSBocmVmPSdodHRwczovL2dyYXBoLnJlbnJlbi5jb20vb2F1dGgvYXV0aG9yaXplP2NsaWVudF9pZD0xNTAwNDUmcmVzcG9uc2VfdHlwZT1jb2RlJnJlZGlyZWN0X3VyaT1odHRwOi8va2FpY2hpYmEuY29tL3RoaXJkcGFydHkvVXNlckNoZWNrRnJvbVJlblJlbi5hc3B4JmRpc3BsYXk9ZGlhbG9nJnNjb3BlPXB1Ymxpc2hfc2hhcmUrcHVibGlzaF9mZWVkJyBjbGFzcz0nYmluZCc+57uR5a6a6I635Y+WNTAw56ev5YiGPC9hPmQCAQ9kFgJmDxUDJzxzcGFuIGNsYXNzPSdvdGhpY28gUVEnPlFR6LSm5Y+3PC9zcGFuPgnlt7Lnu5HlrpoAZAICD2QWAmYPFQMuPHNwYW4gY2xhc3M9J290aGljbyB3ZWlibyc+5b6u5Y2a6LSm5Y+3PC9zcGFuPgnlt7Lnu5HlrpoAZAIDD2QWAmYPFQMvPHNwYW4gY2xhc3M9J290aGljbyB3ZWNoYXQnPuW+ruS/oei0puWPtzwvc3Bhbj4J5pyq57uR5a6a4gE8YSBjbGFzcz0nYmluZCB0b29sdGlwJyBpZD0nYmluZHdlY2hhdCc+57uR5a6aPHNwYW4+PGRpdiBzdHlsZT0ndGV4dC1hbGlnbjpjZW50ZXInPjxpbWcgc3JjPScvaW1hZ2UvcmVmcmVzaC5naWYnIGlkPSd3eHFyaW1nJz48ZGl2IHN0eWxlPSdwYWRkaW5nLWxlZnQ6IDRweDsgaGVpZ2h0OiAxOXB4Oyc+5omr5LiA5omrIOW+ruS/oeS5n+iDveWPq+WkluWNljwvZGl2PjwvZGl2Pjwvc3Bhbj48L2E+ZGQ=" /> 
+   </div> 
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script> 
+   <div id="top"> 
+    <div id="top_inner"> 
+     <a class="logo" href="index.html"> <img src="images/tranlogo.png" /> </a> 
+     <div class="top_area" style="width: 210px; margin-top: 13px; margin-left: 5px; text-align: center;
+            line-height: 10px;"> 
+      <i style="margin-top: 7px;margin-right: 2px;"></i> 
+      <span class="schoolname" style="cursor: pointer;
+                max-width: 124px; margin-right: 0px; line-height: 16px; float: left;padding-top: 7px;"> 华北水利水电大学</span> 
+      <span style="line-height: 16px; float: left;margin-top: 5px;" class="change">[<a href="index.html">切换位置</a>]</span> 
+     </div> 
+     <ul class="top_NewNava"> 
+      <li class="active"><a href="index.html">首页</a></li> 
+      <li><a href="cheap.html">便宜吧</a></li> 
+      <li><a href="gift.html">积分商城</a></li> 
+     </ul> 
+     <div id="top_quickmenu" class="quick_menu"> 
+      <dl> 
+       <dd> 
+        <a id="ctl01_MyOrderLink" class="MyOrderLink" href="member_order.html">我的订单</a> 
+       </dd> 
+       <dd class="all_mess"> 
+        <span id="ctl01_notification" class="notification"><b class="message_prompt"> &nbsp;</b> <span id="ctl01_num" class="num" style="display:none;">0</span> 
+         <div id="ctl01_MessageContent" class="layer_top_account layer_top_Message br4 shadow " style="display: none"> 
+          <span class="arrow"></span> 
+          <ul id="ctl01_MessageBox" class="MessageBox"> 
+           <li class="No_Message_Type"> 
+            <div>
+              今日没有消息 
+            </div></li> 
+           <li class="btn clearfix noPointer"><input type="submit" class="setallmessage" value="知道了" /></li> 
+          </ul> 
+         </div> </span> 
+       </dd> 
+       <dd id="ctl01_top_user" class="Newaccount"> 
+        <div class="login_regist"> 
+         <a href="#" class="log_btn regist user_logined UserNickName">阿逗</a> 
+         <div class="layer_top_account layer_topInfo br4 shadow " style="display: none;"> 
+          <span class="arrow"></span> 
+          <ul> 
+           <li><a href="/personal/member_index.html" class="top_n1">我的帐户</a></li> 
+           <li><a href="member_order.html" class="top_n2">订单中心</a></li> 
+           <li><a href="/personal/member_announce.html" class="top_n3">系统公告</a></li> 
+           <li><a href="/CommomPage/c.aspx?CleanType=2" class="top_n4">退出登录</a></li> 
+          </ul> 
+         </div> 
+        </div> 
+       </dd> 
+      </dl> 
+     </div> 
+     <div id="search" class="fr br3"> 
+      <input id="keyword" type="text" onkeydown="enterIn(event)" value="搜索餐厅、美食" autocomplete="off" /> 
+      <a class="serch_btn_a" href="javascript:searchClick();">搜索</a> 
+      <div class="searchRes" id="searchRes"> 
+      </div> 
+     </div> 
+     <!--end of quickmenu--> 
+    </div> 
+   </div> 
+   <div class="shade" id="shade" style="display: none; opacity: 0.8; filter: alpha(opacity=80);">
+     &nbsp; 
+   </div> 
+   <div class="urgency_message" noticeid="" style="display: none"> 
+    <div class="urgency_message_top"> 
+     <h2 class="urgency_message_top_title"> 紧急通知</h2> 
+     <p class="urgency_message_show"> </p> 
+    </div> 
+    <div class="urgency_message_bottom"> 
+     <a href="javascript:;" class="return_message">好的，我已经联系送餐员</a> 
+    </div> 
+   </div> 
+   <!--end of top--> 
+   <input type="hidden" value="http://kaichiba.com/ajax" id="ajaxUrl" /> 
+   <input type="hidden" id="h_keyword" value="" /> 
+   <script type="text/javascript">
+    $(document).ready(function () {
+        if ($("#h_keyword").val() != "") {
+            $("#keyword").val($("#h_keyword").val());
+        }
+        $(".schoolname").click(function() {
+            location.href = $(".logo").attr("href");
+        });
+    })
+</script> 
+   <!--end of top--> 
+   <div id="wrap"> 
+    <div id="school"> 
+     <a href="member_index.html"></a> 
+     <a href="member_index.html">[切换位置]</a> 
+     <span>/</span> 
+     <em>个人中心</em> 
+    </div> 
+    <!--end of header--> 
+    <div id="container" class="clearfix"> 
+     <div class="shadow clearfix" id="pCenter"> 
+      <div id="pMenu" class="gray"> 
+       <div class="border"> 
+        <dl> 
+         <dt>
+           个人中心 
+         </dt> 
+         <dd> 
+          <a href="member_index.html" class="n1">我的帐户</a> 
+         </dd> 
+         <dd> 
+          <a href="member_addr.html" class="n6">送餐信息</a> 
+         </dd> 
+         <dd> 
+          <a href="member_pwd.html" class="n10">修改密码</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <div class="border"> 
+        <dl> 
+         <dt>
+           订单中心 
+         </dt> 
+         <dd> 
+          <a href="member_order.html" class="n2">今日订单</a> 
+         </dd> 
+         <dd> 
+          <a href="member_order.html" class="n3">历史订单</a> 
+         </dd> 
+         <dd> 
+          <a href="member_comment.html" class="n4">订单评价</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <div class="border"> 
+        <dl> 
+         <dt>
+           信息中心 
+         </dt> 
+         <dd> 
+          <a href="member_announce.html" class="n7">系统公告</a> 
+         </dd> 
+         <dd> 
+          <a href="about.html" class="n8">网站反馈</a> 
+         </dd> 
+         <dd> 
+          <a href="member_message.html" class="n9">餐厅留言</a> 
+         </dd> 
+        </dl> 
+       </div> 
+       <div class="border promote" style="display:none"> 
+        <dl> 
+         <dt>
+           推广联盟 
+         </dt> 
+         <dd> 
+          <a href="promotion.aspx" class="n11">我的推广</a> 
+         </dd> 
+         <dd> 
+          <a href="income.aspx" class="n12">效果收益</a> 
+         </dd> 
+        </dl> 
+       </div> 
+      </div> 
+      <div id="pAccount"> 
+       <div id="ac_info" class="acc_con"> 
+        <p class="ac_title"> 个人信息</p> 
+        <div class="ac_content"> 
+         <table> 
+          <colgroup> 
+           <col class="info_title" /> 
+           <col class="info_con" /> 
+           <col class="info_title" /> 
+           <col class="info_con" /> 
+          </colgroup> 
+          <tbody> 
+           <tr> 
+            <td> <b>我的帐号：</b> </td> 
+            <td> 416148489@qq.com </td> 
+            <td> <b>我的昵称：</b> </td> 
+            <td> <p id="nickName" class="pos_relative"> <span id="dispName"><a href="javascript:;" class="fr" id="chgName">修改昵称</a>阿逗</span> <span id="updateName" style="display: none"> <input name="NewNickname" type="text" value="阿逗" id="NewNickname" /> <input type="submit" name="btn_info" value="确认修改" onclick="return checkNickname();" id="btn_info" /> </span><span id="success" class="tip_layer tl_right br6" style="display: none">修改成功！</span> <span class="tip_layer tl_error br6" style="display: none" id="nicknameNotEmpty">昵称不能为空！</span> </p> </td> 
+           </tr> 
+           <tr> 
+            <td> <b>总积分：</b> </td> 
+            <td> <em class="fl"> 1780</em><span class="credit fr"><a href="../about/fIntegration" target="_blank">积分规则</a><a href="gift.html" target="_blank">去兑换礼品</a></span> </td> 
+            <td> <b>绑定手机：</b> </td> 
+            <td> <span id="bindPhone" class="fl">18005151538</span> </td> 
+           </tr> 
+           <tr> 
+            <td> <b>开吃点：</b> </td> 
+            <td> <em class="fl"> 0</em><em style="color:#F57543;display:none">(其中0个将在过期)</em><a href="../about/fIntegration" class="fr" target="_blank">了解开吃点</a> </td> 
+            <td> </td> 
+            <td> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+       </div> 
+       <div id="accountBind" class="acc_con"> 
+        <p class="ac_title"> 绑定信息<span class="tips">绑定第三方账号，拥有更方便的登陆方式，赢得开吃点和更多积分!</span></p> 
+        <p class="BindDesc"> 绑定社交账号，下单并分享成功后即可获得<span class="tip">5</span>个开吃点</p> 
+        <div class="otherAccount"> 
+         <table> 
+          <colgroup> 
+           <col width="200px" /> 
+           <col /> 
+          </colgroup> 
+          <thead> 
+           <tr> 
+            <td> 关联账号 </td> 
+            <td> 状态 </td> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td> <span class="othico renren">人人账号</span> </td> 
+            <td> 未绑定<a href="https://graph.renren.com/oauth/authorize?client_id=150045&amp;response_type=code&amp;redirect_uri=http://kaichiba.com/thirdparty/UserCheckFromRenRen.aspx&amp;display=dialog&amp;scope=publish_share+publish_feed" class="bind">绑定获取500积分</a> </td> 
+           </tr> 
+           <tr> 
+            <td> <span class="othico QQ">QQ账号</span> </td> 
+            <td> 已绑定 </td> 
+           </tr> 
+           <tr> 
+            <td> <span class="othico weibo">微博账号</span> </td> 
+            <td> 已绑定 </td> 
+           </tr> 
+           <tr> 
+            <td> <span class="othico wechat">微信账号</span> </td> 
+            <td> 未绑定<a class="bind tooltip" id="bindwechat">绑定<span> 
+               <div style="text-align:center"> 
+                <img src="images/refresh.gif" id="wxqrimg" /> 
+                <div style="padding-left: 4px; height: 19px;">
+                  扫一扫 微信也能叫外卖 
+                </div> 
+               </div></span></a> </td> 
+           </tr> 
+          </tbody> 
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+      <!--end of pAccount--> 
+     </div> 
+     <!--end of pCenter --> 
+     <div class="minLoginBg"> 
+     </div> 
+    </div> 
+    <!--end of container--> 
+    <!--浮层--> 
+    <div class="minLogReg"> 
+     <div class="bind_tit clearfix"> 
+      <p class="bind_tit_left fl"> 绑定手机</p> 
+      <a href="javascript:void(0);" class="close">关闭</a> 
+     </div> 
+     <div id="bind_advantage"> 
+      <p> 绑定手机后，您可以：</p> 
+      <ul> 
+       <li>1.获得1000积分</li> 
+       <li>2.用手机号作为账号登录开吃吧</li> 
+       <li>3.让账户变的更加安全</li> 
+      </ul> 
+     </div> 
+     <div id="bind_info"> 
+      <p class="tel_number" style="margin-bottom: 5px;"> <label> 手机号码：</label> <input type="text" value="" id="bind_phone" maxlength="11" /> </p> 
+      <label> 验证码：</label> 
+      <input type="text" id="txtValidateCode" style="width: 60px; float: left;" maxlength="4" /> 
+      <div id="ValidateCode1" style="margin: 3px; float: left;"> 
+      </div> 
+      <p class="g_valid" style="clear: both;"> <label> 校验码：</label> <input type="text" value="" id="input_valid" maxlength="6" /> <input type="button" value="免费获取" id="request_valid" /> </p> 
+      <p class="telk_note" style="margin-top: 10px;"> 校验码是6位数字</p> 
+      <p id="validTips"> </p> 
+      <input type="button" value="绑定手机" class="bind_subBtn" onclick="bindmobile('float_show')" /> 
+     </div> 
+    </div> 
+    <!--结束浮层--> 
+    <div id="appdimencode"> 
+    </div> 
+    <div class="app-img"> 
+     <img src="images/appdimencode.png" width="135px" height="135px" alt="app" /> 
+     <div style="padding-left: 4px; background-color: White; height: 19px;">
+       扫一扫 APP订餐更方便 
+     </div> 
+    </div> 
+    <div id="dimencode"> 
+    </div> 
+    <div class="wx-img"> 
+     <img src="images/dimencode.png" width="135px" height="135px" alt="wx" /> 
+     <div style="padding-left: 4px; background-color: White; height: 19px;">
+       扫一扫 微信也能叫外卖 
+     </div> 
+    </div> 
+    <div id="crappdimencode"> 
+    </div> 
+    <div class="cr-app-img"> 
+     <img src="images/cruserapp.jpg" width="135px" height="135px" alt="wx" /> 
+     <div style="padding-left: 4px; background-color: White; height: 30px;">
+       “嗖”一下的美食 
+      <br />外卖超人手机app下载 
+     </div> 
+    </div> 
+    <a id="feedback_btn" href="about.html"></a> 
+    <div id="MsgHide" style="display: none;"> 
+     <div id="feedbackTip"> 
+      <label> 小提示：催单请进入相应餐厅的页面进行留言，这样餐厅就能看见哦~</label> 
+      <textarea id="feedBackTipContent"></textarea> 
+     </div> 
+     <div id="isVisitor" style="display: none;"> 
+      <label> 您的邮箱(选填)</label> 
+      <input type="text" id="visitorMail" /> 
+     </div> 
+     <p id="isUser"> 我们的回复将发到个人中心的“问题反馈”里，请注意关注，感谢您的建议。</p> 
+     <table class="msgVild fBackVali"> 
+      <tbody> 
+       <tr> 
+        <td> 验证码： </td> 
+        <td> <input type="text" id="fBackValiDateCode" class="ValiDateCode fBackValiDateCode" maxlength="4" style="width: 60px;" /> </td> 
+        <td> 
+         <div id="ValidateCode"> 
+         </div> </td> 
+        <td> <span id="ValidateCodeClick_fBack" style="line-height: 24px;">更换验证码</span> </td> 
+        <td style="width: 102px;"> <p class="validRs fBackValiRs"> </p> </td> 
+       </tr> 
+      </tbody> 
+     </table> 
+     <div class="___dialogBtn fBackBtn"> 
+      <input type="button" class="dialogBtn feedBackBt" value="提交" /> 
+      <input type="button" class="dialogBtn hover fCancelBt" value="取消" /> 
+     </div> 
+    </div> 
+    <div id="footer"> 
+     <p> <a href="/SupplierJoin/Supplier.aspx" target="_blank">商家加盟</a>|<a href="about.html" rel="nofollow">联系我们</a>|<a href="/about/fHelp" rel="nofollow">帮助中心</a>|<a href="http://kaichiba.com/m/index.html" target="_blank" rel="nofollow">移动版</a>|<a href="http://shop.kaichiba.com" target="_blank" rel="nofollow">餐厅登录</a>|<a href="http://blog.kaichiba.com" target="_blank">美食谭</a>|<a href="/about/fRecruit" rel="nofollow">招贤纳士</a>|<a href="/about/fAbout" rel="nofollow">关于我们</a></p> 
+     <hr /> 
+     <p> Copyright &copy; 2011-2014 开吃吧 All Rights Reserved 京ICP备12015678号 | 京公网安备110114001132号</p> 
+    </div> 
+    <!--end of footer--> 
+    <input name="ctl02$hid_IspromoteUser" type="hidden" id="hid_IspromoteUser" value="False" /> 
+    <script src="js/jquery.cookie.js" type="text/javascript"></script> 
+    <script src="js/jquery.XYTipsWindow.2.8.js" type="text/javascript"></script> 
+    <script src="js/kcb_search.js" type="text/javascript"></script> 
+    <script src="js/kcb_top_js.js" type="text/javascript"></script> 
+    <script src="js/kcb_recommendSup.js?v=v5.0.1" type="text/javascript"></script> 
+    <script src="js/kcb_common.js?v=v5.0.1" type="text/javascript"></script> 
+    <script type="text/javascript">
+    $().ready(function () {
+        if ($("#hid_IspromoteUser").val() == "True") {
+            $("#pMenu .promote").css("display", "block");
+        }
+
+        $("#ValidateCode,#ValidateCodeClick_fBack").click(function () {
+            $("#ValidateCode").html("<img src='http://kaichiba.com/Code/ValidateCode.aspx?type=1&r=" + Math.random() + "'>");
+
+        });
+        $("#appdimencode").hover(function () {
+            $(".app-img").toggle();
+        });
+        $("#dimencode").hover(function () {
+            $(".wx-img").toggle();
+        });
+
+        $("#crappdimencode").hover(function () {
+            $(".cr-app-img").toggle();
+        });
+    });    
+</script> 
+    <!--end of footer--> 
+   </div> 
+   <!--end of wrap--> 
+  </form> 
+  <script type="text/javascript" src="js/kcb_personal_home.js?v=v5.1.0"></script> 
+  <script type="text/javascript" src="js/kcb_sendCheckCode.js?v=v5.1.0"></script> 
+  <script id="iDealKCBVisitRecord" src="js/iDeal.KCB.visitRecord.js?webId=2&amp;channel=1&amp;pageType=22" type="text/javascript"></script> 
+  <script type="text/javascript">
+        $().ready(function () {
+
+            $("#ValidateCode1").html("<img title='点击刷新验证码' src='http://kaichiba.com/Code/ValidateCode.aspx?r=" + Math.random() + "'>");
+
+            $("#ValidateCode1,#ValidateCodeClick_Message").click(function () {
+                $("#ValidateCode1 ").html("<img title='点击刷新验证码' src='http://kaichiba.com/Code/ValidateCode.aspx?r=" + Math.random() + "'>");
+
+            });
+        });    
+
+
+    </script>  
+ </body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>个人中心 - 首页</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=2" charset="utf-8"/>
+						<link rel="stylesheet" type="text/css" href="css/myhome1.01.css?v=2" charset="utf-8"/>	
+					
+				
+			
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png"/>
+						<script type="text/javascript" src="js/jquery-1.6.2.min.js?v=2"></script>
+				        <script type="text/javascript" src="js/common.js?v=2"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=2"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back"><span>返回</span></a>
+							<h2>我的京东</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+
+<div class="common-wrapper">
+
+	<div class="head-img">
+		<span class="my-img" style="background-image:url('/images/html5/defaul.png')"></span>
+		<p>hjl416148489</p>
+		<p>银牌用户</p>
+	</div>
+	
+	<ul class="padding-list">
+		<li>
+			<a href="member_order_list.html">
+				<p id="waite4PaymentSum">&nbsp;</p>
+				<p>待付款</p>
+			</a>
+		</li>
+		<li>
+			<a href="member_order_list.html">
+				<p id="waitDeliveryOrderListSum">&nbsp;</p>
+				<p>待收货</p>
+			</a>
+		</li>
+		<li>
+			<a href="member_message.html">
+				<p>
+					<span id="infoCount">&nbsp;&nbsp;</span>
+					<span id="unread-msg-point"></span>
+			    </p>
+				<p>我的消息</p>
+			</a>
+		</li>
+	</ul>
+
+	    	<ul class="menu-list">
+    			    				<li>
+            			<a href="member_order_list.html">
+    						<img src="images/547bc6b5Ncc52a3b8.png" alt=""/>
+            				<p>全部订单</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="member_wallet.html">
+    						<img src="images/547bc6dbN3dabf32a.png" alt=""/>
+            				<p>我的钱包</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="member_collect_goods.html">
+    						<img src="images/547bc6eaN6c97383c.png" alt=""/>
+            				<p>我的关注</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="member_history.html">
+    						<img src="images/547bc70aNf7e3462a.png" alt=""/>
+            				<p>浏览记录</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="/user/services.action?functionId=fuwuguanjia&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+    						<img src="images/547bc727Nde7da59c.png" alt=""/>
+            				<p>服务管家</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="/user/accountCenter.action?functionId=zhanghuguanli&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+    						<img src="images/547bc742N95a14876.png" alt=""/>
+            				<p>账户管理</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="/user/preSells.action?functionId=wodeyuyue&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+    						<img src="images/547bc75fNc5c6209c.png" alt=""/>
+            				<p>我的预约</p>
+            			</a>
+            		</li>
+    				
+    			    				<li>
+            			<a href="//m.jd.com/download/downApp.html?functionId=yingyongtuijian&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+    						<img src="images/547bc772Nbdf299f1.png" alt=""/>
+            				<p>应用推荐</p>
+            			</a>
+            		</li>
+    				
+    			    	</ul>
+		
+		
+	    	<h2 class="list-title">猜你喜欢</h2>
+    	<div id="guessing" class="jd-slider-wrapper">
+            <div class="jd-slider-container" style="width:1200px;" >
+            	<ul class="tj-list">
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1319681420.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1319681420','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1319681420$index=0$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=c37b606a6ce1245a6342601811e50cdfe40fb1ed');">
+            						<img src="images/544496c5N1d7b9f0f.jpg">
+                    				<p>布衣先锋 绅士夹克男士外套 2015春季男装休闲春秋薄款 黑色 XL</p>
+                    				<p class="price">
+    									￥219.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1343117300.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1343117300','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1343117300$index=1$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=9d18906e3a29996e7d9d8ea600b5cc1d0d123c9');">
+            						<img src="images/545772b1Na98457af.jpg">
+                    				<p>TCL D49A561U 49英寸4K超清安卓4.2内置WIFI智能云电视（黑色）</p>
+                    				<p class="price">
+    									￥3699.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1479429342.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1479429342','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1479429342$index=2$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=7c5464ecebeae1a065289e0fe89707d347ae5bab');">
+            						<img src="images/54fff5a0Nc54a81fb.jpg">
+                    				<p>灵范儿韩版2015春装新款女装中长款宽松针织衫开衫外套西装领口袋 浅咖 M</p>
+                    				<p class="price">
+    									￥185.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1235494933.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1235494933','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1235494933$index=3$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=19e776effef91184fcd2f1c4010630ca53d5a1b');">
+            						<img src="images/53d8bd84Ncfd098ce.jpg">
+                    				<p>庄子 毛呢大衣 女款 冬季羊毛大衣新款欧美大牌女装厚外套毛呢修身大衣WPI43132 橄榄绿 170/92A</p>
+                    				<p class="price">
+    									￥1390.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1017267312.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1017267312','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1017267312$index=4$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=ddaac67dd21746a111e1115c8eea28bee187ca2a');">
+            						<img src="images/5451cbecNb5903311.jpg">
+                    				<p>永久24速自行车26寸铝合金山地车/禧玛诺变速/锁死前叉/建大轮胎/培林花鼓 8.5远腾 白蓝色 26寸</p>
+                    				<p class="price">
+    									￥999.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/666416.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('666416','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=666416$index=5$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=697cba14c7a8b3aa072b007735aa0deacd57388b');">
+            						<img src="images/rBEhV1NoszwIAAAAAAMj8CiplJQAANHJACsKRYAAyQI705.jpg">
+                    				<p>奥普（AUPU)  QDP1020C 嵌入式风暖型纯平浴霸</p>
+                    				<p class="price">
+    									￥848.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1015188.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1015188','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1015188$index=6$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=8c41f1975ec08c3a8e4b18744b3bb31769fe4e12');">
+            						<img src="images/53d618ebN98fdf395.jpg">
+                    				<p>万家乐 JSQ22-11201 11升 燃气热水器（天然气）</p>
+                    				<p class="price">
+    									￥1199.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/835274.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('835274','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=835274$index=7$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=1fd490989dab6d225f25cef5bc129649ace2d3eb');">
+            						<img src="images/5433a81cN337536d7.jpg">
+                    				<p>美的(Midea) QD506 90升消毒柜 嵌入式</p>
+                    				<p class="price">
+    									￥999.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1231421.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1231421','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1231421$index=8$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=6474e8d962acebf79c398301d12be5984dc67921');">
+            						<img src="images/54c6ea8dN7a531f65.jpg">
+                    				<p>美的（Midea） WSS5065H 独有养生功能 御膳釜内胆 智能电压力锅 </p>
+                    				<p class="price">
+    									￥399.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1086357.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1086357','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1086357$index=9$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=6dbfe421d88666eb3e6c1ddee7d7eeaf6368b162');">
+            						<img src="images/rBEhUlNoyRMIAAAAAAIz9HqF7XoAANA1gEiV9oAAjQM383.jpg">
+                    				<p>飞利浦（PHILIPS） PT722/15 劲锋系列 电动剃须刀</p>
+                    				<p class="price">
+    									￥399.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1461233432.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1461233432','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1461233432$index=10$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=de5b684d067eaf91021ababaa31349db5542260c');">
+            						<img src="images/542922a8Nbd6977b0.jpg">
+                    				<p>凡纯 2015年春季新款拼接立领夹克 春薄款潮男jacket外套 黑黑色 XL</p>
+                    				<p class="price">
+    									￥108.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1252793.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1252793','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1252793$index=11$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=78bc170ac8ff4ffe2ecede6ec2fa13b00e846c1f');">
+            						<img src="images/549cc81bN1b22f0b8.jpg">
+                    				<p>三星(SAMSUNG)UA55HU5903J 55英寸 4K超高清智能LED电视 黑色</p>
+                    				<p class="price">
+    									￥6699.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1482929958.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1482929958','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1482929958$index=12$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=70f0931007580edc60323539192750ced6697cd7');">
+            						<img src="images/5504311aN5917e232.jpg">
+                    				<p>灵范儿薄开衫针织纱短外套女春秋装毛衣连帽蝙蝠衫2015新款宽松 黑色 均码</p>
+                    				<p class="price">
+    									￥175.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1235465017.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1235465017','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1235465017$index=13$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=830fba30e88f19ee249015d58352c7c27eed0000');">
+            						<img src="images/53d8b76bN0c379791.jpg">
+                    				<p>庄子 毛呢大衣 女款 冬季羊毛大衣新款欧美大牌女装厚外套毛呢修身大衣WPI42103 钻蓝色 170/92A</p>
+                    				<p class="price">
+    									￥1190.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1288837815.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1288837815','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1288837815$index=14$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=d295621ff65c907175eb9015b4f0ca8b5636c3ce');">
+            						<img src="images/55124f62N99f8cd46.jpg">
+                    				<p>永久24/27速自行车 26寸铝合金双碟刹山地车8.3 【用券减200元】 白橙色(27速可锁死前叉) 26寸</p>
+                    				<p class="price">
+    									￥999.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1075410.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1075410','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1075410$index=15$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=748e949a5ee6dae4689074671e448e599542cb2c');">
+            						<img src="images/5452f648N9c69455c.jpg">
+                    				<p>奥普（AUPU） QDP5016C 风暖型纯平浴霸</p>
+                    				<p class="price">
+    									￥799.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/900597.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('900597','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=900597$index=16$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=45c0581e5c6b738dde1b8536415925491a01a78b');">
+            						<img src="images/rBEbRlNqFy4IAAAAAAGI8DwK71oAAAHkwLPHnIAAYkI555.jpg">
+                    				<p>格兰仕(Galanz)G40K031 40升 2000W速热电热水器</p>
+                    				<p class="price">
+    									￥498.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/437361.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('437361','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=437361$index=17$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=9483fe465a38c4cf2271e57acadabb8b81662719');">
+            						<img src="images/545c9d05N0f874501.jpg">
+                    				<p>华帝(VATTI) ZTD110-i13001 嵌入式 消毒柜</p>
+                    				<p class="price">
+    									￥1799.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1016992.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1016992','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1016992$index=18$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=4d3474f8c0f8ab37b8689ad24c0e968fc421761b');">
+            						<img src="images/541029c8N6a74ae91.jpg">
+                    				<p>九阳（Joyoung）JYY-50FS80 智能家用多功能双胆电压力锅大容量5L可预约</p>
+                    				<p class="price">
+    									￥369.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1005268.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1005268','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1005268$index=19$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=33dda42b2a5776f300513f449fd6b6a0c6a6267');">
+            						<img src="images/rBEhVVNm9MUIAAAAAAGqDrCgF2IAAM_KQNRNRMAAaom966.jpg">
+                    				<p>飞利浦（PHILIPS） PT737/14 电动剃须刀</p>
+                    				<p class="price">
+    									￥549.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1392943778.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1392943778','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1392943778$index=20$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=832879ab92e6bb16280ae087672ddccc0beb551c');">
+            						<img src="images/54cc8ec6Neb27b8c9.jpg">
+                    				<p>杰森迪亚 2015春季水洗纯棉男士夹克 男款休闲外套 男装 99685麻灰加绒 XXL</p>
+                    				<p class="price">
+    									￥268.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1267076609.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1267076609','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1267076609$index=21$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=a84e64b3dbd8265cf5077b5b463138a10eb8fd2');">
+            						<img src="images/54f5b702N65677765.jpg">
+                    				<p>源群  2015春季新款男士韩版修身连帽夹克男装休闲薄款外套男夹克男潮男装 JK03卡其色 XXL</p>
+                    				<p class="price">
+    									￥128.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1482477946.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1482477946','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1482477946$index=22$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=f8f1bb4954798950211cb0b712bd499aab9b60e');">
+            						<img src="images/5503d149N92802014.jpg">
+                    				<p>灵范儿针织镂空薄开衫V领中长款外套女春秋空调衫毛衣2015 藏青色 L</p>
+                    				<p class="price">
+    									￥118.0
+                    				</p>
+                    			</a>
+                			</li>
+            			                			<li class="jd-slider-item">
+            					<a href="http://m.jd.com/product/1210711090.html?resourceType=recommend_productDetail&resourceValue=&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" 
+									onclick="showProductDetail('1210711090','bfd5d5fa6afa2d31344dd42eb76b7d68','http://mercury.jd.com/log.gif?t=rec.320000&v=src=rec$action=1$reqsig=d30a5b0829ac97f2cf34c60cbc96a55e8ba0d626$enb=1$sku=0$csku=1210711090$index=23$expid=32000000114120503&rid=6742604034928676122&ver=1&sig=35d55664b1f73dff23f86fc1b4534ef960d547bd');">
+            						<img src="images/53ba53cdN8c72b9c6.jpg">
+                    				<p>庄子 毛呢大衣 女 春秋羊毛修身大衣显瘦女装厚外套 中长款毛呢修身大衣WPH42120 柿子红 165/88A</p>
+                    				<p class="price">
+    									￥1790.0
+                    				</p>
+                    			</a>
+                			</li>
+            			            	</ul>
+    		</div>
+    	</div>
+	</div>
+
+<link rel="stylesheet" type="text/css" href="css/guessing.css?v=2" charset="utf-8"/>
+
+<script type="text/javascript" src="js/jdslider.src.js?v=2"></script>
+<script type="text/javascript" src="js/jquery.cookie.js?v=2"></script>
+<script type="text/javascript" src="js/news1.0.js?v=2"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	showHeadInfo();
+
+    $('#guessing').jdSlider({
+        lineNum:2,
+        fitToScreen:true
+    });
+});
+
+//显示头信息
+var showHeadInfo = function(){
+	var t = (new Date()).valueOf();
+	
+	jQuery.get('/myJd/showHeadInfo.json?t=' + t,
+		{},
+        function(data){
+			if(data){
+    			var waite4PaymentSum = data.waite4PaymentSum;
+    			var waitDeliveryOrderListSum = data.waitDeliveryOrderListSum;
+    			var infoCount = data.infoCount;
+				
+				$('#waite4PaymentSum').html(waite4PaymentSum);
+				$('#waitDeliveryOrderListSum').html(waitDeliveryOrderListSum);
+				$('#infoCount').html(infoCount);
+				
+				/*
+				if(infoCount > 0){
+					$('#unread-msg-point').addClass('unread-msg');
+				}else{
+					$('#unread-msg-point').removeClass('unread-msg');
+				}
+				*/
+				
+			}
+	 },'json');
+}
+
+//显示商品详情
+var showProductDetail = function(wareId,sid,clk){
+
+	//埋点 猜猜你喜欢
+	//可能网络原因 ajax 访问服务器的时间过长或者是网络问题，可能引起跳转失败,所以现在是 a标签上 增加onclick方式.
+	jQuery.get('/myJd/loveProductDetail.json',
+		{ 'wareId': wareId , 'sid' : sid, 'clk' : clk},
+        function(data){
+     		//var url = 'http://m.jd.com/product/' + wareId + '.html?resourceType=recommend_productDetail&resourceValue=&sid=' + sid;
+			//window.location.href = url;
+	});
+	
+}
+
+</script>
+
+    <footer>
+		<div class="login-area" id="footer">
+        	<div class="login">
+				                	<a rel="nofollow" href='member_index.html'>
+						        					hjl41614..
+        									</a>
+    				<span class="lg-bar">|</span>
+											<a rel="nofollow" href='https://passport.m.jd.com/user/logout.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68'>退出</a>
+													<span  class="new-fr"><a href="http://m.jd.com/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version"><a href="http://m.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a></div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有 </div>
+        </div>
+    </footer>
+
+
+    <div style="display:none;">
+        	<img src="/ja.jsp?&amp;utmn=1087086651&amp;utmr=http%3A%2F%2Fjipiao.m.jd.com%2Findex.html%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;utmp=%2FmyJd%2Fhome.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;guid=ON&jav=touch&pin=hjl416148489&utmac=MO-J2011-1" />
+        </div>
+
+            <script type="text/javascript" src="js/pingJS.1.0.js"></script>
+        <script type="text/javascript">
+            pingJS();
+        </script>
+    
+
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='http://m.jd.com/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('http://m.jd.com/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+
+
+
+
+	
+</script>
+</body>
+</html>
+

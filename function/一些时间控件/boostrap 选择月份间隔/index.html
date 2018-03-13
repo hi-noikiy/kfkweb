@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>Bootstrap DateTimePicker(移动端)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="daterangepicker/daterangepicker-bs3.css"/>
+
+    <script src="https://cdn.bootcss.com/jquery/1.8.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="daterangepicker/moment.js"></script>
+    <script type="text/javascript" src="daterangepicker/daterangepicker.js"></script>
+</head>
+<body>
+<div style="padding: 30px">
+
+    <div class="iDate full">
+        <input type="text" id="startEndtimeTime" class='form-control' placeholder="选择时间段" value="2017-05-11 - 2017-05-18">
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#startEndtimeTime').daterangepicker(null, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+        });
+    </script>
+
+</div>
+</body>
+</html>

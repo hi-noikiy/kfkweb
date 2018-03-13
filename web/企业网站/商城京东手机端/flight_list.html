@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>航班列表</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" CONTENT="-1">           
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">     
+    
+	    <script src="js/mping.min.js"></script>
+    <script type="text/javascript"> 
+      try{
+                var pv= new MPing.inputs.PV();   //构造pv 请求
+                var mping = new MPing();        //构造上报实例
+                mping.send(pv);                //上报pv
+    
+      MPing.inputs.Click.attachEvent()
+            } catch (e){}
+    </script>
+    
+	  				<link rel="stylesheet" type="text/css" href="css/base.css?v=20140527100001" charset="UTF-8"/>
+							
+					<link rel="stylesheet" type="text/css" href="css/extend.css" charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="css/hotel.css" charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="css/airline.css" charset="UTF-8"/>
+				
+						<script type="text/javascript">
+			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
+			var _isWebKit = '__proto__' in {};//是否是webkit内核
+			if(_isWebKit){//如果是webkit内核，则分模块使用zepto
+				//要使用zeptojs的路径列表，可以做为分模块替换的开关
+				var _locationList=new Array();
+				//活动模块
+				_locationList.push('/activity/proActList');
+				_locationList.push('/activity/proActWareList');
+				_locationList.push('/activity/list');
+				//商品分类模块
+				_locationList.push('/category/');
+				//京东快讯模块
+				_locationList.push('/newslist.html');
+				_locationList.push('/newslist/');
+				_locationList.push('/news/');
+				//机票模块
+				_locationList.push('/airline/');
+				//酒店模块
+				_locationList.push('/hotel/');
+				//团购模块
+				_locationList.push('/tuan/');
+				//首页相关
+				_locationList.push('/hotbrand.html');//品牌馆
+				//商品筛选相关
+				_locationList.push('/ware/expandSort.action');
+				_locationList.push('/ware/categoryFilter.action');
+				_locationList.push('/goods_list.html');
+				_locationList.push('/products/');
+				
+				_locationList.push('/notice/');//通告模块
+				_locationList.push('/coupons/');//随地惠模块
+				_locationList.push('/chongzhi/');//手机充值模块
+				_locationList.push('/comment/');//手机推荐模块
+				_locationList.push('/pay/');//支付
+				_locationList.push('/order/');//订单
+				_locationList.push('/norder/');//订单
+				var _needReplace = false;
+				//如果当前路径符合要使用的路径规则，则进行替换
+				for(var i=0;i<_locationList.length;i++){
+					if(_winLocation.indexOf(_locationList[i])!=-1){
+						_needReplace=true;
+						break;
+					}
+				}
+				//如果是首页的话，则使用zepto
+				var _tmp = _winLocation.replace(/(^http:\/\/)|(\/*$)/g,'');
+				if(_tmp.indexOf('/')<0 || (_tmp.split('/').length<=2 && _tmp.indexOf('/index')>=0)){
+					_needReplace=true;
+				}
+				//如果是商品详情页的话，则使用zepto
+                var _dlocationList=new Array();
+                _dlocationList.push(/\/product\/([0-9]+)\.html/);
+                _dlocationList.push(/\/orderComment\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)-([0-9]+)\.html/);
+                _dlocationList.push(/\/comments\/([0-9]+)\.html/);
+                for(var i=0,len=_dlocationList.length;i<len;i++){
+                	if(_dlocationList[i].test(_winLocation)){
+                		_needReplace=true;
+               			 break;
+               		 }
+                }
+				if(_needReplace){
+					document.write('<script src="js/zepto.min.js"><\/script>');
+					document.write('<script type="text/javascript">window.jQuery=window.Zepto;<\/script>');
+				}else{
+					document.write('<script src="js/jquery-1.6.2.min.js"><\/script>');
+				}
+			}else{//如果是非webkit内核直接使用jquery
+				document.write('<script src="js/jquery-1.6.2.min.js"><\/script>');
+			}
+		</script>
+				        <script type="text/javascript" src="js/common.js?v=201401141358"></script>
+        <script type="text/javascript" src="js/spin.min.js"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+	    	<div class="header w" style="text-align:center;">
+                航班列表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    			<div class="fl"><a href="/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="back"><span></span>机票预订</a></div>
+    	</div>	
+	</header>
+    <div class="airticket">
+        <p class="p_top">
+        	<a href='#' class="prev" id="pre">&lt;</a>
+            <span class="pt_cont">
+                <span>长沙 - 乌鲁木齐</span>
+                <span class="date">2015-03-31</span>
+                <span id="s_depDate"></span>
+            </span>
+            <a href="#" class="next" id="next">&gt;</a>
+        </p>
+    
+        <div class="mc">
+            <div id="spinner" class="spinner" style="margin:0 auto;position:relative;display:none;"></div>
+    		<div class="tc down-tab" style="display:none;" id="hide"><font color="red">已是当前日期</font></div>
+            <ul class="flight_lst">
+									    					<li>
+    						<a class="down resone">
+								<span style="height: 100%; left: 0; position: absolute; width: 30px;"><img style="margin:18px 0 0 8px;" src="images/CZ.gif"/></span>
+                                <span class="info">
+                                	<span class="txt3c">南方航空 CZ6929</span><br>
+                					<span class="depTime">08:30</span> 黄花机场<br>
+                                    <span class="arrTime">14:30</span> 地窝堡机场
+                                </span>
+                                <span class="price" style="text-align:right;margin-right:10px;">
+                                	<span class="red">&yen;2290起</span><br>
+                                                                   </span>
+                            </a> 
+    					</li>
+                        <li style="border:none;display:none" class="listone">
+							    						<ul class="price_lst">
+                				                                	    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info1">
+														 																																																																																																																												<span class="red">&yen;2290</span><br/>
+																													 																高端经济舱
+															 														                                                                                                                                                                             <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="2290"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok1" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="59776"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0830"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1430"/>
+                                        		<input name="trip.seatcode" type="hidden" value="W"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ6929"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="83353611"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value=""/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="2256"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1150"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1150"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="100"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info2">
+														 																																																																																																																												<span class="red">&yen;2290</span><br/>
+																													 																经济舱
+															 														                                                                                                                                                                             <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="2290"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok2" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="59776"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0830"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1430"/>
+                                        		<input name="trip.seatcode" type="hidden" value="Y"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ6929"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="83353611"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value=""/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="2256"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1150"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1150"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="100"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info3">
+														 																																																																																																																												<span class="red">&yen;4120</span><br/>
+																													 																商务舱
+															 														                                                                                                                                                                             <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="4120"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok3" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="59776"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0830"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1430"/>
+                                        		<input name="trip.seatcode" type="hidden" value="C"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ6929"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="4120"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="84041605"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value=""/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="4009"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2060"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2060"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="180"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info4">
+														 																																																																																																																																																																																												<span class="red">&yen;5270</span><br/>
+																													 																公务舱
+															 														                                                                                                                                                                             <br>
+														<span class="manjian">返券45元</span>
+														<input name="trip.saleDiscountType" type="hidden" value="2"/>
+														<input name="trip.price" type="hidden" value="5270"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok4" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0830"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1430"/>
+                                        		<input name="trip.seatcode" type="hidden" value="J"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ6929"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="5270"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="16976643"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="c5e05b5c-fba1-47b4-b50d-d0a3db8b1151"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="5144"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1139"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1139"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="23000"/>
+        									</form>
+										</li>
+    								        						    						</ul>
+    					</li>
+					    					<li>
+    						<a class="down resone">
+								<span style="height: 100%; left: 0; position: absolute; width: 30px;"><img style="margin:18px 0 0 8px;" src="images/HU.gif"/></span>
+                                <span class="info">
+                                	<span class="txt3c">海南航空 HU7820</span><br>
+                					<span class="depTime">08:55</span> 黄花机场<br>
+                                    <span class="arrTime">15:10</span> 地窝堡机场
+                                </span>
+                                <span class="price" style="text-align:right;margin-right:10px;">
+                                	<span class="red">&yen;3140起</span><br>
+                                                                                                                                          </span>
+                            </a> 
+    					</li>
+                        <li style="border:none;display:none" class="listone">
+							    						<ul class="price_lst">
+                				                                	    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info1">
+														 																																																																																																																												<span class="red">&yen;3140</span><br/>
+																													 																头等舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="3140"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok1" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="59776"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0855"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1510"/>
+                                        		<input name="trip.seatcode" type="hidden" value="Z"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="HU"/>
+                                        		<input name="trip.flightNo" type="hidden" value="HU7820"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="3140"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="85840663"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value=""/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="海南航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T2"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="3059"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1150"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1150"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="137"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info2">
+														 																																																																																																																																																																																												<span class="red">&yen;5730</span><br/>
+																													 																头等舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="manjian">返券260元</span>
+														<input name="trip.saleDiscountType" type="hidden" value="2"/>
+														<input name="trip.price" type="hidden" value="5730"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok2" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="0855"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1510"/>
+                                        		<input name="trip.seatcode" type="hidden" value="F"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="HU"/>
+                                        		<input name="trip.flightNo" type="hidden" value="HU7820"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="5730"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="17699531"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="1f33ee00-f401-4c48-8219-c4c57818175b"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="海南航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T2"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="5387"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2842"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2842"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="27400"/>
+        									</form>
+										</li>
+    								        						    						</ul>
+    					</li>
+					    					<li>
+    						<a class="down resone">
+								<span style="height: 100%; left: 0; position: absolute; width: 30px;"><img style="margin:18px 0 0 8px;" src="images/MF.gif"/></span>
+                                <span class="info">
+                                	<span class="txt3c">厦门航空 MF8279</span><br>
+                					<span class="depTime">11:30</span> 黄花机场<br>
+                                    <span class="arrTime">16:10</span> 地窝堡机场
+                                </span>
+                                <span class="price" style="text-align:right;margin-right:10px;">
+                                	<span class="red">&yen;3140起</span><br>
+                                                                                                                                          </span>
+                            </a> 
+    					</li>
+                        <li style="border:none;display:none" class="listone">
+							    						<ul class="price_lst">
+                				                                	    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info1">
+														 																																																																																																																												<span class="red">&yen;3140</span><br/>
+																													 																经济舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="3140"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok1" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="103171"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1130"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1610"/>
+                                        		<input name="trip.seatcode" type="hidden" value="D"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="MF"/>
+                                        		<input name="trip.flightNo" type="hidden" value="MF8279"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="3140"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="discountId-781713,privilegeTyple-SD,policyId-19362973,policyType-OS"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="19362973"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="厦门航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="3118"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2620"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2620"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="150"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info2">
+														 																																																																																																																												<span class="red">&yen;4180</span><br/>
+																													 																经济舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="4180"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok2" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="103171"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1130"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1610"/>
+                                        		<input name="trip.seatcode" type="hidden" value="C"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="MF"/>
+                                        		<input name="trip.flightNo" type="hidden" value="MF8279"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="4180"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="discountId-781713,privilegeTyple-SD,policyId-19362950,policyType-OS"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="19362950"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="厦门航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="4151"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2620"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2620"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="200"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info3">
+														 																																																																																																																												<span class="red">&yen;5230</span><br/>
+																													 																经济舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="5230"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok3" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="59776"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1130"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1610"/>
+                                        		<input name="trip.seatcode" type="hidden" value="J"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="MF"/>
+                                        		<input name="trip.flightNo" type="hidden" value="MF8279"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="5230"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="86822899"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value=""/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="厦门航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="5189"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1150"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1150"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="250"/>
+        									</form>
+										</li>
+    								        						    						</ul>
+    					</li>
+					    					<li>
+    						<a class="down resone">
+								<span style="height: 100%; left: 0; position: absolute; width: 30px;"><img style="margin:18px 0 0 8px;" src="images/BK.gif"/></span>
+                                <span class="info">
+                                	<span class="txt3c">奥凯航空 BK2885</span><br>
+                					<span class="depTime">12:00</span> 黄花机场<br>
+                                    <span class="arrTime">18:25</span> 地窝堡机场
+                                </span>
+                                <span class="price" style="text-align:right;margin-right:10px;">
+                                	<span class="red">&yen;5526起</span><br>
+                                                                                                                                          </span>
+                            </a> 
+    					</li>
+                        <li style="border:none;display:none" class="listone">
+							    						<ul class="price_lst">
+                				                                	    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info1">
+														 																																																																																																																																																																																																																																																																			<span class="red">&yen;5526</span><br/>
+																													 																头等舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="5526"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok1" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1200"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1825"/>
+                                        		<input name="trip.seatcode" type="hidden" value="F"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="BK"/>
+                                        		<input name="trip.flightNo" type="hidden" value="BK2885"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="5730"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="17862789"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="456bb876-a919-44c0-ac7f-647601304d9e"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="奥凯航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T1"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="5444"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2842"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2842"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="27400"/>
+        									</form>
+										</li>
+    								        						    						</ul>
+    					</li>
+					    					<li>
+    						<a class="down resone">
+								<span style="height: 100%; left: 0; position: absolute; width: 30px;"><img style="margin:18px 0 0 8px;" src="images/CZ.gif"/></span>
+                                <span class="info">
+                                	<span class="txt3c">南方航空 CZ3629</span><br>
+                					<span class="depTime">13:30</span> 黄花机场<br>
+                                    <span class="arrTime">19:30</span> 地窝堡机场
+                                </span>
+                                <span class="price" style="text-align:right;margin-right:10px;">
+                                	<span class="red">&yen;2258起</span><br>
+                                                                                                                                          </span>
+                            </a> 
+    					</li>
+                        <li style="border:none;display:none" class="listone">
+							    						<ul class="price_lst">
+                				                                	    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info1">
+														 																																																																																																																																																																																																																																																																			<span class="red">&yen;2258</span><br/>
+																													 																高端经济舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="zhijiang">直减优惠</span>
+														<input name="trip.saleDiscountType" type="hidden" value="1"/>
+														<input name="trip.price" type="hidden" value="2258"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok1" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1330"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1930"/>
+                                        		<input name="trip.seatcode" type="hidden" value="W"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ3629"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="16756581"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="0bc731c1-e8ca-4cc2-a263-f559350552b8"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="2224"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1139"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1139"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="10000"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info2">
+														 																																																																																																																																																																																												<span class="red">&yen;2290</span><br/>
+																													 																经济舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="manjian">返券30元</span>
+														<input name="trip.saleDiscountType" type="hidden" value="2"/>
+														<input name="trip.price" type="hidden" value="2290"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok2" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1330"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1930"/>
+                                        		<input name="trip.seatcode" type="hidden" value="Y"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ3629"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="16756581"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="e47bf05c-042a-42e2-b7cb-a7c09a673939"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="2224"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1139"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1139"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="10000"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info3">
+														 																																																																																																																																																																																												<span class="red">&yen;4120</span><br/>
+																													 																商务舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="manjian">返券15元</span>
+														<input name="trip.saleDiscountType" type="hidden" value="2"/>
+														<input name="trip.price" type="hidden" value="4120"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok3" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="103171"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1330"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1930"/>
+                                        		<input name="trip.seatcode" type="hidden" value="C"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ3629"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="4120"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="discountId-804655,privilegeTyple-SD,policyId-87839934,policyType-PP"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="0"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="4042"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="2640"/>
+    											<input name="trip.childSalePrice" type="hidden" value="2640"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="180"/>
+        									</form>
+										</li>
+    								    									<li>
+    										<form method="post" action='/airline/selectTrip.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_trip">
+                								<div class="">
+													        											<span class="info" id="info4">
+														 																																																																																																																																																																																												<span class="red">&yen;5270</span><br/>
+																													 																公务舱
+															 														                                                                                                                                                                                                                                                                                                          <br>
+														<span class="manjian">返券75元</span>
+														<input name="trip.saleDiscountType" type="hidden" value="2"/>
+														<input name="trip.price" type="hidden" value="5270"/>
+
+														
+																													<input type="submit" style="width:80px ;  background-image:url(/images/html5/header_bg.png);  border-color: -moz-use-text-color -moz-use-text-color #BCB0A3;    border-radius: 5px 5px 5px 5px;  border-width: 0 0 1px;  color: #FFFFFF;    cursor: pointer;    font-size: 1em;    font-weight: bold;    height: 40px;    line-height: 40px;  display:block;   text-align:center;    text-shadow: 1px 0 0 ; float:right; margin:-30px 30px 0 0;" id="ok4" value="预订"/>
+														    												</span>
+    											</div>
+												<input name="sourceId" type="hidden"  value="62634"/>
+                                            	<input name="trip.departure" type="hidden" value="CSX"/>
+                                        		<input name="trip.arrival" type="hidden" value="URC"/>
+                                        		<input name="trip.depdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.arrdate" type="hidden" value="2015-03-31"/>
+                                        		<input name="trip.deptime" type="hidden" value="1330"/>
+                                        		<input name="trip.arrtime" type="hidden" value="1930"/>
+                                        		<input name="trip.seatcode" type="hidden" value="J"/>
+                                        		<input name="trip.oiltax" type="hidden" value="0"/>
+                                        		<input name="trip.airways" type="hidden" value="CZ"/>
+                                        		<input name="trip.flightNo" type="hidden" value="CZ3629"/>
+                                        		<input name="trip.originalPrice" type="hidden" value="5270"/>
+                                        		<input name="trip.discountId" type="hidden" value=""/>
+                                        		<input name="trip.iOilTax" type="hidden" value="0"/>
+                                        		<input name="trip.fullPrice" type="hidden" value="2290"/>
+                                        		<input name="trip.childOilTax" type="hidden"
+                                                                                                             value="0"
+                                                       />
+                                        		<input name="trip.policyId" type="hidden" value="16756581"/>
+                                        		<input name="trip.commisionPoint" type="hidden" value=""/>
+                                        		<input name="trip.buildfee" type="hidden" value="50"/>
+																									<input name="trip.fareitemid" type="hidden" value="d0ed08bf-9d34-47db-a6b8-fa83a01fe24a"/>
+												                                                <input name="trip.airwaysCn" type="hidden" value="南方航空"/>
+                                                <input name="trip.arrairdrome" type="hidden" value="地窝堡机场"/>
+                                                <input name="trip.arrTerminal" type="hidden" value="T3"/>
+                                                <input name="trip.depairdrome" type="hidden" value="黄花机场"/>
+                                                <input name="trip.depTerminal" type="hidden" value="T2"/>
+    											<input name="trip.promotionPrice" type="hidden" value="0"/>
+    											<input name="trip.promotionId" type="hidden" value=""/>
+                                        		<input name="sid" type="hidden" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+    											<input name="trip.venderPrice" type="hidden" value="5118"/>
+                                            	<input name="trip.childVenderPrice" type="hidden" value="1139"/>
+    											<input name="trip.childSalePrice" type="hidden" value="1139"/>
+    											<input name="trip.depCityCode" type="hidden" value="CSX"/>
+    											<input name="trip.arrCityCode" type="hidden" value="URC"/>
+    											<input name="trip.depCityName" type="hidden" value="长沙"/>
+    											<input name="trip.arrCityName" type="hidden" value="乌鲁木齐"/>
+    											<input name="trip.discount" type="hidden" value="23000"/>
+        									</form>
+										</li>
+    								        						    						</ul>
+    					</li>
+					    														<div class="refill tc">
+    					    						<a class="dis-buttom" id="prePage" href='javascript:void(0)' style="color:gray;">上一页</a>
+    						<font color="gray">1/2</font>
+    						<a class="next" id="nextPage" href='javascript:void(0)'>下一页<span></span></a>
+    					                    </div>
+    			    			<input id="currentPageNo" type="hidden" value="1"/>
+				
+    			<form method="post" action='/airline/list.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' id="frm_list1">
+    				<input id="arrCity" name="arrCity" type="hidden" value="乌鲁木齐"/>
+    				<input id="h_arrDate" name="arrDate" type="hidden" value=""/>
+    				<input id="depCity" name="depCity" type="hidden" value="长沙"/>
+    				<input name="depDate" id="h_depDate" type="hidden" value="2015-03-31"/>
+    				<input id="depTime" name="depTime" type="hidden" value="0024"/>
+    				<input id="classNo" name="classNo" type="hidden" value=""/>
+    				<input id="h_pageNo" name="pageNo" type="hidden" value=""/>
+					    			</form>
+				<input id="depDate" type="hidden" value="2015-03-31"/>
+				<!--input id="arrDate" type="hidden" value=""/-->
+
+            </ul>
+        </div>
+    </div>
+	<div class="re-coupons" id="recoup" style="display:none;position:absolute;bottom:50%;z-index:9999">
+        <div style="color:#000;font-size:14px;line-height:1.5em;" >
+        	<span class="att-succ">返券说明</span><br/>
+        	<span class="cart-succ">1.返还的优惠券为限手机充值的品类京券，可在京东手机充值时使用;</span><br/>
+            <span class="cart-succ">2.航班起飞后两个工作日，系统会将相应金额的优惠券返还至订票账户;</span><br/>
+            <span class="cart-succ">3.如订单中含多张票，只为正常乘坐航班的乘客返还优惠券;</span><br/>
+            <span class="cart-succ">4.优惠券的使用有效期为90天内.</span><br/>
+        </div>
+        <div class="cp-lnk" >
+            <a href="javascript:void(0);" onclick="$('#recoup').hide();"><button>&nbsp;&nbsp;确 定&nbsp;&nbsp;</button></a>                    
+        </div>
+	</div>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+     function spinnerShow(){
+        var spinner = createSpinner();
+        $('#spinner').show();
+         spinner.spin($("#spinner")[0]);
+     }
+     var dateVal=$('#h_depDate').val();
+
+     var target = getDate(dateVal);
+
+     var day = target.getDay();
+
+     day = ARRAY_WEEK_CN[day];
+     $("#s_depDate").html(day);
+
+    $(".resone").click(function(){
+      var ind=$(".resone").index($(this));
+      	if($(this).hasClass("down")){
+  		  $(".listone").eq(ind).show();
+          $(this).removeClass("down");
+          $(this).addClass("up");}
+      else{
+      	  $(".listone").eq(ind).hide();
+          $(this).removeClass("up");
+          $(this).addClass("down");}
+	});
+	if(true){
+		var n= 6 % 5;
+    	if(n==0)
+    	    var totalPage= parseInt(6 / 5);
+    	else
+    		var totalPage= parseInt(6 / 5) + 1;
+	}
+	//点击上一页
+	$('#prePage').click(function(){
+        var currentPageNo = $('#currentPageNo').val();
+		if(currentPageNo==1)
+			return false;
+		else{
+            $('#h_pageNo').val(parseInt(currentPageNo)-1);
+            spinnerShow();
+            $('#frm_list1').submit();
+		}
+    });
+    //点击下一页
+    $('#nextPage').click(function(){
+	var currentPageNo = $('#currentPageNo').val();
+		if(currentPageNo==totalPage)
+			return false;
+		else{
+            $('#h_pageNo').val(parseInt(currentPageNo)+1);
+            spinnerShow();
+            $('#frm_list1').submit();
+		}
+    });
+    //点击前翻
+    $('#pre').click(function(){
+        var canpredate = new Date();
+        var canpreday = canpredate.getDate();
+        var canpremonth = canpredate.getMonth() + 1;
+        var canpreyear = canpredate.getFullYear();
+        var canpremonth = canpremonth >= 10?canpremonth:("0"+canpremonth);
+        var canpreday = canpreday >= 10?canpreday:("0"+canpreday);
+
+        canpredate = canpreyear + "-" + canpremonth + "-" + canpreday;
+		
+		var prevDepDate = "2015-03-31".split("-");
+        var prevDepYear = prevDepDate[0];
+        var prevDepMonth = prevDepDate[1]-1;
+        var prevDepDay = prevDepDate[2];
+		var prevDepDate = new Date(prevDepYear,prevDepMonth,prevDepDay);
+		
+		var prevDepDate = prevDepDate.dateAdd('d',-1);
+		
+		var prevDepYear = prevDepDate.getFullYear();
+        var prevDepMonth = prevDepDate.getMonth()+1;
+        var prevDepDay = prevDepDate.getDate();
+		
+		var prevDepMonth = prevDepMonth > 9?prevDepMonth:("0"+prevDepMonth);
+		var prevDepDay = prevDepDay > 9?prevDepDay:("0"+prevDepDay);
+		
+		prevDepDate = prevDepYear+"-"+prevDepMonth+"-"+prevDepDay;
+		
+		
+        if(canpredate <= prevDepDate){
+            $('#h_pageNo').val(1);
+            $('#h_depDate').val(prevDepDate);
+             spinnerShow();
+            $('#frm_list1').submit();
+        }
+        else
+		{	
+			$('#hide').show();
+			return false;
+		}
+    });
+    //点击后翻
+    $('#next').click(function(){
+		var cannextDate = new Date().dateAdd('m',6);
+        var cannextday = cannextDate.getDate();
+        var cannextmonth = cannextDate.getMonth()+1;
+		var cannextyear = cannextDate.getFullYear();
+		
+        var cannextmonth = cannextmonth >= 10?cannextmonth:("0"+cannextmonth);
+        var cannextday = cannextday >= 10?cannextday:("0"+cannextday);
+
+        cannextDate = cannextyear + "-" + cannextmonth + "-" + cannextday;
+		var nextDepDate = "2015-03-31".split("-");
+        var nextDepYear = nextDepDate[0];
+        var nextDepMonth = nextDepDate[1]-1;
+        var nextDepDay = nextDepDate[2];
+		var nextDepDate = new Date(nextDepYear,nextDepMonth,nextDepDay);
+		
+		var nextDepDate = nextDepDate.dateAdd('d',1);
+		
+		var nextDepYear = nextDepDate.getFullYear();
+        var nextDepMonth = nextDepDate.getMonth()+1;
+        var nextDepDay = nextDepDate.getDate();
+		
+		var nextDepMonth = nextDepMonth > 9?nextDepMonth:("0"+nextDepMonth);
+		var nextDepDay = nextDepDay > 9?nextDepDay:("0"+nextDepDay);
+		
+		nextDepDate = nextDepYear+"-"+nextDepMonth+"-"+nextDepDay;
+        
+		if(nextDepDate <= cannextDate){
+    		$('#h_pageNo').val(1);
+            $('#h_depDate').val(nextDepDate);
+            spinnerShow();
+            $('#frm_list1').submit();
+        }
+		else
+			return false;
+        
+    });
+	
+	$('.manjian').click(function(){
+		var scrollleft = window.pageXOffset|| document.documentElement.scrollLeft || document.body.scrollLeft;
+		var scrolltop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    	var allWidth = document.documentElement.clientWidth || document.body.clientWidth;
+		var allHeight =  document.documentElement.clientHeight || document.body.clientHeight;
+        var left = scrollleft-115+(allWidth/2);
+    	document.getElementById('recoup').style.left=left+'px';	
+		var scrollheight = window.pageYOffset|| document.documentElement.scrollTop || document.body.scrollTop;
+    	var allHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        var top = scrolltop-120+(allHeight/2);
+    	document.getElementById('recoup').style.top=top+'px';
+		$('#recoup').show();
+	});
+	
+});
+</script>
+	<div class="login-area" id="footer">
+        	<div class="login">
+									    					<a rel="nofollow" href='https://passport.m.jd.commember_index.html'>
+    				                	<a rel="nofollow" href='https://passport.m.jd.commember_index.html'>
+						        					hjl41614..
+        									</a>
+    				<span class="lg-bar">|</span>
+											<a rel="nofollow" href='https://passport.m.jd.com/user/logout.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68'>退出</a>
+													<span  class="new-fr"><a href="http://m.jd.com/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version" id="clientArea"><a href="http://m.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a>
+        	</div>
+            <div class="copyright"> Copyright &copy; 2012-2014 京东JD.com 版权所有 </div>
+        </div>
+
+    <div style="display:none;">
+        				<img src="/ja.jsp?&amp;utmn=1873791756&amp;utmr=http%3A%2F%2Fjipiao.m.jd.com%2F%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;utmp=%2Fairline%2Flist.action%3FarrCity%3D%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90%26depTime%3D0024%26sid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68%26depDate%3D2015-03-31%26depCity%3D%E9%95%BF%E6%B2%99&amp;guid=ON&jav=html5&pin=hjl416148489&utmac=MO-J2011-1" />
+			    </div>
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if($wareCount!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text($wareCount>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+    window._clientVersion_ = '';
+    
+	$(document).ready(function(){
+		var _loadScript = function(url, options,cb){
+			var script = document.createElement("script");
+			var def = {
+				type: "text/javascript",
+				charset:"utf-8"
+			}
+			options= options|| {
+			}
+			for(var i in options){
+				def[i] = options[i];
+			}
+			script.src = url;
+			
+			for(var i in def){
+				script.setAttribute(i,def[i]);
+			}
+			script.addEventListener("load",function(){
+				cb && cb();
+			},false)
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+		
+		if($(".download-con").length || $("#clientArea").length){
+			_loadScript("/js/2013/installapp.js?v=20140527100001",{},function(){
+				 $("#clientArea").length && downcheck($("#clientArea"),false);
+			});
+		}
+		
+	})
+</script>
+<div style="display:none;">
+</div>
+</body>
+</html>

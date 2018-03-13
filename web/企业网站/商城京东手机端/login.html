@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>登录</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+         				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=20130806100001" charset="UTF-8"/>
+							
+				
+			
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png"/>
+						<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+				        <script type="text/javascript" src="js/common.js?v=201307121358"></script>
+        <script type="text/javascript" src="js/spin.min.js"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back"><span>返回</span></a>
+							<h2>登录</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+
+<link rel="stylesheet" type="text/css" href="css/base.css" charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/login.css" charset="utf-8"/>
+<style type="text/css">
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow:0 0 0 60px #fff inset;
+    -webkit-text-fill-color: #333;
+}
+</style>
+<div class="common-wrapper">
+    <div class="main">
+    <form  action='' method="post" id="frm_login" >
+		<input type="hidden" name="returnurl" value="http://p.m.jd.com/norder/order.action?wareId=1488391628&amp;enterOrder=true&amp;sid=1d7f067778e1ec0702fd13721e619448"/>
+		<div class="new-txt-err new-mg-t10" id="error" style="display:none"></div> 
+		<div class="item item-username">
+            <input class="txt-input txt-username" type="text" name="username" id="username" value=""  placeholder="请输入用户名/邮箱/已验证手机"/>
+            <b class="input-close"></b>
+        </div>
+        <div class="item item-password">
+			<input id="password" name="password" class="txt-input txt-password ciphertext" type="password"  placeholder="请输入密码" />
+            <input id="ptext" name="ptext" class="txt-input txt-password plaintext" style="display:none" type="text"   placeholder="请输入密码" />
+			<b class="tp-btn btn-off "></b>
+            <b class="input-close"></b> 
+        </div>
+        <div class="item item-captcha">
+		<input type="hidden" value="1" id="codeLevel" />
+        <div id="codeDiv" class="input-info" style="display:none">
+            <input class="txt-input txt-captcha" type="text" name="validateCode" id="validateCode"  size="11" maxlength="4" placeholder="验证码" />
+			<span id="captcha-img">
+				<img src="" id='code' width="75" height="30" alt="" onclick="com_jd_passport_m_validateCode('code','codeKey','1',$('#username').val().trim());" />
+				<input type="hidden" value="" name="codeKey" id="codeKey">
+			</span>
+            <b class="input-close"></b>
+        </div>
+				</div>
+        <div class="item item-btns">
+            <a id="loginSubmit" class="btn-login " href="javascript:login();">登录</a>
+        </div>
+		</form>	
+        <div class="item item-login-option">
+            <span class="register-free">
+		                			<a rel="nofollow" href='reg.html' >免费注册</a>
+                            </span>
+            <span class="retrieve-password">
+				<a href='forget.html' class=""> 找回密码</a>  
+            </span>
+        </div>
+		
+				
+		        <div class="item item-login-other">
+            <dl>
+                <dt>其它登录方式</dt>
+                <dd>
+                    <a href='http://m.jd.com/login/qq.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' class="qq"><span>QQ</span></a>
+                    <a href='http://m.jd.com/login/renrengonggao.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' class="renren"><span>人人</span></a>
+                    <a href='http://m.jd.com/login/weibogonggao.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' class="weibo"><span>新浪微博</span></a>
+                    <a href='http://m.jd.com/login/doubangonggao.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' class="douban"><span>豆瓣</span></a>
+                </dd>
+            </dl>
+        </div>
+		    </div>
+</div>
+<div class="pop-bg"  style="display:none;"></div>
+<div class="pop pop1"  style="display:none;">
+    <p class="error"><br /></p>
+</div>
+<div id="autoLoginHeight"></div>
+
+<script type="text/javascript" src="js/validateCodeWithLogin.js" ></script>
+<script type="text/javascript" src="js/user.js" ></script>
+<script type="text/javascript" src="js/autoHeight.js" ></script>
+<script type="text/javascript" src="js/endFocusPlugin.js" ></script>
+<script type="text/javascript" >
+    window.onload=function(){
+        var oPop=document.getElementsByClassName('pop-bg');
+        oPop[0].style.height=document.body.offsetHeight+'px';
+    }
+	
+    $(function() {
+		$(".input-close").hide();
+		displayPwd();
+		remember();
+		showActionError();
+		autoHeight_login();
+		dispValidateCode();
+		displayClearBtn();
+		setTimeout(displayClearBtn, 200 ); //延迟显示,应对浏览器记住密码
+	});	
+	
+	function showActionError(){
+		if($("#error").html() !=''){
+			var msg = $("#error").html();
+			errShow(msg);
+		}
+		if(false==true){
+			var msg = "检测到您的IP发生变化,为了您的账户安全，请重新登录";
+			errShow(msg);
+		}	
+	}
+	
+	function dispValidateCode(){
+		if($("#codeLevel").val()!= '' && $("#codeLevel").val() != '0'){
+			com_jd_passport_m_validateCode('code','codeKey','1', $('#username').val().trim());
+			$("#codeDiv").css("display","block");
+		}
+	}
+	
+	//是否显示清除按钮
+	function displayClearBtn(){
+		if(document.getElementById("username").value != ''){
+			$("#username").siblings(".input-close").show();
+		}
+		if(document.getElementById("password").value != ''){
+			$(".ciphertext").siblings(".input-close").show();
+		}
+		if($("#codeLevel").val()!="" && $("#codeLevel").val()!='0'){
+			if($("#validateCode").val()!=""){
+				$("#validateCode").siblings(".input-close").show();
+			}
+		}
+	}
+
+	//清除input内容
+    $('.input-close').click(function(e){  
+		$(e.target).parent().find(":input").val("");
+		$(e.target).hide();
+		$($(e.target).parent().find(":input")).each(function(i){
+			if(this.id=="ptext" || this.id=="password"){
+				$("#password").val('');
+				$("#ptext").val('');
+			}
+           //this.src = "test" + i + ".jpg";
+         });
+    });  
+	
+	//设置password字段的值	
+	$('.txt-password').bind('input',function(){
+		$('#password').val($(this).val());
+	});
+	
+	//显隐密码切换
+	function displayPwd(){
+    	$(".tp-btn").toggle(
+          function(){
+            $(this).addClass("btn-on");
+			var textInput = $(this).siblings(".plaintext");
+    		var pwdInput = $(this).siblings(".ciphertext");
+			pwdInput.hide();
+			textInput.val(pwdInput.val()).show().focusEnd();
+          },
+          function(){
+		  	$(this).removeClass("btn-on");
+		  	var textInput = $(this).siblings(".plaintext ");
+    		var pwdInput = $(this).siblings(".ciphertext");
+            textInput.hide();
+			pwdInput.val(textInput.val()).show().focusEnd();
+          }
+    	);
+	}
+	
+	//一个月免登陆切换
+	function remember(){
+    	$("#rememberMe").toggle(
+          function(){
+            $(this).removeClass("login-free-selected");
+			 $('#remember').val("false");
+          },
+          function(){
+		  	$(this).addClass("login-free-selected");
+		  	 $('#remember').val("true");
+          }
+    	);
+	}
+
+	//监控用户输入
+	$(":input").bind('input propertychange', function() {
+		if($(this).val()!=""){
+			$(this).siblings(".input-close").show();
+		}else{
+			$(this).siblings(".input-close").hide();
+		}
+    });
+
+	function errShow(content){
+		$('.error').html(content);
+		$('.pop-bg').show();
+		$('.pop1').show();
+		setTimeout("errHide()",3000);
+	}
+	
+	//隐藏错误提示
+	function errHide(){
+		$('.pop-bg').hide();
+		$('.pop1').hide();
+		$('.error').text('');
+		$("#error").html('');
+		;
+	}
+	
+	//登陆提示
+	function loginShow(content){
+		$('.error').html(content);
+		$('.pop-bg').show();
+		$('.pop1').show();
+	}
+	
+	//点击关闭错误提示
+	$('.pop-bg').live('click',function(){
+		errHide();
+	})
+	//点击关闭错误提示
+	$('.pop').live('click',function(){
+		errHide();
+	})
+	
+	//刷新时清空用户名和密码的值
+/*	$(window).unload(function(){ 
+		$("#username").val("");
+		$("#password").val("");
+		$("#error").html('');
+	});
+*/	
+	function checkUsername(){
+		//var username = $("#username").val().trim();
+		//浏览器记住密码时，jquery取不到输入框中的值，所以直接用js取值
+		var username = document.getElementById("username").value;
+		if(username == ""){
+			errShow("请输入用户名和密码");
+			return false;
+		}
+		return true;
+	}
+
+	function checkPassword(){
+		var password = document.getElementById("password").value;
+		if(password == ""){
+			errShow("请输入用户名和密码");
+			return false;
+		} 
+		if(password.length <6 || password.length>20){
+			errShow("密码不合规则，请重新输入");
+			return false;
+		}
+		return true;
+	}
+	
+	function checkCode(){
+		if($('#codeLevel').val()!='' && $('#codeLevel').val()!='0' ){
+			var validateCode = $('#validateCode').val();
+			if(validateCode == ""){
+				errShow("请输入验证码");
+				return false;
+			}
+			
+			if(validateCode.length != 4){
+				errShow("请输入4位验证码");
+				return false;
+			}
+			
+			if(isContainBlank(validateCode)){
+        		errShow("图片验证码不能包含空格");
+        		return false;
+        	}
+		}
+		return true;
+	}
+	
+	//add by lizhenyou 2015-3-26
+	function isContainBlank(str){
+	 	if(/\s/.test(str)){
+            //alert('有空格');
+			return true;
+        }else{
+            //alert('没有空格');
+			return false;
+        }
+	}
+
+	//登陆校验
+	function login(){
+		if(!loginCheck()){
+			return;
+		}
+		jQuery.ajax({
+				type: "post",
+				data: $('#frm_login').serialize(),
+				dataType: "json",
+				url: "/user/doMLogin.json",
+				beforeSend: function(XMLHttpRequest){
+					loginShow("正在登录...");
+				},
+				success: function(data, textStatus){
+					if(textStatus=='success'){	
+    					if(data!=null && data.success){
+							 window.location.href = data.returnurl;
+    					}else{
+							errShow(data.errorMsg);
+							if(data.codeLevel !='' && data.codeLevel !=0){
+								$("#codeDiv").css("display","block");
+								$("#codeLevel").val(data.codeLevel);
+								com_jd_passport_m_validateCode('code','codeKey','1',$('#username').val().trim());
+							}else{
+								$("#codeDiv").css("display","none");
+							}
+						}
+					}else{
+						errShow("请求异常,请稍后再试.");
+					}
+				},
+				complete: function(XMLHttpRequest, textStatus){		
+
+				},
+				error: function(){					
+					errShow("出错啦 请稍后再试.");
+				}
+		});
+	}
+	
+	function loginCheck(){
+       	if(checkUsername() && checkPassword() && checkCode()){
+		  return true;
+	   	}
+		return false;;
+	}
+
+</script>
+    <footer>
+		<div class="login-area" id="footer">
+        	<div class="login">
+									    					<a href="login.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">登录</a><span class="lg-bar">|</span><a href="https://passport.m.jd.com/user/mobileRegister.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">注册</a>
+    												<span  class="new-fr"><a href="http://m.jd.com/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+        	<div class="version"><a href="http://m.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a><a href="http://www.jd.com" id="toPcHome">电脑版</a></div>
+            <div id="clientArea">
+                <a href="http://m.jd.com/download/downApp.html" id="layout_toClient" class="layout-openJD">客户端</a>
+            </div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有</div>
+        </div>
+    </footer>
+
+
+    <div style="display:none;">
+        	<img src="/ja.jsp?&amp;utmn=1906832073&amp;utmr=http%3A%2F%2Fitem.m.jd.com%2Fware%2Fview.action%3FwareId%3D1488391628%26sid%3D1d7f067778e1ec0702fd13721e619448%26resourceType%3Dindex_category&amp;utmp=%2Fuser%2Flogin.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68%26returnurl%3Dhttp%253A%252F%252Fp.m.jd.com%252Fnorder%252Forder.action%253FwareId%253D1488391628%2526enterOrder%253Dtrue%2526sid%253D1d7f067778e1ec0702fd13721e619448%26ipChanged%3D&amp;guid=ON&jav=touch&pin=-&utmac=MO-J2011-1" />
+        </div>
+
+            <script type="text/javascript" src="js/mping.min.js"></script>
+        <script type="text/javascript">
+            try{
+                var pv= new MPing.inputs.PV();
+                var mping = new MPing();
+                mping.send(pv);
+            } catch (e){
+            }
+        </script>
+    
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='http://m.jd.com/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('http://m.jd.com/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+
+</script>
+
+	<div class="download-con" id="down_app" style="position:relative;position:absolute;position:fixed;bottom:0px;">
+		<div class="down_app">
+			<div class="download-logo"></div>
+			<div class="alogo">
+				<p class="client-name">客户端首单满59元送59元！</p>
+				<p class="client-logon"></p>
+			</div>
+			<div class="open_now">
+				<a id="openJD" href="http://m.jd.com/download/downApp.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68"><span class="open_btn">立即打开</span></a>
+			</div>
+			<div class="close-btn-con close-btn">
+				<span id="appClose" class="close-btn-icon"></span>
+			</div>
+		</div>
+	</div>
+    <script type="text/javascript" src="js/downloadAppPlugIn.js"></script>
+    <script type="text/javascript">
+        window.onload = function(){
+            $("#openJD").downloadAppPlugIn(); 
+            $("#appClose").downloadAppPlugInClose('down_app'); 
+        }
+    </script>
+</body>
+</html>
+

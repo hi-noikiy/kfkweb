@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<link rel="shortcut icon" type="image/ico" href="./img/favicon.ico">
+	<link rel="stylesheet" href="./css/global.css">
+	<link rel="stylesheet" href="http://data.smohan.net/static/css/style.css?version=6.0.7">
+
+	<style type="text/css"></style>
+	<!--[if lt IE 10]>
+	<script>window.location.href = "./index.htmlltie.html";</script><![endif]-->
+	<meta name="keywords" content="水墨寒,smohan,成都网站建设,成都网站设计,水墨寒WEB工作室,jquery,css3,html5,前端博客,前端技术,css3学习,前端">
+	<meta name="description" content="水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。">
+	<title>SmohanTimeLine.js | 实验室 - 水墨寒的博客</title>
+	<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+	.en-markup-crop-options {
+		top: 18px !important;
+		left: 50% !important;
+		margin-left: -100px !important;
+		width: 200px !important;
+		border: 2px rgba(255, 255, 255, .38) solid !important;
+		border-radius: 4px !important;
+	}
+	.en-markup-crop-options div div:first-of-type {
+		margin-left: 0px !important;
+	}
+	</style>
+</head>
+
+<body ryt13389="1">
+<header class="grid-header">
+	<div class="m-progress"></div>
+	<div class="grid-container-fixed">
+		<div class="grid-container-inner"><a href="./index.html" class="m-logo">水墨寒的博客</a><span class="u-loading" style="display: none;"></span>
+			<nav class="m-nav" style="display: block;">
+				<ul>
+					<li><a href="./index.html" data-title="首页">首页</a></li>
+					<li><a href="./works.html" rel="pjax" data-title="作品">作品</a></li>
+					<li><a href="./blog.html" rel="pjax" data-title="博客">博客</a></li>
+					<li><a href="./message.html" rel="pjax" data-title="留言">留言</a></li>
+					<li class="current"><a href="./lab.html" rel="pjax" data-title="实验室">实验室</a></li>
+					<li><a>前端资源</a><span class="icon-drop"></span>
+						<ul class="u-nav-drop">
+							<li><a href="./favorites.html" rel="pjax" data-title="前端收藏夹">前端收藏夹</a></li>
+							<li><a href="./front.html" rel="pjax" data-title="前端WEB圈">前端WEB圈</a></li>
+							<li><a href="./about.html" rel="pjax" data-title="联系水墨寒">联系水墨寒</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<a class="u-icon-menu"><i></i><i></i><i></i></a></div>
+	</div>
+</header>
+<div id="doc-container" class="doc-container">
+<div class="m-library-banner">
+	<div class="grid-container-fixed">
+		<div class="grid-container-inner"><h3><span class="u-icon icon-github" style="font-size: 50px;"></span></h3><h5>SmohanTimeLine.js</h5>
+
+			<p>SmohanTimeLine是一款基于原生JavaScript的支持移动端的时间轴插件，大小仅仅4KB。需要简单的配置，就可以完成你的时间轴，记录流转的时光。</p>
+
+			<p>前端交流群 JQUERY： <strong>221716837</strong> CSS3：<strong>335905622</strong></p></div>
+	</div>
+</div>
+<div class="works-container mt20">
+<div class="grid-container-fixed">
+<section class="grid-viewer-wrap grid-container-inner works-viewer blog-viewer">
+<aside class="m-title"><h1 class="f-toe">SmohanTimeLine.js</h1>
+
+	<p class="fs-12 mt10 fc-grey-x2"><span class="mr10">作者：Smohan</span><span class="mr10">版本：Version.3.2.0</span><span class="mr10">更新于2015-11-11 02:06</span></p>
+
+	<div class="u-time fc-grey-x2"> 人气<span class="u-num ml10" style="font-size: 45px;">1.29 w</span></div>
+</aside>
+<div class="m-content" style="min-height: 800px;padding: 20px 0;" data-cover="http://data.smohan.net/upload/cover/1427737273.jpg"><p style="color: #ff5500;" class="fs-12"> 原创作品，版权归Smohan所有，使用请保留出处.</p><h6>作品信息</h6><pre class="prettyprint linenums lang-javascript"><span class="key">var</span> information <span
+		class="ope">=</span> {
+    fileName   : <span class="str">"smohan_timeline"</span>,
+    version    : <span class="str">"3.2.0"</span>,
+    author     : <span class="str">"Smohan"</span>,
+    createTime : <span class="str">"2015-03-31 12:32"</span>,
+    updateTime : <span class="str">"2015-11-11 02:06"</span>
+};<div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7</div></pre>
+<h6>版本记录</h6>
+<ol class="version">
+	<li><i>2015-11-11</i><strong class="ml20"><a data-hash="15XtN4" class="u-num js-download" data-id="1010">3.2.0
+		<small class="ml10" style="color:#E53333;font-size: 13px;">[最新版本]</small>
+	</a></strong><span class="ml20">使用原生JavaScript重新编写，不在依赖jQuery</span></li>
+	<li><i>2015-03-31</i><strong class="ml20"><a data-hash="1Nr4A3" class="u-num js-download" data-id="1010">3.0.1</a></strong><span class="ml20">增加了对移动端和ajax方法调用的支持，新增minTop和minScreen两个参数作为移动端配置以及开放render方法作为高度改变后的重新渲染</span></li>
+</ol>
+<br>
+
+<div class="mt20 clear-fixed"><p>
+	自2.0版（<a href="http://www.17sucai.com/pins/6749.html" target="_blank" rel="title-tip" title="SmohanTimeLine2.0">查看</a>）发布以来，收到大家不同方向的反馈，感谢大家的支持。<i style="color:#989997;text-decoration:line-through;">首先，再次强调一下，SmohanTimeLine.js，包括2.0版都是支持IE8及其以下IE浏览器的，因为demo中使用的Jquery库是2.1版，而Jquery从1.9开始就不再对IE6-8做支持了，所以有网友反馈说不支持IE6-8，其实，只要在你的项目中将Jquery文件降级到1.8及其以下版本，并且稍微改以下css就好了。</i>新版本3.2.0已完成，采用原生JavaScript编写，不在依赖jQuery插件，减轻移动端负担。
+</p>
+<br>
+
+<p>
+	3.0.1版主要增加了对<span style="font-size:16px;color:#E53333;">移动端和ajax方法</span>调用的支持，新增minTop和minScreen两个参数作为移动端配置以及开放render方法作为高度改变后的重新渲染，具体请参考下列参数：
+</p>
+<h6>
+	参数
+</h6>
+<table width="100%">
+	<tbody>
+	<tr>
+		<td>
+			参数名
+		</td>
+		<td>
+			类型
+		</td>
+		<td>
+			默认值
+		</td>
+		<td>
+			可选值
+		</td>
+		<td>
+			说明
+		</td>
+	</tr>
+	<tr>
+		<td>
+			item
+		</td>
+		<td>
+			String
+		</td>
+		<td>
+			.item
+		</td>
+		<td>
+		</td>
+		<td>
+			列表容器
+		</td>
+	</tr>
+	<tr>
+		<td>
+			margin
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			100
+		</td>
+		<td>
+		</td>
+		<td>
+			左右列表间的间距
+		</td>
+	</tr>
+	<tr>
+		<td>
+			top
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			20
+		</td>
+		<td>
+		</td>
+		<td>
+			上下列表间的间距
+		</td>
+	</tr>
+	<tr>
+		<td>
+			minTop
+		</td>
+		<td>
+			String
+		</td>
+		<td>
+			10
+		</td>
+		<td>
+		</td>
+		<td>
+			移动端上下间距
+		</td>
+	</tr>
+	<tr>
+		<td>
+			resize
+		</td>
+		<td>
+			Boolean
+		</td>
+		<td>
+			true
+		</td>
+		<td>
+			false
+		</td>
+		<td>
+			监听屏幕变化
+		</td>
+	</tr>
+	<tr>
+		<td>
+			minScreen
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			640
+		</td>
+		<td>
+		</td>
+		<td>
+			当屏幕尺寸达到该值时，切换到单列显示，如移动端，需设置resize = true
+		</td>
+	</tr>
+	</tbody>
+</table>
+<h6>
+	CSS
+</h6>
+
+<p>
+	部分样式涉及到CSS3，请直接修改为图片，图片不再提供
+</p>
+<pre class="prettyprint linenums lang-css"><span class="attr">.container</span>{
+   <span class="key">position</span>:<span class="val">relative</span>;
+   <span class="key">width</span>:<span class="val">86</span>%;
+   <span class="key">max-width</span>:<span class="val">1280px</span>;
+   <span class="key">min-width</span>:<span class="val">480px</span>;
+   <span class="key">overflow</span>:<span class="val">hidden</span>;
+}
+<span class="attr">#timeline</span>{
+    <span class="key">position</span>:<span class="val"> relative</span>;
+    <span class="key">min-height</span>:<span class="val"> 660px</span>;
+    <span class="key">margin-top</span>:<span class="val"> 20px</span>;
+}
+<span class="attr">#timeline .line</span>{  //3.2.0 不再使用.lines 类， 改为.line
+    <span class="key">width</span>:<span class="val"> 2px</span>;
+    <span class="key">height</span>:<span class="val"> 0</span>;
+    <span class="key">background-color</span>:<span class="val"> #c8c8c8</span>;
+    <span class="key">position</span>:<span class="val"> absolute</span>;
+    <span class="key">top</span>:<span class="val"> -20px</span>;
+}
+<span class="attr">#timeline .item</span>{
+    <span class="key">background-color</span>:<span class="val"> #fff</span>;
+    <span class="key">overflow</span>:<span class="val"> hidden</span>;
+    <span class="key">position</span>:<span class="val"> absolute</span>;
+    <span class="key">min-height</span>:<span class="val"> 80px</span>;
+    <span class="key">clear</span>:<span class="val"> both</span>;
+    <span class="key">visibility</span>:<span class="val"> hidden</span>; //为避免记载过程中跳动，hidden  item
+}
+<span class="attr">#timeline .item .content</span>{
+    <span class="key">padding</span>:<span class="val">10px</span>;
+    <span class="key">overflow</span>:<span class="val">hidden</span>;
+}
+<span class="attr">#timeline .item .point,#timeline .item .corner</span>{
+    <span class="key">display</span>:<span class="val"> block</span>;
+    <span class="key">position</span>:<span class="val"> absolute</span>;
+    <span class="key">z-index</span>:<span class="val"> 2</span>;
+}
+<span class="attr">#timeline .item .point</span>{
+   <span class="com">/*此处涉及CSS3，如需兼容IE6-8，请修改为图片，中间小圆点*/</span>
+    <span class="key">width</span>:<span class="val"> 16px</span>;
+    <span class="key">height</span>:<span class="val"> 16px</span>;
+    <span class="key">border-radius</span>:<span class="val"> 100</span>%;
+    <span class="key">background-color</span>:<span class="val"> #fff</span>;
+}
+<span class="attr">#timeline .item .point:before</span>{
+   <span class="com">/*此处涉及CSS3，如需兼容IE6-8，可忽略，点上的那个绿点，可直接做图片到 point上*/</span>
+    <span class="key">display</span>:<span class="val"> block</span>;
+    <span class="key">content</span>:<span class="val"> ''</span>;
+    <span class="key">width</span>:<span class="val"> 10px</span>;
+    <span class="key">height</span>:<span class="val"> 10px</span>;
+    <span class="key">border-radius</span>:<span class="val"> 100</span>%;
+    <span class="key">background-color</span>:<span class="val"> #70ca10</span>;
+    <span class="key">position</span>:<span class="val"> absolute</span>;
+    <span class="key">top</span>:<span class="val"> 3px</span>;
+    <span class="key">left</span>:<span class="val"> 3px</span>;
+}
+<span class="attr">#timeline .item.isLeft .corner</span>{
+    <span class="key">top</span> :<span class="val"> 27px</span>;
+}
+<span class="attr">#timeline .item.isLeft .point</span>{
+    <span class="key">top</span> :<span class="val"> 30px</span>;
+}
+<span class="attr">#timeline .item.isRight .corner</span>{
+    <span class="key">top</span> :<span class="val"> 37px</span>;
+}
+<span class="attr">#timeline .item.isRight .point</span>{
+    <span class="key">top</span> :<span class="val"> 40px</span>;
+}
+<span class="attr">#timeline .item .corner</span>{
+    <span class="com">/*此处涉及CSS3，如需兼容IE6-8，请修改为图片，箭头*/</span>
+    <span class="key">border</span>:<span class="val"> 12px solid transparent</span>;
+}
+<span class="attr">#timeline .item.isLeft .corner</span>{
+    <span class="key">border-left-color</span>:<span class="val"> #fff</span>;
+    <span class="key">left</span>:<span class="val"> 100</span>%;
+}
+<span class="attr">#timeline .item.isRight .corner</span>{
+    <span class="key">border-right-color</span>:<span class="val"> #fff</span>;
+    <span class="key">right</span>:<span class="val"> 100</span>%;
+}<div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57<br>58<br>59<br>60<br>61<br>62<br>63<br>64<br>65<br>66<br>67<br>68<br>69<br>70<br>71<br>72<br>73<br>74<br>75<br>76<br>77<br>78<br>79
+	</div></pre>
+<h6>
+	HTML结构
+</h6>
+
+<p>
+	部分结构标签自动生成
+</p>
+<pre class="prettyprint linenums lang-html"><span class="mrk">&lt;div <span class="attr">class</span>=<span class="val">"container"</span>&gt;</span>
+    <span class="mrk">&lt;div <span class="attr">id</span>=<span class="val">"timeline"</span>&gt;</span>
+        <span class="com">&lt;!--循环开始--&gt;</span>
+        <span class="mrk">&lt;div <span class="attr">class</span>=<span class="val">"item"</span>&gt;</span>
+            <span class="mrk">&lt;div <span class="attr">class</span>=<span class="val">"content"</span>&gt;</span>
+                内容....任何HTML代码
+            <span class="mrk">&lt;/div&gt;</span>
+        <span class="mrk">&lt;/div&gt;</span>
+        <span class="com">&lt;!--循环结束--&gt;</span>
+    <span class="mrk">&lt;/div&gt;</span>
+<span class="mrk">&lt;/div&gt;</span><div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11</div></pre>
+<h6>
+	Javascript
+</h6>
+
+<p>
+	在页面中引入smohanTimeLine.js，在window.onload中执行
+</p>
+<pre class="prettyprint linenums lang-js"><span class="ope">&lt;</span>script<span class="ope">&gt;</span>
+<span class="key">var</span> myTimeLine;
+<span class="obj">window</span>.onload <span class="ope">=</span> <span class="key">function</span>(){
+	myTimeLine <span class="ope">=</span> timeLine(<span class="str">'#timeline'</span>,{
+	  item   : <span class="str">'.item'</span>,
+          margin : <span class="num">120</span>, <span class="com">//左右之间的间距</span>
+          top    : <span class="num">20</span> ,  <span class="com">//距离上一个item的间距</span>
+          minTop : <span class="num">10</span>,  <span class="com">//如在手机下显示，可以将上下间距适当缩小</span>
+          resize : <span class="bol">true</span>, <span class="com">//监听窗口变化</span>
+          minScreen : <span class="num">640</span> <span class="com">//当窗口小于640时，单列显示</span>
+	});
+}
+<span class="com">//如容器高度变动，比如ajax加载后，可执行render方法刷新容器</span>
+myTimeLine.render();
+<span class="ope">&lt;</span>/script<span class="ope">&gt;</span><div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15</div></pre>
+</div>
+<!--<h6>版权信息 ©</h6>-->
+<div class="b-copyright mt20"><p class="f-toe fc-313230">本文及其作品版权归Smohan所有，转载使用请注明出处.</p>
+
+	<p class="f-toe">本文标题：<a href="./lab.htmlsmohan_timeline" target="_blank">SmohanTimeLine.js</a></p>
+
+	<p class="f-toe">本文网址：<a href="./lab.htmlsmohan_timeline" target="_blank">./lab.htmlsmohan_timeline.</a></p>
+
+	<p class="f-toe">本文标签：<a class="mr05" href="./blog.html/tag/timeline/" rel="pjax" data-title="timeline | 博客">timeline.</a><a class="mr05" href="./blog.html/tag/%E6%B0%B4%E5%A2%A8%E5%AF%92%E6%97%B6%E9%97%B4%E8%BD%B4/" rel="pjax" data-title="水墨寒时间轴 | 博客">水墨寒时间轴.</a><a
+			class="mr05" href="./blog.html/tag/%E6%97%B6%E5%85%89%E8%BD%B4/" rel="pjax" data-title="时光轴 | 博客">时光轴.</a><a class="mr05" href="./blog.html/tag/jquery%E6%97%B6%E9%97%B4%E8%BD%B4/" rel="pjax" data-title="jquery时间轴 | 博客">jquery时间轴.</a><a class="mr05"
+	                                                                                                                                                                                                                                                                                  href="./blog.html/tag/jquery+timeline/"
+	                                                                                                                                                                                                                                                                                  rel="pjax"
+	                                                                                                                                                                                                                                                                                  data-title="jquery timeline | 博客">jquery
+		timeline.</a></p></div>
+<p class="mt20 fs-12" style="color: #ff5500;">如在使用中有任何问题，请参考demo或者在评论中说明.</p><!--share-->
+<div class="u-share-container f-usn">
+	<ul>
+		<li class="s-praise js-share-praise" data-mould="2" data-post="1010" rel="title-tip" data-praises="279" title="赞一个"><span></span></li>
+		<li class="s-weixin js-share-wx" rel="title-tip" title="分享到朋友圈" data-qrcode="http%3A%2F%2Fdata.smohan.net%2Fupload%2Fqrcode%2Flab_1010.png"></li>
+		<li class="s-weibo js-share-wb" rel="title-tip" title="分享到微博"></li>
+		<li class="s-qzone js-share-qz" rel="title-tip" title="分享到QQ空间"></li>
+		<li class="s-note js-share-note" rel="title-tip" title="分享到有道云笔记"></li>
+	</ul>
+</div>
+<!--buttons-->
+<div class="m-button-groups mt30">
+	<ul class="row2 f-isn">
+		<li><a class="bg-green" target="_blank" href="http://demo.smohan.net/library/timeline/"><i class="u-icon icon-chrome"></i><i>演示</i></a></li>
+		<li><a class="bg-blank js-download" data-hash="15XtN4" data-id="1010"><i class="u-icon icon-download"></i><i>下载（873次）</i></a></li>
+	</ul>
+</div>
+</div>
+<!--comments-->
+<div class="f-cb">&nbsp;</div>
+<div class="mt20 f-fwn fs-24 fc-grey-x1"><span class="u-icon icon-comment3 f-vam" style="font-size: 32px;"></span><span style="display: inline-block;margin-left: 5px;" class="f-vam">发布观点<span class="u-num js-comments-num ml05">（17）</span></span></div>
+<div id="u-load-comment-layer">
+	<div class="u-comments-input-wrap js-comments-input-wrap f-usn" id="comments-box-3">
+		<div class="u-comments-input-fields"><label class="nick"><input type="text" class="f-input-nick js-comment-nick" placeholder="昵称/网址" maxlength="30" spellcheck="false" value=""></label><label class="email"><input type="email" class="f-input-email js-comment-email" placeholder="电子邮箱"
+		                                                                                                                                                                                                                    maxlength="50" spellcheck="false" value=""></label></div>
+		<div class="u-comments-input-textarea">
+			<div class="inner"><textarea class="f-input-text js-comment-content" placeholder="留点空白给你说" spellcheck="false"></textarea></div>
+			<div class="footer"><a class="u-face js-face"><i class="sp_icon face"></i></a><span class="ml05 fs-12">已输入 <i class="u-num u-words-count">0</i>/<i class="u-num u-words-max">500</i>个字符</span>
+				<button class="u-btn-submit f-input-submit js-comment-submit">发 布</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="m-comments-list-wrap">
+	<div id="comments-list-wrap" data-post="1010" data-mould="2">
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-11-11 00:47</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#17F</span></h6>
+
+				<p class="mt05">最新版已发布，demo和下载地址已更新<img src="http://data.smohan.net/static/js/units/sface/face/q/16.gif" title="得意" alt="得意" class="image-face"><a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="545" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a>
+				</p>
+
+				<div class="m-quote"><p><span class="fc-red">罗爱</span><span class="ml20 fs-12 fc-grey-x2">2015-11-09 20:52:39</span></p>
+
+					<p>demo页面看不了了？</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-11-09 22:50</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#16F</span></h6>
+
+				<p class="mt05">部分Demo重写中，力求精细点，你可以下载，里面有demo<img src="http://data.smohan.net/static/js/units/sface/face/q/4.gif" title="坏笑" alt="坏笑" class="image-face"><a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="544" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i
+						class="text">回复</i></a></p>
+
+				<div class="m-quote"><p><span class="fc-red">罗爱</span><span class="ml20 fs-12 fc-grey-x2">2015-11-09 20:52:39</span></p>
+
+					<p>demo页面看不了了？</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="罗爱">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">罗爱</span><span class="ml20 fs-12 fc-grey-x2">2015-11-09 20:52</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#15F</span></h6>
+
+				<p class="mt05">demo页面看不了了？<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="543" data-user="罗爱"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-06-30 02:03</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#14F</span></h6>
+
+				<p class="mt05">确定正确使用？看demo<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="474" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-quote"><p><span class="fc-red">@-181305440</span><span class="ml20 fs-12 fc-grey-x2">2015-06-29 11:32:56</span></p>
+
+					<p>好像好多bug，第一：锚点好像对不到，第二：锚点点数出现的不对</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://q1.qlogo.cn/g?b=qq&amp;nk=181305440&amp;s=100" title="181305440@qq.com">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">181305440@qq.com</span><span class="ml20 fs-12 fc-grey-x2">2015-06-29 11:32</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#13F</span></h6>
+
+				<p class="mt05">好像好多bug，第一：锚点好像对不到，第二：锚点点数出现的不对<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="460" data-user="181305440@qq.com"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="Thonatos.Yang">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">Thonatos.Yang</span><span class="ml20 fs-12 fc-grey-x2">2015-06-12 08:03</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#12F</span></h6>
+
+				<p class="mt05">加个cmd支持吧~ if (typeof define === "function" &amp;&amp; define.cmd) { // 有 Sea.js 等 CMD 模块加载器存在 module.exports = function (a, c) { return new b(a,c); } }<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="456" data-user="Thonatos.Yang"><i
+						class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="Mon">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">Mon</span><span class="ml20 fs-12 fc-grey-x2">2015-05-18 22:47</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#11F</span></h6>
+
+				<p class="mt05">水哥威武<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="447" data-user="Mon"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-05-11 18:15</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#10F</span></h6>
+
+				<p class="mt05">网站刚改版了，可能部分数据没有上传上去，很抱歉。已经更新下载地址和demo地址，谢谢使用<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="475" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-quote"><p><span class="fc-red">@-wei_teaching</span><span class="ml20 fs-12 fc-grey-x2">2015-05-11 07:36:57</span></p>
+
+					<p>很喜欢博主的这个控件，想在自己的项目中用一用，可是下载不了啊？demo页也是无效的。</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="wei_teaching@163.com">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">wei_teaching@163.com</span><span class="ml20 fs-12 fc-grey-x2">2015-05-11 07:36</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#9F</span></h6>
+
+				<p class="mt05">很喜欢博主的这个控件，想在自己的项目中用一用，可是下载不了啊？demo页也是无效的。<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="445" data-user="wei_teaching@163.com"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-04-03 05:59</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#8F</span></h6>
+
+				<p class="mt05">首先定义 var myTimeLine = timeline(el,settings); 然后在ajax的callback里执行myTimeLine.render();重新渲染<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="477" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-quote"><p><span class="fc-red">柠檬_-limon</span><span class="ml20 fs-12 fc-grey-x2">2015-01-11 22:31:00</span></p>
+
+					<p>博主好,我把这个应用于ajax的留言本,现在碰到的一个问题是: ajax返回内容后,留言的区块高度会增加,需要重新布局,于是我就在ajax的callback重载一下$('#TimeLine').smohanTimeline,虽然能够重新布局,但是页面的滚动条却会返回顶部,有没有办法重载后页面滚动条不滚动?</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/smohan.jpg" title="smohan">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2015-04-03 05:56</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#7F</span></h6>
+
+				<p class="mt05">3.0.1版以支持手机，非单独靠右显示，而是单栏显示，请对照页面代码配置<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="476" data-user="smohan"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-quote"><p><span class="fc-red">张治乾</span><span class="ml20 fs-12 fc-grey-x2">2015-01-13 14:39:00</span></p>
+
+					<p>博主你好，请问如何修改为在手机下单独靠右显示？ 两边显示的话框太小了。</p></div>
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="张治乾">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">张治乾</span><span class="ml20 fs-12 fc-grey-x2">2015-01-13 14:42</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#6F</span></h6>
+
+				<p class="mt05">博主你好，请问如何修改为在手机下单独靠右显示？ 两边显示的话框太小了。算是响应式布局请求吧，PC下两栏，手机，特别是分辨率低于480时，单栏显示！<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="440" data-user="张治乾"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="张治乾">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">张治乾</span><span class="ml20 fs-12 fc-grey-x2">2015-01-13 14:39</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#5F</span></h6>
+
+				<p class="mt05">博主你好，请问如何修改为在手机下单独靠右显示？ 两边显示的话框太小了。<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="439" data-user="张治乾"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="柠檬_-limon">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">柠檬_-limon</span><span class="ml20 fs-12 fc-grey-x2">2015-01-11 22:31</span><span class="ml20 fs-12 fc-grey-x1 f-fr">#4F</span></h6>
+
+				<p class="mt05">博主好,我把这个应用于ajax的留言本,现在碰到的一个问题是: ajax返回内容后,留言的区块高度会增加,需要重新布局,于是我就在ajax的callback重载一下$('#TimeLine').smohanTimeline,虽然能够重新布局,但是页面的滚动条却会返回顶部,有没有办法重载后页面滚动条不滚动?<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="438" data-user="柠檬_-limon"><i
+						class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="xiaowtz">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">xiaowtz</span><span class="ml20 fs-12 fc-grey-x2">2014-10-14 17:11</span><span class="ml20 fs-12 fc-grey-x1 f-fr">地板</span></h6>
+
+				<p class="mt05">哇哈哈<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="437" data-user="xiaowtz"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+		<div class="m-comment-item"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" class="f-load-img avatar u-shadow" data-src="http://data.smohan.net/upload/avatar/0.gif" title="嘉祥新闻网-嘉祥网">
+
+			<div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">嘉祥新闻网-嘉祥网</span><span class="ml20 fs-12 fc-grey-x2">2014-10-13 16:38</span><span class="ml20 fs-12 fc-grey-x1 f-fr">板凳</span></h6>
+
+				<p class="mt05">这个不错 博主说的很对。只要引入老版本的JQ库就可以 至于IE6一下基本华丽的效果就可以忽略啦。<a class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="436" data-user="嘉祥新闻网-嘉祥网"><i class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+				<div class="m-replay-write-box"></div>
+			</div>
+		</div>
+	</div>
+	<div class="u-page-load-more" style="display: block;"><span class="icon"></span><span class="label">点击加载更多...</span></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<a class="u-back-up show" id="js-backup-top"></a>
+
+<div class="u-click-right-wrap" id="smohan-right-click" style="display: none;">
+	<ul>
+		<li><a class="js-smohan-right-click-forward disabled" rel="pjax" href="" data-title=""><span class="u-icon icon-p-forward"></span><span>前进</span></a></li>
+		<li><a class="js-smohan-right-click-back" rel="pjax" href="./lab.htmlsmusic_paid.html" data-title="SMusic浮动音乐播放器 | 实验室 - 水墨寒的博客"><span class="u-icon icon-p-back"></span><span>后退</span></a></li>
+		<li><a class="js-smohan-right-click-reload" rel="pjax" href="./lab.htmlsmohan_timeline.html" data-title="SmohanTimeLine.js | 实验室"><span class="u-icon icon-refresh"></span><span>刷新</span></a></li>
+		<li><a href="./about.html" data-title="关于水墨寒" rel="pjax" class="js-smohan-right-click-about"><span class="u-icon icon-about"></span><span>关于</span></a></li>
+	</ul>
+</div>
+<footer class="grid-footer">
+	<div class="grid-container-fixed">
+		<div class="grid-container-inner"><h6><span class="fs-16">Smohan · 游弋在代码里的人生！</span><span class="f-fr email fs-12"><a href="http://data.smohan.net/page/mobile.html" class="f-tdn fc-base" rel="title-tip" title="移动版水墨寒博客" target="_blank"><i class="u-icon icon-mobile"
+		                                                                                                                                                                                                                                               style="font-size: 16px;"></i> 移动版</a></span></h6>
+
+			<div class="copyright mt20">
+				<div class="info"><p class="f-oh"><a href="./about.html#about" rel="pjax" data-title="关于Smohan">关于Smohan</a><a href="./about.html#contact" rel="pjax" data-title="联系方式">联系方式</a><a href="./about.html#server"
+				                                                                                                                                                                                                                           style="color: #6bc30d" rel="pjax"
+				                                                                                                                                                                                                                           data-title="前端外包服务">前端外包服务</a><a
+						href="./front.html" rel="pjax" data-title="前端WEB圈">前端WEB圈</a><a href="./lab.html" rel="pjax" data-title="实验室">实验室</a></p>
+
+					<p class="mt05">Copyright © 2012-2016 Smohan. All Rights Reserved.盗版必究.V.6.0.7.蜀ICP备13000297号-2.</p>
+
+					<div class="careMe"><a href="https://github.com/S-mohan" target="_blank" rel="title-tip" title="Github"><i class="u-icon icon-github"></i></a><a href="http://weibo.com/smohan" target="_blank" rel="title-tip" title="新浪微博"><i class="u-icon icon-weibo"></i></a><a
+							href="mailto:smohan@163.com" rel="title-tip" title="发送邮件"><i class="u-icon icon-email"></i></a><a id="weixin-tip"><i class="u-icon icon-weixin"></i></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="./js/min.js"></script>
+<div style="display: none;">
+	<script src="http://s23.cnzz.com/z_stat.php?id=1000291789&amp;web_id=1000291789" language="JavaScript"></script>
+	<script src="http://c.cnzz.com/core.php?web_id=1000291789&amp;t=z" charset="utf-8" type="text/javascript"></script>
+	<a href="http://www.cnzz.com/stat/website.php?web_id=1000291789" target="_blank" title="站长统计">站长统计</a></div>
+</body>
+</html>

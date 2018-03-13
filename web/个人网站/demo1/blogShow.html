@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--[if lt IE 10]>
+    <script>window.location.href = "./index.htmlltie.html";</script><![endif]-->
+    <meta name="keywords"
+          content="单词拼写,拼写检查,spellcheck,html5,文本特效,水墨寒,smohan,成都网站建设,成都网站设计,水墨寒WEB工作室,jquery,css3,html5,前端博客,前端技术,css3学习,前端">
+    <meta name="description"
+          content="经常会遇到一些可编辑文本内容中显示红色下划波浪线，类似于word文档中错误单词的拼写检查，使得该标签内容很不美观，那么如何关闭textarea等可编辑文本字段的拼写检查呢？我们可以通过一个HTML 5 全局属性spellcheck来解决禁用拼写检查的功能">
+    <title>使用spellcheck属性禁用textarea等可编辑文本字段的拼写检查 - 博客 - 水墨寒的博客</title></head>
+<body ryt13389="1">
+<header class="grid-header">
+    <div class="m-progress"></div>
+    <div class="grid-container-fixed">
+        <div class="grid-container-inner"><a href="./index.html" class="m-logo">水墨寒的博客</a><span class="u-loading"
+                                                                                                style="display: none;"></span>
+            <nav class="m-nav">
+                <ul>
+                    <li><a href="./index.html" data-title="首页">首页</a></li>
+                    <li><a href="./works.html" rel="pjax" data-title="作品">作品</a></li>
+                    <li class="current"><a href="./blog.html" rel="pjax" data-title="博客">博客</a></li>
+                    <li><a href="./message.html" rel="pjax" data-title="留言">留言</a></li>
+                    <li><a href="./lab.html" rel="pjax" data-title="实验室">实验室</a></li>
+                    <li><a>前端资源</a><span class="icon-drop"></span>
+                        <ul class="u-nav-drop">
+                            <li><a href="./favorites.html" rel="pjax" data-title="前端收藏夹">前端收藏夹</a></li>
+                            <li><a href="./front.html" rel="pjax" data-title="前端WEB圈">前端WEB圈</a></li>
+                            <li><a href="./about.html" rel="pjax" data-title="联系水墨寒">联系水墨寒</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <a class="u-icon-menu"><i></i><i></i><i></i></a></div>
+    </div>
+</header>
+<div id="doc-container" class="doc-container">
+    <div class="grid-container-fixed">
+        <div class="grid-col-content">
+            <div class="m-inner">
+                <article class="article-list-container">
+                    <section class="article-item blog-viewer">
+                        <aside class="m-title" style="line-height: 1.5;"><h4 class="f-fwn mt05">理解 JavaScript 中的 this
+                            关键字</h4>
+
+                            <p class="fc-grey-x1" style="font-size: 14px;">
+                                <small>作者：<a href="" target="_blank" class="fc-link">夏末</a></small>
+                                <small class="ml10">阅读：399</small>
+                                <small class="ml10">更新于2016-03-15 23:30</small>
+                            </p>
+                        </aside>
+                        <div class="m-time u-num"><span class="day f-db f-fwb f-tac">15</span><span
+                                class="month fs-18 fc-grey-x1">03<small class="fs-14">月</small></span><span
+                                class="year fs-18 ml10 fc-grey-x1">2016</span></div>
+                        <div class="m-content" style="border-bottom: 1px solid #e1e2e0;padding-bottom: 20px;">
+                            <div class="cover f-img-light-wrap"><img
+                                    src="http://data.smohan.net/upload/cover/1433955786.jpg" class="" data-src=""
+                                    alt=""></div>
+                            <p>
+                                外文源网址：<a href="http://unschooled.org/2012/03/understanding-javascript-this/"
+                                         target="_blank">Understanding the "this" keyword in JavaScript</a>.<br>
+                                许多人被JavaScript中的this关键字给困扰住了，我想混乱的根源来自人们理所当然地认为JavaScript中的this应该像Java中的this或Python中的self一样工作。尽管JavaScript的this有时有类似的效果，但它跟Java或其他语言中的this是完全不同的。尽管有点难理解，但它的原理并不神秘。事实上，this遵循一些简单的小规则，这篇文章就对这些规则作出了解释。<br>
+                                但首先，我想给出一些专业术语和一些JavaScript运行时环境的相关信息，希望能帮助你构建一个心智模型来更好的理解this。
+                            </p>
+
+                            <h6>
+                                执行上下文
+                            </h6>
+
+                            <p>
+                                每一行JavaScript代码都运行在一个“执行上下文”中。JavaScript运行时环境用一个栈维持着这些上下文，栈顶的一个就是当前正在运行的执行上下文。
+                            </p>
+
+                            <p>
+                                有三类可执行代码：<i>全局代码（global code）</i>，<i>函数代码（function code）</i>，<i>eval代码（eval code）</i>。大概的说，全局代码是应用程序最顶层的代码，不被包含在任何方法中，函数代码是在函数（function）体中的代码，eval代码是被eval解释的全局代码。
+                            </p>
+
+                            <p>
+                                this对象每次控制进入一个新的执行上下文时会被重新确定指向，直到控制切换到一个不同的上下文。this的值取决于两件事：被执行的代码的类型（global,function,eval）和调用代码的对象。
+                            </p>
+                            <h6>
+                                全局对象
+                            </h6>
+
+                            <p>
+                                所有的JavaScript运行时都有一个唯一的全局对象。他的属性包括内置的对象如Math和String，以及其他由主环境变量定义的属性。
+                            </p>
+
+                            <p>
+                                在浏览器中，全局对象是<code>window</code>对象。在Node.js中，它就叫作“global
+                                object”。（我假定你将在浏览器中运行代码，然而，我所说的一切也同样适用于Node.js。）
+                            </p>
+                            <h6>
+                                确定this的值
+                            </h6>
+
+                            <p>
+                                第一条规则很简单：this指向全局对象在所有全局代码中。由于所有的程序都是由执行全局代码开始的，并且this在给定的执行上下文中会被修正，所以，默认的this指全局对象。
+                            </p>
+
+                            <p>
+                                当控制进入一个新的执行上下文时发生了什么呢？只有三种this的值发生改变的情况：方法调用，new一个函数对象，函数被<code>call</code>和<code>apply</code>调用。我将逐一解释。
+                            </p>
+                            <h6>
+                                方法调用
+                            </h6>
+
+                            <p>
+                                当我们通过点（例<code>obj.foo()</code>）或者方括号（例<code>obj["foo"]</code>）把一个方法作为一个对象的属性来调用时，this将指向方法体的父对象：
+                            </p>
+<pre class="prettyprint linenums lang-js"><span class="key">var</span> counter <span class="ope">=</span> {
+  val: <span class="num">0</span>,
+  increment: <span class="key">function</span> () {
+    <span class="key">this</span>.val <span class="ope">+</span><span class="ope">=</span> <span class="num">1</span>;
+  }
+};
+counter.increment();
+console.log(counter.val); <span class="com">// 1</span>
+counter[<span class="str">'increment'</span>]();
+console.log(counter.val); <span class="com">// 2 </span><div
+            class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</div></pre>
+                            <p>
+                                这是第二条规则：函数被当作父对象的属性来调用时，在函数代码中的this指向函数的父对象。<br>
+                                注意，如果我们直接调用相同的方法，即，不作为父对象的属性，this将不会指向<code>counter</code>对象：
+                            </p>
+<pre class="prettyprint linenums lang-js"><span class="key">var</span> inc <span class="ope">=</span> counter.increment;
+inc();
+console.log(counter.val); <span class="com">// 2</span>
+console.log(val); <span class="com">// NaN </span><div class="jshl-linenum">1<br>2<br>3<br>4</div></pre>
+                            <p>
+                                当inc被调用时，这里的this不会改变，所以它还是指向全局对象。<br>
+                                当inc执行
+                            </p>
+                            <pre class="prettyprint linenums lang-js"><span class="key">this</span>.val <span
+                                    class="ope">+</span><span class="ope">=</span> <span class="num">1</span>;<div
+                                    class="jshl-linenum">1</div></pre>
+                            <p>
+                                它等效于执行：
+                            </p>
+                            <pre class="prettyprint linenums lang-js"><span class="obj">window</span>.val <span
+                                    class="ope">+</span><span class="ope">=</span> <span class="num">1</span>;<div
+                                    class="jshl-linenum">1</div></pre>
+                            <p>
+                                window.val是undefined，且undefined加1得到NaN。
+                            </p>
+                            <h6>
+                                new 运算符
+                            </h6>
+
+                            <p>
+                                任何JavaScript函数都可以通过new运算符当成构造函数使用。<code>new</code>运算符创建一个新对象并且设置函数中的this指向调用函数的新对象。举个栗子：
+                            </p>
+<pre class="prettyprint linenums lang-js"><span class="key">function</span> F (v) {
+  <span class="key">this</span>.val <span class="ope">=</span> v;
+}
+<span class="key">var</span> f <span class="ope">=</span> <span class="key">new</span> F(<span
+            class="str">"Woohoo!"</span>);
+console.log(f.val); <span class="com">// Woohoo!</span>
+console.log(val); <span class="com">// ReferenceError </span><div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6</div></pre>
+                            <p>
+                                这就是我们的第三条规则：在用new运算符调用的函数代码中的this指向新创建的对象。<br>
+                                注意F没有任何特殊。如果不通过new调用，this将指向全局对象：
+                            </p>
+<pre class="prettyprint linenums lang-js"><span class="key">var</span> f <span class="ope">=</span> F(<span class="str">"Oops!"</span>);
+console.log(f.val); <span class="com">// undefined</span>
+console.log(val); <span class="com">// Oops! </span><div class="jshl-linenum">1<br>2<br>3</div></pre>
+                            <p>
+                                在这个例子中，<code>F("Oops!")</code>是一个通常调用，this没有指向新的对象，因为没有用new创建新的对象，this继续指向全局对象。
+                            </p>
+                            <h6>
+                                Call &amp; Apply
+                            </h6>
+
+                            <p>
+                                所有JavaScript函数都有两个方法，<code>call</code>和<code>apply</code>，让你能够调用函数并且清楚的设置this指向的对象。<code>apply</code>函数有两个参数：一个是this指向的对象，一个（可选）传进函数的参数的数组：
+                            </p>
+<pre class="prettyprint linenums lang-js"><span class="key">var</span> add <span class="ope">=</span> <span class="key">function</span> (x, y) {
+      <span class="key">this</span>.val <span class="ope">=</span> x <span class="ope">+</span> y;
+    },
+    obj <span class="ope">=</span> {
+      val: <span class="num">0</span>
+    };
+add.apply(obj, [<span class="num">2</span>, <span class="num">8</span>]);
+console.log(obj.val); <span class="com">// 10 </span><div
+            class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</div></pre>
+                            <p>
+                                <code>call</code>和<code>apply</code>是完全一样的，只不过要逐个的传递参数，而不是用一个数组：
+                            </p>
+<pre class="prettyprint linenums lang-js">add.call(obj, <span class="num">2</span>, <span class="num">8</span>);
+console.log(obj.val); <span class="com">// 10 </span><div class="jshl-linenum">1<br>2</div></pre>
+                            <p>
+                                这是第四条规则：当使用<code>call</code>或<code>apply</code>调用函数时，函数代码中的this被设置为<code>call</code>或<code>apply</code>中的第一个参数。
+                            </p>
+                            <h6>
+                                总结
+                            </h6>
+                            <ol>
+                                <li>
+                                    默认的，this指向全局对象
+                                </li>
+                                <li>
+                                    当一个函数被作为一个父对象的属性调用时，函数中的this指向父对象
+                                </li>
+                                <li>
+                                    当一个函数被new运算符调用时，函数中的this指向新创建的对象
+                                </li>
+                                <li>
+                                    当使用call或apply调用函数时，函数代码中的this被设置为<code>call</code>或<code>apply</code>中的第一个参数。如果第一个参数是<code>null</code>或不是个对象，this指向全局对象。
+                                </li>
+                            </ol>
+                            <h6>
+                                补充：eval打破上面所有规则
+                            </h6>
+<pre class="prettyprint linenums lang-js"><span class="key">var</span> obj <span class="ope">=</span> {
+  val: <span class="num">0</span>,
+  func: <span class="key">function</span>() {
+    eval(<span class="str">"console.log(this.val)"</span>);
+  }
+};
+obj.func(); <span class="com">// 0 </span><div class="jshl-linenum">1<br>2<br>3<br>4<br>5<br>6<br>7</div></pre>
+                            <pre class="prettyprint linenums lang-js">eval.call({val: <span class="num">0</span>}, <span
+                                    class="str">"console.log(this.val)"</span>); <span
+                                    class="com">// depends on browser </span><div class="jshl-linenum">1</div></pre>
+                            <div class="f-cb">&nbsp;</div>
+                            <!--<h6>版权信息 ©</h6>-->
+                            <div class="b-copyright mt20"><p class="f-toe fc-black-x1">
+                                本文系夏末创作，可自由转载、引用，但需署名作者且注明文章出处.</p>
+
+                                <p class="f-toe">原文作者：<a href="https://segmentfault.com/a/1190000002812359"
+                                                         target="_blank">夏末</a>.</p>
+
+                                <p class="f-toe">原文网址：<a href="https://segmentfault.com/a/1190000002812359"
+                                                         target="_blank">https://segmentfault.com/a/1190000002812359.</a>
+                                </p></div>
+                            <!--相关阅读--><h6>延伸阅读</h6>
+                            <ol class="b-relation">
+                                <li class="f-toe"><a href="./blogShow.html" rel="pjax" title="两个关于日期时间的JavaScript方法"
+                                                     data-title="两个关于日期时间的JavaScript方法 | 博客">两个关于日期时间的JavaScript方法</a>
+                                </li>
+                                <li class="f-toe"><a href="./blog.html5029/" rel="pjax" title="几个JavaScript闭包的例子"
+                                                     data-title="几个JavaScript闭包的例子 | 博客">几个JavaScript闭包的例子</a></li>
+                                <li class="f-toe"><a href="./blog.html5026/" rel="pjax" title="理解JavaScript的闭包"
+                                                     data-title="理解JavaScript的闭包 | 博客">理解JavaScript的闭包</a></li>
+                                <li class="f-toe"><a href="./blog.html5020/" rel="pjax" title="JavaScript学习笔记之Dom知识点总结"
+                                                     data-title="JavaScript学习笔记之Dom知识点总结 | 博客">JavaScript学习笔记之Dom知识点总结</a>
+                                </li>
+                                <li class="f-toe"><a href="./blog.html5018/" rel="pjax" title="JavaScript学习笔记之数组对象知识点总结"
+                                                     data-title="JavaScript学习笔记之数组对象知识点总结 | 博客">JavaScript学习笔记之数组对象知识点总结</a>
+                                </li>
+                                <li class="f-toe"><a href="./blog.html5015/" rel="pjax" title="王子墨JavaScript思维导图（附下载地址）"
+                                                     data-title="王子墨JavaScript思维导图（附下载地址） | 博客">王子墨JavaScript思维导图（附下载地址）</a>
+                                </li>
+                                <li class="f-toe"><a href="./blog.html5008/" rel="pjax"
+                                                     title="45个实用的JavaScript技巧、窍门和最佳实践"
+                                                     data-title="45个实用的JavaScript技巧、窍门和最佳实践 | 博客">45个实用的JavaScript技巧、窍门和最佳实践</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <!--share-->
+                        <div class="u-share-container f-usn">
+                            <ul>
+                                <li class="s-praise js-share-praise" data-mould="1" data-post="5050" rel="title-tip"
+                                    data-praises="8" title="赞一个"><span></span></li>
+                                <li class="s-weixin js-share-wx" rel="title-tip" title="分享到朋友圈"
+                                    data-qrcode="http%3A%2F%2Fdata.smohan.net%2Fupload%2Fqrcode%2Farticle_5050.png"></li>
+                                <li class="s-weibo js-share-wb" rel="title-tip" title="分享到微博"></li>
+                                <li class="s-qzone js-share-qz" rel="title-tip" title="分享到QQ空间"></li>
+                                <li class="s-note js-share-note" rel="title-tip" title="分享到有道云笔记"></li>
+                            </ul>
+                        </div>
+                        <!--comments-->
+                        <div class="f-cb">&nbsp;</div>
+                        <div class="mt20 f-fwn fs-24 fc-grey-x1"
+                             style="border-top: 1px solid #e1e2e0; padding-top: 20px;"><span
+                                class="u-icon icon-comment3 f-vam" style="font-size: 32px;"></span><span
+                                style="display: inline-block;margin-left: 5px;" class="f-vam">发布观点<span
+                                class="u-num js-comments-num ml05">（2）</span></span></div>
+                        <div id="u-load-comment-layer">
+                            <div class="u-comments-input-wrap js-comments-input-wrap f-usn" id="comments-box-1">
+                                <div class="u-comments-input-fields"><label class="nick"><input type="text"
+                                                                                                class="f-input-nick js-comment-nick"
+                                                                                                placeholder="昵称/网址"
+                                                                                                maxlength="30"
+                                                                                                spellcheck="false"
+                                                                                                value=""></label><label
+                                        class="email"><input type="email" class="f-input-email js-comment-email"
+                                                             placeholder="电子邮箱" maxlength="50" spellcheck="false"
+                                                             value=""></label></div>
+                                <div class="u-comments-input-textarea">
+                                    <div class="inner"><textarea class="f-input-text js-comment-content"
+                                                                 placeholder="留点空白给你说" spellcheck="false"></textarea>
+                                    </div>
+                                    <div class="footer"><a class="u-face js-face"><i class="sp_icon face"></i></a><span
+                                            class="ml05 fs-12">已输入 <i class="u-num u-words-count">0</i>/<i
+                                            class="u-num u-words-max">500</i>个字符</span>
+                                        <button class="u-btn-submit f-input-submit js-comment-submit">发 布</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-comments-list-wrap">
+                            <div id="comments-list-wrap" data-post="5050" data-mould="3">
+                                <div class="m-comment-item"><img src="http://data.smohan.net/upload/avatar/smohan.jpg"
+                                                                 class="avatar u-shadow" data-src="" title="smohan">
+
+                                    <div class="inner"><h6 class="fs-14 f-fwn f-oh"><span
+                                            class="fc-red">smohan</span><span class="ml20 fs-12 fc-grey-x2">2016-03-16 15:35</span><span
+                                            class="ml20 fs-12 fc-grey-x1 f-fr">板凳</span></h6>
+
+                                        <p class="mt05">我猜你是leijinchuan<img
+                                                src="http://data.smohan.net/static/js/units/sface/face/q/4.gif"
+                                                title="坏笑" alt="坏笑" class="image-face">，不要问我怎么知道的<a
+                                                class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="724"
+                                                data-user="smohan"><i
+                                                class="icon-undo2"></i>&nbsp;<i class="text">回复</i></a></p>
+
+                                        <div class="m-quote"><p><span class="fc-red">你猜我</span><span
+                                                class="ml20 fs-12 fc-grey-x2">2016-03-16 15:29:35</span></p>
+
+                                            <p>写的很不错，很详细<img
+                                                    src="http://data.smohan.net/static/js/units/sface/face/q/16.gif"
+                                                    title="得意" alt="得意" class="image-face"></p></div>
+                                        <div class="m-replay-write-box"></div>
+                                    </div>
+                                </div>
+                                <div class="m-comment-item"><img src="http://data.smohan.net/upload/avatar/0.gif"
+                                                                 class="avatar u-shadow" data-src="" title="你猜我">
+
+                                    <div class="inner"><h6 class="fs-14 f-fwn f-oh"><span class="fc-red">你猜我</span><span
+                                            class="ml20 fs-12 fc-grey-x2">2016-03-16 15:29</span><span
+                                            class="ml20 fs-12 fc-grey-x1 f-fr">沙发</span></h6>
+
+                                        <p class="mt05">写的很不错，很详细<img
+                                                src="http://data.smohan.net/static/js/units/sface/face/q/16.gif"
+                                                title="得意" alt="得意" class="image-face"><a
+                                                class="reply ml20 fs-12 f-usn fc-red js-comment-reply" data-id="723"
+                                                data-user="你猜我"><i class="icon-undo2"></i>&nbsp;<i
+                                                class="text">回复</i></a></p>
+
+                                        <div class="m-replay-write-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="u-page-load-more"><span class="icon"></span><span class="label">加载更多...</span>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+        <div class="grid-col-sliders">
+            <div class="m-inner">
+                <div class="m-item mt20 fixed" id="blog-category">
+                    <div class="m-search"><label class="search-wrap"><input type="text" maxlength="20"
+                                                                            spellcheck="false" placeholder="输入关键词搜索"
+                                                                            class="js-search-input"><span
+                            class="search-icon js-search-btn"><i class="u-icon icon-search"></i></span></label>
+                        <ul class="search-result-wrap js-search-result"></ul>
+                    </div>
+                    <ul class="m-category mt20">
+                        <li class="slider js-blog-slider" style="top: 280px;"></li>
+                        <li class="js-blog-cate" data-index="1"><a href="./blog.html" rel="pjax"
+                                                                   data-title="博客">全部博文</a></li>
+                        <li class="js-blog-cate" data-index="2"><a href="./blog.html/cat/1/" rel="pjax"
+                                                                   data-title="前端开发 · 博客">前端开发</a></li>
+                        <li class="js-blog-cate child" data-index="3"><a href="./blog.html/cat/1/" rel="pjax"
+                                                                         data-title="移动前端 · 博客">移动前端</a></li>
+                        <li class="js-blog-cate child" data-index="4"><a href="./blog.html/cat/17/" rel="pjax"
+                                                                         data-title="前端分享 · 博客">前端分享</a></li>
+                        <li class="js-blog-cate child" data-index="5"><a href="./blog.html/cat/18/" rel="pjax"
+                                                                         data-title="前端文档 · 博客">前端文档</a></li>
+                        <li class="js-blog-cate" data-index="6"><a href="./blog.html/cat/2/" rel="pjax"
+                                                                   data-title="学习笔记 · 博客">学习笔记</a></li>
+                        <li class="js-blog-cate" data-index="7"><a href="./blog.html/cat/3/" rel="pjax"
+                                                                   data-title="且行且冥 · 博客">且行且冥</a></li>
+                        <li class="js-blog-cate current" data-index="8"><a href="./blog.html/cat/4/" rel="pjax"
+                                                                           data-title="他山之石 · 博客">他山之石</a></li>
+                    </ul>
+                </div>
+                <!--微博-->
+                <div class="m-item unit-weibo-container mt20">
+                    <div class="m-weibo-inner">
+                        <header>&nbsp;</header>
+                        <div class="content">
+                            <div class="avatar"><img src="http://tp2.sinaimg.cn/3061825921/180/5723342913/1"
+                                                     alt="Smohan"><span class="rank" rel="title-tip"
+                                                                        title="新浪认证机构"></span></div>
+                            <h3 class="f-tac fs-16 fc-black-x1 f-fwn">Smohan</h3>
+
+                            <p class="mt05 fs-12 fc-grey-x1 f-tac">水墨寒个人网站 www.smohan.net 官方微博</p>        <a
+                                class="u-btn-submit f-tdn" href="//weibo.com/smohan?s=6cm7D0" target="_blank"><i
+                                class="u-icon icon-weibo"></i>立即关注</a></div>
+                        <footer>
+                            <ul>
+                                <li class="u-num"><strong>42</strong><span>关注</span></li>
+                                <li class="u-num"><strong>313</strong><span>粉丝</span></li>
+                                <li class="u-num"><strong>426</strong><span>微博</span></li>
+                            </ul>
+                        </footer>
+                    </div>
+                </div>
+                <!--标签-->
+                <div class="m-item mt20"><h5 class="m-title"><a href="./blog.html/cat/4/" rel="pjax"
+                                                                data-title="他山之石 · 博客">标签</a></h5>
+
+                    <div class="m-inner tag-wrap js-tags-wrap"><a href="./blog.html/tag/koa/" rel="pjax"
+                                                                  data-title="koa | 博客" style="color:#169e52">koa</a><a
+                            href="./blog.html/tag/nodejs/" rel="pjax" data-title="nodejs | 博客" style="color:#f2b620">nodejs</a><a
+                            href="./blog.html/tag/audio/" rel="pjax" data-title="audio | 博客"
+                            style="color:#775995">audio</a><a href="./blog.html/tag/smusic/" rel="pjax"
+                                                              data-title="sMusic | 博客"
+                                                              style="color:#3598dc">sMusic</a><a
+                            href="./blog.html/tag/sass/" rel="pjax" data-title="Sass | 博客"
+                            style="color:#3598dc">Sass</a><a href="./blog.html/tag/smohan/" rel="pjax"
+                                                             data-title="Smohan | 博客" style="color:#f2b620">Smohan</a><a
+                            href="./blog.html/tag/seajs/"
+                            rel="pjax" data-title="SeaJS | 博客"
+                            style="color:#f15942">SeaJS</a><a
+                            href="./blog.html/tag/javascript/" rel="pjax" data-title="javascript | 博客"
+                            style="color:#775995">javascript</a><a href="./blog.html/tag/css3/" rel="pjax"
+                                                                   data-title="CSS3 | 博客" style="color:#008677">CSS3</a><a
+                            href="./blog.html/tag/html5/" rel="pjax" data-title="Html5 | 博客"
+                            style="color:#d44465">Html5</a><a href="./blog.html/tag/dom/" rel="pjax"
+                                                              data-title="DOM | 博客" style="color:#169e52">DOM</a></div>
+                </div>
+                <!--热门文章-->
+                <div class="m-item mt20"><h5 class="m-title"><a href="./blog.htmlcat/4/" rel="pjax"
+                                                                data-title="他山之石 · 博客">热门文章</a></h5>
+
+                    <div class="m-inner js-hot-article">
+                        <ul class="m-hot-article">
+                            <li class="f-toe" title="微信公众平台开发 JS-SDK开发（图像接口实例）"><a href="./blog.html/5016/" rel="pjax"
+                                                                                   data-title="微信公众平台开发 JS-SDK开发（图像接口实例） | 博客">微信公众平台开发
+                                JS-SDK开发（图像接口实例）</a></li>
+                            <li class="f-toe" title="HTML5音乐列表播放器SMusic开发总结"><a href="./blogShow.html" rel="pjax"
+                                                                                data-title="HTML5音乐列表播放器SMusic开发总结 | 博客">HTML5音乐列表播放器SMusic开发总结</a>
+                            </li>
+                            <li class="f-toe" title="为你的博客添加简单的CSS3音乐播放器"><a href="./blog.html/5013/" rel="pjax"
+                                                                             data-title="为你的博客添加简单的CSS3音乐播放器 | 博客">为你的博客添加简单的CSS3音乐播放器</a>
+                            </li>
+                            <li class="f-toe" title="博客2015版改版总结"><a href="./blog.html/5022/" rel="pjax"
+                                                                     data-title="博客2015版改版总结 | 博客">博客2015版改版总结</a></li>
+                            <li class="f-toe" title="从这几个月的一点感悟谈改版"><a href="./blog.html/5009/" rel="pjax"
+                                                                       data-title="从这几个月的一点感悟谈改版 | 博客">从这几个月的一点感悟谈改版</a>
+                            </li>
+                            <li class="f-toe" title="利用新浪微博接口生成漂亮的微博卡片"><a href="./blog.html/5014/" rel="pjax"
+                                                                           data-title="利用新浪微博接口生成漂亮的微博卡片 | 博客">利用新浪微博接口生成漂亮的微博卡片</a>
+                            </li>
+                            <li class="f-toe" title="PHP关于数据分页后楼层的计算"><a href="./blog.html/5011/" rel="pjax"
+                                                                         data-title="PHP关于数据分页后楼层的计算 | 博客">PHP关于数据分页后楼层的计算</a>
+                            </li>
+                            <li class="f-toe" title="王子墨JavaScript思维导图（附下载地址）"><a href="./blog.html/5015/" rel="pjax"
+                                                                                  data-title="王子墨JavaScript思维导图（附下载地址） | 博客">王子墨JavaScript思维导图（附下载地址）</a>
+                            </li>
+                            <li class="f-toe" title="关于sMusic第二版的一些想法"><a href="./blogShow.html" rel="pjax"
+                                                                          data-title="关于sMusic第二版的一些想法 | 博客">关于sMusic第二版的一些想法</a>
+                            </li>
+                            <li class="f-toe" title="45个实用的JavaScript技巧、窍门和最佳实践"><a href="./blog.html/5008/" rel="pjax"
+                                                                                    data-title="45个实用的JavaScript技巧、窍门和最佳实践 | 博客">45个实用的JavaScript技巧、窍门和最佳实践</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="m-item mt20"><h5 class="m-title"><a href="./blog.htmlcat/4/" rel="pjax"
+                                                                data-title="他山之石 · 博客">前端调查</a></h5>
+
+                    <div class="m-inner m-vote-item js-vote-wrap" data-vote-id="10000" data-vote-type="1"><p
+                            class="m-topic">你最常用的前端开发IDE或编辑器是什么？(单选)</p>
+                        <ul class="m-options">
+                            <li data-vote="19" data-vote-id="1" class="f-toe js-vote-option">notepad++
+                                <small class="ml10 fs-12">(19)</small>
+                                <span style="width: 10.3825%;"></span></li>
+                            <li data-vote="89" data-vote-id="2" class="f-toe js-vote-option">webstorm
+                                <small class="ml10 fs-12">(89)</small>
+                                <span style="width: 48.6339%;"></span></li>
+                            <li data-vote="42" data-vote-id="3" class="f-toe js-vote-option">sublime
+                                <small class="ml10 fs-12">(42)</small>
+                                <span style="width: 22.9508%;"></span></li>
+                            <li data-vote="3" data-vote-id="4" class="f-toe js-vote-option">记事本
+                                <small class="ml10 fs-12">(3)</small>
+                                <span style="width: 1.63934%;"></span></li>
+                            <li data-vote="10" data-vote-id="5" class="f-toe js-vote-option"> Dreamweaver
+                                <small class="ml10 fs-12">(10)</small>
+                                <span style="width: 5.46448%;"></span></li>
+                            <li data-vote="20" data-vote-id="6" class="f-toe js-vote-option">其他
+                                <small class="ml10 fs-12">(20)</small>
+                                <span style="width: 10.929%;"></span></li>
+                        </ul>
+                        <p><a class="u-btn-submit"><span class="v-text">投票</span><span
+                                class="v-num ml05">(183)</span></a></p></div>
+                </div>
+                <div id="js-slider-end"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="u-back-up show" id="js-backup-top"></a>
+
+<div class="u-click-right-wrap" id="smohan-right-click" style="display: none;">
+    <ul>
+        <li><a class="js-smohan-right-click-forward disabled" rel="pjax" href="" data-title=""><span
+                class="u-icon icon-p-forward"></span><span>前进</span></a></li>
+        <li><a class="js-smohan-right-click-back disabled" rel="pjax" href="" data-title=""><span
+                class="u-icon icon-p-back"></span><span>后退</span></a></li>
+        <li><a class="js-smohan-right-click-reload" rel="pjax" href="./blogShow.html"
+               data-title="理解 JavaScript 中的 this 关键字 · 博客"><span class="u-icon icon-refresh"></span><span>刷新</span></a>
+        </li>
+        <li><a href="./about.html" data-title="关于水墨寒" rel="pjax" class="js-smohan-right-click-about"><span
+                class="u-icon icon-about"></span><span>关于</span></a></li>
+    </ul>
+</div>
+<footer class="grid-footer">
+    <div class="grid-container-fixed">
+        <div class="grid-container-inner"><h6><span class="fs-16">Smohan · 游弋在代码里的人生！</span><span
+                class="f-fr email fs-12"><a href="http://data.smohan.net/page/mobile.html" class="f-tdn fc-base"
+                                            rel="title-tip" title="移动版水墨寒博客" target="_blank"><i
+                class="u-icon icon-mobile"
+                style="font-size: 16px;"></i> 移动版</a></span></h6>
+
+            <div class="copyright mt20">
+                <div class="info"><p class="f-oh"><a href="./about.html#about" rel="pjax"
+                                                     data-title="关于Smohan">关于Smohan</a><a href="./about.html#contact"
+                                                                                          rel="pjax" data-title="联系方式">联系方式</a><a
+                        href="./about.html#server"
+                        style="color: #6bc30d" rel="pjax"
+                        data-title="前端外包服务">前端外包服务</a><a
+                        href="./front.html" rel="pjax" data-title="前端WEB圈">前端WEB圈</a><a href="./lab.html" rel="pjax"
+                                                                                        data-title="实验室">实验室</a></p>
+
+                    <p class="mt05">Copyright © 2012-2016 Smohan. All Rights Reserved.盗版必究.V.6.0.7.蜀ICP备13000297号-2.</p>
+
+                    <div class="careMe"><a href="https://github.com/S-mohan" target="_blank" rel="title-tip"
+                                           title="Github"><i class="u-icon icon-github"></i></a><a
+                            href="http://weibo.com/smohan" target="_blank" rel="title-tip" title="新浪微博"><i
+                            class="u-icon icon-weibo"></i></a><a
+                            href="mailto:smohan@163.com" rel="title-tip" title="发送邮件"><i class="u-icon icon-email"></i></a><a
+                            id="weixin-tip"><i class="u-icon icon-weixin"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="./js/min.js"></script>
+<div style="display: none;">
+    <script src="http://s23.cnzz.com/z_stat.php?id=1000291789&amp;web_id=1000291789" language="JavaScript"></script>
+    <script src="http://c.cnzz.com/core.php?web_id=1000291789&amp;t=z" charset="utf-8" type="text/javascript"></script>
+    <a href="http://www.cnzz.com/stat/website.php?web_id=1000291789" target="_blank" title="站长统计">站长统计</a></div>
+</body>
+</html>

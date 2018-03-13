@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>充值</title>
+    	<meta name="author" content="10023.m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+		<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png?v=jd2015012915"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=jd2015012915" charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css?v=jd2015012915" charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="css/base2013.css?v=jd2015012915" charset="UTF-8"/>
+		<script type="text/javascript" src="js/zepto.min.js?v=jd2015012915"></script>
+        <script type="text/javascript">
+			window.jQuery=window.Zepto;
+		</script>
+		
+				<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+							<h2>充值</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="cart.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="http://m.jd.commember_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+			
+				<script type="text/javascript" src="js/jquery-1.6.2.min.js?v=jd2015012915"></script>
+				
+		<script type="text/javascript" src="js/common.js?v=jd2015012915"></script>
+		<script type="text/javascript" src="js/common_002.js?v=jd2015012915"></script>
+		<script type="text/javascript" src="js/spin.min.js?v=jd2015012915"></script>
+				<link rel="stylesheet" type="text/css" href="css/chongzhi.css?v=jd2015012915" charset="UTF-8"/>	
+						<style>.form-box .band-num .item .label {width: 87px;}</style>
+	</head>
+	
+<body id="body">
+	<div class="window-pop" id="_confirm" style="position:absolute;z-index:9999;display:none;min-height:124px">
+        <div class="tip-con" id="_confirmMsg" style="line-height:25px;min-height:80px;margin:20px 0 10px">&nbsp;&nbsp;</div>
+        <div class="tip-btns">
+            <a href="javascript:void(0)" id="_confirmBtn" class="left-btn">确定</a>
+            <a href="javascript:void(0)" id="_cancelBtn" class="right-btn">取消</a>
+        </div>
+    </div>
+    <div class="window-pop" id="_alert" style="position:absolute;z-index:9999;display:none;min-height:124px">
+        <div class="tip-con" id="_alertMsg" style="line-height:25px;min-height:80px;margin:20px 0 10px">&nbsp;&nbsp;</div>
+        <div class="tip-btns">
+            <a href="javascript:void()" id="_alertBtn" class="left-btn" style="border-right:0px solid #f7f2ee;;width:270px">确定</a>
+        </div>
+    </div>
+	<div class="window-pop" id="_calert" style="position:absolute;z-index:9999;display:none;min-height:124px">
+        <div class="tip-con" id="_calertMsg" style="line-height:25px;min-height:80px;margin:20px 0 10px">&nbsp;&nbsp;</div>
+        <div class="tip-btns">
+            <a href="javascript:void()" id="_calertBtn" class="left-btn" style="border-right:0px solid #f7f2ee;;width:270px">确定</a>
+        </div>
+    </div>
+    
+<form id="chongzhi_form" action='/chongzhi/chongzhiConfirm.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68' method="get">
+<div class="main">
+    <div class="recharge">
+        <div class="recharge-num">
+            <input type="tel"  id="mobile" name="mobile" value=""  max="11" style="width:90%" class="recharge-phone" autocomplete="off" placeholder="请输入要充值手机号码"/>
+												        </div>
+		<p class="error radius" id="mobile_err_info" style="display:none;margin: -10px 5px 10px 5px;"><span></span>请输入正确的手机号码</p>
+		<p class="error radius" id="price_err_null" style="display:none;margin: -10px 5px 10px 5px;"><span></span>请选择金额</p>
+		
+        <div class="recharge-sum">
+            <a class="btn-grey" id="price7" onclick="javascript:changePrice(7)">10元</a>
+            <a class="btn-grey" id="price8" onclick="javascript:changePrice(8)">20元</a>
+            <a class="btn-grey" id="price1" onclick="javascript:changePrice(1)">30元</a>
+            <a class="btn-grey" id="price2" onclick="javascript:changePrice(2)">50元</a>
+            <a class="btn-grey" id="price3" onclick="javascript:changePrice(3)">100元</a>
+            <a class="btn-grey" id="price4" onclick="javascript:changePrice(4)">200元</a>
+            <a class="btn-grey" id="price5" onclick="javascript:changePrice(5)">300元</a>
+            <a class="btn-grey" id="price6" onclick="javascript:changePrice(6)">500元</a>
+            <a class="btn-grey" id="price9" onclick="jDPrice()" style="display:none">其它金额</a>
+        </div>
+	    <input type="hidden" id="area" name="area" value="x"/>
+	    <input type="hidden" id="provider" name="isp" value="x"/>
+		
+		<div class="p-price " id="price_type" style="padding-left: 3.125%;">
+        <p id="addr" style="float:right;margin-right:10%;"></p> 
+       	 <p class="avail">单价：
+			<strong  id="price_info" style="color:red"></strong>
+			<strong style="margin-left:20px;height:15px;display:none;" id="chongzhi_wait" ></strong>
+		 </p>
+        </div>
+        <div class="donation-btns"><a id="buyButton" class="btn-submit-donation btn-red" value="立即充值">立即充值</a></div>
+        <input id="buyDiv" type="submit" style="display:none" value="立即充值"/>
+        <div class="view-record"><a href='/chongzhi/queryOrderList.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68'>查看我的充值记录 &gt;</a></div>
+    </div><!--recharge end-->
+</div>
+<div class="mask" id="mask" style="display:none">
+    <div class="window-pop">
+        <div class="other">
+            <div>其他金额</div>
+            <div><input type="text" id="customPrice"/><strong>元</strong>
+			</div>
+        </div>
+        <div class="tip-btns btn-type2">
+            <a href="javascript:jDPriceSelect(1)" class="left-btn" style="width:50%">确认</a>
+            <a href="javascript:jDPriceSelect(0)" class="right-btn" style="width:49%">取消</a>
+        </div>
+    </div>
+</div>
+
+
+<input type="hidden" id="facePrice" name="facePrice"/>
+<input type="hidden" id="sid" name="sid" value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>
+<input type="hidden" id="jdPrice" value=""/>
+<input type="hidden" id="platform" value=""/>
+<input type="hidden" id="type" name="type" value="1"/>
+
+<script type="text/javascript" src="js/chongzhi.js?v=jd2015012915"></script> 
+	
+<script>	
+	
+	$(document).ready(function(){
+	    if('html5'=='html5'){
+	       showFoot("bfd5d5fa6afa2d31344dd42eb76b7d68",null,null);//加尾部
+		}
+		if($("#mobile").val()!=''&&getUserOp()!=9){
+    		$("#price"+getUserOp()).click();
+		}else if($("#mobile").val()!=''){
+			getPhone();
+		}
+		$("#area").change(editAddress);
+		$("#provider").change(editAddress);
+		$("#mobile").blur(getPhone); 
+		
+		$("#mobile").focus(function(){
+			$("#mobile_err_info").hide();
+		}); 
+		$("#buyButton").click(function(){
+			$("#buyDiv").click();
+		}); 
+		$("#chongzhi_form").submit(
+			function(){
+        		if(!checkMobile()){
+        			$("#mobile_err_info").show();
+        			return false;
+        		}
+        			
+        		if($("#facePrice").val()=='' || $("#jdPrice").val()==''){
+        			$("#price_err_null").show();
+        			return false;
+        		}
+        		
+        		if( $("#area").val()=='x' || $("#provider").val()=='x'){
+        			return false;
+        		}
+        		return true;
+        	}
+         );
+		
+		$('#openContacts').click(function(){
+          try{
+              var platform = $('#platform').val();
+              openContacts(platform);
+         }catch(e){
+              alert(e);
+         }
+		 
+		 
+      });
+
+	});
+</script>
+</form>
+		
+		
+	    <script type="text/javascript" src="js/mping.min.js"></script>
+    <script type="text/javascript">
+        try{
+            var pv= new MPing.inputs.PV();   //构造pv 请求
+            var mping = new MPing();        //构造上报实例
+            mping.send(pv);                //上报pv
+        } catch (e){}
+    </script>
+		
+</body>
+</html>

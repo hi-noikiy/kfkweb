@@ -1,0 +1,1 @@
+var myJd = {templeteOutput : function(args){var templete = args.templete;var param = args.param;var out = templete;jQuery.each(param,function(name,value){out  = out.replace(new RegExp("{"+name+"}", "g"), value);});return out;}};

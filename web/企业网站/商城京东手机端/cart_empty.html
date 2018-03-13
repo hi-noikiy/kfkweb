@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>购物车 - 空</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" CONTENT="-1">           
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">           
+	  				<link rel="stylesheet" type="text/css" href="css/base.css?v=20150327" charset="utf-8"/>
+							
+					<link rel="stylesheet" type="text/css" href="css/extend.css?v=20150327" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/hotel.css?v=20150327" charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/airline.css?v=20150327" charset="utf-8"/>
+				
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png?v=20150327"/>
+						<script type="text/javascript">
+			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
+			var _isWebKit = '__proto__' in {};//是否是webkit内核
+			if(_isWebKit){//如果是webkit内核，则分模块使用zepto
+				//要使用zeptojs的路径列表，可以做为分模块替换的开关
+				var _locationList=new Array();
+				//活动模块
+				_locationList.push('/activity/proActList');
+				_locationList.push('/activity/proActWareList');
+				_locationList.push('/activity/list');
+				//商品分类模块
+				_locationList.push('/category/');
+				//京东快讯模块
+				_locationList.push('/newslist.html');
+				_locationList.push('/newslist/');
+				_locationList.push('/news/');
+				//机票模块
+				_locationList.push('/airline/');
+				//酒店模块
+				_locationList.push('/hotel/');
+				//团购模块
+				_locationList.push('/tuan/');
+				//首页相关
+				_locationList.push('/hotbrand.html');//品牌馆
+				//商品筛选相关
+				_locationList.push('/ware/expandSort.action');
+				_locationList.push('/ware/categoryFilter.action');
+				_locationList.push('/goods_list.html');
+				_locationList.push('/products/');
+				_locationList.push('/index/getWare.action')//热门特惠
+				_locationList.push('/notice/');//通告模块
+				_locationList.push('/coupons/');//随地惠模块
+				_locationList.push('/chongzhi/');//手机充值模块
+				_locationList.push('/comment/');//手机推荐模块
+				_locationList.push('/pay/');//支付
+				_locationList.push('/order/');//订单
+				_locationList.push('/norder/');//订单
+				//_locationList.push('/market/floorWare.action');//掌上专享
+				
+				var _needReplace = false;
+				//如果当前路径符合要使用的路径规则，则进行替换
+				for(var i=0;i<_locationList.length;i++){
+					if(_winLocation.indexOf(_locationList[i])!=-1){
+						_needReplace=true;
+						break;
+					}
+				}
+				//如果是首页的话，则使用zepto
+				var _tmp = _winLocation.replace(/(^http:\/\/)|(\/*$)/g,'');
+				if(_tmp.indexOf('/')<0 || (_tmp.split('/').length<=2 && _tmp.indexOf('/index')>=0)){
+					_needReplace=true;
+				}
+				//如果是商品详情页的话，则使用zepto
+                var _dlocationList=new Array();
+                _dlocationList.push(/\/product\/([0-9]+)\.html/);
+                _dlocationList.push(/\/orderComment\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)-([0-9]+)\.html/);
+                _dlocationList.push(/\/comments\/([0-9]+)\.html/);
+                for(var i=0,len=_dlocationList.length;i<len;i++){
+                	if(_dlocationList[i].test(_winLocation)){
+                		_needReplace=true;
+               			 break;
+               		 }
+                }
+				if(_needReplace){
+					document.write('<script src="js/zepto.min.js?v=20150327"><\/script>');
+					document.write('<script type="text/javascript">window.jQuery=window.Zepto;<\/script>');
+				}else{
+					document.write('<script src="js/jquery-1.6.2.min.js?v=20150327"><\/script>');
+				}
+			}else{//如果是非webkit内核直接使用jquery
+				document.write('<script src="js/jquery-1.6.2.min.js?v=20150327"><\/script>');
+			}
+		</script>
+				        <script type="text/javascript" src="js/common.js?v=20150327"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=20150327"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			    						<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+							<h2>购物车</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+<link href="css/title-bar.css?v=20150327" media="all" rel="stylesheet" type="text/css">
+<link href="css/btn.css?v=20150327" media="all" rel="stylesheet" type="text/css">
+<link href="css/checkbox.css?v=20150327" media="all" rel="stylesheet" type="text/css">
+<link href="css/spinner.css?v=20150327" media="all" rel="stylesheet" type="text/css">
+<link href="css/shopping-cart.css?v=20150327" media="all" rel="stylesheet" type="text/css">
+
+<style>
+.cart_item_text{
+    font-size:13px;
+    font-weight: bold;
+	overflow:hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.cart_item_title{
+    font-size:14px;
+}
+.cart_item_gift{
+    font-size:13px;
+	color: #999;
+}
+.cart_item_price{
+    font-size:12px;
+}
+.cart_cutwords{
+	overflow:hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	}
+
+</style>
+<div style="width:100%;z-index:1001;position:absolute;overflow:hidden;background:rgba(145, 145, 145, .4);display:none" id="background" >
+</div>
+<div class="pop" id="giftWares11" style="margin-top:45px;margin-bottom:5%;z-index:1005;position: absolute;display:none" ></div>
+<div id="notEmptyCart"  style="display:none" >
+	    <ul class="shp-cart-list">
+            	    	    	    	    	    	    </ul>
+    <div class="tips tips-save-money"  id="pay-tip">钻石会员满39元免运费，钻石会员以下满59元免运费</div>
+</div>
+<div id="emptyCart"  style="display:block" >
+    <div class="shp-cart-empty">
+        <div class="empty-sign"></div>
+        <div class="empty-warning-text">
+            购物车空空如也，快去购物吧<br>
+            或者登录查看您的购物车
+        </div>
+        <div class="empty-btn-wrapper">
+            <a href='javascript:beWalk()' class="btn-jd-darkred btn-large">去逛逛</a>
+                            <a href='login.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68&returnurl=http%3A%2F%2Fp.m.jd.com%2Fcart%2Fcart.action' class="btn-jd-gray btn-large">去登录</a>
+                    </div>
+    </div>
+
+
+</div>
+<div id="payment_p"  style="display:none" >
+    <div id="paymentp"></div>
+    <div class="payment-total-bar" id="payment">
+        <div class="shp-chk">
+            <span onclick="checkAllHandler();"  class="cart-checkbox"  id="checkIcon-1"></span>
+        </div>
+        <div class="shp-cart-info">
+            <strong class="shp-cart-total">总计:￥<span class="" id="cart_realPrice">$murl.formatePrice($!realPrice,2)</span></strong>
+            <span class="sale-off">商品总额:￥<span class="bottom-bar-price" id="cart_oriPrice">$murl.formatePrice($!oriPrice,2)</span> 返现:￥<span class="bottom-bar-price" id="cart_rePrice">$murl.formatePrice($!{cart.RePrice},2)</span></span>
+        </div>
+        <a class="btn-right-block" id="submit">结算(<span id="checkedNum">  </span>)</a>
+    </div>
+</div>
+<div id="mask" style="visibility: hidden">
+    <div id="mask-wraper">
+        <div id="mask-con">
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="newOrderServer" value="true" />
+<input type="hidden" id="cartNum" value="" />
+<input type="hidden" id="limitWareNum" value=""/>
+<input type="hidden" id="limitCartNum" value=""/>
+<input type="hidden" id="limitBookNum" value=""/>
+<input type="hidden" id="limitNotBookNum" value=""/>
+<input type="hidden" id="resourceType" value="" />
+<input type="hidden" id="resourceValue" value="" />
+<input type="hidden" id="sid" value="bfd5d5fa6afa2d31344dd42eb76b7d68" />
+<script type="text/javascript" src="js/cart.js?v=20150327"></script>
+
+
+<script>
+var cartUse =  'true';
+$(document).ready(function(){
+			document.getElementById("background").style.height=document.getElementById("body").scrollHeight+20+"px";
+			judgeSubmit($("#cart_realPrice").text());
+            //重新设置字体大小
+            resizePriseFontSize();
+            resizeBottomPriseFontSize();
+
+            //判断屏幕旋转
+            //doOnOrientationChange();
+		});
+</script>
+
+    <div style="display:none;">
+    					<img src="/ja.jsp?&amp;utmn=174186226&amp;utmr=http%3A%2F%2Fm.jd.com%2Findex.html&amp;utmp=%2Fcart%2Fcart.action%3Fsid%3Dbfd5d5fa6afa2d31344dd42eb76b7d68&amp;guid=ON&jav=html5&pin=-&utmac=MO-J2011-1" />
+			    </div>
+            <script type="text/javascript" src="js/mping.min.js"></script>
+        <script type="text/javascript">
+            var userPin = '';
+            try{
+                var pv= new MPing.inputs.PV();   //构造pv 请求
+                if(userPin&&userPin!=''){
+                    pv.userPin=userPin;
+                }
+                var mping = new MPing();        //构造上报实例
+                mping.send(pv);                //上报pv
+            } catch (e){}
+        </script>
+    
+<script src="js/downloadAppPlugIn.js?v=20150327" type="text/javascript" ></script>
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+    window._clientVersion_ = '';
+    
+	$(document).ready(function(){
+		var _loadScript = function(url, options,cb){
+			var script = document.createElement("script");
+			var def = {
+				type: "text/javascript",
+				charset:"utf-8"
+			}
+			options= options|| {
+			}
+			for(var i in options){
+				def[i] = options[i];
+			}
+			script.src = url;
+			
+			for(var i in def){
+				script.setAttribute(i,def[i]);
+			}
+			script.addEventListener("load",function(){
+				cb && cb();
+			},false)
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+				if($(".download-con").length || $("#clientArea").length){
+			_loadScript("/js/2013/installapp.js?v=20150327",{},function(){
+				 $("#clientArea").length && downcheck($("#clientArea"),false);
+			});
+		}
+				
+	})
+
+window.onload = function(){
+    $('#openJD').downloadAppPlugIn(null,{DOWN_IPAD :'https://itunes.apple.com/cn/app/jing-dong-du-shu/id506583396?mt=8',DOWN_APP_IOS :'https://itunes.apple.com/cn/app/jing-dong-du-shu/id506583396?mt=8',DOWN_APP_URL :'http://item.m.jd.com/download/downApp.html',INTENT_URL :'openapp.jdebook://communication?params={\'type\':\'1\'}'})
+    $('#close').downloadAppPlugInClose('down_app');
+}
+
+</script>
+</body>
+</html>

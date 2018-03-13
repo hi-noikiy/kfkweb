@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+    	<script  type="text/javascript">
+			pay_startTime = new Date().getTime();
+    	</script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <title>收银台</title>
+        <link rel="stylesheet" type="text/css" href="css/ariel-all.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/home.min.css" />
+    </head>
+    <body>
+        <div id="viewport">
+            <div class="COMM_NAV_BAR_WRAP">
+                <header class="nav-bar COMM_NAV_BAR">
+                    <a href="javascript:void(0);" class="arrow b-arrow COMM_BACK_BTN"></a>
+                    京东收银台
+                    <a href="javascript:void(0);" class="jdkey COMM_JDKEY"></a>
+                </header> 
+                <nav class="COMM_NAV COMM_SIMULATION_1PX_BORDER">
+                    <div class="COMM_NAV_WRAP">
+                        <a href="javascript:void(0);" class="COMM_NAV_JD"></a>
+                    </div>
+                    <div class="COMM_NAV_WRAP">
+                        <a href="javascript:void(0);" class="COMM_NAV_SEARCH"></a>
+                    </div>
+                    <div class="COMM_NAV_WRAP">
+                        <a href="javascript:void(0);" class="COMM_NAV_CART"></a>
+                    </div>
+                    <div class="COMM_NAV_WRAP">
+                        <a href="javascript:void(0);" class="COMM_NAV_MY_JD"></a>
+                    </div>
+                </nav>
+            </div>
+            <div class="order-bar-wrap">
+                <div class="order-bar COMM_SIMULATION_1PX_BORDER">
+                    <span class="JS-pay-tip pay-tip"></span>
+                    <span class="pay-total">
+                        <strong class="JS-pay-total"><em class="pay-total-icon"></em></strong>
+                    </span>
+                </div>
+            </div>
+            <div class="JS-page-ct page-ct">
+                <div class="JS-page-scorller">
+                    <ul class="list pay-list default-pay-list COMM_SIMULATION_1PX_BORDER">
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item quick-pay">
+                            <div class="pay-base-info-wrap">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                                <a href="javascript:void(0);" class="card-info choose-quick-pay COMM_SIMULATION_1PX_DASHED_BORDER">
+                                    <span class="default-bank">--</span>
+                                </a>
+                            </div>
+                            <ul class="list safe-code-list">
+                                <li class="list-item COMM_SIMULATION_1PX_BORDER">
+                                    <span class="safe-code-title-main">安全码</span>
+                                    <div class="textfile card-textfile safe-code">
+                                        <input type="tel" maxlength="3" class="textfile-input" placeholder="卡背面末三位数字" />
+                                        <a href="javascript:void(0);"  class="close-btn textfile-reset textfile-reset-hide">
+                                            <span class="close-btn-cross"></span>
+                                        </a>
+                                    </div>                
+                                    <a href="javascript:void(0);" class="tip-icon card-tip safe-code-tip"></a>
+                                </li>                                
+                            </ul>                              
+                            <div class="next-wrap COMM_SIMULATION_1PX_BORDER">
+                                <a href="javascript:void(0);" class="btn b-btn next">立即支付</a>
+                                <p class="pay-false-btn">支付失败？</p>
+                            </div>
+                        </li>
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item net-bank">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>            
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item weixin-pay">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>                        
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item blank-note">
+                            <div class="pay-base-info-wrap">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                                <span class="available-money">可用额度：--.--元</span>
+                                <a href="javascript:void(0);" class="blank-note-info choose-blank-note COMM_SIMULATION_1PX_DASHED_BORDER">
+                                    <span class="title">还款方式</span>
+                                    <span class="way">--</span>
+                                </a>      
+                            </div>          
+                            <div class="next-wrap COMM_SIMULATION_1PX_BORDER">
+                                <div class="blank-note-tip"><a class="blank-note-tip-icon tip-icon"></a></div>
+                                <a href="javascript:void(0);" class="btn b-btn next">立即支付</a>
+                            </div>
+                        </li>     
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item coffer">
+                            <div class="pay-base-info-wrap">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                                <!-- <span class="available-money both-available-money">可用余额：--.--元</span> -->
+                            </div>
+                            <ul class="list coffer-list COMM_SIMULATION_1PX_DASHED_BORDER">
+                                <li class="list-item COMM_SIMULATION_1PX_BORDER">
+                                    <a href="javascript:void(0);" data-agency-code="185" class="crl-radio coffer-way checked"></a>
+                                    <span class="title">京东小金库</span>
+                                    <span class="available-money coffer-available-money">可用余额：--.--元</span>
+                                </li>
+                                <li class="list-item COMM_SIMULATION_1PX_BORDER">
+                                    <a href="javascript:void(0);" data-agency-code="186" class="crl-radio coffer-way"></a>
+                                    <span class="title">网银钱包余额</span>
+                                    <span class="available-money net-bank-available-money">可用余额：--.--元</span>
+                                </li>
+                            </ul>
+                            <div class="next-wrap COMM_SIMULATION_1PX_BORDER">
+                                <div class="coffer-tip"><a class="coffer-tip-icon tip-icon"></a></div>
+                                <a href="javascript:void(0);" class="btn b-btn next">立即支付</a>
+                            </div>
+                        </li>     
+                        <li class="list-item COMM_SIMULATION_1PX_BORDER pay-list-item default-pay-list-item union-pay">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>
+                    </ul>                
+                    <h2 class="title-bar other-pay-title-bar COMM_SIMULATION_1PX_BORDER">其它支付方式</h2> 
+                    <ul class="list pay-list other-pay-list COMM_SIMULATION_1PX_BORDER">
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item quick-pay">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item net-bank">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>            
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item weixin-pay">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>                        
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item blank-note">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                                <span class="available-money">可用额度：--.--元</span>
+                            </a>
+                        </li>     
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item coffer">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                                <span class="available-money">可用额度：--.--元</span>
+                            </a>
+                        </li>     
+                        <li class="list-item list-link-item COMM_SIMULATION_1PX_BORDER pay-list-item other-pay-list-item union-pay">
+                            <a href="javascript:void(0);" class="list-link">
+                                <span class="pay-icon"></span>
+                                <span class="title-main">--</span>
+                                <span class="title-vice">--</span>
+                            </a>
+                        </li>                                       
+                    </ul>             
+                    <div class="COMM_FIXED_QQ_NAV_BAR"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/ariel-all.min.js"></script>
+        <script type="text/javascript" src="js/pay-all.min.js"></script>
+        <script type="text/javascript" src="js/home.min.js?version=20150129"></script>
+        <script type="text/javascript">
+        $(function(){
+            var homePage = new HomePage();
+        });
+        </script>      
+    </body>
+</html>

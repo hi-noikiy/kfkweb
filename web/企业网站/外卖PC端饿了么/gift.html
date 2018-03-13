@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh">
+ <head> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" /> 
+  <script type="text/javascript">
+    
+      
+  </script> 
+  <title>礼品中心-gift.html</title> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <meta name="description" content="饿了么是中国最专业的网上订餐平台，提供各类中式、日式、韩式、西式等优质美食，如肯德基网上订餐，麦当劳网上订餐等。" /> 
+
+
+  
+  
+
+
+  <link href="css/forward_201503262210.css" type="text/css" rel="stylesheet" /> 
+  <!--[if (gte IE 7)&( lte IE 9)]>
+<link href="css/forward_iehack_201503262210.css" type="text/css" rel="stylesheet" />
+<![endif]--> 
+  <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png?v=2" /> 
+  <link rel="shortcut icon" href="images/favicon.ico?v=2" type="image/x-icon" /> 
+  <script src="js/cdn_detect.js"></script> 
+  <script>
+if(!window.CDNReady){var d=new Date;d.setHours(d.getHours()+6);document.cookie="CDNDown=1; domain=ele.me; expires="+d.toUTCString()+"; path=/";if(!window.localStorage.getItem("CDNBackup")){window.localStorage.setItem("CDNBackup",1);location.reload(true)}}
+</script> 
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]--> 
+  <script type="text/javascript">
+  var ma = "gift/index";
+  var logined = false;
+  var eleme = eleme || {};
+  var start_time = new Date().getTime();
+  var current_username = '';
+  eleme.logined = eleme.logined || false;
+  eleme.ma = eleme.ma || "gift/index";
+  eleme.place_id = eleme.place_id || "";
+  eleme.sessionId = "";
+  eleme.staticHost = "http://static10.elemecdn.com";
+  eleme.host = "ele.me";
+  eleme.api_host = "api.ele.me";
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2513347-3']);
+  _gaq.push(['_setDomainName', '.ele.me']);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_addIgnoredOrganic', '饿了']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么']);
+  _gaq.push(['_addIgnoredOrganic', '¶öÁËÃ´']);
+  _gaq.push(['_addIgnoredOrganic', '饿了吗']);
+  _gaq.push(['_addIgnoredOrganic', '¶öÁËÂð']);
+  _gaq.push(['_addIgnoredOrganic', '饿了网']);
+  _gaq.push(['_addIgnoredOrganic', '饿了吗?']);
+  _gaq.push(['_addIgnoredOrganic', '饿了吧']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么网']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么网上订餐']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么 上海']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么 杭州']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么 北京']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么上海']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么网站']);
+  _gaq.push(['_addIgnoredOrganic', '饿了么杭州']);
+  _gaq.push(['_addIgnoredOrganic', '饿了吗网站']);
+  _gaq.push(['_addIgnoredOrganic', 'ele']);
+  _gaq.push(['_addIgnoredOrganic', 'eleme']);
+  _gaq.push(['_addIgnoredOrganic', 'elema']);
+  _gaq.push(['_addIgnoredOrganic', 'ele.me']);
+  _gaq.push(['_addIgnoredOrganic', 'ele me']);
+  _gaq.push(['_addIgnoredOrganic', 'www.ele.me']);
+  _gaq.push(['_addIgnoredOrganic', 'http://ele.me/']);
+  _gaq.push(['_addIgnoredOrganic', 'http://www.ele.me/']);
+
+  _gaq.push(["_addOrganic", "sogou", "query"]);
+  _gaq.push(["_addOrganic", "so.360.cn", "q"]);
+  _gaq.push(["_addOrganic", "so.com", "q"]);
+  _gaq.push(["_addOrganic", "baidu", "word"]);
+  _gaq.push(['_addOrganic', 'm.baidu', 'word']);
+  _gaq.push(['_addOrganic', 'wap.baidu', 'word']);
+  _gaq.push(['_addOrganic', 'baidu', 'kw']);
+  _gaq.push(['_addOrganic', 'baidu', 'wd']);
+  _gaq.push(["_addOrganic", "soso", "w"]);
+
+  _gaq.push(['_trackPageview']);
+</script> 
+  <script type="text/javascript" src="js/head_201503262210.js"></script> 
+ </head> 
+ <!--[if IE 8]><body class="lt-ie9 lt-ie10"><![endif]--> 
+ <!--[if IE 9]><body class="lt-ie10"><![endif]--> 
+ <!--[if gt IE 9]><!--> 
+ <body> 
+  <!--<![endif]--> 
+  <link href="css/background.css?v=5" type="text/css" rel="stylesheet" /> 
+  <div id="background" style="background-position:1px -10836.111111111px;" class=" night "> 
+   <div id="sun"></div> 
+   <div id="moon"></div> 
+   <div id="clouds"> 
+    <div id="cloudGroup1"> 
+     <img src="images/clouds.png" alt="" id="cloudPiece1" class="cloudPiece" /> 
+     <img src="images/clouds.png" alt="" id="cloudPiece2" class="cloudPiece" /> 
+     <img src="images/clouds.png" alt="" id="cloudPiece3" class="cloudPiece" /> 
+    </div> 
+    <div id="cloudGroup2"> 
+     <img src="images/clouds.png" alt="" id="cloudPiece4" class="cloudPiece" /> 
+     <img src="images/clouds.png" alt="" id="cloudPiece5" class="cloudPiece" /> 
+     <img src="images/clouds.png" alt="" id="cloudPiece6" class="cloudPiece" /> 
+    </div> 
+    <div id="cloudGroup3"> 
+     <img src="images/clouds.png" alt="" id="cloudPiece7" class="cloudPiece" /> 
+     <img src="images/clouds.png" alt="" id="cloudPiece8" class="cloudPiece" /> 
+    </div> 
+   </div> 
+   <div id="bg_stars"> 
+    <div class="star_type_1_big"> 
+     <div class="bg_star" id="star1_1"></div> 
+     <div class="bg_star" id="star1_2"></div> 
+     <div class="bg_star" id="star1_3"></div> 
+     <div class="bg_star" id="star1_4"></div> 
+     <!--             <div class="bg_star" id="star1_5"></div>
+            <div class="bg_star" id="star1_6"></div> --> 
+    </div> 
+    <div class="star_type_1_normal"> 
+     <div class="bg_star" id="star1_7"></div> 
+     <div class="bg_star" id="star1_8"></div> 
+     <div class="bg_star" id="star1_9"></div> 
+     <div class="bg_star" id="star1_10"></div> 
+     <div class="bg_star" id="star1_11"></div> 
+     <div class="bg_star" id="star1_12"></div> 
+    </div> 
+    <div class="star_type_1_small"> 
+     <div class="bg_star" id="star1_13"></div> 
+     <div class="bg_star" id="star1_14"></div> 
+     <div class="bg_star" id="star1_15"></div> 
+     <div class="bg_star" id="star1_16"></div> 
+     <div class="bg_star" id="star1_17"></div> 
+     <div class="bg_star" id="star1_18"></div> 
+    </div> 
+    <div class="star_type_2_big"> 
+     <div class="bg_star" id="star2_1"></div> 
+     <div class="bg_star" id="star2_2"></div> 
+     <div class="bg_star" id="star2_3"></div> 
+     <div class="bg_star" id="star2_4"></div> 
+     <!--             <div class="bg_star" id="star2_5"></div>
+            <div class="bg_star" id="star2_6"></div> --> 
+    </div> 
+    <div class="star_type_2_normal"> 
+     <div class="bg_star" id="star2_7"></div> 
+     <div class="bg_star" id="star2_8"></div> 
+     <div class="bg_star" id="star2_9"></div> 
+     <div class="bg_star" id="star2_10"></div> 
+     <div class="bg_star" id="star2_11"></div> 
+     <div class="bg_star" id="star2_12"></div> 
+    </div> 
+    <div class="star_type_2_small"> 
+     <div class="bg_star" id="star2_13"></div> 
+     <div class="bg_star" id="star2_14"></div> 
+     <div class="bg_star" id="star2_15"></div> 
+     <div class="bg_star" id="star2_16"></div> 
+     <div class="bg_star" id="star2_17"></div> 
+     <div class="bg_star" id="star2_18"></div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="full-content-wrapper"> 
+   <header id="topbar" role="banner"> 
+    <div class="container clearfix"> 
+     <a id="logo" href="index.html" title="饿了么" alt="饿了么" role="logo"> <i class="default-logo"></i> </a> 
+     <div class="mobile-wrap"> 
+      <a id="topbar_mobile" class="topbar-mobile" href="/mobile" target="_blank" onclick="_gaq.push(['_trackEvent', 'topbar', 'click_mobile']);"><i class="icon-mobile"></i>手机客户端</a> 
+      <div id="popup_mobile" class="popup-mobile"> 
+       <div class="arrow"></div> 
+       <div class="panel"> 
+        <p class="title">扫一扫，手机订餐更方便</p> 
+        <a class="qrcode" href="mobile.html" target="_blank"><img src="images/app-qrcode-72.png" alt="扫一扫，手机订餐更方便" /></a> 
+        <a class="btn-ios" href="http://m.ele.me/download/ios/eleme" target="_blank"><span>App Store下载</span></a> 
+        <a class="btn-android" href="http://m.ele.me/download/android/eleme"><span>Android版</span></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="topbar_search" class="topbar-search" role="search"> 
+      <form id="tsearch_form" class="tsearch-form clearfix" action="/search" method="get"> 
+       <i class="icon-tsearch"></i> 
+       <input id="tsearch_input" class="tsearch-input" type="text" name="kw" autocomplete="off" placeholder="搜索餐厅，美食…" /> 
+       <i id="ts_loading" class="icon-tloading hide"></i> 
+       <a id="ts_clear" class="icon-tclear hide"></a> 
+      </form> 
+      <div id="tsearch_autocomplete" class="tsearch-autocomplete"></div> 
+     </div> 
+     <nav class="topbar-nav" role="navigation"> 
+      <ul class="topbar-site-nav"> 
+       <li><a class="tnav-link" rel="nofollow" href="member_order.html">我的饿单</a></li> 
+       <li><a class="tnav-link current" rel="nofollow" href="gift.html">礼品中心</a></li> 
+       <li><a class="tnav-link" rel="nofollow" href="support.html">联系客服</a></li> 
+      </ul> 
+      <div id="topbar_cart" class="eleme_dropdown topbar-widget topbar-cart empty"> 
+       <a class="e_toggle twidget-toggle"> <span id="tcart_total" class="tcart-total twidget-total">0</span> <i class="icon-tcart"></i> </a> 
+       <div class="e_dropdown twidget-dropdown"> 
+        <div id="tcart_loading" class="twidget-loading"></div> 
+        <div id="tcart_wrapper"></div> 
+       </div> 
+      </div> 
+      <div class="topbar-user-nav tnav-link"> 
+       <a rel="nofollow" href="login.html">登录</a> / 
+       <a rel="nofollow" href="register.html">注册</a> 
+      </div> 
+     </nav> 
+    </div> 
+   </header> 
+   <div class="container"> 
+    <div class="gift"> 
+     <div class="row"> 
+      <div class="span12 gift_container bordered-box"> 
+       <div class="gift_description"> 
+        <strong>饿了么礼品中心</strong> 
+        <div class="gift_notification well" style="box-shadow: none;">
+          礼品客服中心电话：4000557117 
+        </div>
+        <!--end gift_notification--> 
+       </div>
+       <!--end gift_description--> 
+       <div class="gift-list"> 
+        <div class="group-header">
+         1000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="gift_detail.html" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/c5e80ee61a6afe87d5b9b626fc5fcpng.png" alt="PP租车200元租车劵" />
+            </div> 
+            <p>PP租车200元租车劵</p> 
+            <span>1000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         2500分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/228" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/e9a70c051e327ace98c0a49ecd24fjpeg.jpeg" alt="本网“新疆天山御枣3A级 500g”（仅江浙沪皖地区）" />
+            </div> 
+            <p>本网“新疆天山御枣3A级 5...</p> 
+            <span>2500分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/229" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/317758cc76e94ddc6a4d9b201cae4jpeg.jpeg" alt="暖岛网50元代金券" />
+            </div> 
+            <p>暖岛网50元代金券</p> 
+            <span>2500分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         20000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/178" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/7fdd7a611da11ff5f431bf441cc10jpeg.jpeg" alt="个性创意泡面碗" />
+            </div> 
+            <p>个性创意泡面碗</p> 
+            <span>20000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         25000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/217" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/5b80f5808b9acd4b5c79a5239e9a0jpeg.jpeg" alt="苹果产品数据线【备注组合】" />
+            </div> 
+            <p>苹果产品数据线【备注组合】</p> 
+            <span>25000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         30000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/142" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/dec51059aa43570b4247b9b6a5063jpeg.jpeg" alt="迷你电子体重称 便携式（随机）" />
+            </div> 
+            <p>迷你电子体重称 便携式（随机）</p> 
+            <span>30000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/174" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/e1b6f1cd692088bfb6222c78c37bbjpeg.jpeg" alt="超级大伞，我用的那种（震撼升级版！）" />
+            </div> 
+            <p>超级大伞，我用的那种（震撼升...</p> 
+            <span>30000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         35000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/126" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/5bef714a7784ef491ff3a3bf4323bjpeg.jpeg" alt="手机充值卡50元" />
+            </div> 
+            <p>手机充值卡50元</p> 
+            <span>35000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/221" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/cc18ad5b65fa24f0b6c3e8aa91a30jpeg.jpeg" alt="牛奶读书灯" />
+            </div> 
+            <p>牛奶读书灯</p> 
+            <span>35000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         40000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/153" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/31f36374f8615f46c11e0342b0e07jpeg.jpeg" alt="香山EB9005L电子秤" />
+            </div> 
+            <p>香山EB9005L电子秤</p> 
+            <span>40000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/225" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/3da8b6bc3038772fd7a59db6804d9jpeg.jpeg" alt="小机器人智能插座" />
+            </div> 
+            <p>小机器人智能插座</p> 
+            <span>40000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         50000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/159" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/36089fad5750203f87d36a2a756d8jpeg.jpeg" alt="SSYP正品超声波雾化负离子加湿器水壶迷你加湿器" />
+            </div> 
+            <p>SSYP正品超声波雾化负离子...</p> 
+            <span>50000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/218" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/1d0efa3b157d9ddd1f96149de6c15jpeg.jpeg" alt="蓝牙/有线二合一音箱" />
+            </div> 
+            <p>蓝牙/有线二合一音箱</p> 
+            <span>50000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         60000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/187" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/bfb8cbfa9d10d1c4304ba6f395fd9jpeg.jpeg" alt="小熊酸奶机" />
+            </div> 
+            <p>小熊酸奶机</p> 
+            <span>60000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/223" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/5ae175ad14d1cbb85ca199bc3efa2jpeg.jpeg" alt="solocar充电宝" />
+            </div> 
+            <p>solocar充电宝</p> 
+            <span>60000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         70000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/128" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/edca2ad62d18c20b6bbfcfe9cbf0djpeg.jpeg" alt="手机充值卡100元" />
+            </div> 
+            <p>手机充值卡100元</p> 
+            <span>70000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/188" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/390c167864a382a8a73d1cca91b9ajpeg.jpeg" alt="飞利浦头戴式耳机" />
+            </div> 
+            <p>飞利浦头戴式耳机</p> 
+            <span>70000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/189" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/caea9352e0eb77f240b9140bce933jpeg.jpeg" alt="骑行隐形口罩" />
+            </div> 
+            <p>骑行隐形口罩</p> 
+            <span>70000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/209" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/71b392a653074fc3f4d92cd5023d3jpeg.jpeg" alt="苔藓微景观" />
+            </div> 
+            <p>苔藓微景观</p> 
+            <span>70000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         80000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/212" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/93d67db49b17ddfb9270231ee77f1jpeg.jpeg" alt="emoi 隔热随手杯随身杯" />
+            </div> 
+            <p>emoi 隔热随手杯随身杯</p> 
+            <span>80000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         100000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/148" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/70202d0d9e58c686a43d93405a99fjpeg.jpeg" alt="人字拖鞋 平底" />
+            </div> 
+            <p>人字拖鞋 平底</p> 
+            <span>100000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/191" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/211c1b32e236e9ed2a831edf11bf0jpeg.jpeg" alt="瑞士军刀背包" />
+            </div> 
+            <p>瑞士军刀背包</p> 
+            <span>100000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/224" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/ef88284e6a93db26a8f58c3f78d47jpeg.jpeg" alt="小可乐移动电源" />
+            </div> 
+            <p>小可乐移动电源</p> 
+            <span>100000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         200000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/112" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/bf1a543f2466ded0196c5a1624b4cjpeg.jpeg" alt="Sony/索尼入耳式耳机" />
+            </div> 
+            <p>Sony/索尼入耳式耳机</p> 
+            <span>200000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/129" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/fd61d90a6b3a239e234c2f5b51de0jpeg.jpeg" alt="苹果Magic Mouse" />
+            </div> 
+            <p>苹果Magic Mouse</p> 
+            <span>200000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         300000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/84" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/a47ed618048869436f10837ea2419jpeg.jpeg" alt="新款 iPod shuffle（颜色随机）" />
+            </div> 
+            <p>新款 iPod shuffl...</p> 
+            <span>300000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/201" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/50c458a620e9e158e4ec79bd9519cjpeg.jpeg" alt="Card Phone" />
+            </div> 
+            <p>Card Phone</p> 
+            <span>300000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         400000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/87" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/a1bde534950be24dadcb7819a9e77jpeg.jpeg" alt="飞利浦（Philips） 220V4LSB 22英寸LED背光宽  屏液晶显示器" />
+            </div> 
+            <p>飞利浦（Philips） 2...</p> 
+            <span>400000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/204" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/40ae9167b736806c1316aa54ef9acjpeg.jpeg" alt="Kindle Paperwhite电子书阅读器（第二代）" />
+            </div> 
+            <p>Kindle Paperwh...</p> 
+            <span>400000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/213" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/0f7d8d2d6c206e639d49f380a7c88jpeg.jpeg" alt="富士拍立得mini8" />
+            </div> 
+            <p>富士拍立得mini8</p> 
+            <span>400000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         800000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/198" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/6948a70653c0ed1d13f45bc5f48d5jpeg.jpeg" alt="最新款iPod touch 16G" />
+            </div> 
+            <p>最新款iPod touch ...</p> 
+            <span>800000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         1500000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/199" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/8531acf1425d17841080cacb76c81jpeg.jpeg" alt="iPad mini3 16g wifi" />
+            </div> 
+            <p>iPad mini3 16g...</p> 
+            <span>1500000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         2000000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/92" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/9e50cfd06b481f7ff8ff0707e1980jpeg.jpeg" alt="iPad Air2 16G" />
+            </div> 
+            <p>iPad Air2 16G</p> 
+            <span>2000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/202" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/7aaec23893ae29c061335da388339jpeg.jpeg" alt="IPS自平衡独轮车" />
+            </div> 
+            <p>IPS自平衡独轮车</p> 
+            <span>2000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/205" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/c5043084a3e4fb558ee117124a5cfjpeg.jpeg" alt="SUUNTO颂拓松拓心率手表" />
+            </div> 
+            <p>SUUNTO颂拓松拓心率手表</p> 
+            <span>2000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         3000000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/215" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/3cfa899e6ddc4feec888dc1c7ca04jpeg.jpeg" alt="索尼微单" />
+            </div> 
+            <p>索尼微单</p> 
+            <span>3000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+        <div class="group-header">
+         5000000分礼品
+        </div> 
+        <ul> 
+         <li> <a href="/gift/show/giftId/133" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/fb7c9070d671fd439aa5350c9c2c9jpeg.jpeg" alt="iPhone6 16G" />
+            </div> 
+            <p>iPhone6 16G</p> 
+            <span>5000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/136" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/cd4165f3e88e7f32e7c0119743f80jpeg.jpeg" alt="MacBook Air 128GB" />
+            </div> 
+            <p>MacBook Air 12...</p> 
+            <span>5000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+         <li> <a href="/gift/show/giftId/200" style="overflow:hidden;"> 
+           <div class="gift_detail"> 
+            <div class="gift_image">
+             <img src="images/8561123c49b3f39a4aabe836c4e8djpeg.jpeg" alt="佳能EOS 7D单反套机（EF-S 18-135mm f/3.5-5.6 IS 镜头）" />
+            </div> 
+            <p>佳能EOS 7D单反套机（E...</p> 
+            <span>5000000分礼品</span> 
+            <div class="btn btn-yellow gift-btn">
+              去看看 
+            </div> 
+           </div> </a> </li> 
+        </ul> 
+       </div> 
+      </div>
+      <!--end gift_container--> 
+     </div>
+     <!--end row--> 
+    </div>
+    <!--end gift--> 
+   </div> 
+   <div id="site_fixed" class="site-fixed"> 
+    <a id="back_top" class="btn-back-top ui_invisible" role="button" title="回顶部"><i class="icon-backtop"></i></a> 
+    <div class="btn-app-qrcode"> 
+     <i class="icon-qrcode"></i> 
+     <img class="img-qrcode" src="images/app-qrcode.png" alt="扫描二维码免费下载手机App" /> 
+    </div> 
+   </div> 
+   <div id="modal_globalLogin" class="modal-global-login modal hide fade" aria-hidden="true" tabindex="-1"> 
+    <a class="close" aria-hidden="true">&times;</a> 
+    <iframe class="ilogin-iframe login_frame" src="https://account.ele.me/ilogin" frameborder="0" scrolling="no"></iframe> 
+   </div> 
+   <footer class="site-footer"> 
+    <p class="sfooter-link-list"> <a class="sfooter-link" href="http://kaidian.ele.me">我要开店</a> <a class="sfooter-link" href="contact.html">联系我们</a> <a class="sfooter-link" href="agreement.html">服务条款和协议</a> <a class="sfooter-link" href="sitemaps.html">站点地图</a> <a class="sfooter-link" href="http://jobs.ele.me">加入我们</a> </p> 
+    <p> 增值电信业务许可证：<a class="sfooter-link sfooter-link-zero" target="_blank" rel="nofollow" href="http://www.shca.gov.cn">沪B2-20150033</a> <a class="sfooter-link" target="_blank" rel="nofollow" href="http://www.miibeian.gov.cn">沪ICP备 09007032</a> <a class="sfooter-link" target="_blank" rel="nofollow" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20120305173227823">上海工商行政管理</a> Copyright &copy;2008-2015 ele.me, All Rights Reserved. </p> 
+   </footer> 
+  </div> 
+  <script type="text/javascript" src="js/foot_201503262210.js"></script> 
+  <script src="js/gift_201503262210.js"></script> 
+ </body>
+</html>

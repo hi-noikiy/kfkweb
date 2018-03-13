@@ -1,0 +1,32 @@
+#container{border:1px solid #ddd\9;}
+/*×ó²àµ¼º½*/
+#fSidebar { background: #F7F7F7; float: left; width: 179px; min-height: 600px; text-align: center; border-right: 1px solid #DEDEDE; }
+#fSidebar ul { background: #F7F7F7; float: left; width: 179px; padding-bottom: 10px; }
+#fSidebar li { float: left; margin: 10px 0 0 1px; height: 32px; width: 180px; }
+#fSidebar li a { display: block;float:right; text-decoration: none; width:163px;height: 32px; line-height: 32px; color: #666;margin-right:1px; }
+#fSidebar li a:hover,#fSidebar li.active a { background: url("../images/main.png") no-repeat -20px -83px;color: #FA6900; }
+#fSidebar h3 { background: #EAEAEA; height: 35px; line-height: 35px; font-size: 16px; float: left; width: 100%; margin-top: 0; }
+
+/*ÓÒ²à²¿·Ö*/
+#about { width: 780px;width:778px\9; float: left;padding:10px;}
+#about.login{border:none;}
+#about.login ul{margin-top:0;}
+.about-title { font-size: 16px; font-weight: bold;line-height: 1.5em; border-bottom: 1px solid #DDD;padding: 0 0 10px 10px;}
+#about p {  line-height: 24px; margin: 0 0 10px 10px; color: #666; }
+#about p em { font-style: normal; font-weight: bold; color: #333; }
+#about.question em { color: #FA6900; }
+.flink { float: left; margin-left: 20px; }
+.flink li { float: left; width: 150px; border-bottom: 1px dotted #BADAF4; line-height: 30px; }
+.flink li a { color: #3265CB; }
+#about .attention{width:730px;margin:10px 0 0 0;line-height:18px;}
+#watchOut { margin: 25px 10px 5px; padding: 15px; float: left; width: 726px; border: 1px solid #ccc; overflow-y: scroll; overflow-x:hidden;}
+#watchOut p{width:709px;margin-left:0;}
+#watchOut .title{text-align:center;width:709px;font-weight:bold;font-size:18px;}
+#agree{float:left;width:100%;}
+#agree label{width:182px;position:relative;}
+#agree input{height:24px;line-height:24px;}
+#joinUs{margin-left:320px;}
+
+.ac_content .invite_url{margin-left:10px;}
+img.dian{position:relative;top:3px;margin:0 1px;}
+#income #pAccount table.talent thead{background-color:#f8f8f8;}

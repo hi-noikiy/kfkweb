@@ -1,0 +1,9 @@
+白天方法：  
+首页找到id为background
+然后设置class 为 “day” background-position: 1px -8197.08px;
+
+黑夜方法：
+
+首页找到id为background
+然后设置class 为 “night” background-position: 1px -8197.08px;
+

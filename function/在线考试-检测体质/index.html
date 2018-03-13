@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>检测体质</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/Questions.js"></script>
+    <script>
+
+		var questions      = TiZhiJson;
+		var itemList       = ["A", "B", "C", "D", "E"];
+		var valueList      = ["5", "4", "3", "2", "1"];
+		var activeQuestion = 0; //当前操作的考题编号
+		var questioned     = 0; //
+		var checkQues      = []; //已做答的题的集合
+
+
+		//展示考卷信息
+		function showQuestion(id) {
+			$(".questioned").text(id + 1);
+			questioned = (id + 1) / questions.length;
+			if (activeQuestion != undefined) {
+				$("#ques" + activeQuestion).removeClass("question_id").addClass("active_question_id");
+			}
+			activeQuestion = id;
+			$(".question").find(".question_info").remove();
+			var question = questions[id];
+			// 第几题
+			$(".question_title").html("<strong>第 " + (id + 1) + " 题 、</strong>" + question.questionTitle);
+			var items = question.questionItems.split(";");
+			var item  = "";
+			for (var i = 0; i < items.length; i++) {
+				item ="<li class='question_info' onclick='clickTrim(this)' id='item" +i+"'><input type='radio' name='item' value='"+valueList[i]+"'>&nbsp;"+itemList[i]+"."+items[i]+"</li>";
+				$(".question").append(item);
+			}
+			$(".question").attr("id", "question" + id);
+			$("#ques" + id).removeClass("active_question_id").addClass("question_id");
+			for (var i = 0; i < checkQues.length; i++) {
+				if (checkQues[i].id == id) {
+					$("#" + checkQues[i].item).find("input").prop("checked", "checked");
+					$("#" + checkQues[i].item).addClass("clickTrim");
+					$("#ques" + activeQuestion).removeClass("question_id").addClass("clickQue");
+				}
+			}
+			progress();
+		}
+
+        /*答题卡*/
+		function answerCard() {
+			$(".question_sum").text(questions.length);
+			for (var i = 0; i < questions.length; i++) {
+				var questionId ="<li id='ques"+i+"'onclick='saveQuestionState("+i+")' class='questionId'>"+(i+1)+"</li>";
+				$("#answerCard ul").append(questionId);
+			}
+		}
+
+        /*选中考题*/
+		var Question;
+		function clickTrim(source) {
+			var id = source.id;
+			$("#" + id).find("input").prop("checked", "checked");
+			$("#" + id).addClass("clickTrim");
+			$("#ques" + activeQuestion).removeClass("question_id").addClass("clickQue");
+			var ques = 0;
+			for (var i = 0; i < checkQues.length; i++) {
+				if (checkQues[i].id == activeQuestion && checkQues[i].item != id) {
+					ques                = checkQues[i].id;
+					checkQues[i].item   = id;//获取当前考题的选项ID
+					checkQues[i].answer = $("#" + id).find("input[name=item]:checked").val();//获取当前考题的选项值
+				}
+			}
+			// 写入数据
+			if (checkQues.length == 0 || Question != activeQuestion && activeQuestion != ques) {
+				var check    = {};
+				check.id     = activeQuestion;//获取当前考题的编号
+				check.item   = id;//获取当前考题的选项ID
+				check.answer = $("#" + id).find("input[name=item]:checked").val();//获取当前考题的选项值
+				checkQues.push(check);
+			}
+			$(".question_info").each(function () {
+				var otherId = $(this).attr("id");
+				if (otherId != id) {
+					$("#" + otherId).find("input").prop("checked", false);
+					$("#" + otherId).removeClass("clickTrim");
+				}
+			});
+			Question = activeQuestion;
+			if ((activeQuestion + 1) != questions.length) showQuestion(activeQuestion + 1);
+			showQuestion(activeQuestion)
+			setTimeout(nextQuestion,100);// 下一题
+
+		}
+		
+		function getResult(checkQues) {
+            console.log(checkQues);
+
+			//检测结果
+			var result  = new Array();
+
+			//判断是否答完题
+			if (checkQues.length == 67) {
+				var temp    = 0;
+                for (var i in checkQues) {
+					if (checkQues[i].answer > 0) {
+						temp += parseInt(checkQues[i].answer);
+					}
+					if (checkQues[i].id == 6) { //阳虚质
+						var t2 = (temp - 7) / (4 * 7) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "YANGXU"
+						});
+						console.log(result);
+						temp = 0;
+					}
+					if (checkQues[i].id == 14) { //阴虚质
+						var t2 = (temp - 8) / (4 * 8) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "YINXU"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 22) { //气虚质
+						var t2 = (temp - 8) / (4 * 8) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "QIXU"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 30) { //痰湿质
+						var t2 = (temp - 8) / (4 * 8) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "TANSHI"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 37) { //湿热质
+						var t2 = (temp - 7) / (4 * 7) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "SHIRE"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 44) { //血瘀质
+						var t2 = (temp - 7) / (4 * 7) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "XUEYU"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 51) { //特禀质
+						var t2 = (temp - 7) / (4 * 7) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "TELIN"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 58) { //气郁质
+						var t2 = (temp - 7) / (4 * 7) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "QIYU"
+						});
+						temp = 0;
+					}
+					if (checkQues[i].id == 66) { //平和质
+						var t2 = (temp - 8) / (4 * 8) * 100;
+						result.push({
+							"fen" : t2,
+							"name": "PINGHE"
+						});
+						temp = 0;
+					}
+
+				}
+
+				//从大到小排序
+				result.sort(function (a, b) {
+					return b.fen - a.fen;
+				});
+				var main = "";
+				var sub  = "";
+
+				if (getfenbyname("PINGHE",result) >= 60 && ispianpo(result)) { // 平和体质
+					main = "PINGHE";
+				} else { // 偏颇体质
+                    console.log(result);
+					main = result[0].name;
+					for (var item in result) {
+						var temp_tizhi = result[item];
+						if (temp_tizhi.name != "PINGHE" && temp_tizhi.name != main) {
+							if (temp_tizhi.fen > 30) {
+								sub += temp_tizhi.name + ",";
+							}
+						}
+					}
+					sub = sub.substring(0, sub.length - 1);
+					localStorage.setItem("main", main);
+					localStorage.setItem("sub", sub);
+				}
+
+				var tizhi_list = {
+					YANGXU: "阳虚质",
+					YINXU : "阴虚质",
+					QIXU  : "气虚质",
+					TANSHI: "痰湿质",
+					SHIRE : "湿热质",
+					XUEYU : "血瘀质",
+					TELING: "特禀质",
+					QIYU  : "气郁质",
+					PINGHE: "平和质"
+				};
+
+				//将结果写到弹窗中
+				return tizhi_list[main];
+			}
+		}
+		//判断偏颇体质是否都小于30
+		function ispianpo(result) {
+			var flag = true;
+			for (var item in result) {
+				var temp_tizhi = result[item];
+				if (temp_tizhi.name != "PINGHE") {
+					if (temp_tizhi.fen > 30) {
+						flag = false;
+						return false;
+					}
+				}
+			}
+			return flag;
+		}
+
+
+		//根据体质名称获取分数
+		function getfenbyname(name,result) {
+			var tempfen = 0;
+			for (var item in result) {
+				var temp_tizhi = result[item];
+				if (temp_tizhi.name == name) {
+					tempfen = temp_tizhi.fen;
+				}
+			}
+			return tempfen;
+		}
+
+        /*设置进度条*/
+		function progress() {
+			var prog = ($(".active_question_id").length + 1) / questions.length;
+			var pro  = $(".progress").parent().width() * prog;
+			$(".progres").text((prog * 100).toString().substr(0, 5) + "%");
+			$(".progress").animate({
+				width  : pro,
+				opacity: 0.5
+			}, 1000);
+		}
+
+        /*保存考题状态 已做答的状态*/
+		function saveQuestionState(clickId) {
+			showQuestion(clickId)
+		}
+
+		// 下一题
+		function nextQuestion(){
+			if ((activeQuestion + 1) != questions.length) showQuestion(activeQuestion + 1);
+			showQuestion(activeQuestion)
+		}
+
+		$(function () {
+			$(".middle-top-left").width($(".middle-top").width() - $(".middle-top-right").width());
+			$(".progress-left").width($(".middle-top-left").width() - 200);
+			progress();
+			answerCard();
+			showQuestion(0);
+            /*alert(TiZhiJson.length);*/
+            /*实现进度条信息加载的动画*/
+			var str = '';
+
+
+            /*答题卡的切换*/
+			$("#openCard").click(function () {
+				$("#closeCard").show();
+				$("#answerCard").slideDown();
+				$(this).hide();
+			});
+			$("#closeCard").click(function () {
+				$("#openCard").show();
+				$("#answerCard").slideUp();
+				$(this).hide();
+			});
+
+			//提交试卷
+			$("#submitQuestions").click(function () {
+//                alert(JSON.stringify(checkQues));
+
+				if (checkQues.length == 67) {
+					alert(getResult(checkQues));
+//					alert("已做答:" + ($(".clickQue").length) + "道题,还有" + (questions.length - ($(".clickQue").length)) + "道题未完成");
+				}else{
+					alert('你的测试题尚未做完，请做完后提交！')
+                }
+
+			});
+
+			//进入下一题
+			$("#nextQuestion").click(function () {
+				nextQuestion();
+			});
+
+
+		})
+    </script>
+</head>
+<body>
+<div>
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="content">
+            <div class="row">
+                <div class="btn-group">
+                    <button class="btn btn-default" type="button" onclick="history.go(-1);">返回上一个页面</button>
+                    <button class="btn btn-default" type="button" onclick="location.reload()">刷新</button>
+                </div>
+            </div>
+
+            <div style="width: 100%;height:auto;display: inline-block;border: 1px solid white;position: relative;margin-top:10px;">
+                <div style="width: 100%;">
+                    <div style="width: 80%;margin: 0px auto">
+                        <div style="width: 100%;height:100px;border: 1px solid #cccccc;border-bottom:none;background:#ffffff;">
+                            <div class="middle-top" style="width: 100%;height: 50px;border-bottom: 1px solid #cccccc;background:#2d3339; position:relative;">
+                                <div class="middle-top-left pull-left" style="height: 100%;padding-left: 20px;background:#3d8dbc;color:#ffffff;">
+
+                                    <div class="pull-left" style=" width:200px;line-height:20px;height:20px;margin:15px;font-size:15px;">
+                                        <!--已做答的数量和考题总数-->
+                                        体质测试
+                                    </div>
+                                </div>
+                                <div class="middle-top-right text-center pull-left" style="width:160px; height: 100%;border-left: 1px solid red;position: absolute;right: 0px;background:#3d8dbc;">
+                                    <div class="pull-right" style=" width:135px;line-height:20px;height:20px;margin:15px;font-size:15px;color:#ffffff;">
+                                        <!--已做答的数量和考题总数-->
+                                        当前第<span class="questioned"></span>题/共<span class="question_sum"></span>题
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 100%;height: 50px;font-size:15px;color: #000000;line-height: 50px;padding-left: 20px;">
+                                <div style="color:#ffffff;background: red;width: 22px;height: 22px;border-radius:11px;line-height:22px;font-size:13px; text-align: center;"
+                                     class="glyphicon glyphicon-info-sign"></div>
+                                温馨提示：以下问题请根据您最近三个月的身体情况回答，回答完上一体，自动跳转到下一题。
+
+
+                            </div>
+                        </div>
+                        <div style="width: 100%;height:auto;display: inline-block;border: 1px solid #cccccc;border-bottom:1px dashed #cccccc;background:#ffffff;">
+                            <div style="width: 100%;height: 90%;padding:20px 20px 0px 20px;">
+                                <!--试题区域-->
+                                <ul class="list-unstyled question" id="" name="">
+                                    <li class="question_title"></li>
+                                </ul>
+                                <!--考题的操作区域-->
+                                <div class="operation" style="margin-top: 20px;">
+
+                                    <div class="text-right" style="margin-right: 20px;">
+                                        <div class="form-group" style="color: #ffffff;">
+                                            <button class="btn btn-success" id="submitQuestions">提交测试</button>
+                                            <button class="btn btn-info" id="nextQuestion">下一题</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 100%;height:auto;display: inline-block;border: 1px solid #cccccc;border-top:none;background:#ffffff;">
+                            <div style="width: 100%;padding:20px;">
+                                <div class="panel-default">
+                                    <div class="panel-heading" class="panel-heading" id="closeCard" style="color: #dce4ec;font-size: 15px;display: none;background: none;">
+                                        <span>收起答题卡</span> <span class="glyphicon glyphicon-chevron-up"></span></div>
+                                    <div class="panel-heading" id="openCard" style="font-size: 15px;background: none;"><span>展开答题卡</span> <span class="glyphicon glyphicon-chevron-down"></span></div>
+                                    <div id="answerCard" style="display: none;">
+                                        <div class="panel-body form-horizontal" style="padding: 0px;">
+                                            <ul class="list-unstyled">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: auto;display: inline-block;border: 1px solid white;">
+                <div class="text-center" style="width: 100%;"> 底部</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+<!--此段可直接删除-开始-->
+<style>
+    .sucainiu-footer {
+        text-align  : center;
+        padding-top : 50px;
+        font-size   : 13px;
+    }
+    .sucainiu-footer p {
+        line-height : 30px;
+    }
+    .sucainiu-footer a {
+        color  : #0066ff;
+        margin : 0px 10px;
+    }
+    .clear {
+        clear : both;
+    }
+</style>
+<div class="clear"></div>
+<div class="sucainiu-footer"></div>
+<!--此段可直接删除-结束-->
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<title>秒杀</title>
+    	<meta name="author" content="m.jd.com">
+        			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	            <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" CONTENT="-1">           
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+    <meta http-equiv="Pragma" CONTENT="no-cache">           
+	  				<link rel="stylesheet" type="text/css" href="css/base2013.css?v=jd2015030523" charset="UTF-8"/>
+		
+		
+							<link rel="stylesheet" type="text/css" href="css/seckill.css?v=jd2015030523" charset="UTF-8"/>	
+				
+					
+		        								<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png?v=jd2015030523"/>
+						<script type="text/javascript">
+			var _winLocation=window.location.href;//获得当前页面的路径，根据路径规则进行逐页替换
+			var _isWebKit = '__proto__' in {};//是否是webkit内核
+			if(_isWebKit){//如果是webkit内核，则分模块使用zepto
+				//要使用zeptojs的路径列表，可以做为分模块替换的开关
+				var _locationList=new Array();
+				//活动模块
+				_locationList.push('/activity/proActList');
+				_locationList.push('/activity/proActWareList');
+				_locationList.push('/activity/list');
+				//商品分类模块
+				_locationList.push('/category/');
+				//京东快讯模块
+				_locationList.push('/newslist.html');
+				_locationList.push('/newslist/');
+				_locationList.push('/news/');
+				//机票模块
+				_locationList.push('/airline/');
+				//酒店模块
+				_locationList.push('/hotel/');
+				//团购模块
+				_locationList.push('/tuan/');
+				//首页相关
+				_locationList.push('/hotbrand.html');//品牌馆
+				//商品筛选相关
+				_locationList.push('/ware/view.action');
+				_locationList.push('/ware/expandSort.action');
+				_locationList.push('/ware/categoryFilter.action');
+				_locationList.push('/goods_list.html');
+				_locationList.push('/products/');
+				_locationList.push('/index/getWare.action')//热门特惠
+				_locationList.push('/notice/');//通告模块
+				_locationList.push('/coupons/');//随地惠模块
+				_locationList.push('/chongzhi/');//手机充值模块
+				_locationList.push('/comment/');//手机推荐模块
+				_locationList.push('/pay/');//支付
+				_locationList.push('/order/');//订单
+				_locationList.push('/norder/');//订单
+				
+				_locationList.push('/seckill/');//秒杀
+				
+				_locationList.push('/sale/act/');//sale
+				_locationList.push('/sale/mall/');//sale
+				//_locationList.push('/market/floorWare.action');//掌上专享
+				
+				var _needReplace = false;
+				//如果当前路径符合要使用的路径规则，则进行替换
+				for(var i=0;i<_locationList.length;i++){
+					if(_winLocation.indexOf(_locationList[i])!=-1){
+						_needReplace=true;
+						break;
+					}
+				}
+				//如果是首页的话，则使用zepto
+				var _tmp = _winLocation.replace(/(^http:\/\/)|(\/*$)/g,'');
+				if(_tmp.indexOf('/')<0 || (_tmp.split('/').length<=2 && _tmp.indexOf('/index')>=0)){
+					_needReplace=true;
+				}
+				//如果是商品详情页的话，则使用zepto
+                var _dlocationList=new Array();
+                _dlocationList.push(/\/product\/([0-9]+)\.html/);
+                _dlocationList.push(/\/orderComment\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)\.html/);
+                _dlocationList.push(/\/consultations\/([0-9]+)-([0-9]+)\.html/);
+                _dlocationList.push(/\/comments\/([0-9]+)\.html/);
+                for(var i=0,len=_dlocationList.length;i<len;i++){
+                	if(_dlocationList[i].test(_winLocation)){
+                		_needReplace=true;
+               			 break;
+               		 }
+                }
+				if(_needReplace){
+					document.write('<script src="js/zepto.min.js?v=jd2015030523"><\/script>');
+					document.write('<script type="text/javascript">window.jQuery=window.Zepto;<\/script>');
+				}else{
+					document.write('<script src="js/jquery-1.6.2.min.js?v=jd2015030523"><\/script>');
+				}
+			}else{//如果是非webkit内核直接使用jquery
+				document.write('<script src="js/jquery-1.6.2.min.js?v=jd2015030523"><\/script>');
+			}
+		</script>
+				        <script type="text/javascript" src="js/common.js?v=jd2015030523"></script>
+        <script type="text/javascript" src="js/spin.min.js?v=jd2015030523"></script>
+	</head>
+
+<body id="body">
+<a name="top"></a>
+<header>
+			    						<div class="new-header">
+        	<a href="javascript:pageBack();" class="new-a-back" id="backUrl"><span>返回</span></a>
+							<h2>秒杀</h2>
+			            <a href="javascript:void(0)" id="btnJdkey" class="new-a-jd"><span>京东键</span></a>
+    	</div>
+		<div class="new-jd-tab" style="display:none" id="jdkey">
+        	<div class="new-tbl-type">
+                <a href="index.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="new-tbl-cell">
+                	<span class="icon">首页</span>
+					<p style="color:#6e6e6e;">首页</p>
+                </a>
+                <a href="cat.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="new-tbl-cell">
+                	<span class="icon2">分类搜索</span>
+					<p style="color:#6e6e6e;">分类搜索</p>
+                </a>
+                <a href="javascript:void(0)" id="html5_cart" class="new-tbl-cell">
+                	<span class="icon3">购物车</span>
+					<p style="color:#6e6e6e;">购物车</p>
+                </a>
+                <a href="member_index.html" class="new-tbl-cell">
+                	<span class="icon4">我的京东</span>
+					<p style="color:#6e6e6e;">我的京东</p>
+                </a>
+            </div>
+        </div>
+	</header>
+<script type="text/javascript">
+window.onunload=function(){}
+</script>
+<script src="js/Mbase.js?v=jd2015030523" type="text/javascript" ></script>
+
+<form id="seckillForm" action="/seckill/seckillList.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" method="get">
+		 <input type="hidden" name="gid" id="gid" value="">
+</form>
+<header class="topfixed">
+	<ul class="tap-list">
+													    <li class="cur" id="30">
+				            			<p>聚惠购</p>
+            			<p>20:00</p>
+						            			   <span></span>
+						            		</li>
+		    									<li id="26">
+				            			<p>通宵购</p>
+            			<p>明日00:00</p>
+						            			   <span></span>
+						            		</li>
+		    									<li id="27">
+				            			<p>京彩购</p>
+            			<p>明日08:00</p>
+						            			   <span></span>
+						            		</li>
+		    									<li id="28">
+				            			<p>人气购</p>
+            			<p>明日12:00</p>
+						            		</li>
+		    			</ul>
+</header>
+<p class="bgsplit"></p>
+<header class="list-head">
+	    	<span id="seckillTile">抢购中</span>
+        <span class="time"><span id="timeText">距离本场结束<span class="red" id="hms">00 : 00 : 00</span></span> </span>
+	</header>
+<ul class="good-list">
+		    			 														  <li>
+					                		<a href="/product/1015873748.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54d597faNb9e6e234.jpg!q70.jpg">
+                			<p class="g-title">【限时秒杀】只需59元包邮 杜蕾斯超薄12亲昵12加送超薄8片 真正的实惠超薄体验 快抢呀</p>
+                			<p class="g-price">￥59.00</p>
+                			<p class="g-price-odd"><del>￥119.00</del></p>
+                			<span class="count">4.9折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1495667831.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/551220a8N046e1452.jpg!q70.jpg">
+                			<p class="g-title">【厂家直销，亏本秒杀】纯棉短袖T恤字母印花棉T T014藏青 XXL</p>
+                			<p class="g-price">￥39.00</p>
+                			<p class="g-price-odd"><del>￥390.00</del></p>
+                			<span class="count">1.0折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1110350587.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54fe4484N84080cc3.jpg!q70.jpg">
+                			<p class="g-title">恒源祥薄款商务休闲提花男士棉袜5双装 混色 5双礼盒装-正品保证</p>
+                			<p class="g-price">￥39.00</p>
+                			<p class="g-price-odd"><del>￥128.00</del></p>
+                			<span class="count">3.0折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1495455967.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/551198e1Nfa7f29d8.jpg!q70.jpg">
+                			<p class="g-title">【前10名在线付款免单】新款百搭四季鞋平跟水钻单鞋凉鞋女 coco-001 银色 37</p>
+                			<p class="g-price">￥139.00</p>
+                			<p class="g-price-odd"><del>￥259.00</del></p>
+                			<span class="count">5.3折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1470375243.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54dc1892Ncd742179.jpg!q70.jpg">
+                			<p class="g-title">三枪 男士短袖 舒肤棉罗纹弹力V领短袖男衫（2枚组） 白+白 175/95(XL)</p>
+                			<p class="g-price">￥49.00</p>
+                			<p class="g-price-odd"><del>￥199.00</del></p>
+                			<span class="count">2.4折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1310049307.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/55078871N1ba0b85c.jpg!q70.jpg">
+                			<p class="g-title">UCOMX Gmuse 双耳音乐运动蓝牙耳机 炫蓝</p>
+                			<p class="g-price">￥89.00</p>
+                			<p class="g-price-odd"><del>￥118.00</del></p>
+                			<span class="count">7.5折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1021964640.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/55125884Nec41821b.jpg!q70.jpg">
+                			<p class="g-title">丝路女款复古圆框偏光墨镜 百搭大框运动驾驶镜防紫外线 B8923 经典时尚-C1黑色</p>
+                			<p class="g-price">￥99.00</p>
+                			<p class="g-price-odd"><del>￥598.00</del></p>
+                			<span class="count">1.6折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/660068.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/rBEQYFGZ6s0IAAAAAADmS_9w4twAABlTgC7_5QAAOZj720.jpg!q70.jpg">
+                			<p class="g-title">斯沃琪(Swatch)手表 炫彩原创系列石英男表至黑色SUOB704</p>
+                			<p class="g-price">￥299.00</p>
+                			<p class="g-price-odd"><del>￥359.00</del></p>
+                			<span class="count">8.3折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1277760.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54698a60N5006209a.jpg!q70.jpg">
+                			<p class="g-title">乐范（LERAVAN）魔力贴Magic Touch 智能便携按摩贴 低周波  APP控制 差旅必备 珍珠白</p>
+                			<p class="g-price">￥279.00</p>
+                			<p class="g-price-odd"><del>￥299.00</del></p>
+                			<span class="count">9.3折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1325695.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54c0a051N5378d553.jpg!q70.jpg">
+                			<p class="g-title">理肤泉（LA ROCHE-POSAY）特安洁面补水特惠套装</p>
+                			<p class="g-price">￥178.00</p>
+                			<p class="g-price-odd"><del>￥200.00</del></p>
+                			<span class="count">8.9折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1007034483.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54fe878cNd5c73b24.jpg!q70.jpg">
+                			<p class="g-title">久爱【9i】纯纯爱 999千足银光面纯银手镯 手链 手饰 镯子 简约时尚 配鉴定证书 约25g配证书</p>
+                			<p class="g-price">￥169.00</p>
+                			<p class="g-price-odd"><del>￥249.00</del></p>
+                			<span class="count">6.7折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1004000809.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54b8f18dN061d5f12.jpg!q70.jpg">
+                			<p class="g-title">【男士专用，控油防脱洗发】蕴特优能 男士洗发水无硅油洗头水控油洗发露防脱型洗发液300ml</p>
+                			<p class="g-price">￥59.00</p>
+                			<p class="g-price-odd"><del>￥118.00</del></p>
+                			<span class="count">5.0折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1464235115.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/54cc2d01N2b89298a.jpg!q70.jpg">
+                			<p class="g-title">【限时秒杀 赠铝箔垫】季风帐篷 户外双人单开门帐篷露营郊游休闲帐篷 迷彩</p>
+                			<p class="g-price">￥89.00</p>
+                			<p class="g-price-odd"><del>￥198.00</del></p>
+                			<span class="count">4.4折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1024418610.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/rBEhVFNHWToIAAAAAARwmV4nyDYAALmuQKXFsUABHCx429.jpg!q70.jpg">
+                			<p class="g-title">汤姆斯Tt&Mm春夏季帆布鞋女韩版学生一脚蹬女生懒人鞋乐福鞋渔夫鞋玛丽鞋TM11008W 深蓝 35</p>
+                			<p class="g-price">￥79.00</p>
+                			<p class="g-price-odd"><del>￥109.00</del></p>
+                			<span class="count">7.2折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1058809370.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/rBEhU1MOrqsIAAAAAAU9gJ2EDDAAAJJJgGQTR4ABT2Y538.jpg!q70.jpg">
+                			<p class="g-title">壳牌（Shell）喜力 汽车机油 润滑油 4L装 5W-40全合成灰壳超凡喜力</p>
+                			<p class="g-price">￥286.00</p>
+                			<p class="g-price-odd"><del>￥425.00</del></p>
+                			<span class="count">6.7折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1085738695.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/550bb430N836cb865.jpg!q70.jpg">
+                			<p class="g-title">邦阳 玛咖片 秘鲁进口玛卡粉 高纯玛咖精片男性保健品 缓解疲劳</p>
+                			<p class="g-price">￥98.00</p>
+                			<p class="g-price-odd"><del>￥198.00</del></p>
+                			<span class="count">4.9折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1136261837.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/549a6ca3N71d04b1d.jpg!q70.jpg">
+                			<p class="g-title">茅台集团 京玉 一帆风顺 6瓶装白酒 52度 500ml</p>
+                			<p class="g-price">￥498.00</p>
+                			<p class="g-price-odd"><del>￥1988.00</del></p>
+                			<span class="count">2.5折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1493111798.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/550fddc2N009ac3bb.png!q70.jpg">
+                			<p class="g-title">朗祺(lionking）洗车水枪套装 高压洗车器 家用刷车 洗车工具 高压10米套装2015D</p>
+                			<p class="g-price">￥89.00</p>
+                			<p class="g-price-odd"><del>￥148.00</del></p>
+                			<span class="count">6.0折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1174897312.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/5454d06fN69030de1.jpg!q70.jpg">
+                			<p class="g-title">盼盼第二代肉松饼1020g整箱装肉松条休闲零食品面包饼干糕点福建特产</p>
+                			<p class="g-price">￥39.90</p>
+                			<p class="g-price-odd"><del>￥76.80</del></p>
+                			<span class="count">5.1折</span>
+							        					                		</a>
+                	</li>
+			    										  <li>
+					                		<a href="/product/1273831138.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">
+                			<img src="images/541bdcb4Nb748b43c.jpg!q70.jpg">
+                			<p class="g-title">泰格斯Targus 15.6寸商务休闲笔记本电脑包双肩包 TSB78701AP黑</p>
+                			<p class="g-price">￥169.00</p>
+                			<p class="g-price-odd"><del>￥599.00</del></p>
+                			<span class="count">2.8折</span>
+							        					                		</a>
+                	</li>
+			    			 					 					 					 				<!--		    <a href="/seckill/seckillList.action?gid=26&sid=bfd5d5fa6afa2d31344dd42eb76b7d68" class="page-next">没有喜欢的?看看下一场!</a>
+		-->
+		<a href="javascript: void(0);" id="layout_toClient" class="page-next">去客户端查看更多秒杀商品！</a>
+	</ul>
+<script type="text/javascript">
+var seckillSecond="8898";
+$(document).ready(function(){
+    countDown("8898",".time"); 	
+	$(".topfixed>ul>li").each(function(){
+        $(this).click(
+            function(){
+                var gid=$(this).attr("id");
+                $("#gid").val(gid);
+                $("#seckillForm").submit();
+            });
+    });
+	
+	M.require('http://st.360buyimg.com/m/js/2014/module/plugIn/downloadAppPlugIn.js?v=jd2015030523', function(){
+		$('#layout_toClient').downloadAppPlugIn();
+	})
+	
+})
+
+function countDown(sys_second,id){ 
+	var timer = setInterval(function(){ 
+		if (sys_second > 1) { 
+		    var seckillListTime = window.localStorage.getItem('seckill_list');
+			if(seckillListTime!=undefined && seckillListTime!=null && seckillListTime!=""){
+			    var nowTime=new Date().getTime();
+			    var backTime=seckillListTime.split("_")[1];
+				var goTime=seckillListTime.split("_")[0];
+				if(seckillSecond==goTime){
+    				var sTime=parseInt((nowTime-backTime)/1000);
+    				if(sTime>1){
+    				    sys_second=sys_second-sTime+1;
+    				}
+				}
+			}
+			sys_second -= 1; 
+			var hour = Math.floor((sys_second / 3600) % 24); 
+			var minute = Math.floor((sys_second / 60) % 60); 
+			var second = Math.floor(sys_second % 60); 
+			hour=hour<10?"0"+hour:hour;//计算小时 
+			minute=minute<10?"0"+minute:minute;//计算分钟 
+			second=second<10?"0"+second:second;//计算秒杀 
+			var hour_elem = $(id).find('#hms'); 
+			$(hour_elem).text(hour).append(" : ").append(minute).append(" : ").append(second);
+			window.localStorage.setItem('seckill_list',seckillSecond+'_'+new Date().getTime());
+		} else { 
+			clearInterval(timer);
+			var t=Math.floor(Math.random()*3)
+			var ts=setInterval(function(){
+        		if(t>0){
+        		   t-=1;
+        		}else{
+				   clearInterval(ts);
+				   $("#gid").val("");
+                   $("#seckillForm").submit();
+				}
+        	},1000);
+		} 
+	}, 1000); 
+} 
+
+</script>
+
+
+
+   
+	<div class="login-area" id="footer"  style="margin:0 auto 15px;" >
+        	<div class="login">
+									    					<a href="login.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">登录</a><span class="lg-bar">|</span><a href="https://passport.m.jd.com/user/mobileRegister.action?v=t&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">注册</a>
+    												<span  class="new-fr"><a href="/showvote.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68">反馈</a><span class="lg-bar">|</span><a href="#top">回到顶部</a></span>
+            </div>
+			<div class="version"><a href="http://wap.jd.comindex.html?v=w&sid=bfd5d5fa6afa2d31344dd42eb76b7d68">标准版</a><a href="javascript:void(0)" class="on">触屏版</a>
+				<a onclick="skip();" href="javascript:void(0);" id="toPcHome">电脑版</a>        	</div>
+        	<div  id="clientArea">
+									<a href="/download/downApp.html?sid=bfd5d5fa6afa2d31344dd42eb76b7d68" id="toClient" class="openJD">客户端</a>
+				        	</div>
+            <div class="copyright">Copyright &copy; 2012-2015 京东JD.com 版权所有</div>
+        </div>
+
+    <div style="display:none;">
+    					<img src="/ja.jsp?&amp;utmn=598674615&amp;utmr=http%3A%2F%2Fm.jd.com%2Fseckill%2FseckillList.action%3Fgid%3D28&amp;utmp=%2Fseckill%2FseckillList.action%3Fgid%3D30&amp;guid=ON&jav=html5&pin=-&utmac=MO-J2011-1&provinceId=&cityId=&countryId=&townId=&skuId=&skuPrice=&stockState=" />
+			    </div>
+
+    <script type="text/javascript" src="js/mping.min.js"></script>
+    <script type="text/javascript">
+        try{
+            var pv= new MPing.inputs.PV();   //构造pv 请求
+            var mping = new MPing();        //构造上报实例
+            mping.send(pv);                //上报pv
+        } catch (e){}
+    </script>
+
+
+<script type="text/javascript">
+$("#unsupport").hide();
+if(!testLocalStorage()){ //not support html5
+    if(0!=0 && !$clearCart && !$teamId){
+		$("#html5_cart_num").text(0>0>0);
+	}
+}else{
+	updateToolBar('');
+}
+
+$("#html5_cart").click(function(){
+//	syncCart('bfd5d5fa6afa2d31344dd42eb76b7d68',true);
+	location.href='cart.html';
+});
+
+function reSearch(){
+var depCity = window.sessionStorage.getItem("airline_depCityName");
+	if(testSessionStorage() && isNotBlank(depCity) && !/^\s*$/.test(depCity) && depCity!=""){
+    	var airStr = '<form action="/airline/list.action" method="post" id="reseach">'
+        +'<input type="hidden" name="sid"  value="bfd5d5fa6afa2d31344dd42eb76b7d68"/>'
+        +'<input type="hidden" name="depCity" value="'+ window.sessionStorage.getItem("airline_depCityName") +'"/>'
+        +'<input type="hidden" name="arrCity" value="'+ window.sessionStorage.getItem("airline_arrCityName") +'"/>'
+        +'<input type="hidden" name="depDate" value="'+ window.sessionStorage.getItem("airline_depDate") +'"/>'
+        +'<input type="hidden" name="depTime" value="'+ window.sessionStorage.getItem("airline_depTime") +'"/>'
+        +'<input type="hidden" name="classNo" value="'+ window.sessionStorage.getItem("airline_classNo") +'"/>'
+        +'</form>';
+    	$("body").append(airStr);
+    	$("#reseach").submit();
+	}else{
+    	window.location.href='/airline/index.action?sid=bfd5d5fa6afa2d31344dd42eb76b7d68';
+	}
+}
+ //banner 关闭点击
+    $('.div_banner_close').click(function(){
+        $('#div_banner_header').unbind('click');
+        jQuery.post('/index/addClientCookieVal.json',function(d){
+              $('#div_banner_header').slideUp(500);
+        });
+    });
+    //banner 下载点击
+    $('.div_banner_download').click(function(){
+         var downloadUrl = $(this).attr('url');
+         jQuery.post('/index/addClientCookieVal.json',function(d){
+               window.location.href=downloadUrl;
+        });
+    });
+    window._clientVersion_ = '';
+    
+	$(document).ready(function(){
+		var _loadScript = function(url, options,cb){
+			var script = document.createElement("script");
+			var def = {
+				type: "text/javascript",
+				charset:"utf-8"
+			}
+			options= options|| {
+			}
+			for(var i in options){
+				def[i] = options[i];
+			}
+			script.src = url;
+			
+			for(var i in def){
+				script.setAttribute(i,def[i]);
+			}
+			script.addEventListener("load",function(){
+				cb && cb();
+			},false)
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+				if($(".download-con").length || $("#clientArea").length){
+			_loadScript("http://st.360buyimg.com/m/js/2013/installapp.js?v=jd2015030523",{},function(){
+				 $("#clientArea").length && downcheck($("#clientArea"),false);
+			});
+		}
+				
+	})
+			function skip(){
+		addCookie('pcm', '1' ,3, '', 'jd.com');
+		var localurl = 'http://www.jd.com/#m';
+		if(localurl == 'http://www.jd.com/#m'){
+			var localurl = document.location.href;
+    		if(localurl.indexOf('http://m.jd.com/sale/mall') == 0){
+    			var saleurl = localurl.replace('http://m.jd.com/sale/mall', 'http://sale.jd.com/mall');
+    			saleurl = saleurl+'#m'
+    			window.location.href = saleurl;
+				return;
+    		}else if(localurl.indexOf('http://m.jd.com/sale/act') == 0){
+    			var saleurl = localurl.replace('http://m.jd.com/sale/act', 'http://sale.jd.com/act');
+    			saleurl = saleurl+'#m'
+    		 	window.location.href = saleurl;
+				return;
+    		}else{
+    			 window.location.href = 'http://www.jd.com/#m';
+				 return;
+    		}
+		}
+		window.location.href = localurl;
+	}
+	
+	function addCookie(name, value, expires, path, domain){ 
+        var str=name+"="+escape(value); 
+        if(expires!=""){ 
+            var date=new Date(); 
+            date.setTime(date.getTime()+expires*24*3600*1000);//expires单位为天 
+            str+=";expires="+date.toGMTString(); 
+        } 
+        if(path!=""){ 
+        	str+=";path="+path;//指定可访问cookie的目录 
+        } 
+        if(domain!=""){ 
+        	str+=";domain="+domain;//指定可访问cookie的域 
+        } 
+        document.cookie=str; 
+    } 
+</script>
+</body>
+</html>

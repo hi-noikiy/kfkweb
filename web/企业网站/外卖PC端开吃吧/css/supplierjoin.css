@@ -1,0 +1,133 @@
+#header{margin-top:10px;}
+/*logo旁“商家加盟四字”*/
+#logo+p { color: #54a7d9; font-weight: bold; height:71px;line-height: 71px; font-size: 19px;margin-left:10px;float:left; }
+.study{height:196px;}
+.speech{height:372px;}
+.notice{height:162px;}
+.income{height:419px;}
+.speech{position:relative;}
+#speechContent{position:absolute;top:0px;}
+
+#btnLog{margin-right:3px;}
+
+#fSidebarRight h4, #centerContent h4 {
+line-height: 35px;
+border-bottom: 1px solid #ddd;
+font-size: 14px;
+}
+/*餐厅加盟首页 右边栏*/
+#fSidebarRight { width: 240px; float: right; }
+#fSidebarRight li { border-bottom: 1px dotted #ddd; /*height: 30px; line-height: 30px;*/ }
+/*公告*/
+#fSidebarRight .notice { border: 1px solid #ddd; padding: 0 10px 10px; }
+#fSidebarRight .notice ul { color: #FF8B1C; }
+#fSidebarRight .notice li{line-height:28px;}
+#fSidebarRight .notice li a { color: #235F98; }
+/*收入榜*/
+.income_top { border: 1px solid #ddd;height: 34px; line-height: 34px; }
+.income_top h4 { padding-left: 10px; background-image: -webkit-gradient(linear,0% 0%,0% 100%,from(#fff),to(#E7E8E5)); 
+
+background: -moz-linear-gradient(top,#fff,#E7E8E5); }
+.income_top ul { padding: 0 10px 10px; border: 1px solid #ddd; border-top:none;}
+.income_top li { height: 36px; line-height: 36px; color: #235F98;*width:216px;}
+.income_top .rank_num { display: inline-block; height: 15px; line-height: 15px; width: 15px; text-align: center; color: 
+
+White;background-color: #F8A955; }
+.income_top .income { color: #F8A955;display:inline; }
+.income_top .name { width: 50px; margin-left: 6px; display: inline-block; }
+.income_top .address { width: 90px; display: inline-block; }
+
+/*中间部分*/
+/*外卖学堂*/
+#centerContent { width: 535px; margin-left: 193px; }
+#centerContent .study{border:1px solid #ddd;padding:0 10px 10px;margin-bottom:10px;}
+#centerContent .study li{height:40px;line-height:40px;width:210px;display:inline-block;padding-left:44px;background:url
+
+(../image/supplierJoin/studyicon.png) no-repeat 12px 12px;*display:inline;*zoom:1;}
+#centerContent .study li a{color:#235F98;}
+/*合作伙伴感言*/
+.dynamic_outer{overflow:hidden;height:334px;}
+#centerContent .speech{border:1px solid #ddd;padding:0 10px 10px;}
+#centerContent .speech li{border-top:1px dotted #ddd;padding:16px 0;}
+#centerContent .speech li:first-child{border:none;}
+#centerContent .speech li img{border:1px solid #ddd;vertical-align:top;}
+#centerContent .speech li .content{display:inline-block;width:430px;margin-left:10px;*display:inline;*zoom:1;*width:425px;}
+#centerContent .speech li .content p{line-height:20px;}
+#centerContent .speech li .content p.sup_name{color:#235F98;line-height:14px;padding-bottom:6px;}
+/*餐厅名店展示*/
+.hot_sups img{width:65px;height:65px;border:1px solid #ddd;margin: 10px 9px;}
+.hot_sups{border:1px solid #ddd;background:white;margin-top:8px;}
+
+.w215{width:215px;}
+
+/*---------------Supplier-----------------*/
+.join_box {width: 730px;width:728px\9; float: left;padding:10px 35px;height: 580px;background-color: #fff}
+/*加盟步骤*/
+.join_item{width:395px;margin-top:10px;margin-bottom:15px;}
+.join_item li{float:left;width:130px;text-align:center;margin-bottom:15px;}
+.join_item li:first-child{width:530px;height:15px;background:url("../images/join-item2.png") center 0px no-repeat;}
+.join_item li.type1{background-position:center 0px;}
+.join_item li.type2{background-position:center -29px;}
+.join_item li.type3{background-position:57px -57px;}
+.join_item li.type4{background-position:center -85px;}
+.join-input-message{color:#557401;font-weight:100;border-bottom:1px solid #ccc;padding:2px 0px 12px 3px;}
+.agree-join{margin-top:21px;}
+.item .agree-join label{width:60px;margin-right:5px;}
+.item .agree-join label input{margin-right:3px;}
+.item .agree-join a{color:#ff6600;}
+.item .agree-join a:hover{text-decoration:underline;}
+#city{width:130px;padding:1px;float:left;height:23px;margin-right:10px;display:block; margin-top:3px;*margin-top:6px;}
+/*浮层内容及加盟填写信息统一样式*/
+.item{ margin:0px; margin-top:10px; width:500px;float: left;}
+.item li{float:left;margin-top:10px;line-height:30px;width:100%;}
+.item li input[type="text"],.item li input[type="password"]{margin-right:10px;float:left;}
+.item li label { float: left; width: 125px; text-align: left; margin-right: 10px; color: #676767;font-size: 14px; }
+.item li label span{color:#ff0000;}
+.item .save { display:block;background: url("../images/button.png") no-repeat 0 0; width: 82px; height: 32px; font-family: 'Microsoft Yahei'; font-size: 16px;  color: #963; text-align: center; line-height: 32px;margin:20px 0px 0px 0px; }
+.item .save:hover{background-position:0 -58px;}
+#join_code{ position: absolute;padding: 90px;margin-left: 430px}
+#join_code p{margin:5px 0 0 0}
+
+.info_title a{*position:relative;*bottom:40px;}
+/*注册*/
+#joinReg{display:block;}
+/*送餐信息*/
+#style input[type="checkbox"]{margin-bottom:-2px;}
+#startPrice .logTips{float:none;display:inline-block;margin-left:10px;}
+#sendprice{width:50px;}
+#reservationcall,#alternatecall{width:140px;}
+/*提交成功并审核*/
+#approving{ width:420px; height:170px; border:#ccc 1px solid ; margin:auto; margin-top:70px; }
+#successApplier{ margin-top:50px; margin-left:30px; color:#676767;}
+#successApplier h3{font-size:20px;height:40px;color:#000}
+#successApplier p{ display:block; height:36px;}
+#successApplier span{ display:block; height:36px;}
+#join_success{border:#ccc 1px solid;margin-top:40px;width:682px;}
+#join_success_box h3{background:url(../images/pass.png) no-repeat;padding-left:62px;line-height:50px;font-size:20px;height:50px;color:#000;}
+#join_success_box{padding:15px 27px 63px;}
+#join_success_box p{border-top:1px solid #ddd;margin-top:18px;padding-top:28px;}
+
+/*--------------------DiniInfo------------------------*/
+#supBase{margin:20px 15px;}
+#supBase .block{margin-top:30px;}
+.wel{height:20px;line-height:20px;padding-left:15px;}
+.wel span{padding-right:40px;color:red}
+.info_title{height: 42px; line-height: 42px; font-size: 16px; padding-left: 10px; background-color: #F5F5F5; font-weight: 
+
+bold;margin-top:30px;}
+#supBase table{margin-top:10px;width:750px;}
+#supBase  td { height: 36px; padding-left: 12px; font-size: 12px; border: 1px solid #E4E4E4; border-collapse: collapse; }
+#supBase a{float:right;padding-right:25px;color: #999999; text-decoration: underline; margin-left: 10px; background-image: 
+
+none; display: inline; font-size: 12px;cursor:pointer}
+
+/*修改餐厅基本信息浮层*/
+#styles{width: 370px;float: left;}
+#styles label{width:auto;margin-right:10px;}
+#styles label input{margin-top:9px;*margin-top:3px;float:left;margin-right:5px;}
+#styles .first_child{display:block;float:left;width:110px;}
+/*修改送餐信息*/
+.item .send_time{padding-left:150px;display:block;}
+.add_time,.del_time{background-color:#FFA312;padding:1px 5px;line-height:24px;clear:right;}
+.add_time{top:8px;left:20px;cursor:pointer;margin:3px 20px 0;}
+.del_time{margin-right:20px;margin-top:5px;cursor:pointer;}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html data-php=''>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta name="baidu-site-verification" content="t7oDT96Amk" />
+<title>个人中心 - 我的钱包</title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<meta name="sogou_site_verification" content="G7nmLR75yc"/>
+<meta name="baidu-tc-cerfication" content="0a8c6d28b570b218f78510c29be4529b" />
+<meta name="360-site-verification" content="8b6121969d78afda8caeb69053fa29d9" />
+<script>
+(function wapStart() {
+    var now = Date.now();
+    var win = this;
+    var phpData = document.documentElement.getAttribute('data-php');
+    var special = /m=special/.test(location.search);
+    var _onCompleted = function() {__STATS.add('dom_ready');};
+    var _onLoad = function() {
+        __STATS.add('onload');
+        if(!special && __locals.img_test_page == 'index' && Math.random() <= 0.1) {
+            var id = __locals.img_test_type;
+            var v = Date.now() - now;
+            if(id) (new Image()).src = 'http://mstats.vip.com/v1/counts/m_img_test?id='+id+'&value='+v;
+        }
+        win.removeEventListener('DOMContentLoaded', _onCompleted);
+        win.removeEventListener('load', _onLoad);
+    };
+
+    if (phpData) {
+        try {
+            phpData = JSON.parse(phpData);
+        } catch (e) {}
+    }
+
+    win.__STATS = {
+        start: now,
+        points: {},
+        add: function(point, time) {
+            __STATS.points[point] = time ? time : (Date.now() - __STATS.start);
+        }
+    };
+    win.addEventListener('DOMContentLoaded', _onCompleted, false);
+    win.addEventListener('load', _onLoad, false);
+    win.onerror = function(msg, url, line, col) {
+        var u = 'http://mstats.vip.com/v1/jslog/m?';
+        u += '_t=' + Date.now();
+        u += '&msg=' + encodeURIComponent([msg, url, line, col || 0].join('|'));
+        (new Image()).src = u;
+    };
+
+    // need remove
+    win.ui = 'touch';
+    win.vipConfig = {
+        priceImageSwitch: parseInt('0', 10),
+        ipLocation: {
+            result: "",
+            province: ""
+        }
+    };
+
+    // all data from php stored here
+    win.__locals = phpData || {};
+}.call(window));
+</script>
+
+
+<link rel="stylesheet" href="css/45cd6da9da.layout.min.css">
+
+<link rel="stylesheet" href="css/86fe49ca90.common.min.css">
+
+
+<script>__STATS.add('head_load');</script>
+
+
+
+
+</head>
+
+<body  >
+
+<script src="js/562a4c0e89.jquery-2.1.0.min.js"></script>
+
+
+
+<!--客户端下载的图片-->
+ 
+
+		<header id="header" class="u-header clearfix">
+	    <!--返回按钮根据程序判断来源，返回上一级-->
+		 		 <!-- 非微信扫码进入的用户 -->
+	    <div class="u-hd-left f-left">
+                <a href="javascript:void(0)" class="J_backToPrev"><span class="u-icon i-hd-back"></span></a>
+                </div>
+			     <div  class="u-hd-tit"><span>唯品钱包</span></div>
+		       	    <div class="u-hd-right f-right"><a href="index.html" mars_sead="nav_home_btn"><span class="u-icon i-hd-home"></span></a></div>
+      		 	</header>
+	
+<div class="space10"></div>
+<div class="userdiv clearfix">
+  <div class="totalwallet">
+    <span>钱包总额</span><span class="font16w">¥0</span>
+  </div>
+   <p class="walltlist">可用余额：<span class="fr">¥0</span></p>
+   <p class="walltlist" style="border:none;">提现中金额：<span class="fr">¥0</span></p>
+</div>
+
+<div class="s_links in_wallet">
+  <a href="user-wallet-detail-index.html">钱包明细<span></span></a>
+  <a href=" user-wallet-bind-send.html"> 绑定号码 <span></span></a>
+  </div>
+
+<div class="space10"></div>
+<div class="compadding"><span class="Qicon2">?</span><a href="user-wallet-help.html" class="forgetkey"> 什么是唯品钱包？</a></div>
+<div class="space20"></div>
+
+  <div class="u-footer clearfix">
+        <div class="u-ft-downbtn">
+    <a style="display: block; width: 302px; height: 53px; margin: 0 auto; background: url(//ms2-m.vipstatic.com/images/common/dc4267fbe5.btn_down_footer.png) no-repeat; background-size: 302px;" href="http://m.vip.com/service-download.html" mars_sead="user_wallet_footer_client_download_btn">
+      <span style="display: block;width: 116px;height:36px;padding: 10px 0 0 78px;overflow: hidden;line-height: 18px;font-style: italic;text-shadow: 0 1px 1px rgba(255,255,255,.75);color: #000;">
+        下载手机APP<br/>钱包绑定更安全！
+      </span>
+    </a></div>
+        <div class="u-footnav clearfix">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<a href="index.html" mars_sead="footer-index_btn">首页</a>
+<a href="cart.html" mars_sead="footer-cart_btn">购物车</a>
+<a href="service-download.html" mars_sead="footer-loading_btn">客户端</a>
+<a href="member_index.html" mars_sead="footer-users_btn">个人中心</a>
+<!-- <a href="user-logout.html" mars_sead="footer-logout_btn">退出登录</a> -->
+
+    </div>
+    <p class="u-copyright" >Copyright © 2008-2015m.vip.com，All Rights Reserved 粤ICP备08114786号</p>
+  </div>
+      <a href="#top" class="u-backtop" mars_sead="home_foot_top_btn"><span class="u-icon i-backtop"></span></a>
+    
+  <!--以下是浮于显示屏左下角的购物袋-->
+  
+
+<script src="js/7fae035d74.swipe.min.js"></script>
+
+<script src="js/6c856242ce.base.min.js"></script>
+
+<script src="js/mars_wap.js"></script>
+<noscript>
+    <img src="http://mar.vip.com/n" height="1" width="1" border="0" alt="" />
+</noscript>
+
+
+<script type="text/javascript">
+$(function() {
+	$("#reddot").on("click", function() {
+		Cookie.Set("WAP[redDot]", 'c4e78512ddbe8a2467f091fb4d82aacf', 7, "vip.com", "/")
+	});
+});
+</script>
+
+<script async src="js/f90fe14b29.report.min.js"></script>
+</body>
+
+</html>
+
