@@ -40061,7 +40061,7 @@ body.m-content--skin-light2 {
 	}
 	.m-header-menu .m-menu__nav > .m-menu__item .m-menu__submenu.m-menu__submenu--classic > .m-menu__subnav {
 		padding : 20px 0;
-		/*width:180px;*/
+		width:180px;
 	}
 	.m-header-menu .m-menu__nav > .m-menu__item .m-menu__submenu.m-menu__submenu--inline {
 		display : table;
