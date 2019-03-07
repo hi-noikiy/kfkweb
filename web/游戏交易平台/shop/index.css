@@ -1,0 +1,56 @@
+.yjcode .left{float:left;width:200px;text-align:left;}
+
+.yjcode .left .sellm{float:left;width:198px;border:#ddd solid 1px;margin:10px 0 0 0;}
+.yjcode .left .sellm .u1{float:left;width:198px;}
+.yjcode .left .sellm .u1 li{float:left;}
+.yjcode .left .sellm .u1 .l1{font-size:14px;font-weight:700;background:url(../img/bgcap4.gif) left top repeat-x;height:23px;width:188px;padding:9px 0 0 10px;border-bottom:#ddd solid 1px;}
+.yjcode .left .sellm .u1 .l2{border-bottom:#ddd solid 1px;width:89px;padding:9px 0 0 10px;height:21px;cursor:pointer;}
+.yjcode .left .sellm .u1 .l21{background-color:#E9E9E9;font-weight:700;}
+.yjcode .left .sellm .u2{float:left;width:198px;font-family:Arial, Helvetica, sans-serif;padding:7px 0;}
+.yjcode .left .sellm .u2 li{float:left;}
+.yjcode .left .sellm .u2 .l1{width:30px;color:#fff;height:24px;padding:10px 0 0 0;background:url(../img/icon5.gif) center center no-repeat;text-align:center;font-weight:700;}
+.yjcode .left .sellm .u2 .l2{width:100px;height:24px;padding:10px 0 0 0;}
+.yjcode .left .sellm .u2 .l3{width:63px;height:24px;padding:10px 5px 0 0;color:#ff6600;text-align:right;}
+.yjcode .left .sellm .u2 .l11{background:url(../img/icon6.gif) center center no-repeat;}
+
+.yjcode .left .hotpro{float:left;width:198px;border:#ddd solid 1px;margin:10px 0 0 0;}
+.yjcode .left .hotpro li{float:left;}
+.yjcode .left .hotpro .l1{font-size:14px;font-weight:700;background:url(../img/bgcap4.gif) left top repeat-x;height:23px;width:188px;padding:9px 0 0 10px;}
+.yjcode .left .hotpro .l2{width:188px;padding:5px 5px 0 5px;height:61px;line-height:18px;border-top:#dddddd dotted 1px;}
+.yjcode .left .hotpro .l2 img{border:#ddd solid 1px;padding:2px;margin:0 8px 0 0;}
+.yjcode .left .hotpro .l2 a{color:#247FBD;}
+.yjcode .left .hotpro .l2 a:hover{color:#ff6600;}
+
+.yjcode .listright{float:left;width:940px;text-align:left;}
+.yjcode .shoptj{float:left;width:939px;border:#E8E8E8 solid 1px;border-left:0;margin:10px 0 0 10px;}
+.yjcode .shoptj .u1{float:left;width:939px;background-color:#F2F2F2;border-left:#ddd solid 1px;height:30px;}
+.yjcode .shoptj .u1 li{float:left;}
+.yjcode .shoptj .u1 .l1{font-weight:700;padding:7px 0 0 20px;width:518px;}
+.yjcode .shoptj .u1 .l2{font-weight:700;padding:7px 20px 0 0;width:380px;text-align:right;}
+.yjcode .listright .d1{float:left;padding:10px;border-left:#e8e8e8 solid 1px;border-top:#e8e8e8 solid 1px;width:448px;height:112px;}
+.yjcode .listright .d1 .dtp{float:left;width:120px;}
+.yjcode .listright .d1 .u2{float:left;width:328px;}
+.yjcode .listright .d1 .u2 li{float:left;}
+.yjcode .listright .d1 .u2 .l1{width:290px;height:20px;font-size:14px;}
+.yjcode .listright .d1 .u2 .l2{width:38px;height:20px;}
+.yjcode .listright .d1 .u2 .l2 a{float:right;width:30px;height:18px;border:#898989 solid 1px;text-align:center;padding:2px 0 0 0;}
+.yjcode .listright .d1 .u2 .l2 a:hover{text-decoration:none;background-color:#f2f2f2;}
+.yjcode .listright .d1 .u2 .l3{width:328px;height:20px;color:#999;}
+.yjcode .listright .d1 .u2 .l4{width:328px;}
+.yjcode .listright .d1 .u2 .l4 .s1{float:left;width:20px;padding:4px 0 0 0;height:68px;text-align:center;color:#fff;background-color:#1079F7;}
+.yjcode .listright .d1 .u2 .l4 .s2{float:left;padding:1px;border:#E5E5E5 solid 1px;margin:0 0 0 8px;}
+.yjcode .listright .d1 .u2 .l4 .s2 img{}
+.yjcode .listr{float:left;width:938px;border:#E8E8E8 solid 1px;margin:10px 0 0 10px;padding:0 0 10px 0;}
+.yjcode .listr .u1{float:left;width:938px;height:160px;border-bottom:#F4F4F4 solid 1px;}
+.yjcode .listr .u1 li{float:left;}
+.yjcode .listr .u1 .l1{padding:20px 0 0 0;text-align:center;width:160px;}
+.yjcode .listr .u1 .l2{width:640px;padding:20px 0 0 0;}
+.yjcode .listr .u1 .l2 .a1{font-size:15px;font-weight:700;}
+.yjcode .listr .u1 .l2 .s0{float:left;width:640px;padding:7px 0 0 0;margin:5px 0 0 0;height:21px;}
+.yjcode .listr .u1 .l2 .s1{float:left;width:72px;border-right:#E8E8E8 solid 1px;height:30px;margin:7px 7px 0 0;line-height:18px;}
+.yjcode .listr .u1 .l2 .s2{float:left;margin:7px 7px 0 0;}
+.yjcode .listr .u1 .l3{width:138px;margin:10px 0 0 0;}
+.yjcode .listr .u1 .l3 a{float:left;border:#D9D9D9 solid 1px;width:115px;height:25px;margin:10px 0 0 0;text-align:center;padding:7px 0 0 0;}
+.yjcode .listr .u1 .l3 a:hover{color:#fff;text-decoration:none;background-color:#F26F20;border:#F26F20 solid 1px;}
+
+.bfbbot{margin:10px 0 0 0;}

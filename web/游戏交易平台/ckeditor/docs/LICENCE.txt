@@ -1,0 +1,19 @@
+KindEditor 版权声明
+
+1. 源代����ϸ
+   KindEditor源代���在LGPL开源��议下发布，免费使用KindEditor必须�ϵ守LGPL协议，下�Ǣ是LGPL协议�Є概要，详细内容请参Կ��ʦ文�?
+
+   1) ��可以自由使用、修改、分发源代码，但要符�����源精神�?
+   2) 源代���的版权彲�indEditor开发团�֟所���，�ߠ论修改��ɺ�妱���，您不���拥有对源代码�Є版权�?
+   3) 如果���人向您要编辑器源代���，��有义务提供修改后的源代�����?
+   4) ���好在��的网站或程序上添加KindEditor官方网站�о接�?
+
+   LGPL协议ա�文：http://www.opensource.org/licenses/lgpl-license.php
+
+2. 风格�ƾ标�?
+   KindEditor�Є小�ƾ标来自MS office，office�ƾ标版权归微软公司所����?
+
+3. 表情�ƾ标�?
+   �?.4版本开始，KindEditor�Є默认表情图片采用��LINE表情，QQ表情�ƾ片版权归QQ开发商腾讯公司�؀����?
+   LINE表情�ƾ片�ո��plugins/emoticons目录下�?
+

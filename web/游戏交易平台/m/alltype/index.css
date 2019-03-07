@@ -1,0 +1,11 @@
+.indextop{height:50px;background-color:#FA7D7F;}
+.indextop .d1{margin:0 0 0 10px;text-align:left;}
+.indextop .d1 img{max-height:50px;}
+.indextop .d21{margin:11px 0 0 10px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;text-align:center;height:39px;color:#fff;font-size:20px;}
+.indextop .d3{margin:12px 10px 0 0;width:40px;text-align:right;}
+
+.type1{background-color:#f2f2f2;font-size:14px;font-weight:700;height:37px;}
+.type1 .d1{margin:10px 0 0 20px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
+.type2{;}
+.type2 .dm{margin:15px 0 5px 20px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
+.type2 .d1{float:left;width:33%;height:30px;}

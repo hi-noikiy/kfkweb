@@ -1,0 +1,31 @@
+# 优源网最新调整 AdminSm
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.73
+
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^(.*)/search(.*).html /$1/index.php\?str=$2
+RewriteRule ^(.*)/view([0-9]*).html /$1/view.php\?id=$2
+RewriteRule ^(.*)/(.*)list(.*).html /$1/$2list.php\?str=$3
+RewriteRule ^(.*)/(.*)view(.*).html /$1/$2view.php\?id=$3
+RewriteRule upload/(.*).(PHP)$ – [L,NC] 
+RewriteRule upload/(.*).(asp)$ – [L,NC] 
+RewriteRule upload1/(.*).(php)$ – [L,NC] 
+RewriteRule upload1/(.*).(asp)$ – [L,NC] 
+RewriteRule upload2/(.*).(php)$ – [L,NC] 
+RewriteRule upload2/(.*).(asp)$ – [L,NC] 
+RewriteRule upload3/(.*).(php)$ – [L,NC] 
+RewriteRule upload3/(.*).(asp)$ – [L,NC] 
+RewriteRule ad/(.*).(PHP)$ – [L,NC] 
+RewriteRule ad/(.*).(asp)$ – [L,NC] 
+RewriteRule uploadfile/(.*).(php)$ – [L,NC] 
+RewriteRule uploadfile/(.*).(asp)$ – [L,NC] 
+RewriteRule userphoto/(.*).(php)$ – [L,NC] 
+RewriteRule userphoto/(.*).(asp)$ – [L,NC] 
+RewriteRule attached/(.*).(php)$ – [L,NC] 
+RewriteRule attached/(.*).(asp)$ – [L,NC]
+RewriteRule img/(.*).(php)$ – [L,NC] 
+RewriteRule img/(.*).(asp)$ – [L,NC]
+RewriteRule gg/(.*).(PHP)$ – [L,NC] 
+RewriteRule gg/(.*).(asp)$ – [L,NC] 

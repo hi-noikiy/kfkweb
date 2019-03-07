@@ -1,0 +1,27 @@
+@charset "gb2312";
+body{background-color:#ebebeb;}
+.indextop{height:50px;background-color:#FA7D7F;}
+.indextop .d1{margin:0 0 0 10px;text-align:left;}
+.indextop .d1 img{max-height:50px;}
+.indextop .d21{margin:11px 0 0 10px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;text-align:center;height:39px;color:#fff;font-size:20px;}
+.indextop .d3{margin:12px 10px 0 0;width:40px;text-align:right;}
+
+.login{border-bottom:#ddd solid 1px;height:50px;background-color:#fff;}
+.login .d1{margin:10px 0 0 10px;width:40px;}
+.login .d1 img{width:30px;}
+.login .d2{margin:10px 10px 0 0;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;text-align:center;}
+.login .d2 input{float:left;width:100%;height:30px;border:0;color:#999;font-size:14px;}
+
+.loginDH{font-size:14px;}
+.loginDH a{color:#666;}
+.loginDH .d1{margin:15px 0 0 10px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;text-align:left;}
+.loginDH .d2{margin:15px 10px 0 0;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;text-align:right;}
+
+.loginbtn{margin:15px 0 0 0;}
+.loginbtn .d0{width:10px;margin:0;}
+.loginbtn .d1{marign:0;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;width:100%;text-align:center;color:#999;}
+.loginbtn .d1 input{background-color:#FA7D7F;font-size:16px;color:#fff;width:100%;height:40px;border:0;}
+
+.tishi{background-color:#fff;}
+.tishi .s1{width:40px;margin:8px 0 0 0;border-bottom:#ddd solid 1px;height:27px;text-align:center;}
+.tishi .s2{margin:8px 0 0 0;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;border-bottom:#ddd solid 1px;height:27px;}
